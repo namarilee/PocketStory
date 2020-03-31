@@ -46,12 +46,17 @@ class BackgroundSelect: UIViewController {
        
     var row = 0
     
+  
+        
      
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        view.addBackground(imageName: "amusement", contentMode: .scaleAspectFit)
         
         questionLabel.text = questions[row]
         
@@ -68,10 +73,8 @@ class BackgroundSelect: UIViewController {
         
         Button3.setTitle(answers[row][2], for: .normal) */
         
-
         
     }
-   
 
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
