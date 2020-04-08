@@ -10,15 +10,24 @@ import UIKit
 
 class BackgroundSelect: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
-
-
+    
+    
     @IBOutlet weak var Button1: UIButton!
-       
+    
     @IBOutlet weak var Button2: UIButton!
-       
+    
     @IBOutlet weak var Button3: UIButton!
-
-    var answer0 = [UIImage(imageLiteralResourceName: "amusement"), "Birthday party", "School"] as [Any]
+    
+    
+    
+    @IBOutlet weak var amuseBackground: UIImageView!
+    
+    
+    var answer0 = [
+        UIImage(imageLiteralResourceName: "amusement"),
+        "Birthday party",
+        "School"] as [Any]
+        
     
     var answer1 = [UIImage(imageLiteralResourceName: "dog"), "Bear", "Cat"] as [Any]
     
@@ -30,7 +39,7 @@ class BackgroundSelect: UIViewController {
     
     
     var answers = [
-        [UIImage(imageLiteralResourceName: "amusement"), "2", "School"],
+        [UIImage(imageLiteralResourceName: "amusement2"), "2", "School"],
         [UIImage(imageLiteralResourceName: "dog"), "Bear", "Cat"],
         [UIImage(imageLiteralResourceName: "pizza"), "Hotdog", "Popcorn"],
         ["Merry-go-round", "Rollercoaster", "Ferris wheel"],
@@ -39,93 +48,93 @@ class BackgroundSelect: UIViewController {
     
     var questions =
         ["Where would you like your story to be?",
-        "Let's start building your story! Choose a character",
-        "Choose a food item!",
-        "Let's go on a ride!",
-        "What would you like to play?"]
-       
+         "Let's start building your story! Choose a character",
+         "Choose a food item!",
+         "Let's go on a ride!",
+         "What would you like to play?"]
+    
     var row = 0
     
-  
-        
-     
+    
+    
+    
+    
+     override func viewDidLoad() {
+            super.viewDidLoad()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+            // Do any additional setup after loading the view.
+            
+            
+            view.addBackground(imageName: "amusement", contentMode: .scaleAspectFit)
+            
+            questionLabel.text = questions[row]
+            
+            questionLabel.adjustsFontSizeToFitWidth = true
 
-        // Do any additional setup after loading the view.
-        
-        
-        view.addBackground(imageName: "amusement", contentMode: .scaleAspectFit)
-        
-        questionLabel.text = questions[row]
-        
-        questionLabel.adjustsFontSizeToFitWidth = true
+            
+        Button1.setImage(UIImage(named: "amusement"), for: .normal)
+            
+          
+            
+            Button1.imageView?.contentMode = .scaleAspectFit
+           
+          /*  Button2.setTitle(answers[row][1], for: .normal)
+            
+            Button3.setTitle(answers[row][2], for: .normal) */
+            
+            
+        }
 
+        let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-        Button1.setImage(answers[row][0] as? UIImage, for: .normal)
         
-      
+        @IBAction func backgroundButtonClicked(_ sender: UIButton) {
+            
+            row += 1
+            print(row)
+         /*  if row > 2 {
+                print("success")
+                let HungryView = Mainstory.instantiateViewController(withIdentifier: "Hungry")
+
+                self.present(HungryView, animated: true, completion: nil)
+            } */
+             questionLabel.text = questions[row]
+            
+
+            
+            userAnswers.background = sender.title (for: .normal)!
+            
+            userAnswers.character = sender.title (for: .normal)!
+            
+            userAnswers.food = sender.title (for: .normal)!
+
+            print(userAnswers.background)
+            
+     Button1.setImage(answers[row][0] as? UIImage, for: .normal)        /*
+            Button2.setTitle(answers[row][1], for: .normal)
+            Button3.setTitle(answers[row][2], for: .normal) */
+            
+           
+        }
         
-        Button1.imageView?.contentMode = .scaleAspectFit
-       
-      /*  Button2.setTitle(answers[row][1], for: .normal)
+        /*
+        // MARK: - Navigation
+
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+        }
+        */
         
-        Button3.setTitle(answers[row][2], for: .normal) */
         
         
     }
 
-    let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-    
-    
-    @IBAction func backgroundButtonClicked(_ sender: UIButton) {
-        
-        row += 1
-        print(row)
-     /*  if row > 2 {
-            print("success")
-            let HungryView = Mainstory.instantiateViewController(withIdentifier: "Hungry")
 
-            self.present(HungryView, animated: true, completion: nil)
-        } */
-         questionLabel.text = questions[row]
-        
-
-        
-        userAnswers.background = sender.title (for: .normal)!
-        
-        userAnswers.character = sender.title (for: .normal)!
-        
-        userAnswers.food = sender.title (for: .normal)!
-
-        print(userAnswers.background)
-        
- Button1.setImage(answers[row][0] as? UIImage, for: .normal)        /*
-        Button2.setTitle(answers[row][1], for: .normal)
-        Button3.setTitle(answers[row][2], for: .normal) */
-        
-       
+    struct userAnswers {
+        static var background = ""
+        static var character = ""
+        static var food = ""
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-    
-}
-
-
-struct userAnswers {
-    static var background = ""
-    static var character = ""
-    static var food = ""
-}
 

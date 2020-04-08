@@ -125,28 +125,28 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctI-9H-sZO">
                                 <rect key="frame" x="348" y="149" width="200" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Image 2"/>
+                                <state key="normal" title="Button2"/>
                                 <connections>
-                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="Eba-D6-bMJ"/>
+                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="gr9-bb-Vzd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIV-FX-Dk4">
                                 <rect key="frame" x="592" y="149" width="200" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Image 3"/>
+                                <state key="normal" title="Button3"/>
                                 <connections>
-                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="T70-wP-Dyu"/>
+                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="IU7-ee-BAr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6i-or-1ox">
                                 <rect key="frame" x="110" y="148" width="200" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Image 1">
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
-                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="cWj-KO-2dX"/>
+                                    <action selector="amuseButtonPressed:" destination="IyB-f8-GW6" eventType="touchUpInside" id="Dhz-m7-yAq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -154,7 +154,6 @@
                         <viewLayoutGuide key="safeArea" id="4wC-HA-sT5"/>
                     </view>
                     <connections>
-                        <outlet property="Button1" destination="X6i-or-1ox" id="OJG-DG-Xb7"/>
                         <outlet property="Button2" destination="ctI-9H-sZO" id="rqf-AX-sY6"/>
                         <outlet property="Button3" destination="xIV-FX-Dk4" id="P7g-RW-2hB"/>
                         <outlet property="questionLabel" destination="uhv-y7-Ocg" id="PUm-G2-kPm"/>
@@ -162,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-Jw-j8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308.70535714285711" y="869.56521739130437"/>
+            <point key="canvasLocation" x="338.16964285714283" y="862.31884057971024"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
