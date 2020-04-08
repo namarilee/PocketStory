@@ -96,9 +96,25 @@ class BackgroundSelect: UIViewController {
             print(row)
          
             if row == 1 && sender == Button1 {
-                view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFit)
+                view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFill)
+                
+                questionLabel.isHidden = true
+                Button1.isHidden = true
+                Button2.isHidden = true
+                Button3.isHidden = true
 
+                let imageView = UIImageView(frame: CGRect(x: 120, y: 270, width: 100, height: 150))
+                imageView.image = UIImage(named: "dog")
+                self.view.addSubview(imageView)
+
+                
+                UIView.animate(withDuration: 3, delay: 3, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                              
+                            imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
+                                 
+                 })
                       }
+            
 
 
          /*  if row > 2 {
@@ -119,7 +135,8 @@ class BackgroundSelect: UIViewController {
 
             print(userAnswers.background)
             
-     Button1.setImage(answers[row][0] as? UIImage, for: .normal)        /*
+  //   Button1.setImage(answers[row][0] as? UIImage, for: .normal)
+            /*
             Button2.setTitle(answers[row][1], for: .normal)
             Button3.setTitle(answers[row][2], for: .normal) */
             
