@@ -88,9 +88,7 @@ class BackgroundSelect: UIViewController {
         }
 
     
-    
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
         
         @IBAction func backgroundButtonClicked(_ sender: UIButton) {
             

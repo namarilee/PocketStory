@@ -157,8 +157,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
-                                    <action selector="amuseButtonCliked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="WwP-mW-aLe"/>
-                                    <action selector="amuseButtonPressed:" destination="IyB-f8-GW6" eventType="touchUpInside" id="AxE-DP-47h"/>
+                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="75Z-Gq-MrE"/>
                                 </connections>
                             </button>
                         </subviews>
