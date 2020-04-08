@@ -12,6 +12,8 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
     
+    
+    
     @IBOutlet weak var Button1: UIButton!
     
     @IBOutlet weak var Button2: UIButton!
@@ -65,7 +67,7 @@ class BackgroundSelect: UIViewController {
             // Do any additional setup after loading the view.
             
             
-            view.addBackground(imageName: "amusement", contentMode: .scaleAspectFit)
+         
             
             questionLabel.text = questions[row]
             
@@ -85,13 +87,22 @@ class BackgroundSelect: UIViewController {
             
         }
 
-        let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    
+    
+    let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         
         @IBAction func backgroundButtonClicked(_ sender: UIButton) {
             
             row += 1
             print(row)
+         
+            if row == 1 && sender == Button1 {
+                view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFit)
+
+                      }
+
+
          /*  if row > 2 {
                 print("success")
                 let HungryView = Mainstory.instantiateViewController(withIdentifier: "Hungry")
