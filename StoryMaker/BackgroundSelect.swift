@@ -8,6 +8,24 @@
 
 import UIKit
 
+extension UILabel {
+
+              func animate(newText: String, characterDelay: TimeInterval) {
+
+                  DispatchQueue.main.async {
+
+                      self.text = ""
+
+                      for (index, character) in newText.enumerated() {
+                          DispatchQueue.main.asyncAfter(deadline: .now() + characterDelay * Double(index)) {
+                              self.text?.append(character)
+                          }
+                      }
+                  }
+              }
+
+          }
+
 class BackgroundSelect: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
@@ -103,16 +121,46 @@ class BackgroundSelect: UIViewController {
                 Button2.isHidden = true
                 Button3.isHidden = true
 
-                let imageView = UIImageView(frame: CGRect(x: 120, y: 270, width: 100, height: 150))
+                let imageView = UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
                 imageView.image = UIImage(named: "dog")
                 self.view.addSubview(imageView)
 
                 
-                UIView.animate(withDuration: 3, delay: 3, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                UIView.animate(withDuration: 1, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
                               
-                            imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
+                           imageView.transform = CGAffineTransform(translationX: 0, y: -150)
+                    
+                    
                                  
                  })
+               
+                let speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
+                speechBubble.image = UIImage(named: "speechBubble")
+                self.view.addSubview(speechBubble)
+                
+                
+                speechBubble.alpha = 0
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                          //Bring's sender's opacity back up to fully opaque.
+                          speechBubble.alpha = 1
+                      }
+                
+                UIView.animate(withDuration: 1, delay: 3.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                                             
+                    speechBubble.transform = CGAffineTransform(scaleX: 2, y: 2)
+                                   
+                                   
+                                                
+                                })
+    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+          let label = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 21))
+          label.center = CGPoint(x: 360, y: 300)
+          label.textAlignment = .center
+          label.font = UIFont(name: "Rockwell", size: 15)
+          label.text = "I'm a test label"
+          self.view.addSubview(label)
+                }
                       }
             
 
