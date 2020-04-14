@@ -141,10 +141,11 @@ class BackgroundSelect: UIViewController {
                 
                 speechBubble.alpha = 0
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                          //Bring's sender's opacity back up to fully opaque.
-                          speechBubble.alpha = 1
-                      }
+                         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            
+                            speechBubble.alpha = 1
+
+                }
                 
                 UIView.animate(withDuration: 1, delay: 3.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                                              
@@ -154,13 +155,41 @@ class BackgroundSelect: UIViewController {
                                                 
                                 })
     DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-          let label = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 21))
-          label.center = CGPoint(x: 360, y: 300)
-          label.textAlignment = .center
-          label.font = UIFont(name: "Rockwell", size: 15)
-          label.text = "I'm a test label"
+          let label = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
+          label.font = UIFont(name: "Rockwell", size: 18)
+          label.text = "Welcome to the amusement park!"
           self.view.addSubview(label)
+        label.animate(newText: label.text ?? "", characterDelay: 0.07)
                 }
+                
+      /*      let hello = UIImageView(frame: CGRect(x: 220, y: 240, width: 192, height: 144))
+                           hello.image = UIImage(named: "hello")
+                           self.view.addSubview(hello) */
+                
+               
+                let helloImage = UIImage(named: "hello")
+                let helloButton   = UIButton(type: UIButton.ButtonType.custom) as UIButton
+
+                helloButton.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
+                helloButton.setImage(helloImage, for: .normal)
+                self.view.addSubview(helloButton)
+                helloButton.alpha = 0
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+                    helloButton.alpha = 1
+                }
+                
+                UIView.animate(withDuration: 1, delay: 7.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                                             
+                    helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                    
+                    
+                                   
+                                   
+                                                
+                                })
+
+              
                       }
             
 
