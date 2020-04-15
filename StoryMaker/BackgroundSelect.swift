@@ -28,7 +28,6 @@ extension UILabel {
 
 class BackgroundSelect: UIViewController {
     
- 
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var Button1: UIButton!
@@ -37,13 +36,10 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var Button3: UIButton!
     
-    
-    
     var answer0 = [
         UIImage(imageLiteralResourceName: "amusement"),
         "Birthday party",
         "School"] as [Any]
-    
     
     var answer1 = [UIImage(imageLiteralResourceName: "dog"), "Bear", "Cat"] as [Any]
     
@@ -71,17 +67,10 @@ class BackgroundSelect: UIViewController {
     
     var row = 0
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        
-        
         
         questionLabel.text = questions[row]
         
@@ -98,9 +87,7 @@ class BackgroundSelect: UIViewController {
          
          Button3.setTitle(answers[row][2], for: .normal) */
         
-        
     }
-    
     
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
@@ -126,14 +113,11 @@ class BackgroundSelect: UIViewController {
                 
                 imageView.transform = CGAffineTransform(translationX: 0, y: -150)
                 
-                
-                
             })
             
             let speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
             speechBubble.image = UIImage(named: "speechBubble")
             self.view.addSubview(speechBubble)
-            
             
             speechBubble.alpha = 0
             
@@ -190,29 +174,19 @@ class BackgroundSelect: UIViewController {
             
        //     helloButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
 
-            
-           
-            
         }
         
-    
-    
-    }
-    
+        questionLabel.text = questions[row]
+        
+        userAnswers.background = sender.title (for: .normal)!
+        
+        userAnswers.character = sender.title (for: .normal)!
+        
+        userAnswers.food = sender.title (for: .normal)!
+        
+        print(userAnswers.background)
 
-   
-    
-    questionLabel.text = questions[row]
-    
-    
-    
-    userAnswers.background = sender.title (for: .normal)!
-    
-    userAnswers.character = sender.title (for: .normal)!
-    
-    userAnswers.food = sender.title (for: .normal)!
-    
-    print(userAnswers.background)
+    }
     
     //   Button1.setImage(answers[row][0] as? UIImage, for: .normal)
     /*
