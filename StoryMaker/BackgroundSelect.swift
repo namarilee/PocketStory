@@ -67,6 +67,10 @@ class BackgroundSelect: UIViewController {
     
     var row = 0
     
+    var label = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
+
+    var helloButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -103,6 +107,7 @@ class BackgroundSelect: UIViewController {
             Button1.isHidden = true
             Button2.isHidden = true
             Button3.isHidden = true
+            label.isHidden = true
             
             let imageView = UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
             imageView.image = UIImage(named: "dog")
@@ -135,18 +140,17 @@ class BackgroundSelect: UIViewController {
                 
             })
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                let label = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
-                label.font = UIFont(name: "Rockwell", size: 18)
-                label.text = "Welcome to the amusement park!"
-                self.view.addSubview(label)
-                label.animate(newText: label.text ?? "", characterDelay: 0.07)
+                self.label.isHidden = false
+                self.label.font = UIFont(name: "Rockwell", size: 18)
+                self.label.text = "Welcome to the amusement park!"
+                self.view.addSubview(self.label)
+                self.label.animate(newText: self.label.text ?? "", characterDelay: 0.07)
             }
             
           
             
             
             let helloImage = UIImage(named: "hello")
-            let helloButton   = UIButton(type: UIButton.ButtonType.custom) as UIButton
             
             helloButton.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
             helloButton.setImage(helloImage, for: .normal)
@@ -156,23 +160,23 @@ class BackgroundSelect: UIViewController {
             self.view.addSubview(helloButton)
             
            
+            helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
+
             
             
             helloButton.alpha = 0
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-                helloButton.alpha = 1
+                self.helloButton.alpha = 1
             }
             
             UIView.animate(withDuration: 1, delay: 7.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                 
-                helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
                 
-
                 
             })
-            
-       //     helloButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+    
 
         }
         
@@ -188,26 +192,22 @@ class BackgroundSelect: UIViewController {
 
     }
     
-    //   Button1.setImage(answers[row][0] as? UIImage, for: .normal)
-    /*
-     Button2.setTitle(answers[row][1], for: .normal)
-     Button3.setTitle(answers[row][2], for: .normal) */
+    
+    @IBAction func helloButtonClicked(_ sender: UIButton) {
+            self.label.font = UIFont(name: "Rockwell", size: 18)
+            self.label.text = "Let's choose a character!"
+            self.view.addSubview(self.label)
+            self.label.animate(newText: self.label.text ?? "", characterDelay: 0.07)
+            
+            let helloImage = UIImage(named: "Next button")
+            helloButton.setImage(helloImage, for: .normal)
+
+            helloButton.removeTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
+            
+            
+    }
     
     
-
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
-
-
-
 
 }
 
