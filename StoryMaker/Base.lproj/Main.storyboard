@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="933" y="2788"/>
         </scene>
-        <!--Background Select-->
+        <!--BackgroundSelect-->
         <scene sceneID="Ffp-61-iHc">
             <objects>
-                <viewController id="IyB-f8-GW6" customClass="BackgroundSelect" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BackgroundSelect" id="IyB-f8-GW6" customClass="BackgroundSelect" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqM-df-Ort">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
