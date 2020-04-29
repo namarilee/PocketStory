@@ -42,11 +42,11 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var Label3: UILabel!
     var answer0 = [
-        UIImage(imageLiteralResourceName: "amusement"),
+        "Amusement",
         "School",
         "Zoo"] as [Any]
     
-    var answer1 = [UIImage(imageLiteralResourceName: "dog"), "Bear", "Cat"] as [Any]
+    var answer1 = [ "dog", "cat",  "cow"] as [Any]
     
     var answer2 = [UIImage(imageLiteralResourceName: "pizza"), "Hotdog", "Popcorn"] as [Any]
     
@@ -54,10 +54,9 @@ class BackgroundSelect: UIViewController {
     
     var answer4 = ["Ping pong", "Xylophone", "Basketball"]
     
-    
     var answers = [
-        [UIImage(imageLiteralResourceName: "amusement2"), "2", "School"],
-        [UIImage(imageLiteralResourceName: "dog"), "Bear", "Cat"],
+         ["Amusement", "School", "Zoo"],
+        ["dog",  "cat",  "cow"],
         [UIImage(imageLiteralResourceName: "pizza"), "Hotdog", "Popcorn"],
         ["Merry-go-round", "Rollercoaster", "Ferris wheel"],
         ["Ping pong", "Xylophone", "Basketball"]
@@ -86,13 +85,14 @@ class BackgroundSelect: UIViewController {
     var speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
     
     var chooseButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    
+    var playMyStoryButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
 
+    var captionRect = UIImageView(frame: CGRect(x: 170, y: 20, width: 416.5, height: 72.5))
     
+    var captionLabel = UILabel(frame: CGRect(x: 170, y: 20, width: 500, height: 21))
+
     var count = 0
-    
-  //  var amuseBG = UIView(imageLiteralResourceName: "amusement2")
-        
-     
     
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -127,13 +127,10 @@ class BackgroundSelect: UIViewController {
     }
     
     func showSpeechBubble() {
-        
         speechBubble.image = UIImage(named: "speechBubble")
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.view.addSubview(self.speechBubble)
-            self.speechBubble.alpha = 0
-            self.speechBubble.alpha = 1
+      
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                 self.speechBubble.transform = CGAffineTransform(scaleX: 2, y: 2)
             })
@@ -155,24 +152,53 @@ class BackgroundSelect: UIViewController {
         speechBubble.isHidden = true
         helloButton.isHidden = true
         self.introLabel.removeFromSuperview()
-        
-    
     }
     
-    func sceneChosen() {
+    func showChooseButton() {
         let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 620, y: 330, width: 108, height: 81)
+        chooseButton.frame = CGRect(x: 150, y: 270, width: 108, height: 81)
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
     }
     
-   
-    
-    func hideBackground() {
-        self.view.backgroundColor = #colorLiteral(red: 0.641756475, green: 0.8999739885, blue: 0.8605425358, alpha: 1)
+    func goToCharacterSelect() {
+        view.removeBackground()
+        questionLabel.text = questions[1]
+        Label1.text = imageLabels[1][0]
+        Label1.adjustsFontSizeToFitWidth = true
+        Button1.setTitle(answers[1][0] as? String, for: .normal)
+        Label2.text = imageLabels[1][1]
+        Label2.adjustsFontSizeToFitWidth = true
+        Button2.setTitle(answers[1][1] as? String, for: .normal)
+        Label3.text = imageLabels[1][2]
+        Label3.adjustsFontSizeToFitWidth = true
+        Button3.setTitle(answers[1][2] as? String, for: .normal)
+        Button2.setImage(UIImage(named: "cat"), for: .normal)
+        Button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        Button3.setImage(UIImage(named: "cow"), for: .normal)
+        Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        
+        let playImage = UIImage(named: "play my story button")
+        playMyStoryButton.frame = CGRect(x: 150, y: 300, width: 240, height: 180)
+        playMyStoryButton.setImage(playImage, for: .normal)
+        self.view.addSubview(self.playMyStoryButton)
+        playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
     }
-
+    
+    func showCaptionRect() {
+        captionRect.image = UIImage(named: "captionRect")
+        self.view.addSubview(self.captionRect)
+      UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+            self.captionRect.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+           })
+               
+    }
+    
+    func updateCaption(_ caption: String) {
+        captionLabel.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -184,8 +210,11 @@ class BackgroundSelect: UIViewController {
         
         Button1.imageView?.contentMode = .scaleAspectFit
         
-        Button2.setTitle(answer0[1] as? String, for: .normal)
-        Button3.setTitle(answer0[2] as? String, for: .normal)
+        Button1.setTitle(answers[row][0] as? String, for: .normal)
+        Button2.setTitle(answers[row][1] as? String, for: .normal)
+        Button3.setTitle(answers[row][2] as? String, for: .normal)
+        
+        Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
         
     }
     
@@ -193,13 +222,10 @@ class BackgroundSelect: UIViewController {
     
     @IBAction func backgroundButtonClicked(_ sender: UIButton) {
         
-        sceneChosen()
-        
-    
-     
+        showChooseButton()
         
         questionLabel.text = questions[row]
-        
+       
         userAnswers.background = sender.title (for: .normal)!
         
         userAnswers.character = sender.title (for: .normal)!
@@ -207,17 +233,19 @@ class BackgroundSelect: UIViewController {
         userAnswers.food = sender.title (for: .normal)!
         
         print(userAnswers.background)
+        print(userAnswers.character)
 
-        
+        if userAnswers.character == "dog" {
+            showChooseButton()
+        }
         
     }
     
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
              row += 1
              print(row)
-        print("worked")
         
-        if userAnswers.background == "Button1" {
+        if userAnswers.background == "Amusement" {
             hideButtonQuestions()
             view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFill)
             
@@ -225,22 +253,19 @@ class BackgroundSelect: UIViewController {
                      
             showSpeechBubble()
                  
-                     
             addMessageToSpeechBubble("Welcome to the amusement park!")
                      
-                 
-                     
-                    
+
             let helloImage = UIImage(named: "hello")
                      
             helloButton.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
             helloButton.setImage(helloImage, for: .normal)
                  
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-                     self.view.addSubview(self.helloButton)
-                     UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+                self.view.addSubview(self.helloButton)
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                          
-                         self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
                          
                          
                      })
@@ -249,15 +274,9 @@ class BackgroundSelect: UIViewController {
                      
                      Button1.setImage(UIImage(named: "dog"), for: .normal)
 
-                     
-                     
-             
-
                  }
         }
         
-        
-         
     @IBAction func helloButtonClicked(_ sender: UIButton) {
             count += 1
             print(count)
@@ -280,21 +299,34 @@ class BackgroundSelect: UIViewController {
         }
            if self.count == 2 {
                 self.helloButton.removeTarget(self, action: #selector(self.helloButtonClicked), for: .touchUpInside)
-               self.hideIntro()
+                self.hideIntro()
                 self.showButtonQuestions()
-            view.removeBackground()
-            
+                self.goToCharacterSelect()
             }
-            
-            
-            
-       
-           
             
         
     }
     
+    @IBAction func playButtonClicked(_ sender: UIButton) {
+        
+        view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFill)
+        hideButtonQuestions()
+        playMyStoryButton.isHidden = true
+        showCaptionRect()
+        self.captionLabel.font = UIFont(name: "Rockwell", size: 25)
+         self.view.addSubview(self.captionLabel)
+        updateCaption("Pup had an amazing day at the amusement park!")
+
+    }
     
+    @IBAction func Button1Clicked(_ sender: UIButton) {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                                
+            self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                                
+                                
+                            })
+    }
 
 }
 
