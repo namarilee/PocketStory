@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
+var backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
+
 extension UIView {
     func addBackground(imageName: String = "amusement", contentMode: UIView.ContentMode = .scaleToFill) {
         // setup the UIImageView
-        let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
+        
         backgroundImageView.image = UIImage(named: imageName)
         backgroundImageView.contentMode = contentMode
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,5 +29,9 @@ extension UIView {
         let bottomConstraint = NSLayoutConstraint(item: backgroundImageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
 
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
+    }
+    
+    func removeBackground() {
+        backgroundImageView.removeFromSuperview()
     }
 }
