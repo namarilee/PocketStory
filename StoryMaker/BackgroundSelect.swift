@@ -90,9 +90,17 @@ class BackgroundSelect: UIViewController {
 
     var captionRect = UIImageView(frame: CGRect(x: 170, y: 20, width: 416.5, height: 72.5))
     
-    var captionLabel = UILabel(frame: CGRect(x: 170, y: 20, width: 500, height: 21))
+    var captionLabel = UILabel(frame: CGRect(x: 100, y: -35, width: 600, height: 200))
+    
+    var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
+    
+    var chosenCharacter =  UIImageView(frame: CGRect(x: 120, y: 450, width: 100, height: 150))
 
+    var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 90.9, height: 136.36))
+    
     var count = 0
+    
+    var animationCount = 0
     
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -155,8 +163,9 @@ class BackgroundSelect: UIViewController {
     }
     
     func showChooseButton() {
+        chooseButton.isHidden = false
         let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 150, y: 270, width: 108, height: 81)
+        chooseButton.frame = CGRect(x: 130, y: 220, width: 162, height: 121.5)
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
@@ -179,11 +188,7 @@ class BackgroundSelect: UIViewController {
         Button3.setImage(UIImage(named: "cow"), for: .normal)
         Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
-        let playImage = UIImage(named: "play my story button")
-        playMyStoryButton.frame = CGRect(x: 150, y: 300, width: 240, height: 180)
-        playMyStoryButton.setImage(playImage, for: .normal)
-        self.view.addSubview(self.playMyStoryButton)
-        playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
+      
     }
     
     func showCaptionRect() {
@@ -196,7 +201,43 @@ class BackgroundSelect: UIViewController {
     }
     
     func updateCaption(_ caption: String) {
-        captionLabel.text = ""
+        captionLabel.text = caption
+        captionLabel.adjustsFontSizeToFitWidth = true
+        captionLabel.numberOfLines = 0
+    }
+    
+    func showStoryTitle(_ title: String) {
+        storyTitle.text = title
+        storyTitle.adjustsFontSizeToFitWidth = true
+        storyTitle.numberOfLines = 0
+    }
+    
+    func characterAnimation() {
+        chosenCharacter.image = UIImage(named: "dog")
+        self.view.addSubview(chosenCharacter)
+        
+        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            self.chosenCharacter.transform = CGAffineTransform(translationX: 0, y: -200)
+        })
+         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.chosenCharacter.isHidden = true
+            self.dogHappy.image = UIImage(named: "dogHappy")
+            self.view.addSubview(self.dogHappy)
+            
+                self.animationCount += 1
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
+                self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
+              
+
+            })
+            UIView.animate(withDuration: 0.5, delay: 4, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                self.dogHappy.alpha = 0
+                         
+
+                       })
+
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -215,7 +256,11 @@ class BackgroundSelect: UIViewController {
         Button3.setTitle(answers[row][2] as? String, for: .normal)
         
         Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
-        
+        let playImage = UIImage(named: "play my story button")
+              playMyStoryButton.frame = CGRect(x: 150, y: 300, width: 240, height: 180)
+              playMyStoryButton.setImage(playImage, for: .normal)
+              self.view.addSubview(self.playMyStoryButton)
+              playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
     }
     
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -237,6 +282,7 @@ class BackgroundSelect: UIViewController {
 
         if userAnswers.character == "dog" {
             showChooseButton()
+            print("character")
         }
         
     }
@@ -244,16 +290,16 @@ class BackgroundSelect: UIViewController {
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
              row += 1
              print(row)
-        
+        Label1.backgroundColor = nil
         if userAnswers.background == "Amusement" {
             hideButtonQuestions()
-            view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFill)
+            view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
             
             showCharacter()
                      
             showSpeechBubble()
                  
-            addMessageToSpeechBubble("Welcome to the amusement park!")
+            addMessageToSpeechBubble("Welcome to the " + amusementPark.name + "!")
                      
 
             let helloImage = UIImage(named: "hello")
@@ -275,6 +321,14 @@ class BackgroundSelect: UIViewController {
                      Button1.setImage(UIImage(named: "dog"), for: .normal)
 
                  }
+        if sender == Button1 && row == 1 {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                                
+            self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.Label1.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.862745098, blue: 0.5333333333, alpha: 1)
+              print("dog clicked")
+                            })
+        }
         }
         
     @IBAction func helloButtonClicked(_ sender: UIButton) {
@@ -308,25 +362,38 @@ class BackgroundSelect: UIViewController {
     }
     
     @IBAction func playButtonClicked(_ sender: UIButton) {
-        
-        view.addBackground(imageName: "amusement2", contentMode: .scaleAspectFill)
-        hideButtonQuestions()
-        playMyStoryButton.isHidden = true
-        showCaptionRect()
+        characterAnimation()
+        view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
+        self.hideButtonQuestions()
+        self.playMyStoryButton.isHidden = true
+        storyTitle.font = UIFont(name: "Rockwell-Bold", size: 40)
+        storyTitle.textAlignment = .center
+        view.addSubview(storyTitle)
+        showStoryTitle(Pup.name + "'s Amazing Day at the " + amusementPark.name)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.storyTitle.isHidden = true
+            self.view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
+            self.showCaptionRect()
         self.captionLabel.font = UIFont(name: "Rockwell", size: 25)
          self.view.addSubview(self.captionLabel)
-        updateCaption("Pup had an amazing day at the amusement park!")
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.updateCaption(Pup.name + " had an amazing day at the " + amusementPark.name + "!")
+        }
     }
+
+}
     
+   
     @IBAction func Button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
                                 
             self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-                                
+            self.Label1.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.862745098, blue: 0.5333333333, alpha: 1)
                                 
                             })
     }
+    
+
 
 }
 
@@ -334,5 +401,16 @@ struct userAnswers {
     static var background = ""
     static var character = ""
     static var food = ""
+}
+
+struct amusementPark {
+    static var name = "Amusement Park"
+    static var imageName = "amusement2"
+    
+}
+
+struct Pup {
+    static var name = "Pup"
+    static var imageName = "dog"
 }
 
