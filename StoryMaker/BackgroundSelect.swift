@@ -96,7 +96,7 @@ class BackgroundSelect: UIViewController {
     
     var chosenCharacter =  UIImageView(frame: CGRect(x: 120, y: 450, width: 100, height: 150))
 
-    var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 90.9, height: 136.36))
+    var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
     var count = 0
     
@@ -219,27 +219,35 @@ class BackgroundSelect: UIViewController {
         UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             self.chosenCharacter.transform = CGAffineTransform(translationX: 0, y: -200)
         })
-         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.chosenCharacter.isHidden = true
             self.dogHappy.image = UIImage(named: "dogHappy")
             self.view.addSubview(self.dogHappy)
             
                 self.animationCount += 1
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
                 self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
               
 
             })
-            UIView.animate(withDuration: 0.5, delay: 4, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
                 self.dogHappy.alpha = 0
                          
 
                        })
 
         }
-        
+    
     }
     
+    func dogWalkLeft() {
+        chosenCharacter.image = UIImage(named: "dog")
+        self.view.addSubview(chosenCharacter)
+        UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                       self.chosenCharacter.transform = CGAffineTransform(translationX: 100, y: -10)
+
+                              })
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -371,6 +379,7 @@ class BackgroundSelect: UIViewController {
         view.addSubview(storyTitle)
         showStoryTitle(Pup.name + "'s Amazing Day at the " + amusementPark.name)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.dogWalkLeft()
             self.storyTitle.isHidden = true
             self.view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
             self.showCaptionRect()
