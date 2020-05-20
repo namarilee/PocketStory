@@ -264,11 +264,7 @@ class BackgroundSelect: UIViewController {
         Button3.setTitle(answers[row][2] as? String, for: .normal)
         
         Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
-        let playImage = UIImage(named: "play my story button")
-              playMyStoryButton.frame = CGRect(x: 150, y: 300, width: 240, height: 180)
-              playMyStoryButton.setImage(playImage, for: .normal)
-              self.view.addSubview(self.playMyStoryButton)
-              playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
+        playMyStoryButton.isHidden = true
     }
     
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -364,6 +360,11 @@ class BackgroundSelect: UIViewController {
                 self.hideIntro()
                 self.showButtonQuestions()
                 self.goToCharacterSelect()
+            let playImage = UIImage(named: "play my story button")
+                        playMyStoryButton.frame = CGRect(x: 500, y: 150, width: 240, height: 180)
+                        playMyStoryButton.setImage(playImage, for: .normal)
+                        self.view.addSubview(self.playMyStoryButton)
+                        playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
             }
             
         
