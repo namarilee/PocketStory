@@ -44,7 +44,7 @@ class BackgroundSelect: UIViewController {
     var answer0 = [
         "Amusement",
         "School",
-        "Zoo"] as [Any]
+        "Farm"] as [Any]
     
     var answer1 = [ "dog", "cat",  "cow"] as [Any]
     
@@ -55,7 +55,7 @@ class BackgroundSelect: UIViewController {
     var answer4 = ["Ping pong", "Xylophone", "Basketball"]
     
     var answers = [
-         ["Amusement", "School", "Zoo"],
+         ["Amusement", "School", "Farm"],
         ["dog",  "cat",  "cow"],
         [UIImage(imageLiteralResourceName: "pizza"), "Hotdog", "Popcorn"],
         ["Merry-go-round", "Rollercoaster", "Ferris wheel"],
@@ -70,7 +70,7 @@ class BackgroundSelect: UIViewController {
          "What would you like to play?"]
     
     var imageLabels = [
-    ["Amusement Park", "School", "idk"],
+    ["Amusement Park", "School", "Farm"],
     ["Pup", "Whiskers", "Bessie"]
     ]
     
@@ -98,9 +98,12 @@ class BackgroundSelect: UIViewController {
 
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
+  //  var anywhereButton = UIButton(frame: CGRect(x: 0, y: 0, width: 900, height: 500))
+    
+    @IBOutlet weak var anywhereButton: UIButton!
     var count = 0
     
-    var animationCount = 0
+    var currentAnimation = 0
     
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -162,14 +165,39 @@ class BackgroundSelect: UIViewController {
         self.introLabel.removeFromSuperview()
     }
     
-    func showChooseButton() {
+    func showChooseButton1() {
         chooseButton.isHidden = false
         let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 130, y: 220, width: 162, height: 121.5)
+            chooseButton.frame = CGRect(x: 130, y: 220, width: 162, height: 121.5)
+        
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
+       
     }
+    
+    func showChooseButton2() {
+        chooseButton.isHidden = false
+        let chooseImage = UIImage(named: "choose button")
+            chooseButton.frame = CGRect(x: 370, y: 220, width: 162, height: 121.5)
+        
+        chooseButton.setImage(chooseImage, for: .normal)
+        self.view.addSubview(self.chooseButton)
+        chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
+
+    }
+    
+    func showChooseButton3() {
+           chooseButton.isHidden = false
+           let chooseImage = UIImage(named: "choose button")
+               chooseButton.frame = CGRect(x: 610, y: 220, width: 162, height: 121.5)
+           
+           chooseButton.setImage(chooseImage, for: .normal)
+           self.view.addSubview(self.chooseButton)
+           chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
+       
+
+       }
     
     func goToCharacterSelect() {
         view.removeBackground()
@@ -183,6 +211,8 @@ class BackgroundSelect: UIViewController {
         Label3.text = imageLabels[1][2]
         Label3.adjustsFontSizeToFitWidth = true
         Button3.setTitle(answers[1][2] as? String, for: .normal)
+        Button1.setImage(UIImage(named: "dog"), for: .normal)
+        Button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         Button2.setImage(UIImage(named: "cat"), for: .normal)
         Button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         Button3.setImage(UIImage(named: "cow"), for: .normal)
@@ -224,7 +254,6 @@ class BackgroundSelect: UIViewController {
             self.dogHappy.image = UIImage(named: "dogHappy")
             self.view.addSubview(self.dogHappy)
             
-                self.animationCount += 1
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
                 self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
               
@@ -255,23 +284,34 @@ class BackgroundSelect: UIViewController {
         
         questionLabel.adjustsFontSizeToFitWidth = true
         
-        Button1.setImage(UIImage(named: "amusement"), for: .normal)
+        Button1.setImage(UIImage(named: "amusement2"), for: .normal)
         
         Button1.imageView?.contentMode = .scaleAspectFit
+        
+        Button2.setImage(UIImage(named: "school"), for: .normal)
+        Button2.imageView?.contentMode = .scaleAspectFit
+        
+        Button3.setImage(UIImage(named: "farm"), for: .normal)
+        Button3.imageView?.contentMode = .scaleAspectFit
         
         Button1.setTitle(answers[row][0] as? String, for: .normal)
         Button2.setTitle(answers[row][1] as? String, for: .normal)
         Button3.setTitle(answers[row][2] as? String, for: .normal)
         
         Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
-        playMyStoryButton.isHidden = true
+        Button2.addTarget(self, action: #selector(Button2Clicked), for: .touchUpInside)
+        Button3.addTarget(self, action: #selector(Button3Clicked), for: .touchUpInside)
+        
+      /*  anywhereButton.backgroundColor = .blue
+        self.view.addSubview(self.anywhereButton)
+        anywhereButton.addTarget(self, action: #selector(userClickedAnywhere), for: .touchUpInside)*/
+       
     }
     
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
     @IBAction func backgroundButtonClicked(_ sender: UIButton) {
         
-        showChooseButton()
         
         questionLabel.text = questions[row]
        
@@ -284,10 +324,10 @@ class BackgroundSelect: UIViewController {
         print(userAnswers.background)
         print(userAnswers.character)
 
-        if userAnswers.character == "dog" {
-            showChooseButton()
+      /*  if userAnswers.character == "dog" {
+            showChooseButton1()
             print("character")
-        }
+        }*/
         
     }
     
@@ -322,17 +362,16 @@ class BackgroundSelect: UIViewController {
                  }
                      helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
                      
-                     Button1.setImage(UIImage(named: "dog"), for: .normal)
+                   
 
                  }
-        if sender == Button1 && row == 1 {
+   /*     if sender == Button1 && row == 1 {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
                                 
             self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            self.Label1.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.862745098, blue: 0.5333333333, alpha: 1)
               print("dog clicked")
                             })
-        }
+        }*/
         }
         
     @IBAction func helloButtonClicked(_ sender: UIButton) {
@@ -396,13 +435,56 @@ class BackgroundSelect: UIViewController {
    
     @IBAction func Button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-                                
-            self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            self.Label1.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.862745098, blue: 0.5333333333, alpha: 1)
-                                
+           
+           
+                self.Button2.transform = .identity
+                self.Button3.transform = .identity
+                self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+           
+          
                             })
+        
+        showChooseButton1()
     }
     
+    @IBAction func Button2Clicked(_ sender: UIButton) {
+           UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+              
+                    self.Button1.transform = .identity
+                    self.Button3.transform = .identity
+                    self.Button2.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                 
+               
+                        })
+        showChooseButton2()
+       }
+    
+    @IBAction func Button3Clicked(_ sender: UIButton) {
+              UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                                      
+                 
+                    self.Button2.transform = .identity
+                    self.Button1.transform = .identity
+                        self.Button3.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                    
+                   
+                                })
+              
+        showChooseButton3()
+          }
+    
+  
+    @IBAction func userClickedAnywhere(_ sender: Any) {
+    
+    UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            self.Button1.transform = . identity
+            self.Button2.transform = . identity
+            self.Button3.transform = . identity
+
+        })
+        
+        chooseButton.isHidden = true
+    }
 
 
 }
