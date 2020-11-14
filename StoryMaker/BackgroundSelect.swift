@@ -468,6 +468,12 @@ class BackgroundSelect: UIViewController {
             playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
         }
         
+        if self.count == 3 {
+            view.addBackground(imageName: "order", contentMode: .scaleAspectFill)
+            self.hideIntro()
+                       
+        }
+        
         
     }
     
