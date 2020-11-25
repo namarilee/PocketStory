@@ -102,7 +102,8 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var anywhereButton: UIButton!
     
-    
+
+
     var count = 0
     
     var currentAnimation = 0
@@ -154,7 +155,7 @@ class BackgroundSelect: UIViewController {
         self.introLabel.isHidden = false
         self.introLabel.font = UIFont(name: "Rockwell", size: 18)
         self.introLabel.text = message
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.view.addSubview(self.introLabel)
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
         }
@@ -398,7 +399,14 @@ class BackgroundSelect: UIViewController {
                 self.view.addSubview(self.helloButton)
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                     
-                    self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                    switch self.currentAnimation {
+                        case 0:
+                            self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                        case 1:
+                            self.helloButton.transform = .identity
+                        default:
+                            break
+                    }
                     
                     
                 })
@@ -417,7 +425,7 @@ class BackgroundSelect: UIViewController {
                 self.view.addSubview(self.captionLabel)
                 self.captionLabel.adjustsFontSizeToFitWidth = true
                 self.captionLabel.numberOfLines = 0
-                self.captionLabel.animate(newText: self.captionLabel.text ?? "Let's start by having some lunch! Tap to go to snack shop.", characterDelay: 0.04)
+                self.captionLabel.animate(newText: self.captionLabel.text ?? "Let's start by having some lunch! Tap the screen to go to the snack shop.", characterDelay: 0.04)
                 //    self.updateCaption("Let's start by having some lunch! Tap to go to snack shop.")
                 
             }
@@ -436,22 +444,24 @@ class BackgroundSelect: UIViewController {
             self.view.addSubview(self.introLabel)
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 
                 self.helloButton.isHidden = false
                 let helloImage = UIImage(named: "Next button")
                 self.helloButton.setImage(helloImage, for: .normal)
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    
-                    switch self.currentAnimation {
-                    case 0:
-                        self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                    case 1:
-                        self.helloButton.transform = .identity
-                    default:
-                        break
-                    }
-                })
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                         
+                         switch self.currentAnimation {
+                             case 0:
+                                 self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                             case 1:
+                                 self.helloButton.transform = .identity
+                             default:
+                                 break
+                         }
+                         
+                         
+                     })
                 
             }
             
@@ -470,8 +480,18 @@ class BackgroundSelect: UIViewController {
         
         if self.count == 3 {
             view.addBackground(imageName: "order", contentMode: .scaleAspectFill)
-            self.hideIntro()
-                       
+            self.helloButton.isHidden = true
+            self.captionRect.isHidden = true
+            self.character.isHidden = true
+            self.captionLabel.isHidden = true
+            hideIntro()
+            self.chosenCharacter.isHidden = true
+            speechBubble.frame = CGRect(x: 300, y: -200, width: 750, height: 700)
+            speechBubble.isHidden = false
+            showSpeechBubble()
+            introLabel.frame = CGRect(x: 550, y: -300, width: 300, height: 680)
+            introLabel.numberOfLines = 0
+            addMessageToSpeechBubble("Hi! My name is Bamboo, and I will be your server.")
         }
         
         
@@ -555,13 +575,13 @@ class BackgroundSelect: UIViewController {
             view.addBackground(imageName: "snackShop", contentMode: .scaleAspectFill)
             
             updateCaption("Let's order some food!")
-            self.helloButton.isHidden = false
+            self.helloButton.isHidden = true
             let helloImage = UIImage(named: "go button")
             self.helloButton.setImage(helloImage, for: .normal)
             helloButton.frame = CGRect(x: 620, y: 100, width: 90, height: 54)
                        
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.view.addSubview(self.helloButton)
+                self.helloButton.isHidden = false
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                         self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
                                
