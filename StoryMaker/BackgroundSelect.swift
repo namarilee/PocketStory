@@ -90,7 +90,7 @@ class BackgroundSelect: UIViewController {
     
     var captionRect = UIImageView(frame: CGRect(x: 250, y: 20, width: 416.5, height: 100))
     
-    var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 600, height: 200))
+    var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 620, height: 200))
     
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
     
@@ -168,10 +168,10 @@ class BackgroundSelect: UIViewController {
         self.introLabel.removeFromSuperview()
     }
     
-    func showChooseButton1() {
+    func showChooseButton() {
         chooseButton.isHidden = false
         let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 130, y: 260, width: 162, height: 121.5)
+        chooseButton.frame = CGRect(x: 370, y: 300, width: 162, height: 121.5)
         
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
@@ -179,28 +179,7 @@ class BackgroundSelect: UIViewController {
         
     }
     
-    func showChooseButton2() {
-        chooseButton.isHidden = false
-        let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 370, y: 260, width: 162, height: 121.5)
-        
-        chooseButton.setImage(chooseImage, for: .normal)
-        self.view.addSubview(self.chooseButton)
-        chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
-        
-    }
-    
-    func showChooseButton3() {
-        chooseButton.isHidden = false
-        let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 610, y: 260, width: 162, height: 121.5)
-        
-        chooseButton.setImage(chooseImage, for: .normal)
-        self.view.addSubview(self.chooseButton)
-        chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
-        
-        
-    }
+ 
     
     func goToCharacterSelect() {
         view.removeBackground()
@@ -479,6 +458,7 @@ class BackgroundSelect: UIViewController {
         }
         
         if self.count == 3 {
+            row = 3
             view.addBackground(imageName: "order", contentMode: .scaleAspectFill)
             self.helloButton.isHidden = true
             self.captionRect.isHidden = true
@@ -489,10 +469,14 @@ class BackgroundSelect: UIViewController {
             speechBubble.frame = CGRect(x: 300, y: -200, width: 750, height: 700)
             speechBubble.isHidden = false
             showSpeechBubble()
-            introLabel.frame = CGRect(x: 550, y: -300, width: 300, height: 680)
+            self.introLabel.isHidden = false
+            introLabel.frame = CGRect(x: 550, y: -300, width: 400, height: 800)
+            self.introLabel.font = UIFont(name: "Rockwell", size: 20)
             introLabel.numberOfLines = 0
-            addMessageToSpeechBubble("Hi! My name is Bamboo, and I will be your server.")
-        }
+            self.introLabel.text = "Hi! My name is Bamboo and I will be your server today."
+                self.view.addSubview(self.introLabel)
+                self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
+            }
         
         
     }
@@ -534,7 +518,7 @@ class BackgroundSelect: UIViewController {
             }
         })
         
-        showChooseButton1()
+        showChooseButton()
     }
     
     @IBAction func Button2Clicked(_ sender: UIButton) {
@@ -548,7 +532,7 @@ class BackgroundSelect: UIViewController {
                 break
             }
         })
-        showChooseButton2()
+        showChooseButton()
     }
     
     @IBAction func Button3Clicked(_ sender: UIButton) {
@@ -564,7 +548,7 @@ class BackgroundSelect: UIViewController {
             }
         })
         
-        showChooseButton3()
+        showChooseButton()
     }
     
     
