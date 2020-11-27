@@ -140,7 +140,7 @@ class BackgroundSelect: UIViewController {
     
     func showSpeechBubble() {
         speechBubble.image = UIImage(named: "speechBubble")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.view.addSubview(self.speechBubble)
             
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
@@ -168,11 +168,23 @@ class BackgroundSelect: UIViewController {
     
     func showChooseButton() {
         chooseButton.isHidden = false
-        let chooseImage = UIImage(named: "choose button")
-        chooseButton.frame = CGRect(x: 370, y: 300, width: 162, height: 121.5)
+        let chooseImage = UIImage(named: "selectButton")
+        chooseButton.frame = CGRect(x: 360, y: 320, width: 190, height: 51)
         
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
+//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+//
+//                      switch self.currentAnimation {
+//                          case 0:
+//                            self.chooseButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+////                          case 1:
+////                              self.chooseButton.transform = .identity
+//                          default:
+//                              break
+//                      }
+//
+//                  })
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
         
     }
@@ -510,7 +522,7 @@ class BackgroundSelect: UIViewController {
             case 0:
                 self.Button2.transform = .identity
                 self.Button3.transform = .identity
-                self.Button1.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                self.Button1.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             default:
                 break
             }
@@ -525,7 +537,7 @@ class BackgroundSelect: UIViewController {
             case 0:
                 self.Button1.transform = .identity
                 self.Button3.transform = .identity
-                self.Button2.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                self.Button2.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             default:
                 break
             }
@@ -540,7 +552,7 @@ class BackgroundSelect: UIViewController {
             case 0:
                 self.Button2.transform = .identity
                 self.Button1.transform = .identity
-                self.Button3.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                self.Button3.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             default:
                 break
             }
