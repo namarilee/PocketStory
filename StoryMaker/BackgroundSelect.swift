@@ -102,8 +102,6 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var anywhereButton: UIButton!
     
-
-
     var count = 0
     
     var currentAnimation = 0
@@ -303,14 +301,14 @@ class BackgroundSelect: UIViewController {
         
         questionLabel.adjustsFontSizeToFitWidth = true
         
-        Button1.setImage(UIImage(named: "amusement2"), for: .normal)
+        Button1.setImage(UIImage(named: "amParkButton"), for: .normal)
         
         Button1.imageView?.contentMode = .scaleAspectFit
         
-        Button2.setImage(UIImage(named: "school"), for: .normal)
+        Button2.setImage(UIImage(named: "schoolButton"), for: .normal)
         Button2.imageView?.contentMode = .scaleAspectFit
         
-        Button3.setImage(UIImage(named: "farm"), for: .normal)
+        Button3.setImage(UIImage(named: "farmButton"), for: .normal)
         Button3.imageView?.contentMode = .scaleAspectFit
         
         Button1.setTitle(answers[row][0] as? String, for: .normal)
