@@ -151,7 +151,7 @@ class BackgroundSelect: UIViewController {
     
     func addMessageToSpeechBubble(_ message: String) {
         self.introLabel.isHidden = false
-        self.introLabel.font = UIFont(name: "Rockwell", size: 18)
+        self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
         self.introLabel.text = message
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.view.addSubview(self.introLabel)
@@ -410,7 +410,7 @@ class BackgroundSelect: UIViewController {
             view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
             showChosenCharacter()
             showCaptionRect()
-            captionLabel.font = UIFont(name: "Rockwell", size: 25)
+            captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.view.addSubview(self.captionLabel)
                 self.captionLabel.adjustsFontSizeToFitWidth = true
@@ -428,7 +428,7 @@ class BackgroundSelect: UIViewController {
         
         if self.count == 1 {
             
-            self.introLabel.font = UIFont(name: "Rockwell", size: 18)
+            self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
             helloButton.isHidden = true
             self.introLabel.text = "Let's choose a character!"
             self.view.addSubview(self.introLabel)
@@ -477,7 +477,7 @@ class BackgroundSelect: UIViewController {
             speechBubble.frame = CGRect(x: 300, y: -200, width: 750, height: 700)
             self.introLabel.isHidden = false
             introLabel.frame = CGRect(x: 540, y: -300, width: 400, height: 800)
-            self.introLabel.font = UIFont(name: "Rockwell", size: 20)
+            self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
             introLabel.numberOfLines = 4
             self.introLabel.text = "Hi! My name is Bamboo and I will be your server today."
             self.view.addSubview(self.introLabel)
@@ -503,7 +503,7 @@ class BackgroundSelect: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
         self.hideButtonQuestions()
         self.playMyStoryButton.isHidden = true
-        storyTitle.font = UIFont(name: "Rockwell-Bold", size: 40)
+        storyTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 40)
         storyTitle.textAlignment = .center
         view.addSubview(storyTitle)
         showStoryTitle(Pup.name + "'s Amazing Day at the " + amusementPark.name)
@@ -512,7 +512,7 @@ class BackgroundSelect: UIViewController {
             self.storyTitle.isHidden = true
             self.view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
             self.showCaptionRect()
-            self.captionLabel.font = UIFont(name: "Rockwell", size: 25)
+            self.captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
             self.view.addSubview(self.captionLabel)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.updateCaption(Pup.name + " had an amazing day at the " + amusementPark.name + "!")
