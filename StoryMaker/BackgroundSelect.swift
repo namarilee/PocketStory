@@ -48,7 +48,7 @@ class BackgroundSelect: UIViewController {
     
     var answer1 = [ "dog", "cat",  "cow"] as [Any]
     
-    var answer2 = [UIImage(imageLiteralResourceName: "pizza"), "Hotdog", "Popcorn"] as [Any]
+    var answer2 = ["pizza", "Hotdog", "Popcorn"] as [Any]
     
     var answer3 = ["Merry-go-round", "Rollercoaster", "Ferris wheel"]
     
@@ -57,7 +57,7 @@ class BackgroundSelect: UIViewController {
     var answers = [
         ["Amusement", "School", "Farm"],
         ["dog",  "cat",  "cow"],
-        [UIImage(imageLiteralResourceName: "pizza"), "Hotdog", "Popcorn"],
+        ["pizza", "Hotdog", "Popcorn"],
         ["Merry-go-round", "Rollercoaster", "Ferris wheel"],
         ["Ping pong", "Xylophone", "Basketball"]
     ]
@@ -96,6 +96,8 @@ class BackgroundSelect: UIViewController {
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
     
     var chosenCharacter =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
+    
+    var chosenFood =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
@@ -233,8 +235,7 @@ class BackgroundSelect: UIViewController {
            Button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
            Button3.setImage(UIImage(named: "popcorn"), for: .normal)
            Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-            Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
-           
+           Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
            
            
        }
@@ -295,6 +296,21 @@ class BackgroundSelect: UIViewController {
             self.view.addSubview(chosenCharacter)
         }
     }
+    
+    func showChosenFood() {
+          if userAnswers.food == "pizza" {
+              chosenFood.image = UIImage(named: "pizza")
+              self.view.addSubview(chosenFood)
+          } else if userAnswers.food == "hotdog" {
+              chosenFood.image = UIImage(named: "hotdog")
+              chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
+              self.view.addSubview(chosenFood)
+          } else if userAnswers.food == "popcorn" {
+              chosenFood.image = UIImage(named: "popcorn")
+              chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
+              self.view.addSubview(chosenFood)
+          }
+      }
     
     func characterAnimation() {
         showChosenCharacter()
@@ -448,6 +464,7 @@ class BackgroundSelect: UIViewController {
         if userAnswers.food == "pizza" {
             hideButtonQuestions()
             view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
+            showChosenFood()
         }
     }
     
@@ -523,6 +540,7 @@ class BackgroundSelect: UIViewController {
         if self.count == 4 {
             helloButton.isHidden = true
             introLabel.isHidden = true
+            self.hideIntro()
             self.showButtonQuestions()
             self.goToFoodSelect()
 
@@ -664,3 +682,17 @@ struct Bessie {
     static var name = "Bessie"
     static var imageName = "cow"
 }
+
+struct Pizza {
+    static var name = "pizza"
+    static var imageName = "pizza"
+}
+struct Hotdog {
+    static var name = "hotdog"
+    static var imageName = "hotdog"
+}
+struct Popcorn {
+    static var name = "popcorn"
+    static var imageName = "popcorn"
+}
+
