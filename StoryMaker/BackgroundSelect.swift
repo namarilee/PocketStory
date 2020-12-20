@@ -64,9 +64,9 @@ class BackgroundSelect: UIViewController {
     
     var questions =
         ["Where would you like your story to be?",
-         "Let's start building your story! Choose a character",
+         "Let's start building your story! Choose a character.",
          "Choose a food item!",
-         "Let's go on a ride!",
+         "Choose a food item!",
          "What would you like to play?"]
     
     var imageLabels = [
@@ -101,7 +101,11 @@ class BackgroundSelect: UIViewController {
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
+    var skipButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+
     
+  //  var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 620, height: 200))
+
     
     //  var anywhereButton = UIButton(frame: CGRect(x: 0, y: 0, width: 900, height: 500))
     
@@ -219,7 +223,7 @@ class BackgroundSelect: UIViewController {
     
     func goToFoodSelect() {
            view.removeBackground()
-           questionLabel.text = questions[2]
+           questionLabel.text = "Choose a food item!"
            Label1.text = imageLabels[2][0]
            Label1.adjustsFontSizeToFitWidth = true
            Button1.setTitle(answers[2][0] as? String, for: .normal)
@@ -366,6 +370,14 @@ class BackgroundSelect: UIViewController {
                 }
                 helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
     }
+    func pizzaGame() {
+        questionLabel.text = "Choose a food item!"
+        hideButtonQuestions()
+        showChosenFood()
+        view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -394,6 +406,11 @@ class BackgroundSelect: UIViewController {
         /*  anywhereButton.backgroundColor = .blue
          self.view.addSubview(self.anywhereButton)
          anywhereButton.addTarget(self, action: #selector(userClickedAnywhere), for: .touchUpInside)*/
+        skipButton.frame = CGRect(x: 360, y: 320, width: 190, height: 51)
+        skipButton.setTitle("Tap me", for: .normal)
+        view.addSubview(skipButton)
+        skipButton.addTarget(self, action: #selector(skipClicked), for: .touchUpInside)
+
         
     }
     
@@ -462,9 +479,8 @@ class BackgroundSelect: UIViewController {
             }
         }
         if userAnswers.food == "pizza" {
-            hideButtonQuestions()
-            view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
-            showChosenFood()
+            pizzaGame()
+        
         }
     }
     
@@ -570,6 +586,13 @@ class BackgroundSelect: UIViewController {
         
     }
     
+    @IBAction func skipClicked(_ sender: UIButton) {
+        print("lol")
+        self.count = 4
+        print(count)
+        pizzaGame()
+
+    }
     
     @IBAction func Button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
