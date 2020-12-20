@@ -71,7 +71,8 @@ class BackgroundSelect: UIViewController {
     
     var imageLabels = [
         ["Amusement Park", "School", "Farm"],
-        ["Pup", "Whiskers", "Bessie"]
+        ["Pup", "Whiskers", "Bessie"],
+        ["Pizza", "Hotdog", "Popcorn"]
     ]
     
     var row = 0
@@ -97,6 +98,8 @@ class BackgroundSelect: UIViewController {
     var chosenCharacter =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
+    
+    
     
     //  var anywhereButton = UIButton(frame: CGRect(x: 0, y: 0, width: 900, height: 500))
     
@@ -210,10 +213,31 @@ class BackgroundSelect: UIViewController {
         Button3.setImage(UIImage(named: "cow"), for: .normal)
         Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
-        
-        
-        
     }
+    
+    func goToFoodSelect() {
+           view.removeBackground()
+           questionLabel.text = questions[2]
+           Label1.text = imageLabels[2][0]
+           Label1.adjustsFontSizeToFitWidth = true
+           Button1.setTitle(answers[2][0] as? String, for: .normal)
+           Label2.text = imageLabels[2][1]
+           Label2.adjustsFontSizeToFitWidth = true
+           Button2.setTitle(answers[2][1] as? String, for: .normal)
+           Label3.text = imageLabels[2][2]
+           Label3.adjustsFontSizeToFitWidth = true
+           Button3.setTitle(answers[2][2] as? String, for: .normal)
+           Button1.setImage(UIImage(named: "pizza"), for: .normal)
+           Button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+           Button2.setImage(UIImage(named: "hotdog"), for: .normal)
+           Button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+           Button3.setImage(UIImage(named: "popcorn"), for: .normal)
+           Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+            Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
+           
+           
+           
+       }
     
     func showCaptionRect() {
         captionRect.image = UIImage(named: "captionRect")
@@ -374,7 +398,8 @@ class BackgroundSelect: UIViewController {
         
         print(userAnswers.background)
         print(userAnswers.character)
-        
+        print(userAnswers.food)
+
         /*  if userAnswers.character == "dog" {
          showChooseButton1()
          print("character")
@@ -419,6 +444,10 @@ class BackgroundSelect: UIViewController {
                 //    self.updateCaption("Let's start by having some lunch! Tap to go to snack shop.")
                 
             }
+        }
+        if userAnswers.food == "pizza" {
+            hideButtonQuestions()
+            view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
         }
     }
     
@@ -493,8 +522,10 @@ class BackgroundSelect: UIViewController {
             }
         if self.count == 4 {
             helloButton.isHidden = true
-            self.introLabel.text = "Choose a food item!"
-             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
+            introLabel.isHidden = true
+            self.showButtonQuestions()
+            self.goToFoodSelect()
+
         }
     }
     
