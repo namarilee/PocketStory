@@ -75,6 +75,8 @@ class BackgroundSelect: UIViewController {
         ["Pizza", "Hotdog", "Popcorn"]
     ]
     
+    var pizzaDisplays = [UIImage(named: "1pizza"), UIImage(named: "2pizza"), UIImage(named: "3pizza"), UIImage(named: "4pizza"), UIImage(named: "5pizza")]
+    
     var row = 0
     
     var introLabel = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
@@ -370,12 +372,74 @@ class BackgroundSelect: UIViewController {
                 }
                 helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
     }
+    var pizzaLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
+    var pizzaImageView:UIImageView = UIImageView()
+    var num1 = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var num2 = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var num3 = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var num4 = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var num5 = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    
     func pizzaGame() {
-        questionLabel.text = "Choose a food item!"
+        pizzaLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
+        pizzaLabel.text = "How many pizza slices are there?"
+        view.addSubview(pizzaLabel)
+        skipButton.isHidden = true
         hideButtonQuestions()
         showChosenFood()
         view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
+        pizzaImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+        pizzaImageView.image = pizzaDisplays[Int.random(in: 0...4)]
+        view.addSubview(pizzaImageView)
+        //1
+        num1.frame = CGRect(x: 90, y: 250, width: 110, height: 110)
+        let num1Image = UIImage(named: "num1")
+        num1.setImage(num1Image, for: .normal)
+        view.addSubview(num1)
+        num1.addTarget(self, action: #selector(num1Clicked), for: .touchUpInside)
+        //2
+        num2.frame = CGRect(x: 240, y: 250, width: 110, height: 110)
+        let num2Image = UIImage(named: "num2")
+        num2.setImage(num2Image, for: .normal)
+        view.addSubview(num2)
+        num2.addTarget(self, action: #selector(num2Clicked), for: .touchUpInside)
+        //3
+        num3.frame = CGRect(x: 390, y: 250, width: 110, height: 110)
+        let num3Image = UIImage(named: "num3")
+        num3.setImage(num3Image, for: .normal)
+        view.addSubview(num3)
+        num3.addTarget(self, action: #selector(num3Clicked), for: .touchUpInside)
+        //4
+        num4.frame = CGRect(x: 540, y: 250, width: 110, height: 110)
+        let num4Image = UIImage(named: "num4")
+        num4.setImage(num4Image, for: .normal)
+        view.addSubview(num4)
+        num4.addTarget(self, action: #selector(num4Clicked), for: .touchUpInside)
+        //5
+        num5.frame = CGRect(x: 690, y: 250, width: 110, height: 110)
+        let num5Image = UIImage(named: "num5")
+        num5.setImage(num5Image, for: .normal)
+        view.addSubview(num5)
+        num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
         
+    }
+    @IBAction func num1Clicked(_ sender: UIButton) {
+        if pizzaImageView.image == pizzaDisplays[0] {
+            
+        }
+
+    }
+    @IBAction func num2Clicked(_ sender: UIButton) {
+    
+    }
+    @IBAction func num3Clicked(_ sender: UIButton) {
+    
+    }
+    @IBAction func num4Clicked(_ sender: UIButton) {
+    
+    }
+    @IBAction func num5Clicked(_ sender: UIButton) {
+    
     }
     
     override func viewDidLoad() {
@@ -480,7 +544,7 @@ class BackgroundSelect: UIViewController {
         }
         if userAnswers.food == "pizza" {
             pizzaGame()
-        
+       
         }
     }
     
