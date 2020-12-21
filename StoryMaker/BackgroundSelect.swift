@@ -372,6 +372,13 @@ class BackgroundSelect: UIViewController {
                 }
                 helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
     }
+    func animateNumber(number: UIButton) {
+        UIView.animate(withDuration: 0.9, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
+            number.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        })
+     
+
+    }
     var pizzaLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
     var pizzaImageView:UIImageView = UIImageView()
     var num1 = UIButton(type: UIButton.ButtonType.custom) as UIButton
@@ -425,21 +432,40 @@ class BackgroundSelect: UIViewController {
     }
     @IBAction func num1Clicked(_ sender: UIButton) {
         if pizzaImageView.image == pizzaDisplays[0] {
-            
+            animateNumber(number: num1)
+        } else {
+            num1.alpha = 0.5
         }
 
     }
     @IBAction func num2Clicked(_ sender: UIButton) {
+        if pizzaImageView.image == pizzaDisplays[1] {
+            animateNumber(number: num2)
+        } else {
+            num2.alpha = 0.5
+        }
     
     }
     @IBAction func num3Clicked(_ sender: UIButton) {
-    
+    if pizzaImageView.image == pizzaDisplays[2] {
+               animateNumber(number: num3)
+           } else {
+               num3.alpha = 0.5
+           }
     }
     @IBAction func num4Clicked(_ sender: UIButton) {
-    
+    if pizzaImageView.image == pizzaDisplays[3] {
+               animateNumber(number: num4)
+           } else {
+               num4.alpha = 0.5
+           }
     }
     @IBAction func num5Clicked(_ sender: UIButton) {
-    
+        if pizzaImageView.image == pizzaDisplays[4] {
+               animateNumber(number: num5)
+           } else {
+               num5.alpha = 0.5
+           }
     }
     
     override func viewDidLoad() {
