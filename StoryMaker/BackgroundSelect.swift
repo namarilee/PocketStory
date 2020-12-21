@@ -385,11 +385,17 @@ class BackgroundSelect: UIViewController {
         })
     
     }
+
     func animatePizzaQ() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
             switch self.currentAnimation {
             case 0:
                 self.pizzaImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
+                self.num1.transform = CGAffineTransform(translationX: 0, y: 200)
+                self.num2.transform = CGAffineTransform(translationX: 0, y: 200)
+                self.num3.transform = CGAffineTransform(translationX: 0, y: 200)
+                self.num4.transform = CGAffineTransform(translationX: 0, y: 200)
+                self.num5.transform = CGAffineTransform(translationX: 0, y: 200)
             default:
                 break
             }
@@ -401,6 +407,7 @@ class BackgroundSelect: UIViewController {
 
     }
     func reloadPizza() {
+        greatJobImageView.isHidden = true
         pizzaCount += 1
         print("pizzaCount: ", pizzaCount)
         progressImageView.image = gameProgressBar[pizzaCount]
@@ -411,6 +418,11 @@ class BackgroundSelect: UIViewController {
             switch self.currentAnimation {
              case 0:
               self.pizzaImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
+              self.num1.transform = .identity
+              self.num2.transform = .identity
+              self.num3.transform = .identity
+              self.num4.transform = .identity
+              self.num5.transform = .identity
             default:
                 break
             }
@@ -418,16 +430,26 @@ class BackgroundSelect: UIViewController {
         if pizzaCount == 5 {
             self.hidePizzaGame()
             showButtonQuestions()
+            view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
+            view.removeBackground()
+            questionLabel.text = "What game would you like to play?"
               }
     }
     var pizzaLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
     var pizzaImageView:UIImageView = UIImageView()
     var progressImageView:UIImageView = UIImageView()
+    var darkImageView:UIImageView = UIImageView()
     var num1 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num2 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num3 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num4 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num5 = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var greatJobImageView:UIImageView = UIImageView()
+    
+    func showGreatJob() {
+        darkImageView.isHidden = false
+        greatJobImageView.isHidden = false
+    }
     func hidePizzaGame() {
         pizzaLabel.isHidden = true
         pizzaImageView.isHidden = true
@@ -451,7 +473,13 @@ class BackgroundSelect: UIViewController {
          progressImageView.frame = CGRect(x: 10, y: 100, width: 100, height: 200)
         progressImageView.image = gameProgressBar[0]
         view.addSubview(progressImageView)
-
+        darkImageView.image = UIImage(named: "darkFaded")
+        view.addSubview(darkImageView)
+        darkImageView.isHidden = true
+        greatJobImageView.frame = CGRect(x: 230, y: 100, width: 431.3, height: 204.6)
+        greatJobImageView.image = UIImage(named: "greatJob")
+        view.addSubview(greatJobImageView)
+        greatJobImageView.isHidden = true
         //1
         num1.frame = CGRect(x: 90, y: 250, width: 110, height: 110)
         let num1Image = UIImage(named: "num1")
@@ -494,6 +522,7 @@ class BackgroundSelect: UIViewController {
             num5.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.animatePizzaQ()
+                self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.reloadPizza()
                     self.num2.alpha = 1
@@ -517,6 +546,7 @@ class BackgroundSelect: UIViewController {
             num5.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.animatePizzaQ()
+                self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.reloadPizza()
                     self.num1.alpha = 1
@@ -540,6 +570,7 @@ class BackgroundSelect: UIViewController {
         num5.alpha = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.animatePizzaQ()
+            self.showGreatJob()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.reloadPizza()
                 self.num2.alpha = 1
@@ -562,6 +593,7 @@ class BackgroundSelect: UIViewController {
         num5.alpha = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.animatePizzaQ()
+            self.showGreatJob()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.reloadPizza()
                 self.num2.alpha = 1
@@ -584,6 +616,7 @@ class BackgroundSelect: UIViewController {
             num1.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.animatePizzaQ()
+                self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.reloadPizza()
                     self.num2.alpha = 1
@@ -700,7 +733,7 @@ class BackgroundSelect: UIViewController {
         }
         if userAnswers.food == "pizza" {
             pizzaGame()
-       
+            
         }
     }
     
@@ -711,27 +744,23 @@ class BackgroundSelect: UIViewController {
         if self.count == 1 {
             
             self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
-            helloButton.isHidden = true
-            self.introLabel.text = "Let's choose a character!"
+UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+            self.helloButton.transform = CGAffineTransform(translationX: 0, y: 200)
+
+        })
+    self.introLabel.text = "Let's choose a character!"
             self.view.addSubview(self.introLabel)
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                                 
-                     switch self.currentAnimation {
-                         case 0:
-                            self.helloButton.transform = .identity
-                         default:
-                             break
-                                 }
-                                 
-                             })
+        
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 
-                self.helloButton.isHidden = false
                 let helloImage = UIImage(named: "Next button")
                 self.helloButton.setImage(helloImage, for: .normal)
-                self.showHelloButton()
-                
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                    self.helloButton.transform = CGAffineTransform(translationX: 0, y: -100)
+                    self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+
+                })
             }
             
         }
@@ -765,7 +794,7 @@ class BackgroundSelect: UIViewController {
             self.view.addSubview(self.introLabel)
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
 //           speechBubble.isHidden = false
-//            showSpeechBubble()
+            showSpeechBubble()
        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     self.helloButton.isHidden = false
                     let helloImage = UIImage(named: "hello")
