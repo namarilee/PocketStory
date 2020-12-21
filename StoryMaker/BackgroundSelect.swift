@@ -77,6 +77,8 @@ class BackgroundSelect: UIViewController {
     
     var pizzaDisplays = [UIImage(named: "1pizza"), UIImage(named: "2pizza"), UIImage(named: "3pizza"), UIImage(named: "4pizza"), UIImage(named: "5pizza")]
     
+    var gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
+    
     var row = 0
     
     var introLabel = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
@@ -372,32 +374,84 @@ class BackgroundSelect: UIViewController {
                 }
                 helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
     }
+    var pizzaCount = 0
+    var progressCount = 0
     func animateNumber(number: UIButton) {
         UIView.animate(withDuration: 0.9, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
             number.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            number.transform = .identity
+            }
         })
-     
+    
+    }
+    func animatePizzaQ() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
+            switch self.currentAnimation {
+            case 0:
+                self.pizzaImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
+            default:
+                break
+            }
+              })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            self.pizzaImageView.isHidden = true
+        }
 
+    }
+    func reloadPizza() {
+        pizzaCount += 1
+        print("pizzaCount: ", pizzaCount)
+        progressImageView.image = gameProgressBar[pizzaCount]
+        pizzaImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+        pizzaImageView.image = pizzaDisplays[Int.random(in: 0...4)]
+        self.pizzaImageView.isHidden = false
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
+            switch self.currentAnimation {
+             case 0:
+              self.pizzaImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
+            default:
+                break
+            }
+        })
+        if pizzaCount == 5 {
+            self.hidePizzaGame()
+            showButtonQuestions()
+              }
     }
     var pizzaLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
     var pizzaImageView:UIImageView = UIImageView()
+    var progressImageView:UIImageView = UIImageView()
     var num1 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num2 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num3 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num4 = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var num5 = UIButton(type: UIButton.ButtonType.custom) as UIButton
-    
+    func hidePizzaGame() {
+        pizzaLabel.isHidden = true
+        pizzaImageView.isHidden = true
+        progressImageView.isHidden = true
+        num1.isHidden = true
+        num2.isHidden = true
+        num3.isHidden = true
+        num4.isHidden = true
+        num5.isHidden = true
+    }
     func pizzaGame() {
         pizzaLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
         pizzaLabel.text = "How many pizza slices are there?"
         view.addSubview(pizzaLabel)
         skipButton.isHidden = true
         hideButtonQuestions()
-        showChosenFood()
-        view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
+        view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
         pizzaImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
         pizzaImageView.image = pizzaDisplays[Int.random(in: 0...4)]
         view.addSubview(pizzaImageView)
+         progressImageView.frame = CGRect(x: 10, y: 100, width: 100, height: 200)
+        progressImageView.image = gameProgressBar[0]
+        view.addSubview(progressImageView)
+
         //1
         num1.frame = CGRect(x: 90, y: 250, width: 110, height: 110)
         let num1Image = UIImage(named: "num1")
@@ -428,11 +482,27 @@ class BackgroundSelect: UIViewController {
         num5.setImage(num5Image, for: .normal)
         view.addSubview(num5)
         num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
-        
+      
     }
+    
     @IBAction func num1Clicked(_ sender: UIButton) {
         if pizzaImageView.image == pizzaDisplays[0] {
             animateNumber(number: num1)
+            num2.alpha = 0.5
+            num3.alpha = 0.5
+            num4.alpha = 0.5
+            num5.alpha = 0.5
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.animatePizzaQ()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.reloadPizza()
+                    self.num2.alpha = 1
+                    self.num3.alpha = 1
+                    self.num4.alpha = 1
+                    self.num5.alpha = 1
+                         }
+            }
+         
         } else {
             num1.alpha = 0.5
         }
@@ -441,6 +511,21 @@ class BackgroundSelect: UIViewController {
     @IBAction func num2Clicked(_ sender: UIButton) {
         if pizzaImageView.image == pizzaDisplays[1] {
             animateNumber(number: num2)
+            num1.alpha = 0.5
+            num3.alpha = 0.5
+            num4.alpha = 0.5
+            num5.alpha = 0.5
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.animatePizzaQ()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.reloadPizza()
+                    self.num1.alpha = 1
+                    self.num3.alpha = 1
+                    self.num4.alpha = 1
+                    self.num5.alpha = 1
+                                }
+            }
+            
         } else {
             num2.alpha = 0.5
         }
@@ -448,21 +533,66 @@ class BackgroundSelect: UIViewController {
     }
     @IBAction func num3Clicked(_ sender: UIButton) {
     if pizzaImageView.image == pizzaDisplays[2] {
-               animateNumber(number: num3)
+        animateNumber(number: num3)
+        num2.alpha = 0.5
+        num1.alpha = 0.5
+        num4.alpha = 0.5
+        num5.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.animatePizzaQ()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.reloadPizza()
+                self.num2.alpha = 1
+                self.num1.alpha = 1
+                self.num4.alpha = 1
+                self.num5.alpha = 1
+                          }
+        }
+      
            } else {
                num3.alpha = 0.5
            }
     }
     @IBAction func num4Clicked(_ sender: UIButton) {
     if pizzaImageView.image == pizzaDisplays[3] {
-               animateNumber(number: num4)
+        animateNumber(number: num4)
+        num2.alpha = 0.5
+        num3.alpha = 0.5
+        num1.alpha = 0.5
+        num5.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.animatePizzaQ()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.reloadPizza()
+                self.num2.alpha = 1
+                self.num3.alpha = 1
+                self.num1.alpha = 1
+                self.num5.alpha = 1
+                        }
+        }
+    
            } else {
                num4.alpha = 0.5
            }
     }
     @IBAction func num5Clicked(_ sender: UIButton) {
         if pizzaImageView.image == pizzaDisplays[4] {
-               animateNumber(number: num5)
+            animateNumber(number: num5)
+            num2.alpha = 0.5
+            num3.alpha = 0.5
+            num4.alpha = 0.5
+            num1.alpha = 0.5
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.animatePizzaQ()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.reloadPizza()
+                    self.num2.alpha = 1
+                    self.num3.alpha = 1
+                    self.num4.alpha = 1
+                    self.num1.alpha = 1
+                           }
+            }
+     
            } else {
                num5.alpha = 0.5
            }
