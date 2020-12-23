@@ -374,7 +374,7 @@ class BackgroundSelect: UIViewController {
                 }
                 helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
     }
-    var pizzaCount = 0
+    var foodGameCount = 0
     var progressCount = 0
     func animateNumber(number: UIButton) {
         UIView.animate(withDuration: 0.9, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
@@ -408,9 +408,9 @@ class BackgroundSelect: UIViewController {
     }
     func reloadPizza() {
         greatJobImageView.isHidden = true
-        pizzaCount += 1
-        print("pizzaCount: ", pizzaCount)
-        progressImageView.image = gameProgressBar[pizzaCount]
+        foodGameCount += 1
+        print("pizzaCount: ", foodGameCount)
+        progressImageView.image = gameProgressBar[foodGameCount]
         foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
         foodGameImageView.image = pizzaDisplays[Int.random(in: 0...4)]
         self.foodGameImageView.isHidden = false
@@ -427,7 +427,7 @@ class BackgroundSelect: UIViewController {
                 break
             }
         })
-        if pizzaCount == 5 {
+        if foodGameCount == 5 {
             self.hidePizzaGame()
             showButtonQuestions()
             view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
@@ -514,17 +514,27 @@ class BackgroundSelect: UIViewController {
     }
     
     @IBAction func num1Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[0] {
+        if foodGameImageView.image == pizzaDisplays[0] || randomColor == 0 {
             animateNumber(number: num1)
             num2.alpha = 0.5
             num3.alpha = 0.5
             num4.alpha = 0.5
             num5.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animatePizzaQ()
+                if userAnswers.food == "pizza" {
+                    self.animatePizzaQ()
+                }
+                if userAnswers.food == "hotdog" {
+                    self.animateHotdogQ()
+                }
                 self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadPizza()
+                    if userAnswers.food == "pizza" {
+                        self.reloadPizza()
+                    }
+                    if userAnswers.food == "hotdog" {
+                        self.reloadHotdog()
+                    }
                     self.num2.alpha = 1
                     self.num3.alpha = 1
                     self.num4.alpha = 1
@@ -636,12 +646,80 @@ class BackgroundSelect: UIViewController {
     var blueLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var orangeLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var colorLabels = [UILabel]()
-
+    var randomColor = Int.random(in: 0...4)
     
+    func hideHotdogGame() {
+        foodGameLabel.isHidden = true
+        progressImageView.isHidden = true
+        redLabel.isHidden = true
+        greenLabel.isHidden = true
+        purpleLabel.isHidden = true
+        blueLabel.isHidden = true
+        orangeLabel.isHidden = true
+        num1.isHidden = true
+        num2.isHidden = true
+        num3.isHidden = true
+        num4.isHidden = true
+        num5.isHidden = true
+    }
+    func animateHotdogQ() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
+                  switch self.currentAnimation {
+                  case 0:
+                    self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
+                      self.num1.transform = CGAffineTransform(translationX: 0, y: 200)
+                      self.num2.transform = CGAffineTransform(translationX: 0, y: 200)
+                      self.num3.transform = CGAffineTransform(translationX: 0, y: 200)
+                      self.num4.transform = CGAffineTransform(translationX: 0, y: 200)
+                      self.num5.transform = CGAffineTransform(translationX: 0, y: 200)
+                  default:
+                      break
+                  }
+                    })
+    }
+    func reloadHotdog() {
+        greatJobImageView.isHidden = true
+        foodGameCount += 1
+        print("foodGameCount: ", foodGameCount)
+        progressImageView.image = gameProgressBar[foodGameCount]
+        randomColor = Int.random(in: 0...4)
+        colorLabels[randomColor].frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+        colorLabels[randomColor].isHidden = false
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
+              switch self.currentAnimation {
+               case 0:
+                self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
+                self.num1.transform = .identity
+                self.num2.transform = .identity
+                self.num3.transform = .identity
+                self.num4.transform = .identity
+                self.num5.transform = .identity
+              default:
+                  break
+              }
+          })
+          if foodGameCount == 5 {
+              self.hideHotdogGame()
+              showButtonQuestions()
+              view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
+              view.removeBackground()
+              questionLabel.text = "What game would you like to play?"
+                }
+    }
     func showHotdogGame() {
         skipButton.isHidden = true
         hideButtonQuestions()
         view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
+        progressImageView.frame = CGRect(x: 10, y: 100, width: 100, height: 200)
+        progressImageView.image = gameProgressBar[0]
+        view.addSubview(progressImageView)
+        darkImageView.image = UIImage(named: "darkFaded")
+        view.addSubview(darkImageView)
+        darkImageView.isHidden = true
+        greatJobImageView.frame = CGRect(x: 230, y: 100, width: 431.3, height: 204.6)
+        greatJobImageView.image = UIImage(named: "greatJob")
+        view.addSubview(greatJobImageView)
+        greatJobImageView.isHidden = true
         foodGameLabel.isHidden = false
         foodGameLabel.frame = CGRect(x: 320, y: -40, width: 620, height: 200)
         foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
@@ -667,18 +745,36 @@ class BackgroundSelect: UIViewController {
         colorLabels.append(purpleLabel)
         colorLabels.append(blueLabel)
         colorLabels.append(orangeLabel)
-        view.addSubview(colorLabels[Int.random(in: 0...4)])
-        num1.frame = CGRect(x: 90, y: 250, width: 165, height: 165)
+        view.addSubview(colorLabels[randomColor])
+        num1.frame = CGRect(x: 90, y: 250, width: 130, height: 130)
         let num1Image = UIImage(named: "redHotdog")
         num1.setImage(num1Image, for: .normal)
         view.addSubview(num1)
         num1.addTarget(self, action: #selector(num1Clicked), for: .touchUpInside)
-        num2.frame = CGRect(x: 90, y: 250, width: 165, height: 165)
+        
+        num2.frame = CGRect(x: 240, y: 250, width: 130, height: 130)
         let num2Image = UIImage(named: "greenHotdog")
         num2.setImage(num2Image, for: .normal)
         view.addSubview(num2)
         num2.addTarget(self, action: #selector(num2Clicked), for: .touchUpInside)
 
+        num3.frame = CGRect(x: 390, y: 250, width: 130, height: 130)
+        let num3Image = UIImage(named: "purpleHotdog")
+        num3.setImage(num3Image, for: .normal)
+        view.addSubview(num3)
+        num3.addTarget(self, action: #selector(num3Clicked), for: .touchUpInside)
+
+        num4.frame = CGRect(x: 540, y: 250, width: 130, height: 130)
+        let num4Image = UIImage(named: "blueHotdog")
+        num4.setImage(num4Image, for: .normal)
+        view.addSubview(num4)
+        num4.addTarget(self, action: #selector(num4Clicked), for: .touchUpInside)
+
+        num5.frame = CGRect(x: 690, y: 250, width: 130, height: 130)
+        let num5Image = UIImage(named: "orangeHotdog")
+        num5.setImage(num5Image, for: .normal)
+            view.addSubview(num5)
+            num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
     }
     
 
