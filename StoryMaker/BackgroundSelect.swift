@@ -548,17 +548,27 @@ class BackgroundSelect: UIViewController {
 
     }
     @IBAction func num2Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[1] {
+        if foodGameImageView.image == pizzaDisplays[1] || randomColor == 1 {
             animateNumber(number: num2)
             num1.alpha = 0.5
             num3.alpha = 0.5
             num4.alpha = 0.5
             num5.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animatePizzaQ()
+                if userAnswers.food == "pizza" {
+                    self.animatePizzaQ()
+                }
+                if userAnswers.food == "hotdog" {
+                    self.animateHotdogQ()
+                }
                 self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadPizza()
+                    if userAnswers.food == "pizza" {
+                        self.reloadPizza()
+                    }
+                    if userAnswers.food == "hotdog" {
+                        self.reloadHotdog()
+                    }
                     self.num1.alpha = 1
                     self.num3.alpha = 1
                     self.num4.alpha = 1
@@ -572,17 +582,27 @@ class BackgroundSelect: UIViewController {
     
     }
     @IBAction func num3Clicked(_ sender: UIButton) {
-    if foodGameImageView.image == pizzaDisplays[2] {
+    if foodGameImageView.image == pizzaDisplays[2] || randomColor == 2 {
         animateNumber(number: num3)
         num2.alpha = 0.5
         num1.alpha = 0.5
         num4.alpha = 0.5
         num5.alpha = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.animatePizzaQ()
+            if userAnswers.food == "pizza" {
+                self.animatePizzaQ()
+            }
+            if userAnswers.food == "hotdog" {
+                self.animateHotdogQ()
+            }
             self.showGreatJob()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.reloadPizza()
+                if userAnswers.food == "pizza" {
+                    self.reloadPizza()
+                }
+                if userAnswers.food == "hotdog" {
+                    self.reloadHotdog()
+                }
                 self.num2.alpha = 1
                 self.num1.alpha = 1
                 self.num4.alpha = 1
@@ -595,17 +615,27 @@ class BackgroundSelect: UIViewController {
            }
     }
     @IBAction func num4Clicked(_ sender: UIButton) {
-    if foodGameImageView.image == pizzaDisplays[3] {
+    if foodGameImageView.image == pizzaDisplays[3] || randomColor == 3 {
         animateNumber(number: num4)
         num2.alpha = 0.5
         num3.alpha = 0.5
         num1.alpha = 0.5
         num5.alpha = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.animatePizzaQ()
+            if userAnswers.food == "pizza" {
+                self.animatePizzaQ()
+            }
+            if userAnswers.food == "hotdog" {
+                self.animateHotdogQ()
+            }
             self.showGreatJob()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.reloadPizza()
+                if userAnswers.food == "pizza" {
+                    self.reloadPizza()
+                }
+                if userAnswers.food == "hotdog" {
+                    self.reloadHotdog()
+                }
                 self.num2.alpha = 1
                 self.num3.alpha = 1
                 self.num1.alpha = 1
@@ -618,17 +648,27 @@ class BackgroundSelect: UIViewController {
            }
     }
     @IBAction func num5Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[4] {
+        if foodGameImageView.image == pizzaDisplays[4] || randomColor == 4 {
             animateNumber(number: num5)
             num2.alpha = 0.5
             num3.alpha = 0.5
             num4.alpha = 0.5
             num1.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animatePizzaQ()
+                if userAnswers.food == "pizza" {
+                    self.animatePizzaQ()
+                }
+                if userAnswers.food == "hotdog" {
+                    self.animateHotdogQ()
+                }
                 self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadPizza()
+                    if userAnswers.food == "pizza" {
+                        self.reloadPizza()
+                    }
+                    if userAnswers.food == "hotdog" {
+                        self.reloadHotdog()
+                    }
                     self.num2.alpha = 1
                     self.num3.alpha = 1
                     self.num4.alpha = 1
@@ -676,6 +716,9 @@ class BackgroundSelect: UIViewController {
                       break
                   }
                     })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                self.foodGameImageView.isHidden = true
+            }
     }
     func reloadHotdog() {
         greatJobImageView.isHidden = true
@@ -779,6 +822,7 @@ class BackgroundSelect: UIViewController {
     
 
     func hotdogGame() {
+        userAnswers.food = "pizza"
        showHotdogGame()
     }
     override func viewDidLoad() {
