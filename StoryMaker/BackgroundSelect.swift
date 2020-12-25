@@ -76,7 +76,7 @@ class BackgroundSelect: UIViewController {
     ]
     
     var pizzaDisplays = [UIImage(named: "1pizza"), UIImage(named: "2pizza"), UIImage(named: "3pizza"), UIImage(named: "4pizza"), UIImage(named: "5pizza")]
-    
+    var hotdogDisplays = [UIImage(named: "redHD"), UIImage(named: "greenHD"), UIImage(named: "purpleHD"), UIImage(named: "blueHD"), UIImage(named: "orangeHD")]
     var gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
     
     var row = 0
@@ -514,27 +514,17 @@ class BackgroundSelect: UIViewController {
     }
     
     @IBAction func num1Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[0] || randomColor == 0 {
+        if foodGameImageView.image == pizzaDisplays[0] {
             animateNumber(number: num1)
             num2.alpha = 0.5
             num3.alpha = 0.5
             num4.alpha = 0.5
             num5.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                if userAnswers.food == "pizza" {
-                    self.animatePizzaQ()
-                }
-                if userAnswers.food == "hotdog" {
-                    self.animateHotdogQ()
-                }
+                self.animatePizzaQ()
                 self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    if userAnswers.food == "pizza" {
-                        self.reloadPizza()
-                    }
-                    if userAnswers.food == "hotdog" {
-                        self.reloadHotdog()
-                    }
+                    self.reloadPizza()
                     self.num2.alpha = 1
                     self.num3.alpha = 1
                     self.num4.alpha = 1
@@ -542,67 +532,66 @@ class BackgroundSelect: UIViewController {
                          }
             }
          
+        } else if foodGameImageView.image == hotdogDisplays[0] {
+            animateNumber(number: num1)
+            num2.alpha = 0.5
+            num3.alpha = 0.5
+            num4.alpha = 0.5
+            num5.alpha = 0.5
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.animateHotdogQ()
+                self.showGreatJob()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.reloadHotdog()
+                    self.num2.alpha = 1
+                    self.num3.alpha = 1
+                    self.num4.alpha = 1
+                    self.num5.alpha = 1
+                }
+            }
         } else {
             num1.alpha = 0.5
         }
-
     }
     @IBAction func num2Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[1] || randomColor == 1 {
+        if foodGameImageView.image == pizzaDisplays[1] {
             animateNumber(number: num2)
             num1.alpha = 0.5
             num3.alpha = 0.5
             num4.alpha = 0.5
             num5.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                if userAnswers.food == "pizza" {
-                    self.animatePizzaQ()
-                }
-                if userAnswers.food == "hotdog" {
-                    self.animateHotdogQ()
-                }
+                self.animatePizzaQ()
                 self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    if userAnswers.food == "pizza" {
-                        self.reloadPizza()
-                    }
-                    if userAnswers.food == "hotdog" {
-                        self.reloadHotdog()
-                    }
+                    self.reloadPizza()
                     self.num1.alpha = 1
                     self.num3.alpha = 1
                     self.num4.alpha = 1
                     self.num5.alpha = 1
-                                }
+                }
             }
             
-        } else {
+        }
+        else {
             num2.alpha = 0.5
         }
     
     }
     @IBAction func num3Clicked(_ sender: UIButton) {
-    if foodGameImageView.image == pizzaDisplays[2] || randomColor == 2 {
+    if foodGameImageView.image == pizzaDisplays[2] || foodGameImageView.image == hotdogDisplays[2] {
         animateNumber(number: num3)
         num2.alpha = 0.5
         num1.alpha = 0.5
         num4.alpha = 0.5
         num5.alpha = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if userAnswers.food == "pizza" {
                 self.animatePizzaQ()
-            }
-            if userAnswers.food == "hotdog" {
-                self.animateHotdogQ()
-            }
+          
             self.showGreatJob()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                if userAnswers.food == "pizza" {
                     self.reloadPizza()
-                }
-                if userAnswers.food == "hotdog" {
-                    self.reloadHotdog()
-                }
+             
                 self.num2.alpha = 1
                 self.num1.alpha = 1
                 self.num4.alpha = 1
@@ -615,27 +604,20 @@ class BackgroundSelect: UIViewController {
            }
     }
     @IBAction func num4Clicked(_ sender: UIButton) {
-    if foodGameImageView.image == pizzaDisplays[3] || randomColor == 3 {
+    if foodGameImageView.image == pizzaDisplays[3] || foodGameImageView.image == hotdogDisplays[3] {
         animateNumber(number: num4)
         num2.alpha = 0.5
         num3.alpha = 0.5
         num1.alpha = 0.5
         num5.alpha = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if userAnswers.food == "pizza" {
                 self.animatePizzaQ()
-            }
-            if userAnswers.food == "hotdog" {
-                self.animateHotdogQ()
-            }
+          
             self.showGreatJob()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                if userAnswers.food == "pizza" {
                     self.reloadPizza()
-                }
-                if userAnswers.food == "hotdog" {
-                    self.reloadHotdog()
-                }
+                
+
                 self.num2.alpha = 1
                 self.num3.alpha = 1
                 self.num1.alpha = 1
@@ -648,27 +630,19 @@ class BackgroundSelect: UIViewController {
            }
     }
     @IBAction func num5Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[4] || randomColor == 4 {
+        if foodGameImageView.image == pizzaDisplays[4] || foodGameImageView.image == hotdogDisplays[4] {
             animateNumber(number: num5)
             num2.alpha = 0.5
             num3.alpha = 0.5
             num4.alpha = 0.5
             num1.alpha = 0.5
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                if userAnswers.food == "pizza" {
                     self.animatePizzaQ()
-                }
-                if userAnswers.food == "hotdog" {
-                    self.animateHotdogQ()
-                }
+               
                 self.showGreatJob()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    if userAnswers.food == "pizza" {
-                        self.reloadPizza()
-                    }
-                    if userAnswers.food == "hotdog" {
-                        self.reloadHotdog()
-                    }
+                    self.reloadPizza()
+                  
                     self.num2.alpha = 1
                     self.num3.alpha = 1
                     self.num4.alpha = 1
@@ -685,9 +659,9 @@ class BackgroundSelect: UIViewController {
     var purpleLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var blueLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var orangeLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-    var colorLabels = [UILabel]()
-    var randomColor = Int.random(in: 0...4)
-    
+//    var colorLabels = [UILabel]()
+//    var randomColor = Int.random(in: 0...4)
+//
     func hideHotdogGame() {
         foodGameLabel.isHidden = true
         progressImageView.isHidden = true
@@ -706,7 +680,7 @@ class BackgroundSelect: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
                   switch self.currentAnimation {
                   case 0:
-                    self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
+                  //  self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
                       self.num1.transform = CGAffineTransform(translationX: 0, y: 200)
                       self.num2.transform = CGAffineTransform(translationX: 0, y: 200)
                       self.num3.transform = CGAffineTransform(translationX: 0, y: 200)
@@ -725,13 +699,17 @@ class BackgroundSelect: UIViewController {
         foodGameCount += 1
         print("foodGameCount: ", foodGameCount)
         progressImageView.image = gameProgressBar[foodGameCount]
-        randomColor = Int.random(in: 0...4)
-        colorLabels[randomColor].frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
-        colorLabels[randomColor].isHidden = false
+        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+        foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
+
+//        randomColor = Int.random(in: 0...4)
+//        colorLabels[randomColor].frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+//        colorLabels[randomColor].isHidden = false
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
               switch self.currentAnimation {
                case 0:
-                self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
+              //  self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
+                self.foodGameImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
                 self.num1.transform = .identity
                 self.num2.transform = .identity
                 self.num3.transform = .identity
@@ -750,6 +728,9 @@ class BackgroundSelect: UIViewController {
                 }
     }
     func showHotdogGame() {
+        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+        foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
+        view.addSubview(foodGameImageView)
         skipButton.isHidden = true
         hideButtonQuestions()
         view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
@@ -768,27 +749,27 @@ class BackgroundSelect: UIViewController {
         foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
         foodGameLabel.text = "Match the color!"
         view.addSubview(foodGameLabel)
-        redLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-        redLabel.textColor = #colorLiteral(red: 0.8862745098, green: 0, blue: 0, alpha: 1)
-        redLabel.text = "Red"
-        greenLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-        greenLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        greenLabel.text = "Green"
-        purpleLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-        purpleLabel.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        purpleLabel.text = "Purple"
-        blueLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-        blueLabel.textColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        blueLabel.text = "Blue"
-        orangeLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-        orangeLabel.textColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        orangeLabel.text = "Orange"
-        colorLabels.append(redLabel)
-        colorLabels.append(greenLabel)
-        colorLabels.append(purpleLabel)
-        colorLabels.append(blueLabel)
-        colorLabels.append(orangeLabel)
-        view.addSubview(colorLabels[randomColor])
+//        redLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
+//        redLabel.textColor = #colorLiteral(red: 0.8862745098, green: 0, blue: 0, alpha: 1)
+//        redLabel.text = "Red"
+//        greenLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
+//        greenLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+//        greenLabel.text = "Green"
+//        purpleLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
+//        purpleLabel.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+//        purpleLabel.text = "Purple"
+//        blueLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
+//        blueLabel.textColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+//        blueLabel.text = "Blue"
+//        orangeLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
+//        orangeLabel.textColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+//        orangeLabel.text = "Orange"
+//        colorLabels.append(redLabel)
+//        colorLabels.append(greenLabel)
+//        colorLabels.append(purpleLabel)
+//        colorLabels.append(blueLabel)
+//        colorLabels.append(orangeLabel)
+//        view.addSubview(colorLabels[randomColor])
         num1.frame = CGRect(x: 90, y: 250, width: 130, height: 130)
         let num1Image = UIImage(named: "redHotdog")
         num1.setImage(num1Image, for: .normal)
@@ -822,7 +803,7 @@ class BackgroundSelect: UIViewController {
     
 
     func hotdogGame() {
-        userAnswers.food = "pizza"
+       // userAnswers.food = "pizza"
        showHotdogGame()
     }
     override func viewDidLoad() {
@@ -1036,7 +1017,7 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
         print("lol")
         self.count = 4
         print(count)
-        hotdogGame()
+        pizzaGame()
 
     }
     
