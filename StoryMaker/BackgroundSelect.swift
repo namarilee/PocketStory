@@ -837,11 +837,34 @@ class BackgroundSelect: UIViewController {
     }
   //  let popcornGame: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
   //  let popcornViewController = popcornGame.instantiateViewController(withIdentifier: "Hungry") as! BackgroundSelect
-
+    @objc func moveBasket(_ recognizer: UIPanGestureRecognizer) {
+        let translation: CGPoint = recognizer.translation(in: self.view)
+        recognizer.view?.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y)
+        recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
+    }
     func startPopcornGame() {
            hideButtonQuestions()
            //self.present(popcornViewController, animated: true, completion: nil)
+        skipButton.isHidden = true
+        let basketImageView = UIImageView()
+        basketImageView.isUserInteractionEnabled = true
+        basketImageView.frame = CGRect(x: 100, y: 280, width: 150, height: 150)
+        basketImageView.image = UIImage(named: "popcornContainer")
+        self.view.addSubview(basketImageView)
+        basketImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.moveBasket(_:))))
+        view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
+            let randomPopcorn = Int(arc4random_uniform(UInt32((Int)(UIScreen.main.bounds.size.width-100))) + 1)
+            let kernelImageView = UIImageView()
+            kernelImageView.frame = CGRect(x: randomPopcorn + 30, y: 30, width: 100, height: 100)
+            kernelImageView.image = UIImage(named: "kernel")
+            self.view.addSubview(kernelImageView)
+            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (t2) in
+                kernelImageView.center.y += 1
+            })
+        }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
