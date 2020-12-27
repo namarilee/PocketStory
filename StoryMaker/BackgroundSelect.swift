@@ -842,15 +842,24 @@ class BackgroundSelect: UIViewController {
         recognizer.view?.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y)
         recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
     }
+    var popcornCountLabel = UILabel(frame: CGRect(x: 760, y: 250, width: 620, height: 200))
+   let pCounterImageView = UIImageView()
+    var currentScore = 0
     func startPopcornGame() {
            hideButtonQuestions()
            //self.present(popcornViewController, animated: true, completion: nil)
         skipButton.isHidden = true
+        popcornCountLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 50)
+        popcornCountLabel.text = "0"
+        view.addSubview(popcornCountLabel)
         let basketImageView = UIImageView()
         basketImageView.isUserInteractionEnabled = true
         basketImageView.frame = CGRect(x: 100, y: 280, width: 150, height: 150)
         basketImageView.image = UIImage(named: "popcornContainer")
         self.view.addSubview(basketImageView)
+        pCounterImageView.frame = CGRect(x: 760, y: 250, width: 200, height: 200)
+        pCounterImageView.image = UIImage(named: "kernel")
+        self.view.addSubview(pCounterImageView)
         basketImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.moveBasket(_:))))
         view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
@@ -861,6 +870,11 @@ class BackgroundSelect: UIViewController {
             self.view.addSubview(kernelImageView)
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (t2) in
                 kernelImageView.center.y += 1
+                if kernelImageView.center.x - 50 > basketImageView.center.x - 75 && kernelImageView.center.x + 50 < basketImageView.center.x + 75 && kernelImageView.center.y > basketImageView.center.y - 75 {
+                    self.currentScore += 1
+                    self.popcornCountLabel.text = "\(self.currentScore)"
+                    kernelImageView.center.y = -100000
+                }
             })
         }
     }
