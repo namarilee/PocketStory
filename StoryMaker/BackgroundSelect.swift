@@ -714,13 +714,10 @@ class BackgroundSelect: UIViewController {
     var purpleLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var blueLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var orangeLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-//    var colorLabels = [UILabel]()
-//    var randomColor = Int.random(in: 0...4)
-//
     func hideHotdogGame() {
         foodGameLabel.isHidden = true
         progressImageView.isHidden = true
-        foodGameImageView.isHidden = false
+        foodGameImageView.isHidden = true
         redLabel.isHidden = true
         greenLabel.isHidden = true
         purpleLabel.isHidden = true
@@ -758,14 +755,10 @@ class BackgroundSelect: UIViewController {
         foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
         foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
 
-//        randomColor = Int.random(in: 0...4)
-//        colorLabels[randomColor].frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
-//        colorLabels[randomColor].isHidden = false
         self.foodGameImageView.isHidden = false
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
               switch self.currentAnimation {
                case 0:
-              //  self.colorLabels[self.randomColor].transform = CGAffineTransform(translationX: -800, y: 0.00001)
                 self.foodGameImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
                 self.num1.transform = .identity
                 self.num2.transform = .identity
@@ -806,27 +799,7 @@ class BackgroundSelect: UIViewController {
         foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
         foodGameLabel.text = "Match the color!"
         view.addSubview(foodGameLabel)
-//        redLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-//        redLabel.textColor = #colorLiteral(red: 0.8862745098, green: 0, blue: 0, alpha: 1)
-//        redLabel.text = "Red"
-//        greenLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-//        greenLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-//        greenLabel.text = "Green"
-//        purpleLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-//        purpleLabel.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-//        purpleLabel.text = "Purple"
-//        blueLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-//        blueLabel.textColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-//        blueLabel.text = "Blue"
-//        orangeLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 45)
-//        orangeLabel.textColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-//        orangeLabel.text = "Orange"
-//        colorLabels.append(redLabel)
-//        colorLabels.append(greenLabel)
-//        colorLabels.append(purpleLabel)
-//        colorLabels.append(blueLabel)
-//        colorLabels.append(orangeLabel)
-//        view.addSubview(colorLabels[randomColor])
+
         num1.frame = CGRect(x: 90, y: 250, width: 130, height: 130)
         let num1Image = UIImage(named: "redHotdog")
         num1.setImage(num1Image, for: .normal)
@@ -860,8 +833,14 @@ class BackgroundSelect: UIViewController {
     
 
     func hotdogGame() {
-       // userAnswers.food = "pizza"
        showHotdogGame()
+    }
+  //  let popcornGame: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+  //  let popcornViewController = popcornGame.instantiateViewController(withIdentifier: "Hungry") as! BackgroundSelect
+
+    func startPopcornGame() {
+           hideButtonQuestions()
+           //self.present(popcornViewController, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -901,10 +880,7 @@ class BackgroundSelect: UIViewController {
     
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
-    
-    
     @IBAction func backgroundButtonClicked(_ sender: UIButton) {
-        
         
         questionLabel.text = questions[row]
         
@@ -967,8 +943,12 @@ class BackgroundSelect: UIViewController {
             pizzaGame()
             
         }
-        if userAnswers.food == "hotdog" {
+        if userAnswers.food == "Hotdog" {
+            showHotdogGame()
             hotdogGame()
+        }
+        if userAnswers.food == "Popcorn" {
+            startPopcornGame()
         }
     }
     
@@ -1074,7 +1054,7 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
         print("lol")
         self.count = 4
         print(count)
-        hotdogGame()
+        startPopcornGame()
 
     }
     

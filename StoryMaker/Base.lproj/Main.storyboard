@@ -36,30 +36,13 @@
             </objects>
             <point key="canvasLocation" x="1074" y="1638"/>
         </scene>
-        <!--View Controller-->
+        <!--Background Select-->
         <scene sceneID="RJI-al-vHn">
             <objects>
-                <viewController storyboardIdentifier="Hungry" id="IIj-b0-Doc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Hungry" id="IIj-b0-Doc" customClass="BackgroundSelect" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7o-PD-hhc">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm hungry! Let's get some food." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-hX-TQG">
-                                <rect key="frame" x="194" y="115" width="509" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="30"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU7-h7-67X">
-                                <rect key="frame" x="200" y="125" width="497" height="165"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Next button"/>
-                                <connections>
-                                    <segue destination="22n-44-0Dd" kind="presentation" id="vxE-VB-YI1"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.61568627450980395" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="d1h-BP-o4h"/>
                     </view>
@@ -242,7 +225,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Next button" width="960" height="720"/>
         <image name="Start button" width="960" height="720"/>
         <image name="gradient background" width="1920" height="1080"/>
     </resources>
