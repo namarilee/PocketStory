@@ -1199,6 +1199,7 @@ struct userAnswers {
     static var background = ""
     static var character = ""
     static var food = ""
+    static var game = ""
 }
 
 struct amusementPark {
