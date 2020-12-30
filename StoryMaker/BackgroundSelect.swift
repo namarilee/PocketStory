@@ -891,6 +891,7 @@ class BackgroundSelect: UIViewController {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                             self.hidePopcornGame()
                             self.greatJobImageView.isHidden = true
+                            self.questionLabel.text = "What would you like to play?"
                         }
                     }
                 }
