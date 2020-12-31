@@ -915,6 +915,8 @@ class BackgroundSelect: UIViewController {
         skipButton.isHidden = true
         view.addSubview(pingPong.paddle1)
         view.addSubview(pingPong.paddle2)
+        view.addSubview(pingPong.ball)
+
         pingPong.paddle2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.movePaddle(_:))))
 
     }
