@@ -58,7 +58,6 @@ class BackgroundSelect: UIViewController {
         ["Amusement", "School", "Farm"],
         ["dog",  "cat",  "cow"],
         ["pizza", "Hotdog", "Popcorn"],
-        ["Merry-go-round", "Rollercoaster", "Ferris wheel"],
         ["Ping pong", "Xylophone", "Basketball"]
     ]
     
@@ -118,6 +117,7 @@ class BackgroundSelect: UIViewController {
     var count = 0
     
     var currentAnimation = 0
+    var pingPong = PingPong()
     
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -905,6 +905,10 @@ class BackgroundSelect: UIViewController {
          //kernelImageView.isHidden = true
          showButtonQuestions()
      }
+    func pong() {
+        pingPong.startPongGame()
+        view.addSubview(pingPong.paddle1)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -952,10 +956,13 @@ class BackgroundSelect: UIViewController {
         userAnswers.character = sender.title (for: .normal)!
         
         userAnswers.food = sender.title (for: .normal)!
-        
+        userAnswers.game = sender.title (for: .normal)!
+
         print(userAnswers.background)
         print(userAnswers.character)
         print(userAnswers.food)
+        print(userAnswers.game)
+
 
         /*  if userAnswers.character == "dog" {
          showChooseButton1()
@@ -1012,6 +1019,9 @@ class BackgroundSelect: UIViewController {
         }
         if userAnswers.food == "Popcorn" {
             startPopcornGame()
+        }
+        if userAnswers.game == "Ping pong" {
+            PingPong().startPongGame()
         }
     }
     
@@ -1115,10 +1125,11 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
     
     @IBAction func skipClicked(_ sender: UIButton) {
         print("lol")
-        self.count = 4
-        print(count)
-        startPopcornGame()
-
+       // self.count = 4
+       // print(count)
+        hideButtonQuestions()
+        pong()
+       // startPopcornGame()
     }
     
     @IBAction func Button1Clicked(_ sender: UIButton) {
