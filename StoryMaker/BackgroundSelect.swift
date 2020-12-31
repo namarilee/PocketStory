@@ -905,11 +905,17 @@ class BackgroundSelect: UIViewController {
          //kernelImageView.isHidden = true
          showButtonQuestions()
      }
+    @objc func movePaddle(_ recognizer: UIPanGestureRecognizer) {
+        let translation: CGPoint = recognizer.translation(in: self.view)
+        recognizer.view?.center = CGPoint(x: recognizer.view!.center.x, y: recognizer.view!.center.y + translation.y)
+        recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
+    }
     func pong() {
         pingPong.startPongGame()
         skipButton.isHidden = true
         view.addSubview(pingPong.paddle1)
         view.addSubview(pingPong.paddle2)
+        pingPong.paddle2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.movePaddle(_:))))
 
     }
     override func viewDidLoad() {
