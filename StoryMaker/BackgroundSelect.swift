@@ -907,7 +907,10 @@ class BackgroundSelect: UIViewController {
      }
     func pong() {
         pingPong.startPongGame()
+        skipButton.isHidden = true
         view.addSubview(pingPong.paddle1)
+        view.addSubview(pingPong.paddle2)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
