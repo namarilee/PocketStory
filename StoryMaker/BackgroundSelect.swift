@@ -916,6 +916,7 @@ class BackgroundSelect: UIViewController {
         view.addSubview(pingPong.paddle1)
         view.addSubview(pingPong.paddle2)
         view.addSubview(pingPong.ball)
+        view.addSubview(pingPong.pongScoreLabel)
 
         pingPong.paddle2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.movePaddle(_:))))
 
