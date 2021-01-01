@@ -1,4 +1,3 @@
 # PocketStory
 
-Hi! My name is Marina Lee and this is my Gold Award project. It is an iOS game for kids with autism or special needs that 
-teaches them skills taught in music therapy. Website coming soon!
+My Girl Scout Gold Award project
