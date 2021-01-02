@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -43,13 +43,13 @@
                     <view key="view" contentMode="scaleToFill" id="h7o-PD-hhc">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.90980392156862744" green="0.61568627450980395" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.80784313730000001" green="0.98431372549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="d1h-BP-o4h"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gef-uC-pQJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392" y="1796"/>
+            <point key="canvasLocation" x="1327" y="499"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="802-R7-Z4B">
@@ -168,6 +168,14 @@
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="IU7-ee-BAr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-vG-Swm">
+                                <rect key="frame" x="815" y="31" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="IIj-b0-Doc" kind="presentation" id="Vlc-68-cOu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83137254901960778" green="0.96078431372549022" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="4wC-HA-sT5"/>
@@ -185,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-Jw-j8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="559.82142857142856" y="895.6521739130435"/>
+            <point key="canvasLocation" x="633.48214285714278" y="605.79710144927537"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -195,9 +203,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient background" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-IW-kTZ">
-                                <rect key="frame" x="-146" y="-44" width="1189" height="502"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient background" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-IW-kTZ">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-oJ-sbK">
                                 <rect key="frame" x="334" y="239" width="228" height="162"/>
@@ -216,6 +223,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UZ7-IW-kTZ" secondAttribute="bottom" id="7Mh-6N-3jf"/>
+                            <constraint firstAttribute="trailing" secondItem="UZ7-IW-kTZ" secondAttribute="trailing" id="9F7-ct-ODQ"/>
+                            <constraint firstItem="UZ7-IW-kTZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KXa-NY-aJV"/>
+                            <constraint firstItem="UZ7-IW-kTZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MJl-fM-47W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
