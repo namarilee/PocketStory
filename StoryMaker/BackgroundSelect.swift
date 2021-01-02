@@ -282,25 +282,25 @@ class BackgroundSelect: UIViewController {
         storyTitle.numberOfLines = 0
     }
     func showChosenBackground() {
-        if userAnswers.background == "Amusement" {
-            view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
-        } else if userAnswers.background == "School" {
-            view.addBackground(imageName: school.imageName, contentMode: .scaleAspectFill)
-        } else if userAnswers.background == "Farm" {
-            view.addBackground(imageName: farm.imageName, contentMode: .scaleAspectFill)
+        if UserAnswers.background == "Amusement" {
+            view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
+        } else if UserAnswers.background == "School" {
+            view.addBackground(imageName: School.imageName, contentMode: .scaleAspectFill)
+        } else if UserAnswers.background == "Farm" {
+            view.addBackground(imageName: Farm.imageName, contentMode: .scaleAspectFill)
             
         }
     }
     
     func showChosenCharacter() {
-        if userAnswers.character == "dog" {
+        if UserAnswers.character == "dog" {
             chosenCharacter.image = UIImage(named: "dog")
             self.view.addSubview(chosenCharacter)
-        } else if userAnswers.character == "cat" {
+        } else if UserAnswers.character == "cat" {
             chosenCharacter.image = UIImage(named: "cat")
             chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
             self.view.addSubview(chosenCharacter)
-        } else if userAnswers.character == "cow" {
+        } else if UserAnswers.character == "cow" {
             chosenCharacter.image = UIImage(named: "cow")
             chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
             self.view.addSubview(chosenCharacter)
@@ -308,14 +308,14 @@ class BackgroundSelect: UIViewController {
     }
     
     func showChosenFood() {
-          if userAnswers.food == "pizza" {
+          if UserAnswers.food == "pizza" {
               chosenFood.image = UIImage(named: "pizza")
               self.view.addSubview(chosenFood)
-          } else if userAnswers.food == "hotdog" {
+          } else if UserAnswers.food == "hotdog" {
               chosenFood.image = UIImage(named: "hotdog")
               chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
               self.view.addSubview(chosenFood)
-          } else if userAnswers.food == "popcorn" {
+          } else if UserAnswers.food == "popcorn" {
               chosenFood.image = UIImage(named: "popcorn")
               chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
               self.view.addSubview(chosenFood)
@@ -962,17 +962,17 @@ class BackgroundSelect: UIViewController {
         
         questionLabel.text = questions[row]
         
-        userAnswers.background = sender.title (for: .normal)!
+        UserAnswers.background = sender.title (for: .normal)!
         
-        userAnswers.character = sender.title (for: .normal)!
+        UserAnswers.character = sender.title (for: .normal)!
         
-        userAnswers.food = sender.title (for: .normal)!
-        userAnswers.game = sender.title (for: .normal)!
+        UserAnswers.food = sender.title (for: .normal)!
+        UserAnswers.game = sender.title (for: .normal)!
 
-        print(userAnswers.background)
-        print(userAnswers.character)
-        print(userAnswers.food)
-        print(userAnswers.game)
+        print(UserAnswers.background)
+        print(UserAnswers.character)
+        print(UserAnswers.food)
+        print(UserAnswers.game)
 
 
         /*  if userAnswers.character == "dog" {
@@ -987,7 +987,7 @@ class BackgroundSelect: UIViewController {
         print(row)
         revertAll()
         Label1.backgroundColor = nil
-        if userAnswers.background == "Amusement" {
+        if UserAnswers.background == "Amusement" {
             hideButtonQuestions()
             //    view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
             showChosenBackground()
@@ -996,7 +996,7 @@ class BackgroundSelect: UIViewController {
             
             showSpeechBubble()
             
-            addMessageToSpeechBubble("Welcome to the " + amusementPark.name + "!")
+            addMessageToSpeechBubble("Welcome to the " + AmusementPark.name + "!")
             
             
             let helloImage = UIImage(named: "hello")
@@ -1005,9 +1005,9 @@ class BackgroundSelect: UIViewController {
             
         }
         
-        if userAnswers.character == "dog" || userAnswers.character == "cat" || userAnswers.character == "cow" {
+        if UserAnswers.character == "dog" || UserAnswers.character == "cat" || UserAnswers.character == "cow" {
             hideButtonQuestions()
-            view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
+            view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
             showChosenCharacter()
             showCaptionRect()
             captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
@@ -1020,18 +1020,18 @@ class BackgroundSelect: UIViewController {
                 
             }
         }
-        if userAnswers.food == "pizza" {
+        if UserAnswers.food == "pizza" {
             pizzaGame()
             
         }
-        if userAnswers.food == "Hotdog" {
+        if UserAnswers.food == "Hotdog" {
             showHotdogGame()
             hotdogGame()
         }
-        if userAnswers.food == "Popcorn" {
+        if UserAnswers.food == "Popcorn" {
             startPopcornGame()
         }
-        if userAnswers.game == "Ping pong" {
+        if UserAnswers.game == "Ping pong" {
             PingPong().startPongGame()
         }
     }
@@ -1119,16 +1119,16 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
         storyTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 40)
         storyTitle.textAlignment = .center
         view.addSubview(storyTitle)
-        showStoryTitle(Pup.name + "'s Amazing Day at the " + amusementPark.name)
+        showStoryTitle(Pup.name + "'s Amazing Day at the " + AmusementPark.name)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.dogWalkLeft()
             self.storyTitle.isHidden = true
-            self.view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
+            self.view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
             self.showCaptionRect()
             self.captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
             self.view.addSubview(self.captionLabel)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.updateCaption(Pup.name + " had an amazing day at the " + amusementPark.name + "!")
+                self.updateCaption(Pup.name + " had an amazing day at the " + AmusementPark.name + "!")
             }
         }
         
@@ -1218,25 +1218,25 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
     
 }
 
-struct userAnswers {
+struct UserAnswers {
     static var background = ""
     static var character = ""
     static var food = ""
     static var game = ""
 }
 
-struct amusementPark {
+struct AmusementPark {
     static var name = "Amusement Park"
     static var imageName = "amusement2"
     
 }
 
-struct school {
+struct School {
     static var name = "School"
     static var imageName = "school"
 }
 
-struct farm {
+struct Farm {
     static var name = "Farm"
     static var imageName = "farm"
 }
@@ -1260,10 +1260,12 @@ struct Pizza {
     static var name = "pizza"
     static var imageName = "pizza"
 }
+
 struct Hotdog {
     static var name = "hotdog"
     static var imageName = "hotdog"
 }
+
 struct Popcorn {
     static var name = "popcorn"
     static var imageName = "popcorn"
