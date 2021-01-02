@@ -211,13 +211,13 @@ class BackgroundSelect: UIViewController {
         questionLabel.text = questions[1]
         Label1.text = imageLabels[1][0]
         Label1.adjustsFontSizeToFitWidth = true
-        Button1.setTitle(answers[1][0] as? String, for: .normal)
+        Button1.setTitle(answers[1][0], for: .normal)
         Label2.text = imageLabels[1][1]
         Label2.adjustsFontSizeToFitWidth = true
-        Button2.setTitle(answers[1][1] as? String, for: .normal)
+        Button2.setTitle(answers[1][1], for: .normal)
         Label3.text = imageLabels[1][2]
         Label3.adjustsFontSizeToFitWidth = true
-        Button3.setTitle(answers[1][2] as? String, for: .normal)
+        Button3.setTitle(answers[1][2], for: .normal)
         Button1.setImage(UIImage(named: "dog"), for: .normal)
         Button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         Button2.setImage(UIImage(named: "cat"), for: .normal)
@@ -232,13 +232,13 @@ class BackgroundSelect: UIViewController {
            questionLabel.text = "Choose a food item!"
            Label1.text = imageLabels[2][0]
            Label1.adjustsFontSizeToFitWidth = true
-           Button1.setTitle(answers[2][0] as? String, for: .normal)
+           Button1.setTitle(answers[2][0], for: .normal)
            Label2.text = imageLabels[2][1]
            Label2.adjustsFontSizeToFitWidth = true
-           Button2.setTitle(answers[2][1] as? String, for: .normal)
+           Button2.setTitle(answers[2][1], for: .normal)
            Label3.text = imageLabels[2][2]
            Label3.adjustsFontSizeToFitWidth = true
-           Button3.setTitle(answers[2][2] as? String, for: .normal)
+           Button3.setTitle(answers[2][2], for: .normal)
            Button1.setImage(UIImage(named: "pizza"), for: .normal)
            Button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
            Button2.setImage(UIImage(named: "hotdog"), for: .normal)
@@ -938,9 +938,9 @@ class BackgroundSelect: UIViewController {
         Button3.setImage(UIImage(named: "farmButton"), for: .normal)
         Button3.imageView?.contentMode = .scaleAspectFit
         
-        Button1.setTitle(answers[row][0] as? String, for: .normal)
-        Button2.setTitle(answers[row][1] as? String, for: .normal)
-        Button3.setTitle(answers[row][2] as? String, for: .normal)
+        Button1.setTitle(answers[row][0], for: .normal)
+        Button2.setTitle(answers[row][1], for: .normal)
+        Button3.setTitle(answers[row][2], for: .normal)
         
         Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
         Button2.addTarget(self, action: #selector(Button2Clicked), for: .touchUpInside)
