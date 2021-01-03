@@ -29,7 +29,7 @@ class PingPong {
         pongScoreLabel.text = "0"
 
        // ball.translatesAutoresizingMaskIntoConstraints = false
-       // ball.centerXAnchor.constraint(equalTo: self.centerXAxisAnchor).isActive = true
+      //  ball.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
            // self.paddle1.frame = CGRect(x: 0 + self.pongBounds, y: 100, width: 200, height: 200)
            
