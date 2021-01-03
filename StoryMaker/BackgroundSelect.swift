@@ -30,17 +30,17 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
-    @IBOutlet weak var Button1: UIButton!
+    @IBOutlet weak var button1: UIButton!
     
-    @IBOutlet weak var Button2: UIButton!
+    @IBOutlet weak var button2: UIButton!
     
-    @IBOutlet weak var Button3: UIButton!
+    @IBOutlet weak var button3: UIButton!
     
-    @IBOutlet weak var Label1: UILabel!
+    @IBOutlet weak var label1: UILabel!
     
-    @IBOutlet weak var Label2: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
-    @IBOutlet weak var Label3: UILabel!
+    @IBOutlet weak var label3: UILabel!
     var answer0 = [
         "Amusement",
         "School",
@@ -121,26 +121,26 @@ class BackgroundSelect: UIViewController {
     
     func hideButtonQuestions() {
         questionLabel.isHidden = true
-        Button1.isHidden = true
-        Button2.isHidden = true
-        Button3.isHidden = true
+        button1.isHidden = true
+        button2.isHidden = true
+        button3.isHidden = true
         introLabel.isHidden = true
-        Label1.isHidden = true
-        Label2.isHidden = true
-        Label3.isHidden = true
+        label1.isHidden = true
+        label2.isHidden = true
+        label3.isHidden = true
         chooseButton.isHidden = true
         
     }
     
     func showButtonQuestions() {
         questionLabel.isHidden = false
-        Button1.isHidden = false
-        Button2.isHidden = false
-        Button3.isHidden = false
+        button1.isHidden = false
+        button2.isHidden = false
+        button3.isHidden = false
         introLabel.isHidden = false
-        Label1.isHidden = false
-        Label2.isHidden = false
-        Label3.isHidden = false
+        label1.isHidden = false
+        label2.isHidden = false
+        label3.isHidden = false
         view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
         view.removeBackground()
     }
@@ -209,43 +209,43 @@ class BackgroundSelect: UIViewController {
     func goToCharacterSelect() {
         view.removeBackground()
         questionLabel.text = questions[1]
-        Label1.text = imageLabels[1][0]
-        Label1.adjustsFontSizeToFitWidth = true
-        Button1.setTitle(answers[1][0], for: .normal)
-        Label2.text = imageLabels[1][1]
-        Label2.adjustsFontSizeToFitWidth = true
-        Button2.setTitle(answers[1][1], for: .normal)
-        Label3.text = imageLabels[1][2]
-        Label3.adjustsFontSizeToFitWidth = true
-        Button3.setTitle(answers[1][2], for: .normal)
-        Button1.setImage(UIImage(named: "dog"), for: .normal)
-        Button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        Button2.setImage(UIImage(named: "cat"), for: .normal)
-        Button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        Button3.setImage(UIImage(named: "cow"), for: .normal)
-        Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        label1.text = imageLabels[1][0]
+        label1.adjustsFontSizeToFitWidth = true
+        button1.setTitle(answers[1][0], for: .normal)
+        label2.text = imageLabels[1][1]
+        label2.adjustsFontSizeToFitWidth = true
+        button2.setTitle(answers[1][1], for: .normal)
+        label3.text = imageLabels[1][2]
+        label3.adjustsFontSizeToFitWidth = true
+        button3.setTitle(answers[1][2], for: .normal)
+        button1.setImage(UIImage(named: "dog"), for: .normal)
+        button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        button2.setImage(UIImage(named: "cat"), for: .normal)
+        button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        button3.setImage(UIImage(named: "cow"), for: .normal)
+        button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
     }
     
     func goToFoodSelect() {
            view.removeBackground()
            questionLabel.text = "Choose a food item!"
-           Label1.text = imageLabels[2][0]
-           Label1.adjustsFontSizeToFitWidth = true
-           Button1.setTitle(answers[2][0], for: .normal)
-           Label2.text = imageLabels[2][1]
-           Label2.adjustsFontSizeToFitWidth = true
-           Button2.setTitle(answers[2][1], for: .normal)
-           Label3.text = imageLabels[2][2]
-           Label3.adjustsFontSizeToFitWidth = true
-           Button3.setTitle(answers[2][2], for: .normal)
-           Button1.setImage(UIImage(named: "pizza"), for: .normal)
-           Button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           Button2.setImage(UIImage(named: "hotdog"), for: .normal)
-           Button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           Button3.setImage(UIImage(named: "popcorn"), for: .normal)
-           Button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
+           label1.text = imageLabels[2][0]
+           label1.adjustsFontSizeToFitWidth = true
+           button1.setTitle(answers[2][0], for: .normal)
+           label2.text = imageLabels[2][1]
+           label2.adjustsFontSizeToFitWidth = true
+           button2.setTitle(answers[2][1], for: .normal)
+           label3.text = imageLabels[2][2]
+           label3.adjustsFontSizeToFitWidth = true
+           button3.setTitle(answers[2][2], for: .normal)
+           button1.setImage(UIImage(named: "pizza"), for: .normal)
+           button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+           button2.setImage(UIImage(named: "hotdog"), for: .normal)
+           button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+           button3.setImage(UIImage(named: "popcorn"), for: .normal)
+           button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+           button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
            
            
        }
@@ -262,9 +262,9 @@ class BackgroundSelect: UIViewController {
     func revertAll() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
-            self.Button1.transform = . identity
-            self.Button2.transform = . identity
-            self.Button3.transform = . identity
+            self.button1.transform = . identity
+            self.button2.transform = . identity
+            self.button3.transform = . identity
             
         })
     }
@@ -927,23 +927,23 @@ class BackgroundSelect: UIViewController {
         
         questionLabel.adjustsFontSizeToFitWidth = true
         
-        Button1.setImage(UIImage(named: "amParkButton"), for: .normal)
+        button1.setImage(UIImage(named: "amParkButton"), for: .normal)
         
-        Button1.imageView?.contentMode = .scaleAspectFit
+        button1.imageView?.contentMode = .scaleAspectFit
         
-        Button2.setImage(UIImage(named: "schoolButton"), for: .normal)
-        Button2.imageView?.contentMode = .scaleAspectFit
+        button2.setImage(UIImage(named: "schoolButton"), for: .normal)
+        button2.imageView?.contentMode = .scaleAspectFit
         
-        Button3.setImage(UIImage(named: "farmButton"), for: .normal)
-        Button3.imageView?.contentMode = .scaleAspectFit
+        button3.setImage(UIImage(named: "farmButton"), for: .normal)
+        button3.imageView?.contentMode = .scaleAspectFit
         
-        Button1.setTitle(answers[row][0], for: .normal)
-        Button2.setTitle(answers[row][1], for: .normal)
-        Button3.setTitle(answers[row][2], for: .normal)
+        button1.setTitle(answers[row][0], for: .normal)
+        button2.setTitle(answers[row][1], for: .normal)
+        button3.setTitle(answers[row][2], for: .normal)
         
-        Button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
-        Button2.addTarget(self, action: #selector(Button2Clicked), for: .touchUpInside)
-        Button3.addTarget(self, action: #selector(Button3Clicked), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(Button2Clicked), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(Button3Clicked), for: .touchUpInside)
         
         /*  anywhereButton.backgroundColor = .blue
          self.view.addSubview(self.anywhereButton)
@@ -986,7 +986,7 @@ class BackgroundSelect: UIViewController {
         row += 1
         print(row)
         revertAll()
-        Label1.backgroundColor = nil
+        label1.backgroundColor = nil
         if UserAnswers.background == "Amusement" {
             hideButtonQuestions()
             //    view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
@@ -1148,9 +1148,9 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
             
             switch self.currentAnimation {
             case 0:
-                self.Button2.transform = .identity
-                self.Button3.transform = .identity
-                self.Button1.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.button2.transform = .identity
+                self.button3.transform = .identity
+                self.button1.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             default:
                 break
             }
@@ -1163,9 +1163,9 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             switch self.currentAnimation {
             case 0:
-                self.Button1.transform = .identity
-                self.Button3.transform = .identity
-                self.Button2.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.button1.transform = .identity
+                self.button3.transform = .identity
+                self.button2.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             default:
                 break
             }
@@ -1178,9 +1178,9 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
             
             switch self.currentAnimation {
             case 0:
-                self.Button2.transform = .identity
-                self.Button1.transform = .identity
-                self.Button3.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.button2.transform = .identity
+                self.button1.transform = .identity
+                self.button3.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             default:
                 break
             }
