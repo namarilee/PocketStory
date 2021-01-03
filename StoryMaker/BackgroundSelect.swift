@@ -41,58 +41,65 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var label2: UILabel!
     
     @IBOutlet weak var label3: UILabel!
-    var answer0 = [
+
+    let answer0 = [
         "Amusement",
         "School",
         "Farm"] as [Any]
     
-    var answer1 = [ "dog", "cat",  "cow"] as [Any]
+    let answer1 = [ "dog", "cat",  "cow"] as [Any]
     
-    var answer2 = ["pizza", "Hotdog", "Popcorn"] as [Any]
+    let answer2 = ["pizza", "Hotdog", "Popcorn"] as [Any]
     
-    var answer3 = ["Merry-go-round", "Rollercoaster", "Ferris wheel"]
+    let answer3 = ["Merry-go-round", "Rollercoaster", "Ferris wheel"]
     
-    var answer4 = ["Ping pong", "Xylophone", "Basketball"]
+    let answer4 = ["Ping pong", "Xylophone", "Basketball"]
     
-    var answers = [
+    let answers = [
         ["Amusement", "School", "Farm"],
         ["dog",  "cat",  "cow"],
         ["pizza", "Hotdog", "Popcorn"],
         ["Ping pong", "Xylophone", "Basketball"]
     ]
     
-    var questions =
+    let questions =
         ["Where would you like your story to be?",
          "Let's start building your story! Choose a character.",
          "Choose a food item!",
          "Choose a food item!",
          "What would you like to play?"]
     
-    var imageLabels = [
+    let imageLabels = [
         ["Amusement Park", "School", "Farm"],
         ["Pup", "Whiskers", "Bessie"],
         ["Pizza", "Hotdog", "Popcorn"]
     ]
     
-    var pizzaDisplays = [UIImage(named: "1pizza"), UIImage(named: "2pizza"), UIImage(named: "3pizza"), UIImage(named: "4pizza"), UIImage(named: "5pizza")]
-    var hotdogDisplays = [UIImage(named: "redHD"), UIImage(named: "greenHD"), UIImage(named: "purpleHD"), UIImage(named: "blueHD"), UIImage(named: "orangeHD")]
-    var gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
+    let pizzaDisplays = [UIImage(named: "1pizza"), UIImage(named: "2pizza"), UIImage(named: "3pizza"), UIImage(named: "4pizza"), UIImage(named: "5pizza")]
+
+    let hotdogDisplays = [UIImage(named: "redHD"), UIImage(named: "greenHD"), UIImage(named: "purpleHD"), UIImage(named: "blueHD"), UIImage(named: "orangeHD")]
+
+    let gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
     
     var row = 0
     
     var introLabel = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
     
-    var helloButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var promptButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
     
     var character =  UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
     
     var speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
+    
+    let speechBubbleButtonFrame = CGRect(x: 620, y: 330, width: 72, height: 54)
     
     var chooseButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
     
     var playMyStoryButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
     
     var captionRect = UIImageView(frame: CGRect(x: 250, y: 20, width: 416.5, height: 100))
+    
+    let captionButtonFrame = CGRect(x: 620, y: 100, width: 90, height: 54)
     
     var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 580, height: 200))
     
@@ -177,7 +184,7 @@ class BackgroundSelect: UIViewController {
     func hideIntro() {
         character.isHidden = true
         speechBubble.isHidden = true
-        helloButton.isHidden = true
+        promptButton.isHidden = true
         self.introLabel.removeFromSuperview()
     }
     
@@ -245,7 +252,7 @@ class BackgroundSelect: UIViewController {
            button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
            button3.setImage(UIImage(named: "popcorn"), for: .normal)
            button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
+           button1.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
            
            
        }
@@ -357,25 +364,43 @@ class BackgroundSelect: UIViewController {
         })
     }
     
-    func showHelloButton() {
-        helloButton.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
-                
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-        self.view.addSubview(self.helloButton)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                        
-            switch self.currentAnimation {
-                case 0:
-                    self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                   // self.helloButton.transform = .identity
-                default:
-                    break
-                        }
-                        
-                    })
-                }
-                helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
+    func showPromptButton(image: UIImage, frame: CGRect, delay: Double, animation: Int) {
+        promptButton.isHidden = true
+        promptButton.transform = .identity
+        promptButton.setImage(image, for: .normal)
+        promptButton.frame = frame
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.view.bringSubviewToFront(self.promptButton)
+            self.promptButton.isHidden = false
+            switch animation {
+            case 0:
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                    self.promptButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                })
+            case 1:
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                    self.promptButton.transform = CGAffineTransform(translationX: 0, y: 200)
+                })
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                    self.promptButton.transform = CGAffineTransform(translationX: 0, y: 100)
+                    self.promptButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                })
+            case 2:
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                    self.promptButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+                })
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                    self.promptButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+                })
+            default:
+                break;
+            }
+
+        }
+        promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
+
     var foodGameCount = 0
     var progressCount = 0
     func animateNumber(number: UIButton) {
@@ -941,9 +966,9 @@ class BackgroundSelect: UIViewController {
         button2.setTitle(answers[row][1], for: .normal)
         button3.setTitle(answers[row][2], for: .normal)
         
-        button1.addTarget(self, action: #selector(Button1Clicked), for: .touchUpInside)
-        button2.addTarget(self, action: #selector(Button2Clicked), for: .touchUpInside)
-        button3.addTarget(self, action: #selector(Button3Clicked), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(button2Clicked), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
         
         /*  anywhereButton.backgroundColor = .blue
          self.view.addSubview(self.anywhereButton)
@@ -998,11 +1023,9 @@ class BackgroundSelect: UIViewController {
             
             addMessageToSpeechBubble("Welcome to the " + AmusementPark.name + "!")
             
-            
-            let helloImage = UIImage(named: "hello")
-            helloButton.setImage(helloImage, for: .normal)
-            showHelloButton()
-            
+            promptButton.isHidden = true
+            view.addSubview(promptButton)
+            showPromptButton(image: UIImage(named: "hello")!, frame: speechBubbleButtonFrame, delay: 7, animation: 0)
         }
         
         if UserAnswers.character == "dog" || UserAnswers.character == "cat" || UserAnswers.character == "cow" {
@@ -1034,35 +1057,22 @@ class BackgroundSelect: UIViewController {
         }
     }
     
-    @IBAction func helloButtonClicked(_ sender: UIButton) {
+    @IBAction func promptButtonClicked(_ sender: UIButton) {
         count += 1
-        print(count)
+        print("COUNT: \(count)")
         
         if self.count == 1 {
             
             self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                self.helloButton.transform = CGAffineTransform(translationX: 0, y: 200)
-                
-            })
             self.introLabel.text = "Let's choose a character!"
             self.view.addSubview(self.introLabel)
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                
-                let helloImage = UIImage(named: "Next button")
-                self.helloButton.setImage(helloImage, for: .normal)
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.helloButton.transform = CGAffineTransform(translationX: 0, y: -100)
-                    self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                    
-                })
-            }
-            
+            showPromptButton(image: UIImage(named: "Next button")!, frame: speechBubbleButtonFrame, delay: 3, animation: 1)
         }
+
         if self.count == 2 {
-            self.helloButton.removeTarget(self, action: #selector(self.helloButtonClicked), for: .touchUpInside)
+            self.promptButton.removeTarget(self, action: #selector(self.promptButtonClicked), for: .touchUpInside)
             self.hideIntro()
             self.showButtonQuestions()
             self.goToCharacterSelect()
@@ -1076,7 +1086,7 @@ class BackgroundSelect: UIViewController {
         if self.count == 3 {
             row = 3
             view.addBackground(imageName: "order", contentMode: .scaleAspectFill)
-            self.helloButton.isHidden = true
+            self.promptButton.isHidden = true
             self.captionRect.isHidden = true
             self.character.isHidden = true
             self.captionLabel.isHidden = true
@@ -1092,15 +1102,11 @@ class BackgroundSelect: UIViewController {
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
 //           speechBubble.isHidden = false
             showSpeechBubble()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.helloButton.isHidden = false
-                let helloImage = UIImage(named: "hello")
-                self.helloButton.setImage(helloImage, for: .normal)
-                self.showHelloButton()
-            }
+            self.showPromptButton(image: UIImage(named: "hello")!, frame: self.speechBubbleButtonFrame, delay: 3, animation: 0)
         }
+
         if self.count == 4 {
-            helloButton.isHidden = true
+            promptButton.isHidden = true
             introLabel.isHidden = true
             self.hideIntro()
             self.showButtonQuestions()
@@ -1141,7 +1147,7 @@ class BackgroundSelect: UIViewController {
        // startPopcornGame()
     }
     
-    @IBAction func Button1Clicked(_ sender: UIButton) {
+    @IBAction func button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
             switch self.currentAnimation {
@@ -1157,7 +1163,7 @@ class BackgroundSelect: UIViewController {
         showChooseButton()
     }
     
-    @IBAction func Button2Clicked(_ sender: UIButton) {
+    @IBAction func button2Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             switch self.currentAnimation {
             case 0:
@@ -1171,7 +1177,7 @@ class BackgroundSelect: UIViewController {
         showChooseButton()
     }
     
-    @IBAction func Button3Clicked(_ sender: UIButton) {
+    @IBAction func button3Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
             switch self.currentAnimation {
@@ -1187,7 +1193,6 @@ class BackgroundSelect: UIViewController {
         showChooseButton()
     }
     
-    
     @IBAction func userClickedAnywhere(_ sender: Any) {
         
         revertAll()
@@ -1195,23 +1200,10 @@ class BackgroundSelect: UIViewController {
             view.addBackground(imageName: "snackShop", contentMode: .scaleAspectFill)
             
             updateCaption("Let's order some food!")
-            self.helloButton.isHidden = true
-            let helloImage = UIImage(named: "go button")
-            self.helloButton.setImage(helloImage, for: .normal)
-            helloButton.frame = CGRect(x: 620, y: 100, width: 90, height: 54)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.view.bringSubviewToFront(self.helloButton)
-                self.helloButton.isHidden = false
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                })
-            }
-            helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
+            showPromptButton(image: UIImage(named: "go button")!, frame: captionButtonFrame, delay: 2, animation: 2)
         }
         chooseButton.isHidden = true
     }
-    
     
 }
 
