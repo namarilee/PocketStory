@@ -94,7 +94,7 @@ class BackgroundSelect: UIViewController {
     
     var captionRect = UIImageView(frame: CGRect(x: 250, y: 20, width: 416.5, height: 100))
     
-    var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 620, height: 200))
+    var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 580, height: 200))
     
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
     
@@ -1015,9 +1015,7 @@ class BackgroundSelect: UIViewController {
                 self.view.addSubview(self.captionLabel)
                 self.captionLabel.adjustsFontSizeToFitWidth = true
                 self.captionLabel.numberOfLines = 0
-                self.captionLabel.animate(newText: self.captionLabel.text ?? "Let's start by having some lunch! Tap the screen to go to the snack shop.", characterDelay: 0.04)
-                //    self.updateCaption("Let's start by having some lunch! Tap to go to snack shop.")
-                
+                self.updateCaption("Let's start by having some lunch! Tap the screen to go to the snack shop.")
             }
         }
         if UserAnswers.food == "pizza" {
@@ -1043,14 +1041,14 @@ class BackgroundSelect: UIViewController {
         if self.count == 1 {
             
             self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
-UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-            self.helloButton.transform = CGAffineTransform(translationX: 0, y: 200)
-
-        })
-    self.introLabel.text = "Let's choose a character!"
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                self.helloButton.transform = CGAffineTransform(translationX: 0, y: 200)
+                
+            })
+            self.introLabel.text = "Let's choose a character!"
             self.view.addSubview(self.introLabel)
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
-        
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 
                 let helloImage = UIImage(named: "Next button")
@@ -1058,7 +1056,7 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                     self.helloButton.transform = CGAffineTransform(translationX: 0, y: -100)
                     self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-
+                    
                 })
             }
             
@@ -1094,13 +1092,13 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
             self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
 //           speechBubble.isHidden = false
             showSpeechBubble()
-       DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.helloButton.isHidden = false
-                    let helloImage = UIImage(named: "hello")
-                    self.helloButton.setImage(helloImage, for: .normal)
-                    self.showHelloButton()
-                }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.helloButton.isHidden = false
+                let helloImage = UIImage(named: "hello")
+                self.helloButton.setImage(helloImage, for: .normal)
+                self.showHelloButton()
             }
+        }
         if self.count == 4 {
             helloButton.isHidden = true
             introLabel.isHidden = true
@@ -1201,16 +1199,15 @@ UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initial
             let helloImage = UIImage(named: "go button")
             self.helloButton.setImage(helloImage, for: .normal)
             helloButton.frame = CGRect(x: 620, y: 100, width: 90, height: 54)
-                       
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.view.bringSubviewToFront(self.helloButton)
                 self.helloButton.isHidden = false
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                        self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                               
-                               
-                           })
-                       }
-                       helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
+                    self.helloButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                })
+            }
+            helloButton.addTarget(self, action: #selector(helloButtonClicked), for: .touchUpInside)
         }
         chooseButton.isHidden = true
     }
