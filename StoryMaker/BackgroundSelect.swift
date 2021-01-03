@@ -45,11 +45,11 @@ class BackgroundSelect: UIViewController {
     let answer0 = [
         "Amusement",
         "School",
-        "Farm"] as [Any]
+        "Farm"]
     
-    let answer1 = [ "dog", "cat",  "cow"] as [Any]
+    let answer1 = [ "dog", "cat",  "cow"]
     
-    let answer2 = ["pizza", "Hotdog", "Popcorn"] as [Any]
+    let answer2 = ["pizza", "Hotdog", "Popcorn"]
     
     let answer3 = ["Merry-go-round", "Rollercoaster", "Ferris wheel"]
     
@@ -85,7 +85,7 @@ class BackgroundSelect: UIViewController {
     
     var introLabel = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
     
-    var promptButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var promptButton = UIButton(type: UIButton.ButtonType.custom)
     
     var character =  UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
     
@@ -93,9 +93,9 @@ class BackgroundSelect: UIViewController {
     
     let speechBubbleButtonFrame = CGRect(x: 620, y: 330, width: 72, height: 54)
     
-    var chooseButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var chooseButton = UIButton(type: UIButton.ButtonType.custom)
     
-    var playMyStoryButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var playMyStoryButton = UIButton(type: UIButton.ButtonType.custom)
     
     var captionRect = UIImageView(frame: CGRect(x: 250, y: 20, width: 416.5, height: 100))
     
@@ -111,7 +111,7 @@ class BackgroundSelect: UIViewController {
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
-    var skipButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    var skipButton = UIButton(type: UIButton.ButtonType.custom)
 
     
   //  var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 620, height: 200))
@@ -208,10 +208,7 @@ class BackgroundSelect: UIViewController {
 //
 //                  })
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
-        
     }
-    
- 
     
     func goToCharacterSelect() {
         view.removeBackground()
@@ -231,7 +228,6 @@ class BackgroundSelect: UIViewController {
         button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         button3.setImage(UIImage(named: "cow"), for: .normal)
         button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        
     }
     
     func goToFoodSelect() {
@@ -253,8 +249,6 @@ class BackgroundSelect: UIViewController {
            button3.setImage(UIImage(named: "popcorn"), for: .normal)
            button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
            button1.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
-           
-           
        }
     
     func showCaptionRect() {
@@ -263,16 +257,13 @@ class BackgroundSelect: UIViewController {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
             self.captionRect.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         })
-        
     }
     
     func revertAll() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-            
             self.button1.transform = . identity
             self.button2.transform = . identity
             self.button3.transform = . identity
-            
         })
     }
     
@@ -288,6 +279,7 @@ class BackgroundSelect: UIViewController {
         storyTitle.adjustsFontSizeToFitWidth = true
         storyTitle.numberOfLines = 0
     }
+
     func showChosenBackground() {
         if UserAnswers.background == "Amusement" {
             view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
@@ -295,7 +287,6 @@ class BackgroundSelect: UIViewController {
             view.addBackground(imageName: School.imageName, contentMode: .scaleAspectFill)
         } else if UserAnswers.background == "Farm" {
             view.addBackground(imageName: Farm.imageName, contentMode: .scaleAspectFill)
-            
         }
     }
     
@@ -342,17 +333,11 @@ class BackgroundSelect: UIViewController {
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
                 self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
-                
-                
             })
             UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
                 self.dogHappy.alpha = 0
-                
-                
             })
-            
         }
-        
     }
     
     func dogWalkLeft() {
@@ -360,7 +345,6 @@ class BackgroundSelect: UIViewController {
         self.view.addSubview(chosenCharacter)
         UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             self.chosenCharacter.transform = CGAffineTransform(translationX: 100, y: -10)
-            
         })
     }
     
@@ -396,7 +380,6 @@ class BackgroundSelect: UIViewController {
             default:
                 break;
             }
-
         }
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
@@ -410,7 +393,6 @@ class BackgroundSelect: UIViewController {
             number.transform = .identity
             }
         })
-    
     }
 
     func animatePizzaQ() {
@@ -426,13 +408,13 @@ class BackgroundSelect: UIViewController {
             default:
                 break
             }
-              })
+        })
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.foodGameImageView.isHidden = true
         }
-
     }
+
     func reloadPizza() {
         greatJobImageView.isHidden = true
         foodGameCount += 1
@@ -477,6 +459,7 @@ class BackgroundSelect: UIViewController {
         darkImageView.isHidden = false
         greatJobImageView.isHidden = false
     }
+
     func hidePizzaGame() {
         foodGameLabel.isHidden = true
         foodGameImageView.isHidden = true
@@ -487,6 +470,7 @@ class BackgroundSelect: UIViewController {
         num4.isHidden = true
         num5.isHidden = true
     }
+
     func pizzaGame() {
         foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
         foodGameLabel.text = "How many pizza slices are there?"
@@ -537,7 +521,6 @@ class BackgroundSelect: UIViewController {
         num5.setImage(num5Image, for: .normal)
         view.addSubview(num5)
         num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
-      
     }
     
     @IBAction func num1Clicked(_ sender: UIButton) {
@@ -578,6 +561,7 @@ class BackgroundSelect: UIViewController {
             num1.alpha = 0.5
         }
     }
+
     @IBAction func num2Clicked(_ sender: UIButton) {
         animateNumber(number: num2)
         num1.alpha = 0.5
@@ -616,6 +600,7 @@ class BackgroundSelect: UIViewController {
         }
     
     }
+
     @IBAction func num3Clicked(_ sender: UIButton) {
         animateNumber(number: num3)
         num2.alpha = 0.5
@@ -654,6 +639,7 @@ class BackgroundSelect: UIViewController {
             num3.alpha = 0.5
         }
     }
+
     @IBAction func num4Clicked(_ sender: UIButton) {
     if foodGameImageView.image == pizzaDisplays[3] {
         animateNumber(number: num4)
@@ -695,6 +681,7 @@ class BackgroundSelect: UIViewController {
                num4.alpha = 0.5
            }
     }
+
     @IBAction func num5Clicked(_ sender: UIButton) {
         if foodGameImageView.image == pizzaDisplays[4] {
             animateNumber(number: num5)
@@ -736,11 +723,13 @@ class BackgroundSelect: UIViewController {
                num5.alpha = 0.5
            }
     }
+
     var redLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var greenLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var purpleLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var blueLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
     var orangeLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
+
     func hideHotdogGame() {
         foodGameLabel.isHidden = true
         progressImageView.isHidden = true
@@ -756,6 +745,7 @@ class BackgroundSelect: UIViewController {
         num4.isHidden = true
         num5.isHidden = true
     }
+
     func animateHotdogQ() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
                   switch self.currentAnimation {
@@ -774,6 +764,7 @@ class BackgroundSelect: UIViewController {
                 self.foodGameImageView.isHidden = true
             }
     }
+
     func reloadHotdog() {
         greatJobImageView.isHidden = true
         foodGameCount += 1
@@ -804,6 +795,7 @@ class BackgroundSelect: UIViewController {
               questionLabel.text = "What game would you like to play?"
                 }
     }
+
     func showHotdogGame() {
         foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
         foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
@@ -857,7 +849,6 @@ class BackgroundSelect: UIViewController {
             view.addSubview(num5)
             num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
     }
-    
 
     func hotdogGame() {
        showHotdogGame()
@@ -977,8 +968,6 @@ class BackgroundSelect: UIViewController {
         skipButton.setTitle("Tap me", for: .normal)
         view.addSubview(skipButton)
         skipButton.addTarget(self, action: #selector(skipClicked), for: .touchUpInside)
-
-        
     }
     
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
