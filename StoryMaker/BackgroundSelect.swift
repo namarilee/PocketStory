@@ -83,16 +83,22 @@ class BackgroundSelect: UIViewController {
     
     var row = 0
     
-    var introLabel = UILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
+    var introLabel = AnimatedUILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
     
     var promptButton = UIButton(type: UIButton.ButtonType.custom)
+    
+    var showPromptButtenWorkItem: DispatchWorkItem?
     
     var character =  UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
     
     var speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
     
     let speechBubbleButtonFrame = CGRect(x: 620, y: 330, width: 72, height: 54)
-    
+
+    var showSpeechBubbleWorkItem: DispatchWorkItem?
+
+    var addMessageToSpeechBubbleWorkItem: DispatchWorkItem?
+
     var chooseButton = UIButton(type: UIButton.ButtonType.custom)
     
     var playMyStoryButton = UIButton(type: UIButton.ButtonType.custom)
@@ -101,8 +107,10 @@ class BackgroundSelect: UIViewController {
     
     let captionButtonFrame = CGRect(x: 620, y: 100, width: 90, height: 54)
     
-    var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 580, height: 200))
+    var captionLabel = AnimatedUILabel(frame: CGRect(x: 170, y: -35, width: 580, height: 200))
     
+    var delayedCaptionWorkItem: DispatchWorkItem?
+
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
     
     var chosenCharacter =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
@@ -159,26 +167,27 @@ class BackgroundSelect: UIViewController {
             self.character.transform = CGAffineTransform(translationX: 0, y: -150)
         })
     }
-    
+
     func showSpeechBubble() {
         speechBubble.image = UIImage(named: "speechBubble")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        showSpeechBubbleWorkItem = DispatchWorkItem {
             self.view.addSubview(self.speechBubble)
-            
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                 self.speechBubble.transform = CGAffineTransform(scaleX: 2, y: 2)
             })
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: showSpeechBubbleWorkItem!)
     }
-    
+
     func addMessageToSpeechBubble(_ message: String) {
         self.introLabel.isHidden = false
         self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
         self.introLabel.text = message
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
             self.view.addSubview(self.introLabel)
-            self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
+            self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: addMessageToSpeechBubbleWorkItem!)
     }
     
     func hideIntro() {
@@ -268,10 +277,11 @@ class BackgroundSelect: UIViewController {
     }
     
     func updateCaption(_ caption: String) {
+        captionLabel.stopAnimation()
         captionLabel.text = caption
         captionLabel.adjustsFontSizeToFitWidth = true
         captionLabel.numberOfLines = 0
-        self.captionLabel.animate(newText: self.captionLabel.text ?? "", characterDelay: 0.07)
+        captionLabel.startAnimation(newText: self.captionLabel.text ?? "", characterDelay: 0.07)
     }
     
     func showStoryTitle(_ title: String) {
@@ -347,14 +357,14 @@ class BackgroundSelect: UIViewController {
             self.chosenCharacter.transform = CGAffineTransform(translationX: 100, y: -10)
         })
     }
-    
+
     func showPromptButton(image: UIImage, frame: CGRect, delay: Double, animation: Int) {
         promptButton.isHidden = true
         promptButton.transform = .identity
         promptButton.setImage(image, for: .normal)
         promptButton.frame = frame
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        showPromptButtenWorkItem = DispatchWorkItem {
             self.view.bringSubviewToFront(self.promptButton)
             self.promptButton.isHidden = false
             switch animation {
@@ -381,6 +391,7 @@ class BackgroundSelect: UIViewController {
                 break;
             }
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtenWorkItem!)
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
 
@@ -998,7 +1009,7 @@ class BackgroundSelect: UIViewController {
     
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         row += 1
-        print(row)
+        print("ROW: \(row)")
         revertAll()
         label1.backgroundColor = nil
         if UserAnswers.background == "Amusement" {
@@ -1023,12 +1034,13 @@ class BackgroundSelect: UIViewController {
             showChosenCharacter()
             showCaptionRect()
             captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            delayedCaptionWorkItem = DispatchWorkItem {
                 self.view.addSubview(self.captionLabel)
                 self.captionLabel.adjustsFontSizeToFitWidth = true
                 self.captionLabel.numberOfLines = 0
                 self.updateCaption("Let's start by having some lunch! Tap the screen to go to the snack shop.")
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
         }
         if UserAnswers.food == "pizza" {
             pizzaGame()
@@ -1055,7 +1067,7 @@ class BackgroundSelect: UIViewController {
             self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
             self.introLabel.text = "Let's choose a character!"
             self.view.addSubview(self.introLabel)
-            self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
+            self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
             
             showPromptButton(image: UIImage(named: "Next button")!, frame: speechBubbleButtonFrame, delay: 3, animation: 1)
         }
@@ -1084,13 +1096,8 @@ class BackgroundSelect: UIViewController {
             speechBubble.frame = CGRect(x: 300, y: -200, width: 750, height: 700)
             self.introLabel.isHidden = false
             introLabel.frame = CGRect(x: 540, y: -300, width: 400, height: 800)
-            self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
-            introLabel.numberOfLines = 4
-            self.introLabel.text = "Hi! My name is Bamboo and I will be your server today."
-            self.view.addSubview(self.introLabel)
-            self.introLabel.animate(newText: self.introLabel.text ?? "", characterDelay: 0.07)
-//           speechBubble.isHidden = false
             showSpeechBubble()
+            addMessageToSpeechBubble("Hi! My name is Bamboo and I will be your server today.")
             self.showPromptButton(image: UIImage(named: "hello")!, frame: self.speechBubbleButtonFrame, delay: 3, animation: 0)
         }
 
@@ -1183,12 +1190,25 @@ class BackgroundSelect: UIViewController {
     }
     
     @IBAction func userClickedAnywhere(_ sender: Any) {
-        
+        print("User Clicked Anywhere ROW: \(row)")
+        character.layer.removeAllAnimations()
+        showSpeechBubbleWorkItem?.perform()
+        showSpeechBubbleWorkItem?.cancel()
+        speechBubble.layer.removeAllAnimations()
+        addMessageToSpeechBubbleWorkItem?.perform()
+        addMessageToSpeechBubbleWorkItem?.cancel()
+        introLabel.stopAnimation()
+        showPromptButtenWorkItem?.perform()
+        showPromptButtenWorkItem?.cancel()
+        captionRect.layer.removeAllAnimations()
+        captionLabel.stopAnimation()
+        delayedCaptionWorkItem?.perform()
+        delayedCaptionWorkItem?.cancel()
         revertAll()
-        if row == 2 {
+        let captionText = "Let's order some food!"
+        if row == 2 && captionLabel.text != captionText {
             view.addBackground(imageName: "snackShop", contentMode: .scaleAspectFill)
-            
-            updateCaption("Let's order some food!")
+            updateCaption(captionText)
             showPromptButton(image: UIImage(named: "go button")!, frame: captionButtonFrame, delay: 2, animation: 2)
         }
         chooseButton.isHidden = true

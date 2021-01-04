@@ -16,6 +16,7 @@
 		7AFC373D23E78825009C6534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC373B23E78825009C6534 /* Main.storyboard */; };
 		7AFC373F23E7882B009C6534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC373E23E7882B009C6534 /* Assets.xcassets */; };
 		7AFC374223E7882B009C6534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC374023E7882B009C6534 /* LaunchScreen.storyboard */; };
+		90AAB9A625A2A27D000337AD /* AnimatedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7AFC373E23E7882B009C6534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AFC374123E7882B009C6534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AFC374323E7882B009C6534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedUILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				7AFC373E23E7882B009C6534 /* Assets.xcassets */,
 				7AFC374023E7882B009C6534 /* LaunchScreen.storyboard */,
 				7AFC374323E7882B009C6534 /* Info.plist */,
+				90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AFC373A23E78825009C6534 /* ViewController.swift in Sources */,
+				90AAB9A625A2A27D000337AD /* AnimatedUILabel.swift in Sources */,
 				7ABEE620259D084B0028B257 /* PingPong.swift in Sources */,
 				7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */,
 				7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */,
