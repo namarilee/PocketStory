@@ -74,7 +74,7 @@ class BackgroundSelect: UIViewController {
     var character =  UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
     
     var speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
-    
+
     let speechBubbleButtonFrame = CGRect(x: 620, y: 330, width: 72, height: 54)
 
     var showSpeechBubbleWorkItem: DispatchWorkItem?
@@ -89,8 +89,10 @@ class BackgroundSelect: UIViewController {
     
     let captionButtonFrame = CGRect(x: 620, y: 100, width: 90, height: 54)
     
-    var captionLabel = AnimatedUILabel(frame: CGRect(x: 170, y: -35, width: 580, height: 200))
-    
+    var captionLabel = AnimatedUILabel(frame: CGRect(x: 175, y: -30, width: 580, height: 200))
+
+    let bambooCaptionButtonFrame = CGRect(x: 720, y: 100, width: 72, height: 54)
+
     var delayedCaptionWorkItem: DispatchWorkItem?
 
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
@@ -163,9 +165,10 @@ class BackgroundSelect: UIViewController {
     }
 
     func addMessageToSpeechBubble(_ message: String) {
-        self.introLabel.isHidden = false
-        self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
-        self.introLabel.text = message
+        introLabel.isHidden = false
+        introLabel.numberOfLines = 0
+        introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
+        introLabel.text = message
         addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
             self.view.addSubview(self.introLabel)
             self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
@@ -1019,7 +1022,6 @@ class BackgroundSelect: UIViewController {
             captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
             delayedCaptionWorkItem = DispatchWorkItem {
                 self.view.addSubview(self.captionLabel)
-                self.captionLabel.adjustsFontSizeToFitWidth = true
                 self.captionLabel.numberOfLines = 0
                 self.updateCaption("Let's start by having some lunch! Tap the screen to go to the snack shop.")
             }
@@ -1076,12 +1078,12 @@ class BackgroundSelect: UIViewController {
             self.captionLabel.isHidden = true
             hideIntro()
             self.chosenCharacter.isHidden = true
-            speechBubble.frame = CGRect(x: 300, y: -200, width: 750, height: 700)
+            speechBubble.frame = CGRect(x: 250, y: -200, width: 750, height: 700)
             self.introLabel.isHidden = false
-            introLabel.frame = CGRect(x: 540, y: -300, width: 400, height: 800)
+            introLabel.frame = CGRect(x: 505, y: -335, width: 300, height: 800)
             showSpeechBubble()
             addMessageToSpeechBubble("Hi! My name is Bamboo and I will be your server today.")
-            self.showPromptButton(image: UIImage(named: "hello")!, frame: self.speechBubbleButtonFrame, delay: 3, animation: 0)
+            self.showPromptButton(image: UIImage(named: "hello")!, frame: self.bambooCaptionButtonFrame, delay: 7, animation: 0)
         }
 
         if self.count == 4 {
