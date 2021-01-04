@@ -7,24 +7,6 @@
 //
 
 import UIKit
-import SwiftUI
-extension UILabel {
-    
-    func animate(newText: String, characterDelay: TimeInterval) {
-        
-        DispatchQueue.main.async {
-            
-            self.text = ""
-            
-            for (index, character) in newText.enumerated() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + characterDelay * Double(index)) {
-                    self.text?.append(character)
-                }
-            }
-        }
-    }
-    
-}
 
 class BackgroundSelect: UIViewController {
     
@@ -172,6 +154,7 @@ class BackgroundSelect: UIViewController {
         speechBubble.image = UIImage(named: "speechBubble")
         showSpeechBubbleWorkItem = DispatchWorkItem {
             self.view.addSubview(self.speechBubble)
+            self.speechBubble.isHidden = false
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                 self.speechBubble.transform = CGAffineTransform(scaleX: 2, y: 2)
             })
