@@ -17,4 +17,12 @@ class Keyboard: UIViewController {
         super.viewDidLoad()
     }
     
+    // @IBAction func c1pressed(_ sender: Any) {
+    
+    @IBAction func c1pressed(_ sender: Any) {
+        
+        let url = Bundle.main.url(forResource: "c1piano", withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
 }
