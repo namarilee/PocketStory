@@ -2,11 +2,24 @@
 //  Keyboard.swift
 //  StoryMaker
 //
+<<<<<<< Updated upstream
+//  Created by Marina Lee on 1/3/21.
+=======
 //  Created by Marina Lee on 1/4/21.
+>>>>>>> Stashed changes
 //  Copyright © 2021 marinalee. All rights reserved.
 //
 
 import Foundation
+<<<<<<< Updated upstream
+import UIKit
+import AVFoundation
+
+class Keyboard: UIViewController {
+    
+}
+
+=======
 import AVFoundation
 import UIKit
 
@@ -18,3 +31,4 @@ class Keyboard: UIViewController {
     }
     
 }
+>>>>>>> Stashed changes
