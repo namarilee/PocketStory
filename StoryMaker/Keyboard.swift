@@ -25,4 +25,20 @@ class Keyboard: UIViewController {
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
     }
+    
+    
+    @IBAction func cpressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "c#piano", withExtension: "wav")
+           player = try! AVAudioPlayer(contentsOf: url!)
+           player.play()
+        
+    }
+    
+    
+    @IBAction func dpressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "dpiano", withExtension: "wav")
+           player = try! AVAudioPlayer(contentsOf: url!)
+           player.play()
+    }
+    
 }

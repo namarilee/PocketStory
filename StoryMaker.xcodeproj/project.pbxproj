@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */; };
+		7A399F4725BCC2D200153EFF /* c#piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A399F4625BCC2D200153EFF /* c#piano.wav */; };
+		7A399F4925BCC38F00153EFF /* dpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A399F4825BCC38F00153EFF /* dpiano.wav */; };
 		7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E53225A44727003ECDD3 /* Keyboard.swift */; };
 		7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A46E53725A44D97003ECDD3 /* c1piano.wav */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		7A399F4625BCC2D200153EFF /* c#piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "c#piano.wav"; path = "../../c#piano.wav"; sourceTree = "<group>"; };
+		7A399F4825BCC38F00153EFF /* dpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dpiano.wav; path = ../../dpiano.wav; sourceTree = "<group>"; };
 		7A46E53225A44727003ECDD3 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A46E53725A44D97003ECDD3 /* c1piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c1piano.wav; path = StoryMaker/sounds/c1piano.wav; sourceTree = SOURCE_ROOT; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
@@ -52,7 +56,9 @@
 		7A46E53625A44D76003ECDD3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				7A399F4625BCC2D200153EFF /* c#piano.wav */,
 				7A46E53725A44D97003ECDD3 /* c1piano.wav */,
+				7A399F4825BCC38F00153EFF /* dpiano.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 			files = (
 				7AFC374223E7882B009C6534 /* LaunchScreen.storyboard in Resources */,
 				7AFC373F23E7882B009C6534 /* Assets.xcassets in Resources */,
+				7A399F4725BCC2D200153EFF /* c#piano.wav in Resources */,
+				7A399F4925BCC38F00153EFF /* dpiano.wav in Resources */,
 				7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */,
 				7AFC373D23E78825009C6534 /* Main.storyboard in Resources */,
 			);
