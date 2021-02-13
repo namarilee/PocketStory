@@ -27,7 +27,7 @@ class Keyboard: UIViewController {
     }
     
     
-    @IBAction func cpressed(_ sender: Any) {
+    @IBAction func cSharpPressed(_ sender: Any) {
         let url = Bundle.main.url(forResource: "c#piano", withExtension: "wav")
            player = try! AVAudioPlayer(contentsOf: url!)
            player.play()
@@ -35,10 +35,45 @@ class Keyboard: UIViewController {
     }
     
     
-    @IBAction func dpressed(_ sender: Any) {
-        let url = Bundle.main.url(forResource: "dpiano", withExtension: "wav")
+   
+    @IBAction func dPressed(_ sender: Any) {
+    
+    let url = Bundle.main.url(forResource: "dpiano", withExtension: "wav")
            player = try! AVAudioPlayer(contentsOf: url!)
            player.play()
+    
+    }
+    
+    @IBAction func dSharpPressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "dsharppiano", withExtension: "wav")
+                 player = try! AVAudioPlayer(contentsOf: url!)
+                 player.play()
+    }
+    
+    
+    @IBAction func ePressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "epiano", withExtension: "wav")
+                 player = try! AVAudioPlayer(contentsOf: url!)
+                 player.play()
+    }
+    
+    @IBAction func fPressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "fpiano", withExtension: "wav")
+                 player = try! AVAudioPlayer(contentsOf: url!)
+                 player.play()
+    }
+    
+    
+    @IBAction func fSharpPressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "fsharppiano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
+    }
+    
+    @IBAction func gPressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "gpiano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
     }
     
 }

@@ -61,23 +61,32 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="D"/>
                                         <connections>
-                                            <action selector="dpressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="XU6-Fp-UsN"/>
+                                            <action selector="dPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="n0g-2T-hct"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Au-si-y6G">
                                         <rect key="frame" x="195.66666666666669" y="0.0" width="93" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="E"/>
+                                        <connections>
+                                            <action selector="ePressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="BZH-Wl-ndl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2q-hN-Rka">
                                         <rect key="frame" x="293.66666666666669" y="0.0" width="93" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="F"/>
+                                        <connections>
+                                            <action selector="fPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="NFw-An-xsU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-Ua-0gh">
                                         <rect key="frame" x="391.66666666666669" y="0.0" width="92.666666666666686" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="G"/>
+                                        <connections>
+                                            <action selector="gPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="Uqx-1k-aDe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekv-21-VlU">
                                         <rect key="frame" x="489.33333333333337" y="0.0" width="93" height="275"/>
@@ -96,44 +105,51 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="56" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLC-Sa-3hW">
-                                <rect key="frame" x="140" y="108" width="140" height="165"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="56" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLC-Sa-3hW">
+                                <rect key="frame" x="134" y="108" width="140" height="165"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKV-Hp-2jy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKV-Hp-2jy">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="165"/>
                                         <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="C#/D♭"/>
                                         <connections>
-                                            <action selector="cpressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="Xvc-st-7De"/>
+                                            <action selector="cSharpPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="Xvc-st-7De"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJy-DE-35e">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJy-DE-35e">
                                         <rect key="frame" x="98" y="0.0" width="42" height="165"/>
                                         <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="D#/E♭"/>
+                                        <connections>
+                                            <action selector="dSharpPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="JQ4-QT-tOt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAq-DQ-Xyw">
+                                <rect key="frame" x="633" y="108" width="41" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="A#/B♭"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMU-pD-wDa">
+                                <rect key="frame" x="438" y="108" width="40" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="F#/G♭"/>
+                                <connections>
+                                    <action selector="fSharpPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="tUX-7v-LO5"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-O4-baO">
-                                <rect key="frame" x="420" y="108" width="268" height="165"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMU-pD-wDa">
-                                        <rect key="frame" x="0.0" y="0.0" width="62.666666666666664" height="165"/>
-                                        <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="F#/G♭"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-wW-AN2">
-                                        <rect key="frame" x="102.6666666666667" y="0.0" width="62.666666666666671" height="165"/>
-                                        <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="G#/A♭"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAq-DQ-Xyw">
-                                        <rect key="frame" x="205.33333333333337" y="0.0" width="62.666666666666686" height="165"/>
-                                        <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="A#/B♭"/>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="394" y="108" width="40" height="165"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-wW-AN2">
+                                <rect key="frame" x="536" y="108" width="41" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="G#/A♭"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.98431372549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -142,7 +158,6 @@
                             <constraint firstItem="uLC-Sa-3hW" firstAttribute="top" secondItem="d1h-BP-o4h" secondAttribute="top" constant="108" id="JZk-WS-JVC"/>
                             <constraint firstItem="thv-63-UX1" firstAttribute="top" secondItem="d1h-BP-o4h" secondAttribute="top" constant="108" id="Kg0-Rw-XTU"/>
                             <constraint firstItem="hV9-O4-baO" firstAttribute="leading" secondItem="uLC-Sa-3hW" secondAttribute="trailing" constant="120" id="Q89-KC-kVi"/>
-                            <constraint firstItem="d1h-BP-o4h" firstAttribute="trailing" secondItem="hV9-O4-baO" secondAttribute="trailing" constant="190" id="WWK-Ii-whL"/>
                             <constraint firstAttribute="bottom" secondItem="thv-63-UX1" secondAttribute="bottom" constant="31" id="Wie-v2-Pcv"/>
                             <constraint firstItem="hV9-O4-baO" firstAttribute="top" secondItem="d1h-BP-o4h" secondAttribute="top" constant="108" id="gZ8-4x-XoR"/>
                             <constraint firstAttribute="trailing" secondItem="thv-63-UX1" secondAttribute="trailing" constant="49" id="jBh-Bt-0mX"/>
@@ -309,9 +324,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient background" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-IW-kTZ">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-oJ-sbK">
                                 <rect key="frame" x="334" y="239" width="228" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -328,13 +340,11 @@
                                 <color key="textColor" red="0.27450980392156865" green="0.25490196078431371" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient background" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-IW-kTZ">
+                                <rect key="frame" x="-285" y="-130" width="1519" height="544"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="UZ7-IW-kTZ" secondAttribute="bottom" id="7Mh-6N-3jf"/>
-                            <constraint firstAttribute="trailing" secondItem="UZ7-IW-kTZ" secondAttribute="trailing" id="9F7-ct-ODQ"/>
-                            <constraint firstItem="UZ7-IW-kTZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KXa-NY-aJV"/>
-                            <constraint firstItem="UZ7-IW-kTZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MJl-fM-47W"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
