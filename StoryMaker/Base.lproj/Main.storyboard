@@ -92,16 +92,25 @@
                                         <rect key="frame" x="489.33333333333337" y="0.0" width="93" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="A"/>
+                                        <connections>
+                                            <action selector="apressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="Ar9-7d-Nqe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW0-bT-DMd">
                                         <rect key="frame" x="587.33333333333337" y="0.0" width="92.666666666666629" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="B"/>
+                                        <connections>
+                                            <action selector="bpressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="sVn-xa-5D7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-67-1lv">
                                         <rect key="frame" x="685" y="0.0" width="93" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="C"/>
+                                        <connections>
+                                            <action selector="c2pressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="5a8-1s-wNT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -131,6 +140,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="A#/B♭"/>
+                                <connections>
+                                    <action selector="bflatpressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="9Xa-9W-nbC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMU-pD-wDa">
                                 <rect key="frame" x="438" y="108" width="40" height="165"/>
@@ -149,6 +161,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="G#/A♭"/>
+                                <connections>
+                                    <action selector="gsharppressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="L8K-9w-RTl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.98431372549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>

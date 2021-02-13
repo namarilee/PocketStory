@@ -76,4 +76,36 @@ class Keyboard: UIViewController {
                        player.play()
     }
     
+    @IBAction func gsharppressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "gsharppiano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
+    }
+    
+    
+    @IBAction func apressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "apiano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
+    }
+    
+    @IBAction func bflatpressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "bflatpiano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
+    }
+    
+    @IBAction func bpressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "bpiano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
+    }
+    
+    
+    @IBAction func c2pressed(_ sender: Any) {
+        let url = Bundle.main.url(forResource: "c2piano", withExtension: "wav")
+                       player = try! AVAudioPlayer(contentsOf: url!)
+                       player.play()
+    }
+    
 }
