@@ -23,7 +23,8 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var label2: UILabel!
     
     @IBOutlet weak var label3: UILabel!
-
+    @IBOutlet weak var keyboardButton: UIButton!
+    
     let answer0 = [
         "Amusement",
         "School",
@@ -958,6 +959,7 @@ class BackgroundSelect: UIViewController {
         button2.addTarget(self, action: #selector(button2Clicked), for: .touchUpInside)
         button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
         
+        keyboardButton.setImage(UIImage(named: "keyboard button"), for: .normal)
         /*  anywhereButton.backgroundColor = .blue
          self.view.addSubview(self.anywhereButton)
          anywhereButton.addTarget(self, action: #selector(userClickedAnywhere), for: .touchUpInside)*/

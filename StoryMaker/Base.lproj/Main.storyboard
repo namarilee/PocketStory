@@ -304,8 +304,8 @@
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="IU7-ee-BAr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-vG-Swm">
-                                <rect key="frame" x="815" y="31" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-vG-Swm">
+                                <rect key="frame" x="811" y="29" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -324,6 +324,7 @@
                         <outlet property="Label2" destination="1XG-pa-oJC" id="oZU-VK-bL4"/>
                         <outlet property="Label3" destination="Kcv-DY-ftA" id="SpH-d7-SWP"/>
                         <outlet property="anywhereButton" destination="k1C-IJ-3a4" id="DuK-l3-nbX"/>
+                        <outlet property="keyboardButton" destination="aFo-vG-Swm" id="Tgh-vR-1NA"/>
                         <outlet property="questionLabel" destination="uhv-y7-Ocg" id="iFC-to-dJa"/>
                     </connections>
                 </viewController>
