@@ -156,6 +156,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-O4-baO">
                                 <rect key="frame" x="394" y="108" width="40" height="165"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-Lg-dzE">
+                                <rect key="frame" x="51" y="41" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="flipHorizontal" id="yPW-bk-Kzd"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-wW-AN2">
                                 <rect key="frame" x="536" y="108" width="41" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -309,13 +317,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="IIj-b0-Doc" kind="presentation" id="Vlc-68-cOu"/>
+                                    <segue destination="IIj-b0-Doc" kind="presentation" modalTransitionStyle="flipHorizontal" id="Vlc-68-cOu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83137254901960778" green="0.96078431372549022" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="4wC-HA-sT5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hwz-vb-tNZ"/>
                     <connections>
                         <outlet property="Button1" destination="nBP-Q6-JLM" id="5JG-wV-WSi"/>
                         <outlet property="Button2" destination="ctI-9H-sZO" id="rqf-AX-sY6"/>
@@ -369,6 +378,10 @@
             <point key="canvasLocation" x="800.89285714285711" y="-239.13043478260872"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vlc-68-cOu"/>
+        <segue reference="yPW-bk-Kzd"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Start button" width="960" height="720"/>
         <image name="gradient background" width="1920" height="1080"/>
