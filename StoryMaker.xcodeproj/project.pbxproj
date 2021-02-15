@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A14483825D893A50080BBF6 /* gsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14483725D893A50080BBF6 /* gsharppiano.wav */; };
-		7A14483D25D895000080BBF6 /* apiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14483925D895000080BBF6 /* apiano.wav */; };
-		7A14483E25D895000080BBF6 /* bflatpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14483A25D895000080BBF6 /* bflatpiano.wav */; };
-		7A14483F25D895000080BBF6 /* c2piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14483B25D895000080BBF6 /* c2piano.wav */; };
-		7A14484025D895000080BBF6 /* bpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14483C25D895000080BBF6 /* bpiano.wav */; };
+		7A14484225DB0F8E0080BBF6 /* apiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484125DB0F8E0080BBF6 /* apiano.wav */; };
+		7A14484E25DB0FDF0080BBF6 /* dsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */; };
+		7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484425DB0FDE0080BBF6 /* bpiano.wav */; };
+		7A14485025DB0FDF0080BBF6 /* c2piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484525DB0FDE0080BBF6 /* c2piano.wav */; };
+		7A14485125DB0FDF0080BBF6 /* epiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484625DB0FDE0080BBF6 /* epiano.wav */; };
+		7A14485225DB0FDF0080BBF6 /* dpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484725DB0FDE0080BBF6 /* dpiano.wav */; };
+		7A14485325DB0FDF0080BBF6 /* fsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484825DB0FDE0080BBF6 /* fsharppiano.wav */; };
+		7A14485425DB0FDF0080BBF6 /* gsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */; };
+		7A14485525DB0FDF0080BBF6 /* fpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484A25DB0FDE0080BBF6 /* fpiano.wav */; };
+		7A14485625DB0FDF0080BBF6 /* c#piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484B25DB0FDE0080BBF6 /* c#piano.wav */; };
+		7A14485725DB0FDF0080BBF6 /* bflatpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */; };
+		7A14485825DB0FDF0080BBF6 /* gpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484D25DB0FDE0080BBF6 /* gpiano.wav */; };
 		7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */; };
-		7A399F4725BCC2D200153EFF /* c#piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A399F4625BCC2D200153EFF /* c#piano.wav */; };
-		7A399F4925BCC38F00153EFF /* dpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A399F4825BCC38F00153EFF /* dpiano.wav */; };
 		7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E53225A44727003ECDD3 /* Keyboard.swift */; };
 		7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A46E53725A44D97003ECDD3 /* c1piano.wav */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
-		7A94621A25C3A8D7003E0C53 /* epiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A94621925C3A8D7003E0C53 /* epiano.wav */; };
-		7A94621C25C3AA12003E0C53 /* fpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A94621B25C3AA12003E0C53 /* fpiano.wav */; };
-		7A94621E25C3AAB3003E0C53 /* dsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A94621D25C3AAB3003E0C53 /* dsharppiano.wav */; };
-		7A94622025C3AF64003E0C53 /* fsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A94621F25C3AF64003E0C53 /* fsharppiano.wav */; };
-		7A94622225C3B173003E0C53 /* gpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A94622125C3B173003E0C53 /* gpiano.wav */; };
 		7ABEE620259D084B0028B257 /* PingPong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEE61F259D084B0028B257 /* PingPong.swift */; };
 		7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373523E78825009C6534 /* AppDelegate.swift */; };
 		7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373723E78825009C6534 /* SceneDelegate.swift */; };
@@ -34,22 +34,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7A14483725D893A50080BBF6 /* gsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gsharppiano.wav; path = ../../gsharppiano.wav; sourceTree = "<group>"; };
-		7A14483925D895000080BBF6 /* apiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = apiano.wav; path = ../../apiano.wav; sourceTree = "<group>"; };
-		7A14483A25D895000080BBF6 /* bflatpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bflatpiano.wav; path = ../../bflatpiano.wav; sourceTree = "<group>"; };
-		7A14483B25D895000080BBF6 /* c2piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c2piano.wav; path = ../../c2piano.wav; sourceTree = "<group>"; };
-		7A14483C25D895000080BBF6 /* bpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bpiano.wav; path = ../../bpiano.wav; sourceTree = "<group>"; };
+		7A14484125DB0F8E0080BBF6 /* apiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = apiano.wav; path = StoryMaker/sounds/apiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dsharppiano.wav; path = StoryMaker/sounds/dsharppiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484425DB0FDE0080BBF6 /* bpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bpiano.wav; path = StoryMaker/sounds/bpiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484525DB0FDE0080BBF6 /* c2piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c2piano.wav; path = StoryMaker/sounds/c2piano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484625DB0FDE0080BBF6 /* epiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = epiano.wav; path = StoryMaker/sounds/epiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484725DB0FDE0080BBF6 /* dpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dpiano.wav; path = StoryMaker/sounds/dpiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484825DB0FDE0080BBF6 /* fsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fsharppiano.wav; path = StoryMaker/sounds/fsharppiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gsharppiano.wav; path = StoryMaker/sounds/gsharppiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484A25DB0FDE0080BBF6 /* fpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fpiano.wav; path = StoryMaker/sounds/fpiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484B25DB0FDE0080BBF6 /* c#piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "c#piano.wav"; path = "StoryMaker/sounds/c#piano.wav"; sourceTree = SOURCE_ROOT; };
+		7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bflatpiano.wav; path = StoryMaker/sounds/bflatpiano.wav; sourceTree = SOURCE_ROOT; };
+		7A14484D25DB0FDE0080BBF6 /* gpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gpiano.wav; path = StoryMaker/sounds/gpiano.wav; sourceTree = SOURCE_ROOT; };
 		7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		7A399F4625BCC2D200153EFF /* c#piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "c#piano.wav"; path = "../../c#piano.wav"; sourceTree = "<group>"; };
-		7A399F4825BCC38F00153EFF /* dpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dpiano.wav; path = ../../dpiano.wav; sourceTree = "<group>"; };
 		7A46E53225A44727003ECDD3 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A46E53725A44D97003ECDD3 /* c1piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c1piano.wav; path = StoryMaker/sounds/c1piano.wav; sourceTree = SOURCE_ROOT; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
-		7A94621925C3A8D7003E0C53 /* epiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = epiano.wav; path = ../../epiano.wav; sourceTree = "<group>"; };
-		7A94621B25C3AA12003E0C53 /* fpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fpiano.wav; path = ../../fpiano.wav; sourceTree = "<group>"; };
-		7A94621D25C3AAB3003E0C53 /* dsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dsharppiano.wav; path = ../../dsharppiano.wav; sourceTree = "<group>"; };
-		7A94621F25C3AF64003E0C53 /* fsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fsharppiano.wav; path = ../../fsharppiano.wav; sourceTree = "<group>"; };
-		7A94622125C3B173003E0C53 /* gpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gpiano.wav; path = ../../gpiano.wav; sourceTree = "<group>"; };
 		7ABEE61F259D084B0028B257 /* PingPong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingPong.swift; sourceTree = "<group>"; };
 		7AFC373223E78825009C6534 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC373523E78825009C6534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,19 +76,19 @@
 		7A46E53625A44D76003ECDD3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				7A399F4625BCC2D200153EFF /* c#piano.wav */,
 				7A46E53725A44D97003ECDD3 /* c1piano.wav */,
-				7A94621D25C3AAB3003E0C53 /* dsharppiano.wav */,
-				7A94621B25C3AA12003E0C53 /* fpiano.wav */,
-				7A399F4825BCC38F00153EFF /* dpiano.wav */,
-				7A94621F25C3AF64003E0C53 /* fsharppiano.wav */,
-				7A94621925C3A8D7003E0C53 /* epiano.wav */,
-				7A94622125C3B173003E0C53 /* gpiano.wav */,
-				7A14483725D893A50080BBF6 /* gsharppiano.wav */,
-				7A14483925D895000080BBF6 /* apiano.wav */,
-				7A14483A25D895000080BBF6 /* bflatpiano.wav */,
-				7A14483C25D895000080BBF6 /* bpiano.wav */,
-				7A14483B25D895000080BBF6 /* c2piano.wav */,
+				7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */,
+				7A14484425DB0FDE0080BBF6 /* bpiano.wav */,
+				7A14484B25DB0FDE0080BBF6 /* c#piano.wav */,
+				7A14484525DB0FDE0080BBF6 /* c2piano.wav */,
+				7A14484725DB0FDE0080BBF6 /* dpiano.wav */,
+				7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */,
+				7A14484625DB0FDE0080BBF6 /* epiano.wav */,
+				7A14484A25DB0FDE0080BBF6 /* fpiano.wav */,
+				7A14484825DB0FDE0080BBF6 /* fsharppiano.wav */,
+				7A14484D25DB0FDE0080BBF6 /* gpiano.wav */,
+				7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */,
+				7A14484125DB0F8E0080BBF6 /* apiano.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -187,22 +187,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A94621E25C3AAB3003E0C53 /* dsharppiano.wav in Resources */,
-				7A94622225C3B173003E0C53 /* gpiano.wav in Resources */,
+				7A14484E25DB0FDF0080BBF6 /* dsharppiano.wav in Resources */,
+				7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */,
+				7A14485625DB0FDF0080BBF6 /* c#piano.wav in Resources */,
 				7AFC374223E7882B009C6534 /* LaunchScreen.storyboard in Resources */,
+				7A14485825DB0FDF0080BBF6 /* gpiano.wav in Resources */,
+				7A14485225DB0FDF0080BBF6 /* dpiano.wav in Resources */,
+				7A14485025DB0FDF0080BBF6 /* c2piano.wav in Resources */,
+				7A14485725DB0FDF0080BBF6 /* bflatpiano.wav in Resources */,
 				7AFC373F23E7882B009C6534 /* Assets.xcassets in Resources */,
-				7A14483D25D895000080BBF6 /* apiano.wav in Resources */,
-				7A94621C25C3AA12003E0C53 /* fpiano.wav in Resources */,
-				7A94622025C3AF64003E0C53 /* fsharppiano.wav in Resources */,
-				7A94621A25C3A8D7003E0C53 /* epiano.wav in Resources */,
-				7A14483825D893A50080BBF6 /* gsharppiano.wav in Resources */,
-				7A399F4725BCC2D200153EFF /* c#piano.wav in Resources */,
-				7A399F4925BCC38F00153EFF /* dpiano.wav in Resources */,
-				7A14483F25D895000080BBF6 /* c2piano.wav in Resources */,
 				7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */,
-				7A14483E25D895000080BBF6 /* bflatpiano.wav in Resources */,
+				7A14485425DB0FDF0080BBF6 /* gsharppiano.wav in Resources */,
+				7A14485525DB0FDF0080BBF6 /* fpiano.wav in Resources */,
 				7AFC373D23E78825009C6534 /* Main.storyboard in Resources */,
-				7A14484025D895000080BBF6 /* bpiano.wav in Resources */,
+				7A14485325DB0FDF0080BBF6 /* fsharppiano.wav in Resources */,
+				7A14485125DB0FDF0080BBF6 /* epiano.wav in Resources */,
+				7A14484225DB0F8E0080BBF6 /* apiano.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
