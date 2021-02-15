@@ -1175,7 +1175,7 @@ class BackgroundSelect: UIViewController {
         
         showChooseButton()
     }
-    
+       
     @IBAction func userClickedAnywhere(_ sender: Any) {
         print("User Clicked Anywhere ROW: \(row)")
         character.layer.removeAllAnimations()
