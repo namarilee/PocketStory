@@ -24,6 +24,7 @@ class AnimatedUILabel: UILabel {
     func startAnimation(newText: String, characterDelay: TimeInterval) {
         self.newText = newText
         text = ""
+        isHidden = false
         for (index, character) in newText.enumerated() {
             let workItem = DispatchWorkItem {
                 self.text?.append(character)
