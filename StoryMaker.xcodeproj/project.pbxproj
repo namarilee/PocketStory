@@ -31,6 +31,12 @@
 		7AFC373F23E7882B009C6534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC373E23E7882B009C6534 /* Assets.xcassets */; };
 		7AFC374223E7882B009C6534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC374023E7882B009C6534 /* LaunchScreen.storyboard */; };
 		90AAB9A625A2A27D000337AD /* AnimatedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */; };
+		90AAB9DF25DB28EA000337AD /* PizzaGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9DE25DB28EA000337AD /* PizzaGameView.swift */; };
+		90AAB9E225DB40F3000337AD /* PizzaGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9E125DB40F3000337AD /* PizzaGameCoordinator.swift */; };
+		90AAB9E525DB60BA000337AD /* HotdogGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9E425DB60BA000337AD /* HotdogGameCoordinator.swift */; };
+		90AAB9E925DB6210000337AD /* HotdogGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9E825DB6210000337AD /* HotdogGameView.swift */; };
+		90AAB9F025DB965D000337AD /* PopcornGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9EF25DB965D000337AD /* PopcornGameCoordinator.swift */; };
+		90AAB9F325DB96B1000337AD /* PopcornGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9F225DB96B1000337AD /* PopcornGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,12 @@
 		7AFC374123E7882B009C6534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AFC374323E7882B009C6534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedUILabel.swift; sourceTree = "<group>"; };
+		90AAB9DE25DB28EA000337AD /* PizzaGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaGameView.swift; sourceTree = "<group>"; };
+		90AAB9E125DB40F3000337AD /* PizzaGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaGameCoordinator.swift; sourceTree = "<group>"; };
+		90AAB9E425DB60BA000337AD /* HotdogGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotdogGameCoordinator.swift; sourceTree = "<group>"; };
+		90AAB9E825DB6210000337AD /* HotdogGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotdogGameView.swift; sourceTree = "<group>"; };
+		90AAB9EF25DB965D000337AD /* PopcornGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcornGameCoordinator.swift; sourceTree = "<group>"; };
+		90AAB9F225DB96B1000337AD /* PopcornGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcornGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,12 @@
 				7AFC374023E7882B009C6534 /* LaunchScreen.storyboard */,
 				7AFC374323E7882B009C6534 /* Info.plist */,
 				90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */,
+				90AAB9DE25DB28EA000337AD /* PizzaGameView.swift */,
+				90AAB9E125DB40F3000337AD /* PizzaGameCoordinator.swift */,
+				90AAB9E425DB60BA000337AD /* HotdogGameCoordinator.swift */,
+				90AAB9E825DB6210000337AD /* HotdogGameView.swift */,
+				90AAB9EF25DB965D000337AD /* PopcornGameCoordinator.swift */,
+				90AAB9F225DB96B1000337AD /* PopcornGameView.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -214,11 +232,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AFC373A23E78825009C6534 /* ViewController.swift in Sources */,
+				90AAB9E225DB40F3000337AD /* PizzaGameCoordinator.swift in Sources */,
 				90AAB9A625A2A27D000337AD /* AnimatedUILabel.swift in Sources */,
 				7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */,
+				90AAB9F325DB96B1000337AD /* PopcornGameView.swift in Sources */,
+				90AAB9DF25DB28EA000337AD /* PizzaGameView.swift in Sources */,
+				90AAB9E525DB60BA000337AD /* HotdogGameCoordinator.swift in Sources */,
 				7ABEE620259D084B0028B257 /* PingPong.swift in Sources */,
 				7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */,
+				90AAB9F025DB965D000337AD /* PopcornGameCoordinator.swift in Sources */,
 				7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */,
+				90AAB9E925DB6210000337AD /* HotdogGameView.swift in Sources */,
 				7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */,
 				7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */,
 			);

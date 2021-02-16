@@ -23,6 +23,7 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var label2: UILabel!
     
     @IBOutlet weak var label3: UILabel!
+
     @IBOutlet weak var keyboardButton: UIButton!
     
     let answer0 = [
@@ -58,10 +59,6 @@ class BackgroundSelect: UIViewController {
         ["Pizza", "Hotdog", "Popcorn"]
     ]
     
-    let pizzaDisplays = [UIImage(named: "1pizza"), UIImage(named: "2pizza"), UIImage(named: "3pizza"), UIImage(named: "4pizza"), UIImage(named: "5pizza")]
-
-    let hotdogDisplays = [UIImage(named: "redHD"), UIImage(named: "greenHD"), UIImage(named: "purpleHD"), UIImage(named: "blueHD"), UIImage(named: "orangeHD")]
-
     let gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
     
     var row = 0
@@ -106,6 +103,7 @@ class BackgroundSelect: UIViewController {
     
     var skipButton = UIButton(type: UIButton.ButtonType.custom)
 
+    let numSelectors = [#selector(num1Clicked), #selector(num2Clicked), #selector(num3Clicked), #selector(num4Clicked), #selector(num5Clicked)]
     
   //  var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 620, height: 200))
 
@@ -113,6 +111,10 @@ class BackgroundSelect: UIViewController {
     //  var anywhereButton = UIButton(frame: CGRect(x: 0, y: 0, width: 900, height: 500))
     
     @IBOutlet weak var anywhereButton: UIButton!
+
+    var pizzaGameCoordinator: PizzaGameCoordinator? = nil
+    var hotdogGameCoordinator: HotdogGameCoordinator? = nil
+    var popcornGameCoordinator: PopcornGameCoordinator? = nil
     
     var count = 0
     
@@ -382,548 +384,52 @@ class BackgroundSelect: UIViewController {
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
 
-    var foodGameCount = 0
-    var progressCount = 0
-    func animateNumber(number: UIButton) {
-        UIView.animate(withDuration: 0.9, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
-            number.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            number.transform = .identity
-            }
-        })
-    }
-
-    func animatePizzaQ() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
-            switch self.currentAnimation {
-            case 0:
-                self.foodGameImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
-                self.num1.transform = CGAffineTransform(translationX: 0, y: 200)
-                self.num2.transform = CGAffineTransform(translationX: 0, y: 200)
-                self.num3.transform = CGAffineTransform(translationX: 0, y: 200)
-                self.num4.transform = CGAffineTransform(translationX: 0, y: 200)
-                self.num5.transform = CGAffineTransform(translationX: 0, y: 200)
-            default:
-                break
-            }
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            self.foodGameImageView.isHidden = true
-        }
-    }
-
-    func reloadPizza() {
-        greatJobImageView.isHidden = true
-        foodGameCount += 1
-        print("pizzaCount: ", foodGameCount)
-        progressImageView.image = gameProgressBar[foodGameCount]
-        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
-        foodGameImageView.image = pizzaDisplays[Int.random(in: 0...4)]
-        self.foodGameImageView.isHidden = false
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
-            switch self.currentAnimation {
-             case 0:
-              self.foodGameImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
-              self.num1.transform = .identity
-              self.num2.transform = .identity
-              self.num3.transform = .identity
-              self.num4.transform = .identity
-              self.num5.transform = .identity
-            default:
-                break
-            }
-        })
-        if foodGameCount == 5 {
-            self.hidePizzaGame()
-            showButtonQuestions()
-            view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
-            view.removeBackground()
-            questionLabel.text = "What game would you like to play?"
-              }
-    }
-    var foodGameLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
-    var foodGameImageView:UIImageView = UIImageView()
-    var progressImageView:UIImageView = UIImageView()
-    var darkImageView:UIImageView = UIImageView()
-    var num1 = UIButton(type: UIButton.ButtonType.custom) as UIButton
-    var num2 = UIButton(type: UIButton.ButtonType.custom) as UIButton
-    var num3 = UIButton(type: UIButton.ButtonType.custom) as UIButton
-    var num4 = UIButton(type: UIButton.ButtonType.custom) as UIButton
-    var num5 = UIButton(type: UIButton.ButtonType.custom) as UIButton
-    var greatJobImageView:UIImageView = UIImageView()
-    
-    func showGreatJob() {
-        darkImageView.isHidden = false
-        greatJobImageView.isHidden = false
-    }
-
-    func hidePizzaGame() {
-        foodGameLabel.isHidden = true
-        foodGameImageView.isHidden = true
-        progressImageView.isHidden = true
-        num1.isHidden = true
-        num2.isHidden = true
-        num3.isHidden = true
-        num4.isHidden = true
-        num5.isHidden = true
-    }
-
-    func pizzaGame() {
-        foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
-        foodGameLabel.text = "How many pizza slices are there?"
-        view.addSubview(foodGameLabel)
-        skipButton.isHidden = true
-        hideButtonQuestions()
-        view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
-        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
-        foodGameImageView.image = pizzaDisplays[Int.random(in: 0...4)]
-        view.addSubview(foodGameImageView)
-         progressImageView.frame = CGRect(x: 10, y: 100, width: 100, height: 200)
-        progressImageView.image = gameProgressBar[0]
-        view.addSubview(progressImageView)
-        darkImageView.image = UIImage(named: "darkFaded")
-        view.addSubview(darkImageView)
-        darkImageView.isHidden = true
-        greatJobImageView.frame = CGRect(x: 230, y: 100, width: 431.3, height: 204.6)
-        greatJobImageView.image = UIImage(named: "greatJob")
-        view.addSubview(greatJobImageView)
-        greatJobImageView.isHidden = true
-        //1
-        num1.frame = CGRect(x: 90, y: 250, width: 110, height: 110)
-        let num1Image = UIImage(named: "num1")
-        num1.setImage(num1Image, for: .normal)
-        view.addSubview(num1)
-        num1.addTarget(self, action: #selector(num1Clicked), for: .touchUpInside)
-        //2
-        num2.frame = CGRect(x: 240, y: 250, width: 110, height: 110)
-        let num2Image = UIImage(named: "num2")
-        num2.setImage(num2Image, for: .normal)
-        view.addSubview(num2)
-        num2.addTarget(self, action: #selector(num2Clicked), for: .touchUpInside)
-        //3
-        num3.frame = CGRect(x: 390, y: 250, width: 110, height: 110)
-        let num3Image = UIImage(named: "num3")
-        num3.setImage(num3Image, for: .normal)
-        view.addSubview(num3)
-        num3.addTarget(self, action: #selector(num3Clicked), for: .touchUpInside)
-        //4
-        num4.frame = CGRect(x: 540, y: 250, width: 110, height: 110)
-        let num4Image = UIImage(named: "num4")
-        num4.setImage(num4Image, for: .normal)
-        view.addSubview(num4)
-        num4.addTarget(self, action: #selector(num4Clicked), for: .touchUpInside)
-        //5
-        num5.frame = CGRect(x: 690, y: 250, width: 110, height: 110)
-        let num5Image = UIImage(named: "num5")
-        num5.setImage(num5Image, for: .normal)
-        view.addSubview(num5)
-        num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
-    }
-    
     @IBAction func num1Clicked(_ sender: UIButton) {
-        animateNumber(number: num1)
-        num2.alpha = 0.5
-        num3.alpha = 0.5
-        num4.alpha = 0.5
-        num5.alpha = 0.5
-        if foodGameImageView.image == pizzaDisplays[0] {
-          
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animatePizzaQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadPizza()
-                    self.num2.alpha = 1
-                    self.num3.alpha = 1
-                    self.num4.alpha = 1
-                    self.num5.alpha = 1
-                         }
-            }
-         
-        }
-     else if foodGameImageView.image == hotdogDisplays[0] {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animateHotdogQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadHotdog()
-                    self.num2.alpha = 1
-                    self.num3.alpha = 1
-                    self.num4.alpha = 1
-                    self.num5.alpha = 1
-                         }
-            }
-        }
-        else {
-            num1.alpha = 0.5
+        if (pizzaGameCoordinator != nil) {
+            pizzaGameCoordinator?.handleNumClicked(0)
+        } else if (hotdogGameCoordinator != nil) {
+            hotdogGameCoordinator?.handleNumClicked(0)
         }
     }
 
     @IBAction func num2Clicked(_ sender: UIButton) {
-        animateNumber(number: num2)
-        num1.alpha = 0.5
-        num3.alpha = 0.5
-        num4.alpha = 0.5
-        num5.alpha = 0.5
-
-        if foodGameImageView.image == pizzaDisplays[1] {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animatePizzaQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadPizza()
-                    self.num1.alpha = 1
-                    self.num3.alpha = 1
-                    self.num4.alpha = 1
-                    self.num5.alpha = 1
-                }
-            }
+        if (pizzaGameCoordinator != nil) {
+            pizzaGameCoordinator?.handleNumClicked(1)
+        } else if (hotdogGameCoordinator != nil) {
+            hotdogGameCoordinator?.handleNumClicked(1)
         }
-       else if foodGameImageView.image == hotdogDisplays[1] {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animateHotdogQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadHotdog()
-                    self.num1.alpha = 1
-                    self.num3.alpha = 1
-                    self.num4.alpha = 1
-                    self.num5.alpha = 1
-                }
-            }
-        }
-        else {
-            num2.alpha = 0.5
-        }
-    
     }
 
     @IBAction func num3Clicked(_ sender: UIButton) {
-        animateNumber(number: num3)
-        num2.alpha = 0.5
-        num1.alpha = 0.5
-        num4.alpha = 0.5
-        num5.alpha = 0.5
-    if foodGameImageView.image == pizzaDisplays[2] {
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.animatePizzaQ()
-            self.showGreatJob()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.reloadPizza()
-                self.num2.alpha = 1
-                self.num1.alpha = 1
-                self.num4.alpha = 1
-                self.num5.alpha = 1
-            }
-        }
-    }
-    else if foodGameImageView.image == hotdogDisplays[2] {
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animateHotdogQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadHotdog()
-                    self.num2.alpha = 1
-                    self.num1.alpha = 1
-                    self.num4.alpha = 1
-                    self.num5.alpha = 1
-                }
-            }
-        }
-    else {
-            num3.alpha = 0.5
+        if (pizzaGameCoordinator != nil) {
+            pizzaGameCoordinator?.handleNumClicked(2)
+        } else if (hotdogGameCoordinator != nil) {
+            hotdogGameCoordinator?.handleNumClicked(2)
         }
     }
 
     @IBAction func num4Clicked(_ sender: UIButton) {
-    if foodGameImageView.image == pizzaDisplays[3] {
-        animateNumber(number: num4)
-        num2.alpha = 0.5
-        num3.alpha = 0.5
-        num1.alpha = 0.5
-        num5.alpha = 0.5
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.animatePizzaQ()
-            self.showGreatJob()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.reloadPizza()
-                self.num2.alpha = 1
-                self.num3.alpha = 1
-                self.num1.alpha = 1
-                self.num5.alpha = 1
-            }
+        if (pizzaGameCoordinator != nil) {
+            pizzaGameCoordinator?.handleNumClicked(3)
+        } else if (hotdogGameCoordinator != nil) {
+            hotdogGameCoordinator?.handleNumClicked(3)
         }
-    }
-    else if foodGameImageView.image == hotdogDisplays[3] {
-            animateNumber(number: num4)
-            num2.alpha = 0.5
-            num3.alpha = 0.5
-            num1.alpha = 0.5
-            num5.alpha = 0.5
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animateHotdogQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadHotdog()
-                    self.num2.alpha = 1
-                    self.num3.alpha = 1
-                    self.num1.alpha = 1
-                    self.num5.alpha = 1
-                }
-            }
-        }
-    else {
-               num4.alpha = 0.5
-           }
     }
 
     @IBAction func num5Clicked(_ sender: UIButton) {
-        if foodGameImageView.image == pizzaDisplays[4] {
-            animateNumber(number: num5)
-            num2.alpha = 0.5
-            num3.alpha = 0.5
-            num4.alpha = 0.5
-            num1.alpha = 0.5
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.animatePizzaQ()
-                self.showGreatJob()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.reloadPizza()
-                    self.num2.alpha = 1
-                    self.num3.alpha = 1
-                    self.num4.alpha = 1
-                    self.num1.alpha = 1
-                }
-            }
-        }
-        else if foodGameImageView.image == hotdogDisplays[4] {
-                animateNumber(number: num5)
-                num2.alpha = 0.5
-                num3.alpha = 0.5
-                num4.alpha = 0.5
-                num1.alpha = 0.5
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.animateHotdogQ()
-                    self.showGreatJob()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.reloadHotdog()
-                        self.num2.alpha = 1
-                        self.num3.alpha = 1
-                        self.num4.alpha = 1
-                        self.num1.alpha = 1
-                    }
-                }
-            }
-        else {
-               num5.alpha = 0.5
-           }
-    }
-
-    var redLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-    var greenLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-    var purpleLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-    var blueLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-    var orangeLabel = UILabel(frame: CGRect(x: 400, y: 30, width: 620, height: 200))
-
-    func hideHotdogGame() {
-        foodGameLabel.isHidden = true
-        progressImageView.isHidden = true
-        foodGameImageView.isHidden = true
-        redLabel.isHidden = true
-        greenLabel.isHidden = true
-        purpleLabel.isHidden = true
-        blueLabel.isHidden = true
-        orangeLabel.isHidden = true
-        num1.isHidden = true
-        num2.isHidden = true
-        num3.isHidden = true
-        num4.isHidden = true
-        num5.isHidden = true
-    }
-
-    func animateHotdogQ() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options:[], animations: {
-                  switch self.currentAnimation {
-                  case 0:
-                   self.foodGameImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
-                      self.num1.transform = CGAffineTransform(translationX: 0, y: 200)
-                      self.num2.transform = CGAffineTransform(translationX: 0, y: 200)
-                      self.num3.transform = CGAffineTransform(translationX: 0, y: 200)
-                      self.num4.transform = CGAffineTransform(translationX: 0, y: 200)
-                      self.num5.transform = CGAffineTransform(translationX: 0, y: 200)
-                  default:
-                      break
-                  }
-                    })
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                self.foodGameImageView.isHidden = true
-            }
-    }
-
-    func reloadHotdog() {
-        greatJobImageView.isHidden = true
-        foodGameCount += 1
-        print("foodGameCount: ", foodGameCount)
-        progressImageView.image = gameProgressBar[foodGameCount]
-        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
-        foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
-
-        self.foodGameImageView.isHidden = false
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
-              switch self.currentAnimation {
-               case 0:
-                self.foodGameImageView.transform = CGAffineTransform(translationX: -800, y: 0.00001)
-                self.num1.transform = .identity
-                self.num2.transform = .identity
-                self.num3.transform = .identity
-                self.num4.transform = .identity
-                self.num5.transform = .identity
-              default:
-                  break
-              }
-          })
-          if foodGameCount == 5 {
-              self.hideHotdogGame()
-              showButtonQuestions()
-              view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
-              view.removeBackground()
-              questionLabel.text = "What game would you like to play?"
-                }
-    }
-
-    func showHotdogGame() {
-        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
-        foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
-        view.addSubview(foodGameImageView)
-        skipButton.isHidden = true
-        hideButtonQuestions()
-        view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
-        progressImageView.frame = CGRect(x: 10, y: 100, width: 100, height: 200)
-        progressImageView.image = gameProgressBar[0]
-        view.addSubview(progressImageView)
-        darkImageView.image = UIImage(named: "darkFaded")
-        view.addSubview(darkImageView)
-        darkImageView.isHidden = true
-        greatJobImageView.frame = CGRect(x: 230, y: 100, width: 431.3, height: 204.6)
-        greatJobImageView.image = UIImage(named: "greatJob")
-        view.addSubview(greatJobImageView)
-        greatJobImageView.isHidden = true
-        foodGameLabel.isHidden = false
-        foodGameLabel.frame = CGRect(x: 320, y: -40, width: 620, height: 200)
-        foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 30)
-        foodGameLabel.text = "Match the color!"
-        view.addSubview(foodGameLabel)
-
-        num1.frame = CGRect(x: 90, y: 250, width: 130, height: 130)
-        let num1Image = UIImage(named: "redHotdog")
-        num1.setImage(num1Image, for: .normal)
-        view.addSubview(num1)
-        num1.addTarget(self, action: #selector(num1Clicked), for: .touchUpInside)
-        
-        num2.frame = CGRect(x: 240, y: 250, width: 130, height: 130)
-        let num2Image = UIImage(named: "greenHotdog")
-        num2.setImage(num2Image, for: .normal)
-        view.addSubview(num2)
-        num2.addTarget(self, action: #selector(num2Clicked), for: .touchUpInside)
-
-        num3.frame = CGRect(x: 390, y: 250, width: 130, height: 130)
-        let num3Image = UIImage(named: "purpleHotdog")
-        num3.setImage(num3Image, for: .normal)
-        view.addSubview(num3)
-        num3.addTarget(self, action: #selector(num3Clicked), for: .touchUpInside)
-
-        num4.frame = CGRect(x: 540, y: 250, width: 130, height: 130)
-        let num4Image = UIImage(named: "blueHotdog")
-        num4.setImage(num4Image, for: .normal)
-        view.addSubview(num4)
-        num4.addTarget(self, action: #selector(num4Clicked), for: .touchUpInside)
-
-        num5.frame = CGRect(x: 690, y: 250, width: 130, height: 130)
-        let num5Image = UIImage(named: "orangeHotdog")
-        num5.setImage(num5Image, for: .normal)
-            view.addSubview(num5)
-            num5.addTarget(self, action: #selector(num5Clicked), for: .touchUpInside)
-    }
-
-    func hotdogGame() {
-       showHotdogGame()
-    }
-  //  let popcornGame: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-  //  let popcornViewController = popcornGame.instantiateViewController(withIdentifier: "Hungry") as! BackgroundSelect
-    @objc func moveBasket(_ recognizer: UIPanGestureRecognizer) {
-        let translation: CGPoint = recognizer.translation(in: self.view)
-        recognizer.view?.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y)
-        recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
-    }
-    var popcornCountLabel = UILabel(frame: CGRect(x: 760, y: 250, width: 620, height: 200))
-    let pCounterImageView = UIImageView()
-    var currentScore = 0
-    let basketImageView = UIImageView()
-
-    func startPopcornGame() {
-        hideButtonQuestions()
-        greatJobImageView.frame = CGRect(x: 230, y: 100, width: 431.3, height: 204.6)
-        greatJobImageView.image = UIImage(named: "greatJob")
-        view.addSubview(greatJobImageView)
-        greatJobImageView.isHidden = true
-           //self.present(popcornViewController, animated: true, completion: nil)
-        skipButton.isHidden = true
-        popcornCountLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 50)
-        popcornCountLabel.text = "0"
-        view.addSubview(popcornCountLabel)
-        basketImageView.isUserInteractionEnabled = true
-        basketImageView.frame = CGRect(x: 100, y: 280, width: 150, height: 150)
-        basketImageView.image = UIImage(named: "popcornContainer")
-        self.view.addSubview(basketImageView)
-        pCounterImageView.frame = CGRect(x: 750, y: 250, width: 200, height: 200)
-        pCounterImageView.image = UIImage(named: "kernel")
-        self.view.addSubview(pCounterImageView)
-        basketImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.moveBasket(_:))))
-        view.addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
-            let randomPopcorn = Int(arc4random_uniform(UInt32((Int)(UIScreen.main.bounds.size.width-100))) + 1)
-            let kernelImageView = UIImageView()
-            kernelImageView.frame = CGRect(x: randomPopcorn + 30, y: 30, width: 100, height: 100)
-            kernelImageView.image = UIImage(named: "kernel")
-            self.view.addSubview(kernelImageView)
-            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (t2) in
-                kernelImageView.center.y += 1
-                if kernelImageView.center.x - 50 > self.basketImageView.center.x - 75 && kernelImageView.center.x + 50 < self.basketImageView.center.x + 75 && kernelImageView.center.y > self.basketImageView.center.y - 75 {
-                    self.currentScore += 1
-                    self.popcornCountLabel.text = "\(self.currentScore)"
-                    kernelImageView.center.y = -100000
-                    if self.currentScore == 10 {
-                        kernelImageView.isHidden = true
-                        t1.invalidate()
-                        t2.invalidate()
-                        self.showGreatJob()
-                        self.basketImageView.isHidden = true
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                            self.hidePopcornGame()
-                            self.greatJobImageView.isHidden = true
-                            self.questionLabel.text = "What would you like to play?"
-                        }
-                    }
-                }
-            })
+        if (pizzaGameCoordinator != nil) {
+            pizzaGameCoordinator?.handleNumClicked(4)
+        } else if (hotdogGameCoordinator != nil) {
+            hotdogGameCoordinator?.handleNumClicked(4)
         }
     }
-    func hidePopcornGame() {
-         popcornCountLabel.isHidden = true
-         pCounterImageView.isHidden = true
-         basketImageView.isHidden = true
-         //kernelImageView.isHidden = true
-         showButtonQuestions()
-     }
+
     @objc func movePaddle(_ recognizer: UIPanGestureRecognizer) {
         let translation: CGPoint = recognizer.translation(in: self.view)
         recognizer.view?.center = CGPoint(x: recognizer.view!.center.x, y: recognizer.view!.center.y + translation.y)
         recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
     }
+
     func pong() {
         pingPong.startPongGame()
         skipButton.isHidden = true
@@ -934,6 +440,7 @@ class BackgroundSelect: UIViewController {
         pingPong.paddle2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.movePaddle(_:))))
 
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -968,7 +475,7 @@ class BackgroundSelect: UIViewController {
         view.addSubview(skipButton)
         skipButton.addTarget(self, action: #selector(skipClicked), for: .touchUpInside)
     }
-    
+
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
     @IBAction func backgroundButtonClicked(_ sender: UIButton) {
@@ -1029,16 +536,21 @@ class BackgroundSelect: UIViewController {
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
         }
+
+        skipButton.isHidden = true
+        hideButtonQuestions()
+
         if UserAnswers.food == "pizza" {
-            pizzaGame()
-            
+            pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
+            view = pizzaGameCoordinator?.loadView()
         }
         if UserAnswers.food == "Hotdog" {
-            showHotdogGame()
-            hotdogGame()
+            hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
+            view = hotdogGameCoordinator?.loadView()
         }
         if UserAnswers.food == "Popcorn" {
-            startPopcornGame()
+            popcornGameCoordinator = PopcornGameCoordinator(parent: self)
+            view = popcornGameCoordinator?.loadView()
         }
         if UserAnswers.game == "Ping pong" {
             PingPong().startPongGame()
