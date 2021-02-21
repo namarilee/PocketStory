@@ -189,22 +189,18 @@ class BackgroundSelect: UIViewController {
     func showChooseButton() {
         chooseButton.isHidden = false
         let chooseImage = UIImage(named: "selectButton")
-        chooseButton.frame = CGRect(x: 360, y: 320, width: 190, height: 51)
-        
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
-//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-//
-//                      switch self.currentAnimation {
-//                          case 0:
-//                            self.chooseButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-////                          case 1:
-////                              self.chooseButton.transform = .identity
-//                          default:
-//                              break
-//                      }
-//
-//                  })
+//        chooseButton.frame = CGRect(x: 360, y: 320, width: 190, height: 51)
+        chooseButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chooseButton.heightAnchor.constraint(equalTo: chooseButton.widthAnchor, multiplier: 51.0/190.0),
+            chooseButton.widthAnchor.constraint(equalToConstant: 190),
+            chooseButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.12),
+            chooseButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            NSLayoutConstraint(item: chooseButton, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.73, constant: 0)
+        ])
+
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
     }
     
