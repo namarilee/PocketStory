@@ -63,15 +63,15 @@ class BackgroundSelect: UIViewController {
     
     var row = 0
     
-    var introLabel = AnimatedUILabel(frame: CGRect(x: 320, y: 290, width: 500, height: 21))
+    var introLabel = AnimatedUILabel(frame: CGRect())
     
     var promptButton = UIButton(type: UIButton.ButtonType.custom)
     
     var showPromptButtenWorkItem: DispatchWorkItem?
     
-    var character =  UIImageView(frame: CGRect(x: 180, y: 450, width: 100, height: 150))
-    
-    var speechBubble = UIImageView(frame: CGRect(x: 220, y: 240, width: 500, height: 300))
+    var character =  UIImageView()
+
+    var speechBubble = UIImageView()
 
     let speechBubbleButtonFrame = CGRect(x: 620, y: 330, width: 72, height: 54)
 
@@ -148,17 +148,32 @@ class BackgroundSelect: UIViewController {
     }
     
     func showCharacter() {
-        character.image = UIImage(named: "dog")
         self.view.addSubview(character)
+        character.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            character.heightAnchor.constraint(equalTo: character.widthAnchor, multiplier: 150.0/100.0),
+            character.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35),
+            NSLayoutConstraint(item: character, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 0.51, constant: 0),
+            NSLayoutConstraint(item: character, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 2.5, constant: 0)
+        ])
+        character.image = UIImage(named: "dog")
         UIView.animate(withDuration: 1, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-            self.character.transform = CGAffineTransform(translationX: 0, y: -150)
+            self.character.transform = CGAffineTransform(translationX: 0, y: -(self.view.frame.height * 0.35))
         })
     }
 
     func showSpeechBubble() {
+        speechBubble.isHidden = true
+        view.addSubview(self.speechBubble)
+        speechBubble.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            speechBubble.heightAnchor.constraint(equalTo: speechBubble.widthAnchor, multiplier: 300.0/500.0),
+            speechBubble.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
+            NSLayoutConstraint(item: speechBubble, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.06, constant: 0),
+            NSLayoutConstraint(item: speechBubble, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.85, constant: 0)
+        ])
         speechBubble.image = UIImage(named: "speechBubble")
         showSpeechBubbleWorkItem = DispatchWorkItem {
-            self.view.addSubview(self.speechBubble)
             self.speechBubble.isHidden = false
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
                 self.speechBubble.transform = CGAffineTransform(scaleX: 2, y: 2)
@@ -172,8 +187,15 @@ class BackgroundSelect: UIViewController {
         introLabel.numberOfLines = 0
         introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
         introLabel.text = message
+        view.addSubview(self.introLabel)
+        introLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            introLabel.heightAnchor.constraint(equalTo: introLabel.widthAnchor, multiplier: 21.0/500.0),
+            introLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
+            NSLayoutConstraint(item: introLabel, attribute: .centerX, relatedBy: .equal, toItem: speechBubble, attribute: .centerX, multiplier: 1.4, constant: 0),
+            NSLayoutConstraint(item: introLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.45, constant: 0)
+        ])
         addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
-            self.view.addSubview(self.introLabel)
             self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: addMessageToSpeechBubbleWorkItem!)
@@ -191,11 +213,9 @@ class BackgroundSelect: UIViewController {
         let chooseImage = UIImage(named: "selectButton")
         chooseButton.setImage(chooseImage, for: .normal)
         self.view.addSubview(self.chooseButton)
-//        chooseButton.frame = CGRect(x: 360, y: 320, width: 190, height: 51)
         chooseButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             chooseButton.heightAnchor.constraint(equalTo: chooseButton.widthAnchor, multiplier: 51.0/190.0),
-            chooseButton.widthAnchor.constraint(equalToConstant: 190),
             chooseButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.12),
             chooseButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             NSLayoutConstraint(item: chooseButton, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.73, constant: 0)
@@ -347,7 +367,7 @@ class BackgroundSelect: UIViewController {
         promptButton.isHidden = true
         promptButton.transform = .identity
         promptButton.setImage(image, for: .normal)
-        promptButton.frame = frame
+//        promptButton.frame = frame
         
         showPromptButtenWorkItem = DispatchWorkItem {
             self.view.bringSubviewToFront(self.promptButton)
@@ -516,6 +536,13 @@ class BackgroundSelect: UIViewController {
             
             promptButton.isHidden = true
             view.addSubview(promptButton)
+            promptButton.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                promptButton.heightAnchor.constraint(equalTo: promptButton.widthAnchor, multiplier: 54.0/72.0),
+                promptButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14),
+                NSLayoutConstraint(item: promptButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.47, constant: 0),
+                NSLayoutConstraint(item: promptButton, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.7, constant: 0)
+            ])
             showPromptButton(image: UIImage(named: "hello")!, frame: speechBubbleButtonFrame, delay: 7, animation: 0)
         }
         
