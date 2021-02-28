@@ -465,6 +465,18 @@ class BackgroundSelect: UIViewController {
 
     let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
+    @IBAction func backgroundButtonClicked(_ sender: UIButton) {
+        questionLabel.text = questions[row]
+
+        UserAnswers.background = sender.title (for: .normal)!
+        UserAnswers.character = sender.title (for: .normal)!
+        UserAnswers.food = sender.title (for: .normal)!
+
+        print(UserAnswers.background)
+        print(UserAnswers.character)
+        print(UserAnswers.food)
+    }
+
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         row += 1
         print("ROW: \(row)")
