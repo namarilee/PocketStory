@@ -61,8 +61,6 @@ class BackgroundSelect: UIViewController {
         ["Pizza", "Hotdog", "Popcorn"]
     ]
     
-    let gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
-    
     var row = 0
     
     var introLabel = AnimatedUILabel(frame: CGRect())
@@ -103,13 +101,7 @@ class BackgroundSelect: UIViewController {
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
-    let numSelectors = [#selector(num1Clicked), #selector(num2Clicked), #selector(num3Clicked), #selector(num4Clicked), #selector(num5Clicked)]
-    
     @IBOutlet weak var anywhereButton: UIButton!
-
-    var pizzaGameCoordinator: PizzaGameCoordinator? = nil
-    var hotdogGameCoordinator: HotdogGameCoordinator? = nil
-    var popcornGameCoordinator: PopcornGameCoordinator? = nil
     
     var count = 0
     
@@ -237,28 +229,7 @@ class BackgroundSelect: UIViewController {
         button3.setImage(UIImage(named: "cow"), for: .normal)
         button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
     }
-    
-    func goToFoodSelect() {
-           view.removeBackground()
-           questionLabel.text = "Choose a food item!"
-           label1.text = imageLabels[2][0]
-           label1.adjustsFontSizeToFitWidth = true
-           button1.setTitle(answers[2][0], for: .normal)
-           label2.text = imageLabels[2][1]
-           label2.adjustsFontSizeToFitWidth = true
-           button2.setTitle(answers[2][1], for: .normal)
-           label3.text = imageLabels[2][2]
-           label3.adjustsFontSizeToFitWidth = true
-           button3.setTitle(answers[2][2], for: .normal)
-           button1.setImage(UIImage(named: "pizza"), for: .normal)
-           button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button2.setImage(UIImage(named: "hotdog"), for: .normal)
-           button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button3.setImage(UIImage(named: "popcorn"), for: .normal)
-           button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button1.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
-       }
-    
+
     func showCaptionRect() {
         captionRect.image = UIImage(named: "captionRect")
         self.view.addSubview(self.captionRect)
@@ -394,46 +365,6 @@ class BackgroundSelect: UIViewController {
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
 
-    @IBAction func num1Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(0)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(0)
-        }
-    }
-
-    @IBAction func num2Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(1)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(1)
-        }
-    }
-
-    @IBAction func num3Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(2)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(2)
-        }
-    }
-
-    @IBAction func num4Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(3)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(3)
-        }
-    }
-
-    @IBAction func num5Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(4)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(4)
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -463,7 +394,7 @@ class BackgroundSelect: UIViewController {
         pongButton.setTitle("Pong", for: .normal)
     }
 
-    let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
     @IBAction func backgroundButtonClicked(_ sender: UIButton) {
         questionLabel.text = questions[row]
@@ -521,19 +452,6 @@ class BackgroundSelect: UIViewController {
 
         pongButton.isHidden = true
         hideButtonQuestions()
-
-        if UserAnswers.food == "pizza" {
-            pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
-            view = pizzaGameCoordinator?.loadView()
-        }
-        if UserAnswers.food == "Hotdog" {
-            hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
-            view = hotdogGameCoordinator?.loadView()
-        }
-        if UserAnswers.food == "Popcorn" {
-            popcornGameCoordinator = PopcornGameCoordinator(parent: self)
-            view = popcornGameCoordinator?.loadView()
-        }
     }
     
     @IBAction func promptButtonClicked(_ sender: UIButton) {
@@ -583,7 +501,8 @@ class BackgroundSelect: UIViewController {
             introLabel.isHidden = true
             self.hideIntro()
             self.showButtonQuestions()
-            self.goToFoodSelect()
+            let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "FoodSelectViewController") as! FoodSelectViewController
+            self.present(nextViewController, animated:false, completion:nil)
         }
     }
     
@@ -717,19 +636,4 @@ struct Whiskers {
 struct Bessie {
     static var name = "Bessie"
     static var imageName = "cow"
-}
-
-struct Pizza {
-    static var name = "pizza"
-    static var imageName = "pizza"
-}
-
-struct Hotdog {
-    static var name = "hotdog"
-    static var imageName = "hotdog"
-}
-
-struct Popcorn {
-    static var name = "popcorn"
-    static var imageName = "popcorn"
 }
