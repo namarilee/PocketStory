@@ -26,6 +26,8 @@ class BackgroundSelect: UIViewController {
 
     @IBOutlet weak var keyboardButton: UIButton!
     
+    @IBOutlet weak var pongButton: UIButton!
+
     let answer0 = [
         "Amusement",
         "School",
@@ -59,8 +61,6 @@ class BackgroundSelect: UIViewController {
         ["Pizza", "Hotdog", "Popcorn"]
     ]
     
-    let gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
-    
     var row = 0
     
     var introLabel = AnimatedUILabel(frame: CGRect())
@@ -89,8 +89,6 @@ class BackgroundSelect: UIViewController {
     
     var captionLabel = AnimatedUILabel(frame: CGRect(x: 175, y: -30, width: 580, height: 200))
 
-    let bambooCaptionButtonFrame = CGRect(x: 720, y: 100, width: 72, height: 54)
-
     var delayedCaptionWorkItem: DispatchWorkItem?
 
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
@@ -101,25 +99,11 @@ class BackgroundSelect: UIViewController {
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
-    var skipButton = UIButton(type: UIButton.ButtonType.custom)
-
-    let numSelectors = [#selector(num1Clicked), #selector(num2Clicked), #selector(num3Clicked), #selector(num4Clicked), #selector(num5Clicked)]
-    
-  //  var captionLabel = UILabel(frame: CGRect(x: 170, y: -35, width: 620, height: 200))
-
-    
-    //  var anywhereButton = UIButton(frame: CGRect(x: 0, y: 0, width: 900, height: 500))
-    
     @IBOutlet weak var anywhereButton: UIButton!
-
-    var pizzaGameCoordinator: PizzaGameCoordinator? = nil
-    var hotdogGameCoordinator: HotdogGameCoordinator? = nil
-    var popcornGameCoordinator: PopcornGameCoordinator? = nil
     
     var count = 0
     
     var currentAnimation = 0
-    var pingPong = PingPong()
     
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -243,28 +227,7 @@ class BackgroundSelect: UIViewController {
         button3.setImage(UIImage(named: "cow"), for: .normal)
         button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
     }
-    
-    func goToFoodSelect() {
-           view.removeBackground()
-           questionLabel.text = "Choose a food item!"
-           label1.text = imageLabels[2][0]
-           label1.adjustsFontSizeToFitWidth = true
-           button1.setTitle(answers[2][0], for: .normal)
-           label2.text = imageLabels[2][1]
-           label2.adjustsFontSizeToFitWidth = true
-           button2.setTitle(answers[2][1], for: .normal)
-           label3.text = imageLabels[2][2]
-           label3.adjustsFontSizeToFitWidth = true
-           button3.setTitle(answers[2][2], for: .normal)
-           button1.setImage(UIImage(named: "pizza"), for: .normal)
-           button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button2.setImage(UIImage(named: "hotdog"), for: .normal)
-           button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button3.setImage(UIImage(named: "popcorn"), for: .normal)
-           button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-           button1.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
-       }
-    
+
     func showCaptionRect() {
         captionRect.image = UIImage(named: "captionRect")
         self.view.addSubview(self.captionRect)
@@ -400,63 +363,6 @@ class BackgroundSelect: UIViewController {
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
 
-    @IBAction func num1Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(0)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(0)
-        }
-    }
-
-    @IBAction func num2Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(1)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(1)
-        }
-    }
-
-    @IBAction func num3Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(2)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(2)
-        }
-    }
-
-    @IBAction func num4Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(3)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(3)
-        }
-    }
-
-    @IBAction func num5Clicked(_ sender: UIButton) {
-        if (pizzaGameCoordinator != nil) {
-            pizzaGameCoordinator?.handleNumClicked(4)
-        } else if (hotdogGameCoordinator != nil) {
-            hotdogGameCoordinator?.handleNumClicked(4)
-        }
-    }
-
-    @objc func movePaddle(_ recognizer: UIPanGestureRecognizer) {
-        let translation: CGPoint = recognizer.translation(in: self.view)
-        recognizer.view?.center = CGPoint(x: recognizer.view!.center.x, y: recognizer.view!.center.y + translation.y)
-        recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
-    }
-
-    func pong() {
-        pingPong.startPongGame()
-        skipButton.isHidden = true
-        view.addSubview(pingPong.paddle1)
-        view.addSubview(pingPong.paddle2)
-        view.addSubview(pingPong.ball)
-        view.addSubview(pingPong.pongScoreLabel)
-        pingPong.paddle2.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(BackgroundSelect.movePaddle(_:))))
-
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -483,41 +389,23 @@ class BackgroundSelect: UIViewController {
         button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
         
         keyboardButton.setImage(UIImage(named: "keyboard button"), for: .normal)
-        /*  anywhereButton.backgroundColor = .blue
-         self.view.addSubview(self.anywhereButton)
-         anywhereButton.addTarget(self, action: #selector(userClickedAnywhere), for: .touchUpInside)*/
-        skipButton.frame = CGRect(x: 360, y: 320, width: 190, height: 51)
-        skipButton.setTitle("Tap me", for: .normal)
-        view.addSubview(skipButton)
-        skipButton.addTarget(self, action: #selector(skipClicked), for: .touchUpInside)
+        pongButton.setTitle("Pong", for: .normal)
     }
 
-    let Mainstory : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-    
+    let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
     @IBAction func backgroundButtonClicked(_ sender: UIButton) {
-        
         questionLabel.text = questions[row]
-        
+
         UserAnswers.background = sender.title (for: .normal)!
-        
         UserAnswers.character = sender.title (for: .normal)!
-        
         UserAnswers.food = sender.title (for: .normal)!
-        UserAnswers.game = sender.title (for: .normal)!
 
         print(UserAnswers.background)
         print(UserAnswers.character)
         print(UserAnswers.food)
-        print(UserAnswers.game)
-
-
-        /*  if userAnswers.character == "dog" {
-         showChooseButton1()
-         print("character")
-         }*/
-        
     }
-    
+
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         row += 1
         print("ROW: \(row)")
@@ -560,24 +448,8 @@ class BackgroundSelect: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
         }
 
-        skipButton.isHidden = true
+        pongButton.isHidden = true
         hideButtonQuestions()
-
-        if UserAnswers.food == "pizza" {
-            pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
-            view = pizzaGameCoordinator?.loadView()
-        }
-        if UserAnswers.food == "Hotdog" {
-            hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
-            view = hotdogGameCoordinator?.loadView()
-        }
-        if UserAnswers.food == "Popcorn" {
-            popcornGameCoordinator = PopcornGameCoordinator(parent: self)
-            view = popcornGameCoordinator?.loadView()
-        }
-        if UserAnswers.game == "Ping pong" {
-            PingPong().startPongGame()
-        }
     }
     
     @IBAction func promptButtonClicked(_ sender: UIButton) {
@@ -585,7 +457,6 @@ class BackgroundSelect: UIViewController {
         print("COUNT: \(count)")
         
         if self.count == 1 {
-            
             self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
             self.introLabel.text = "Let's choose a character!"
             self.view.addSubview(self.introLabel)
@@ -607,29 +478,8 @@ class BackgroundSelect: UIViewController {
         }
         
         if self.count == 3 {
-            row = 3
-            view.addBackground(imageName: "order", contentMode: .scaleAspectFill)
-            self.promptButton.isHidden = true
-            self.captionRect.isHidden = true
-            self.character.isHidden = true
-            self.captionLabel.isHidden = true
-            hideIntro()
-            self.chosenCharacter.isHidden = true
-            speechBubble.frame = CGRect(x: 250, y: -200, width: 750, height: 700)
-            self.introLabel.isHidden = false
-            introLabel.frame = CGRect(x: 505, y: -335, width: 300, height: 800)
-            showSpeechBubble()
-            addMessageToSpeechBubble("Hi! My name is Bamboo and I will be your server today.")
-            self.showPromptButton(image: UIImage(named: "hello")!, frame: self.bambooCaptionButtonFrame, delay: 7, animation: 0)
-        }
-
-        if self.count == 4 {
-            promptButton.isHidden = true
-            introLabel.isHidden = true
-            self.hideIntro()
-            self.showButtonQuestions()
-            self.goToFoodSelect()
-
+            let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
+            self.present(nextViewController, animated:false, completion:nil)
         }
     }
     
@@ -653,18 +503,8 @@ class BackgroundSelect: UIViewController {
                 self.updateCaption(Pup.name + " had an amazing day at the " + AmusementPark.name + "!")
             }
         }
-        
     }
-    
-    @IBAction func skipClicked(_ sender: UIButton) {
-        print("lol")
-       // self.count = 4
-       // print(count)
-        hideButtonQuestions()
-        pong()
-       // startPopcornGame()
-    }
-    
+
     @IBAction func button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -742,7 +582,6 @@ struct UserAnswers {
     static var background = ""
     static var character = ""
     static var food = ""
-    static var game = ""
 }
 
 struct AmusementPark {
@@ -775,19 +614,3 @@ struct Bessie {
     static var name = "Bessie"
     static var imageName = "cow"
 }
-
-struct Pizza {
-    static var name = "pizza"
-    static var imageName = "pizza"
-}
-
-struct Hotdog {
-    static var name = "hotdog"
-    static var imageName = "hotdog"
-}
-
-struct Popcorn {
-    static var name = "popcorn"
-    static var imageName = "popcorn"
-}
-

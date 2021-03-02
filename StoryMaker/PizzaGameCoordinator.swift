@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class PizzaGameCoordinator {
-    private var parent: BackgroundSelect
+    private var parent: FoodSelectViewController
     private var numSelectors: [Selector]
     private var pizzaGameView: PizzaGameView?
     
-    init(parent: BackgroundSelect, numSelectors: [Selector]) {
+    init(parent: FoodSelectViewController, numSelectors: [Selector]) {
         self.parent = parent
         self.numSelectors = numSelectors
     }

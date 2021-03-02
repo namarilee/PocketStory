@@ -11,7 +11,7 @@ import UIKit
 
 class PopcornGameView: UIView {
 
-    private var parent: BackgroundSelect
+    private var parent: FoodSelectViewController
 
     let darkImageView = UIImageView()
     let greatJobImageView = UIImageView()
@@ -21,7 +21,7 @@ class PopcornGameView: UIView {
 
     var currentScore = 0
 
-    init(parent: BackgroundSelect) {
+    init(parent: FoodSelectViewController) {
         self.parent = parent
         super.init(frame: .zero)
 
@@ -63,7 +63,7 @@ class PopcornGameView: UIView {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                             self.hidePopcornGame()
                             self.greatJobImageView.isHidden = true
-                            parent.questionLabel.text = "What would you like to play?"
+//                            parent.questionLabel.text = "What would you like to play?"
                         }
                     }
                 }
@@ -86,7 +86,7 @@ class PopcornGameView: UIView {
         pCounterImageView.isHidden = true
         basketImageView.isHidden = true
         //kernelImageView.isHidden = true
-        parent.showButtonQuestions()
+//        parent.showButtonQuestions()
     }
 
     @objc func moveBasket(_ recognizer: UIPanGestureRecognizer) {

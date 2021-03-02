@@ -11,7 +11,7 @@ import UIKit
 
 class PizzaGameView: UIView {
 
-    private var parent: BackgroundSelect
+    private var parent: FoodSelectViewController
 
     let foodGameLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
     let foodGameImageView = UIImageView()
@@ -28,7 +28,7 @@ class PizzaGameView: UIView {
 
     var foodGameCount = 0
 
-    init(parent: BackgroundSelect, numSelectors: [Selector]) {
+    init(parent: FoodSelectViewController, numSelectors: [Selector]) {
         self.parent = parent
         super.init(frame: .zero)
 
@@ -136,10 +136,10 @@ class PizzaGameView: UIView {
         })
         if foodGameCount == 5 {
             hidePizzaGame()
-            parent.showButtonQuestions()
+//            parent.showButtonQuestions()
             backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
             removeBackground()
-            parent.questionLabel.text = "What game would you like to play?"
+//            parent.questionLabel.text = "What game would you like to play?"
             parent.pizzaGameCoordinator = nil
         }
     }
