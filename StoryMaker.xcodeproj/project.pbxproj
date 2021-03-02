@@ -38,6 +38,7 @@
 		90AAB9F325DB96B1000337AD /* PopcornGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AAB9F225DB96B1000337AD /* PopcornGameView.swift */; };
 		90F9C07425EB0CE200840D48 /* PingPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C07325EB0CE200840D48 /* PingPongViewController.swift */; };
 		90F9C07B25EB6EEF00840D48 /* FoodSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */; };
+		90F9C08025EC8B3000840D48 /* BambooDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		90AAB9F225DB96B1000337AD /* PopcornGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcornGameView.swift; sourceTree = "<group>"; };
 		90F9C07325EB0CE200840D48 /* PingPongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingPongViewController.swift; sourceTree = "<group>"; };
 		90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectViewController.swift; sourceTree = "<group>"; };
+		90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BambooDialogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				90AAB9F225DB96B1000337AD /* PopcornGameView.swift */,
 				90F9C07325EB0CE200840D48 /* PingPongViewController.swift */,
 				90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */,
+				90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				90AAB9E225DB40F3000337AD /* PizzaGameCoordinator.swift in Sources */,
 				90AAB9A625A2A27D000337AD /* AnimatedUILabel.swift in Sources */,
 				7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */,
+				90F9C08025EC8B3000840D48 /* BambooDialogViewController.swift in Sources */,
 				90AAB9F325DB96B1000337AD /* PopcornGameView.swift in Sources */,
 				90AAB9DF25DB28EA000337AD /* PizzaGameView.swift in Sources */,
 				90AAB9E525DB60BA000337AD /* HotdogGameCoordinator.swift in Sources */,

@@ -89,8 +89,6 @@ class BackgroundSelect: UIViewController {
     
     var captionLabel = AnimatedUILabel(frame: CGRect(x: 175, y: -30, width: 580, height: 200))
 
-    let bambooCaptionButtonFrame = CGRect(x: 720, y: 100, width: 72, height: 54)
-
     var delayedCaptionWorkItem: DispatchWorkItem?
 
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
@@ -480,28 +478,7 @@ class BackgroundSelect: UIViewController {
         }
         
         if self.count == 3 {
-            row = 3
-            view.addBackground(imageName: "order", contentMode: .scaleAspectFill)
-            self.promptButton.isHidden = true
-            self.captionRect.isHidden = true
-            self.character.isHidden = true
-            self.captionLabel.isHidden = true
-            hideIntro()
-            self.chosenCharacter.isHidden = true
-            speechBubble.frame = CGRect(x: 250, y: -200, width: 750, height: 700)
-            self.introLabel.isHidden = false
-            introLabel.frame = CGRect(x: 505, y: -335, width: 300, height: 800)
-            showSpeechBubble()
-            addMessageToSpeechBubble("Hi! My name is Bamboo and I will be your server today.")
-            self.showPromptButton(image: UIImage(named: "hello")!, frame: self.bambooCaptionButtonFrame, delay: 7, animation: 0)
-        }
-
-        if self.count == 4 {
-            promptButton.isHidden = true
-            introLabel.isHidden = true
-            self.hideIntro()
-            self.showButtonQuestions()
-            let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "FoodSelectViewController") as! FoodSelectViewController
+            let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
             self.present(nextViewController, animated:false, completion:nil)
         }
     }

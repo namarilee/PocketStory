@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "speechBubblePrecise.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "speechBubble.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
