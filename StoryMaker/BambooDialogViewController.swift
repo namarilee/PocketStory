@@ -74,7 +74,7 @@ class BambooDialogViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtenWorkItem!)
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
-    
+
     @IBAction func promptButtonClicked(_ sender: UIButton) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "FoodSelectViewController") as! FoodSelectViewController
         self.present(nextViewController, animated:false, completion:nil)

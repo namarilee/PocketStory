@@ -568,10 +568,9 @@ class BackgroundSelect: UIViewController {
         delayedCaptionWorkItem?.cancel()
         revertAll()
         let captionText = "Let's order some food!"
-        if row == 2 && captionLabel.text != captionText {
-            view.addBackground(imageName: "snackShop", contentMode: .scaleAspectFill)
-            updateCaption(captionText)
-            showPromptButton(image: UIImage(named: "go button")!, frame: captionButtonFrame, delay: 2, animation: 2)
+        if row == 2 {
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "SnackShopViewController") as! SnackShopViewController
+            self.present(nextViewController, animated:false, completion:nil)
         }
         chooseButton.isHidden = true
     }
