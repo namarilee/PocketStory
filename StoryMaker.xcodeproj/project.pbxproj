@@ -40,6 +40,7 @@
 		90F9C07B25EB6EEF00840D48 /* FoodSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */; };
 		90F9C08025EC8B3000840D48 /* BambooDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */; };
 		90F9C08525EF571100840D48 /* SnackShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C08425EF571000840D48 /* SnackShopViewController.swift */; };
+		90F9C08825EF704C00840D48 /* ParkLunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectViewController.swift; sourceTree = "<group>"; };
 		90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BambooDialogViewController.swift; sourceTree = "<group>"; };
 		90F9C08425EF571000840D48 /* SnackShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackShopViewController.swift; sourceTree = "<group>"; };
+		90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */,
 				90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */,
 				90F9C08425EF571000840D48 /* SnackShopViewController.swift */,
+				90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				90AAB9E525DB60BA000337AD /* HotdogGameCoordinator.swift in Sources */,
 				90F9C07425EB0CE200840D48 /* PingPongViewController.swift in Sources */,
 				7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */,
+				90F9C08825EF704C00840D48 /* ParkLunchViewController.swift in Sources */,
 				90AAB9F025DB965D000337AD /* PopcornGameCoordinator.swift in Sources */,
 				90F9C07B25EB6EEF00840D48 /* FoodSelectViewController.swift in Sources */,
 				7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */,

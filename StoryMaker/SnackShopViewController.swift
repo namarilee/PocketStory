@@ -15,13 +15,18 @@ class SnackShopViewController: UIViewController {
 
     @IBOutlet weak var goButton: UIButton!
 
+    @IBOutlet weak var characterImage: UIImageView!
+
     let captionText = "Let's order some food!"
 
     var showGoButtenWorkItem: DispatchWorkItem?
 
+    var chosenCharacter = "dog"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        characterImage.image = UIImage(named: chosenCharacter)
         updateCaption(captionText)
         showGoButton(delay: 2)
     }
@@ -53,6 +58,12 @@ class SnackShopViewController: UIViewController {
     @IBAction func goButtonClicked(_ sender: UIButton) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
         self.present(nextViewController, animated:false, completion:nil)
+    }
+
+    @IBAction func userClickedAnywhere(_ sender: Any) {
+        showGoButtenWorkItem?.perform()
+        showGoButtenWorkItem?.cancel()
+        captionLabel.stopAnimation()
     }
 
 }

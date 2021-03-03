@@ -413,7 +413,6 @@ class BackgroundSelect: UIViewController {
         label1.backgroundColor = nil
         if UserAnswers.background == "Amusement" {
             hideButtonQuestions()
-            //    view.addBackground(imageName: amusementPark.imageName, contentMode: .scaleAspectFill)
             showChosenBackground()
             
             showCharacter()
@@ -435,17 +434,9 @@ class BackgroundSelect: UIViewController {
         }
         
         if UserAnswers.character == "dog" || UserAnswers.character == "cat" || UserAnswers.character == "cow" {
-            hideButtonQuestions()
-            view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
-            showChosenCharacter()
-            showCaptionRect()
-            captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
-            delayedCaptionWorkItem = DispatchWorkItem {
-                self.view.addSubview(self.captionLabel)
-                self.captionLabel.numberOfLines = 0
-                self.updateCaption("Let's start by having some lunch! Tap the screen to go to the snack shop.")
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkLunchViewController") as! ParkLunchViewController
+            nextViewController.chosenCharacter = UserAnswers.character
+            self.present(nextViewController, animated:false, completion:nil)
         }
 
         pongButton.isHidden = true
@@ -473,13 +464,7 @@ class BackgroundSelect: UIViewController {
             let playImage = UIImage(named: "play my story button")
             playMyStoryButton.frame = CGRect(x: 500, y: 150, width: 240, height: 180)
             playMyStoryButton.setImage(playImage, for: .normal)
-            //  self.view.addSubview(self.playMyStoryButton)
             playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
-        }
-        
-        if self.count == 3 {
-            let nextViewController = mainStoryBoard.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
-            self.present(nextViewController, animated:false, completion:nil)
         }
     }
     
@@ -567,11 +552,6 @@ class BackgroundSelect: UIViewController {
         delayedCaptionWorkItem?.perform()
         delayedCaptionWorkItem?.cancel()
         revertAll()
-        let captionText = "Let's order some food!"
-        if row == 2 {
-            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "SnackShopViewController") as! SnackShopViewController
-            self.present(nextViewController, animated:false, completion:nil)
-        }
         chooseButton.isHidden = true
     }
     
