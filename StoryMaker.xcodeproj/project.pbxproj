@@ -41,6 +41,7 @@
 		90F9C08025EC8B3000840D48 /* BambooDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */; };
 		90F9C08525EF571100840D48 /* SnackShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C08425EF571000840D48 /* SnackShopViewController.swift */; };
 		90F9C08825EF704C00840D48 /* ParkLunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */; };
+		90F9C08B25F0B01B00840D48 /* CharacterSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9C08A25F0B01B00840D48 /* CharacterSelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BambooDialogViewController.swift; sourceTree = "<group>"; };
 		90F9C08425EF571000840D48 /* SnackShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackShopViewController.swift; sourceTree = "<group>"; };
 		90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLunchViewController.swift; sourceTree = "<group>"; };
+		90F9C08A25F0B01B00840D48 /* CharacterSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */,
 				90F9C08425EF571000840D48 /* SnackShopViewController.swift */,
 				90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */,
+				90F9C08A25F0B01B00840D48 /* CharacterSelectViewController.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */,
 				90AAB9E925DB6210000337AD /* HotdogGameView.swift in Sources */,
 				7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */,
+				90F9C08B25F0B01B00840D48 /* CharacterSelectViewController.swift in Sources */,
 				7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,8 +35,6 @@ class FoodSelectViewController: UIViewController {
     var hotdogGameCoordinator: HotdogGameCoordinator? = nil
     var popcornGameCoordinator: PopcornGameCoordinator? = nil
 
-    var chosenFood = ""
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,8 +53,7 @@ class FoodSelectViewController: UIViewController {
     }
 
     @IBAction func pizzaButtonClicked(_ sender: UIButton) {
-        chosenFood = sender.title (for: .normal)!
-        print("Chosen food: \(chosenFood)")
+        UserAnswers.food = "Pizza"
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -69,8 +66,7 @@ class FoodSelectViewController: UIViewController {
     }
 
     @IBAction func hotdogButtonClicked(_ sender: UIButton) {
-        chosenFood = sender.title (for: .normal)!
-        print("Chosen food: \(chosenFood)")
+        UserAnswers.food = "Hotdog"
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -83,8 +79,7 @@ class FoodSelectViewController: UIViewController {
     }
 
     @IBAction func popcornButtonClicked(_ sender: UIButton) {
-        chosenFood = sender.title (for: .normal)!
-        print("Chosen food: \(chosenFood)")
+        UserAnswers.food = "Popcorn"
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -114,15 +109,15 @@ class FoodSelectViewController: UIViewController {
 
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
 
-        if chosenFood == "Pizza" {
+        if UserAnswers.food == "Pizza" {
             pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
             view = pizzaGameCoordinator?.loadView()
         }
-        if chosenFood == "Hotdog" {
+        if UserAnswers.food == "Hotdog" {
             hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
             view = hotdogGameCoordinator?.loadView()
         }
-        if chosenFood == "Popcorn" {
+        if UserAnswers.food == "Popcorn" {
             popcornGameCoordinator = PopcornGameCoordinator(parent: self)
             view = popcornGameCoordinator?.loadView()
         }

@@ -207,26 +207,6 @@ class BackgroundSelect: UIViewController {
 
         chooseButton.addTarget(self, action: #selector(chooseButtonClicked), for: .touchUpInside)
     }
-    
-    func goToCharacterSelect() {
-        view.removeBackground()
-        questionLabel.text = questions[1]
-        label1.text = imageLabels[1][0]
-        label1.adjustsFontSizeToFitWidth = true
-        button1.setTitle(answers[1][0], for: .normal)
-        label2.text = imageLabels[1][1]
-        label2.adjustsFontSizeToFitWidth = true
-        button2.setTitle(answers[1][1], for: .normal)
-        label3.text = imageLabels[1][2]
-        label3.adjustsFontSizeToFitWidth = true
-        button3.setTitle(answers[1][2], for: .normal)
-        button1.setImage(UIImage(named: "dog"), for: .normal)
-        button1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        button2.setImage(UIImage(named: "cat"), for: .normal)
-        button2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        button3.setImage(UIImage(named: "cow"), for: .normal)
-        button3.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-    }
 
     func showCaptionRect() {
         captionRect.image = UIImage(named: "captionRect")
@@ -460,7 +440,10 @@ class BackgroundSelect: UIViewController {
             self.promptButton.removeTarget(self, action: #selector(self.promptButtonClicked), for: .touchUpInside)
             self.hideIntro()
             self.showButtonQuestions()
-            self.goToCharacterSelect()
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "CharacterSelectViewController") as! CharacterSelectViewController
+            self.present(nextViewController, animated:false, completion:nil)
+
+            // TODO: Create PlayMyStoryViewController for the below
             let playImage = UIImage(named: "play my story button")
             playMyStoryButton.frame = CGRect(x: 500, y: 150, width: 240, height: 180)
             playMyStoryButton.setImage(playImage, for: .normal)
