@@ -21,12 +21,10 @@ class SnackShopViewController: UIViewController {
 
     var showGoButtenWorkItem: DispatchWorkItem?
 
-    var chosenCharacter = "dog"
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        characterImage.image = UIImage(named: chosenCharacter)
+        characterImage.image = UIImage(named: UserAnswers.character)
         updateCaption(captionText)
         showGoButton(delay: 2)
     }

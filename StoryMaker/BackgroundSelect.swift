@@ -71,17 +71,7 @@ class BackgroundSelect: UIViewController {
     
     var character =  UIImageView()
 
-    var speechBubble = UIImageView()
-
-    let speechBubbleButtonFrame = CGRect(x: 620, y: 330, width: 72, height: 54)
-
-    var showSpeechBubbleWorkItem: DispatchWorkItem?
-
-    var addMessageToSpeechBubbleWorkItem: DispatchWorkItem?
-
     var chooseButton = UIButton(type: UIButton.ButtonType.custom)
-    
-    var playMyStoryButton = UIButton(type: UIButton.ButtonType.custom)
     
     var captionRect = UIImageView(frame: CGRect(x: 250, y: 20, width: 416.5, height: 100))
     
@@ -93,11 +83,7 @@ class BackgroundSelect: UIViewController {
 
     var storyTitle = UILabel(frame: CGRect(x: 210, y: 125, width: 497, height: 165))
     
-    var chosenCharacter =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
-    
     var chosenFood =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
-    
-    var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
     
     @IBOutlet weak var anywhereButton: UIButton!
     
@@ -129,67 +115,6 @@ class BackgroundSelect: UIViewController {
         label3.isHidden = false
         view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
         view.removeBackground()
-    }
-    
-    func showCharacter() {
-        self.view.addSubview(character)
-        character.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            character.heightAnchor.constraint(equalTo: character.widthAnchor, multiplier: 150.0/100.0),
-            character.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35),
-            NSLayoutConstraint(item: character, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 0.51, constant: 0),
-            NSLayoutConstraint(item: character, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 2.5, constant: 0)
-        ])
-        character.image = UIImage(named: "dog")
-        UIView.animate(withDuration: 1, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-            self.character.transform = CGAffineTransform(translationX: 0, y: -(self.view.frame.height * 0.35))
-        })
-    }
-
-    func showSpeechBubble() {
-        speechBubble.isHidden = true
-        view.addSubview(self.speechBubble)
-        speechBubble.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            speechBubble.heightAnchor.constraint(equalTo: speechBubble.widthAnchor, multiplier: 300.0/500.0),
-            speechBubble.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
-            NSLayoutConstraint(item: speechBubble, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.06, constant: 0),
-            NSLayoutConstraint(item: speechBubble, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.85, constant: 0)
-        ])
-        speechBubble.image = UIImage(named: "speechBubble")
-        showSpeechBubbleWorkItem = DispatchWorkItem {
-            self.speechBubble.isHidden = false
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                self.speechBubble.transform = CGAffineTransform(scaleX: 2, y: 2)
-            })
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: showSpeechBubbleWorkItem!)
-    }
-
-    func addMessageToSpeechBubble(_ message: String) {
-        introLabel.isHidden = false
-        introLabel.numberOfLines = 0
-        introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
-        introLabel.text = message
-        view.addSubview(self.introLabel)
-        introLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            introLabel.heightAnchor.constraint(equalTo: introLabel.widthAnchor, multiplier: 21.0/500.0),
-            introLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
-            NSLayoutConstraint(item: introLabel, attribute: .centerX, relatedBy: .equal, toItem: speechBubble, attribute: .centerX, multiplier: 1.4, constant: 0),
-            NSLayoutConstraint(item: introLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.45, constant: 0)
-        ])
-        addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
-            self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: addMessageToSpeechBubbleWorkItem!)
-    }
-    
-    func hideIntro() {
-        character.isHidden = true
-        speechBubble.isHidden = true
-        promptButton.isHidden = true
-        self.introLabel.removeFromSuperview()
     }
     
     func showChooseButton() {
@@ -248,21 +173,6 @@ class BackgroundSelect: UIViewController {
         }
     }
     
-    func showChosenCharacter() {
-        if UserAnswers.character == "dog" {
-            chosenCharacter.image = UIImage(named: "dog")
-            self.view.addSubview(chosenCharacter)
-        } else if UserAnswers.character == "cat" {
-            chosenCharacter.image = UIImage(named: "cat")
-            chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
-            self.view.addSubview(chosenCharacter)
-        } else if UserAnswers.character == "cow" {
-            chosenCharacter.image = UIImage(named: "cow")
-            chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
-            self.view.addSubview(chosenCharacter)
-        }
-    }
-    
     func showChosenFood() {
           if UserAnswers.food == "pizza" {
               chosenFood.image = UIImage(named: "pizza")
@@ -277,71 +187,6 @@ class BackgroundSelect: UIViewController {
               self.view.addSubview(chosenFood)
           }
       }
-    
-    func characterAnimation() {
-        showChosenCharacter()
-        
-        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-            self.chosenCharacter.transform = CGAffineTransform(translationX: 0, y: -200)
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.chosenCharacter.isHidden = true
-            self.dogHappy.image = UIImage(named: "dogHappy")
-            self.view.addSubview(self.dogHappy)
-            
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
-                self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
-            })
-            UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-                self.dogHappy.alpha = 0
-            })
-        }
-    }
-    
-    func dogWalkLeft() {
-        chosenCharacter.image = UIImage(named: "dog")
-        self.view.addSubview(chosenCharacter)
-        UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-            self.chosenCharacter.transform = CGAffineTransform(translationX: 100, y: -10)
-        })
-    }
-
-    func showPromptButton(image: UIImage, frame: CGRect, delay: Double, animation: Int) {
-        promptButton.isHidden = true
-        promptButton.transform = .identity
-        promptButton.setImage(image, for: .normal)
-//        promptButton.frame = frame
-        
-        showPromptButtenWorkItem = DispatchWorkItem {
-            self.view.bringSubviewToFront(self.promptButton)
-            self.promptButton.isHidden = false
-            switch animation {
-            case 0:
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.promptButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                })
-            case 1:
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.promptButton.transform = CGAffineTransform(translationX: 0, y: 200)
-                })
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.promptButton.transform = CGAffineTransform(translationX: 0, y: 100)
-                    self.promptButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                })
-            case 2:
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.promptButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-                })
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                    self.promptButton.transform = CGAffineTransform(scaleX: 1, y: 1)
-                })
-            default:
-                break;
-            }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtenWorkItem!)
-        promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -392,84 +237,8 @@ class BackgroundSelect: UIViewController {
         revertAll()
         label1.backgroundColor = nil
         if UserAnswers.background == "Amusement" {
-            hideButtonQuestions()
-            showChosenBackground()
-            
-            showCharacter()
-            
-            showSpeechBubble()
-            
-            addMessageToSpeechBubble("Welcome to the " + AmusementPark.name + "!")
-            
-            promptButton.isHidden = true
-            view.addSubview(promptButton)
-            promptButton.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                promptButton.heightAnchor.constraint(equalTo: promptButton.widthAnchor, multiplier: 54.0/72.0),
-                promptButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14),
-                NSLayoutConstraint(item: promptButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.47, constant: 0),
-                NSLayoutConstraint(item: promptButton, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.7, constant: 0)
-            ])
-            showPromptButton(image: UIImage(named: "hello")!, frame: speechBubbleButtonFrame, delay: 7, animation: 0)
-        }
-        
-        if UserAnswers.character == "dog" || UserAnswers.character == "cat" || UserAnswers.character == "cow" {
-            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkLunchViewController") as! ParkLunchViewController
-            nextViewController.chosenCharacter = UserAnswers.character
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
-        }
-
-        pongButton.isHidden = true
-        hideButtonQuestions()
-    }
-    
-    @IBAction func promptButtonClicked(_ sender: UIButton) {
-        count += 1
-        print("COUNT: \(count)")
-        
-        if self.count == 1 {
-            self.introLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 18)
-            self.introLabel.text = "Let's choose a character!"
-            self.view.addSubview(self.introLabel)
-            self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
-            
-            showPromptButton(image: UIImage(named: "Next button")!, frame: speechBubbleButtonFrame, delay: 3, animation: 1)
-        }
-
-        if self.count == 2 {
-            self.promptButton.removeTarget(self, action: #selector(self.promptButtonClicked), for: .touchUpInside)
-            self.hideIntro()
-            self.showButtonQuestions()
-            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "CharacterSelectViewController") as! CharacterSelectViewController
-            self.present(nextViewController, animated:false, completion:nil)
-
-            // TODO: Create PlayMyStoryViewController for the below
-            let playImage = UIImage(named: "play my story button")
-            playMyStoryButton.frame = CGRect(x: 500, y: 150, width: 240, height: 180)
-            playMyStoryButton.setImage(playImage, for: .normal)
-            playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
-        }
-    }
-    
-    @IBAction func playButtonClicked(_ sender: UIButton) {
-        characterAnimation()
-        view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
-        self.hideButtonQuestions()
-        self.playMyStoryButton.isHidden = true
-        storyTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 40)
-        storyTitle.textAlignment = .center
-        view.addSubview(storyTitle)
-        showStoryTitle(Pup.name + "'s Amazing Day at the " + AmusementPark.name)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.dogWalkLeft()
-            self.storyTitle.isHidden = true
-            self.view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
-            self.showCaptionRect()
-            self.captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
-            self.view.addSubview(self.captionLabel)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.updateCaption(Pup.name + " had an amazing day at the " + AmusementPark.name + "!")
-            }
         }
     }
 
@@ -522,11 +291,6 @@ class BackgroundSelect: UIViewController {
     @IBAction func userClickedAnywhere(_ sender: Any) {
         print("User Clicked Anywhere ROW: \(row)")
         character.layer.removeAllAnimations()
-        showSpeechBubbleWorkItem?.perform()
-        showSpeechBubbleWorkItem?.cancel()
-        speechBubble.layer.removeAllAnimations()
-        addMessageToSpeechBubbleWorkItem?.perform()
-        addMessageToSpeechBubbleWorkItem?.cancel()
         introLabel.stopAnimation()
         showPromptButtenWorkItem?.perform()
         showPromptButtenWorkItem?.cancel()

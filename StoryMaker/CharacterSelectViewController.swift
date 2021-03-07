@@ -19,6 +19,12 @@ class CharacterSelectViewController: UIViewController {
 
     let chooseButton = UIButton(type: UIButton.ButtonType.custom)
 
+    // TODO: Currently not used yet
+    let chosenCharacter =  UIImageView()
+
+    // TODO: Currently not used yet
+    let dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,8 +104,53 @@ class CharacterSelectViewController: UIViewController {
 
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkLunchViewController") as! ParkLunchViewController
-        nextViewController.chosenCharacter = UserAnswers.character
         self.present(nextViewController, animated:false, completion:nil)
+    }
+
+    // TODO: Currently not used yet
+    func showChosenCharacter() {
+        if UserAnswers.character == "dog" {
+            chosenCharacter.image = UIImage(named: "dog")
+            view.addSubview(chosenCharacter)
+        } else if UserAnswers.character == "cat" {
+            chosenCharacter.image = UIImage(named: "cat")
+            chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
+            view.addSubview(chosenCharacter)
+        } else if UserAnswers.character == "cow" {
+            chosenCharacter.image = UIImage(named: "cow")
+            chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
+            view.addSubview(chosenCharacter)
+        }
+    }
+
+    // TODO: Currently not used yet
+    func characterAnimation() {
+        showChosenCharacter()
+        
+        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            self.chosenCharacter.transform = CGAffineTransform(translationX: 0, y: -200)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.chosenCharacter.isHidden = true
+            self.dogHappy.image = UIImage(named: "dogHappy")
+            self.view.addSubview(self.dogHappy)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
+                self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
+            })
+            UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                self.dogHappy.alpha = 0
+            })
+        }
+    }
+
+    // TODO: Currently not used yet
+    func dogWalkLeft() {
+        chosenCharacter.image = UIImage(named: "dog")
+        view.addSubview(chosenCharacter)
+        UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            self.chosenCharacter.transform = CGAffineTransform(translationX: 100, y: -10)
+        })
     }
 
 }

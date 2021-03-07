@@ -39,7 +39,6 @@ class BambooDialogViewController: UIViewController {
     }
 
     func showSpeechBubble() {
-        speechBubble.isHidden = true
         showSpeechBubbleWorkItem = DispatchWorkItem {
             self.speechBubble.isHidden = false
             self.speechBubble.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -59,7 +58,6 @@ class BambooDialogViewController: UIViewController {
     }
 
     func showPromptButton(image: UIImage, delay: Double) {
-        promptButton.isHidden = true
         promptButton.transform = .identity
         promptButton.setImage(image, for: .normal)
         

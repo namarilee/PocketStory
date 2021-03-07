@@ -23,12 +23,10 @@ class ParkLunchViewController: UIViewController {
 
     var delayedCaptionWorkItem: DispatchWorkItem?
 
-    var chosenCharacter = "dog"
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        characterImage.image = UIImage(named: chosenCharacter)
+        characterImage.image = UIImage(named: UserAnswers.character)
         captionRect.translatesAutoresizingMaskIntoConstraints = true
         captionRect.isHidden = true
         showCaptionRect()
@@ -65,7 +63,6 @@ class ParkLunchViewController: UIViewController {
         captionLabel.stopAnimation()
         captionRect.layer.removeAllAnimations()
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "SnackShopViewController") as! SnackShopViewController
-        nextViewController.chosenCharacter = chosenCharacter
         self.present(nextViewController, animated:false, completion:nil)
     }
 
