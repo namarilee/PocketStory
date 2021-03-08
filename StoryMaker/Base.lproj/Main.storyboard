@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController storyboardIdentifier="ParkWelcomeViewController" modalPresentationStyle="fullScreen" id="pOY-H4-TTr" customClass="ParkWelcomeViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywf-Cv-L8z">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amusement" translatesAutoresizingMaskIntoConstraints="NO" id="ap9-tL-1cS" userLabel="Amusement">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubblePrecise" translatesAutoresizingMaskIntoConstraints="NO" id="dSF-Rr-7t9" userLabel="SpeechBubblePrecise">
-                                <rect key="frame" x="394" y="506.5" width="562" height="202.5"/>
+                                <rect key="frame" x="327" y="258.66666666666669" width="466" height="103.66666666666669"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxw-Cg-Fyq" userLabel="IntroLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
-                                <rect key="frame" x="421" y="499" width="508" height="170"/>
+                                <rect key="frame" x="349.33333333333337" y="255" width="421.33333333333337" height="87"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaZ-ew-GIf" userLabel="AnywhereButton">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8H-Wq-19r" userLabel="PromptButton">
-                                <rect key="frame" x="743" y="578" width="218.5" height="194"/>
+                                <rect key="frame" x="665.66666666666663" y="295.33333333333331" width="111.66666666666663" height="99.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h8H-Wq-19r" secondAttribute="height" multiplier="72:64" id="gAw-fZ-GqI"/>
                                 </constraints>
@@ -87,17 +87,17 @@
             <objects>
                 <viewController storyboardIdentifier="CharacterSelectViewController" modalPresentationStyle="fullScreen" id="eaw-4R-cdx" customClass="CharacterSelectViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ciy-bN-ohY">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's start building your story! Choose a character." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-ko-FJB" userLabel="QuestionLabel">
-                                <rect key="frame" x="54" y="72.5" width="972" height="58"/>
+                                <rect key="frame" x="44.666666666666686" y="22.666666666666671" width="806.66666666666652" height="58"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eu-Yt-kLV" userLabel="AnywhereButton">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hV-xM-TKk" userLabel="PupButton">
-                                <rect key="frame" x="109.5" y="186.5" width="213" height="315.5"/>
+                                <rect key="frame" x="125" y="95.333333333333329" width="108.66666666666669" height="161.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1hV-xM-TKk" secondAttribute="height" multiplier="562:835" id="ibn-YH-JNf"/>
                                 </constraints>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Yr-iwn" userLabel="WhiskersButton">
-                                <rect key="frame" x="394.5" y="186.5" width="291" height="315.5"/>
+                                <rect key="frame" x="373.66666666666669" y="95.333333333333329" width="148.66666666666669" height="161.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="exO-Yr-iwn" secondAttribute="height" multiplier="818:888" id="qhg-1S-PEJ"/>
                                 </constraints>
@@ -127,7 +127,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-bD-NYe" userLabel="BessieButton">
-                                <rect key="frame" x="679" y="186.5" width="370" height="315.5"/>
+                                <rect key="frame" x="622.33333333333337" y="95.333333333333329" width="189" height="161.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="r0n-bD-NYe" secondAttribute="height" multiplier="903:771" id="gj6-bc-Hm8"/>
                                 </constraints>
@@ -141,19 +141,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZp-mk-woC" userLabel="PupLabel">
-                                <rect key="frame" x="195.5" y="567" width="41" height="40.5"/>
+                                <rect key="frame" x="158.66666666666666" y="289.66666666666669" width="41" height="21"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whiskers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7n2-gi-VDi" userLabel="WhiskersLabel">
-                                <rect key="frame" x="491" y="567" width="98" height="40.5"/>
+                                <rect key="frame" x="399" y="289.66666666666669" width="98" height="21"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bessie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgx-IQ-HKX" userLabel="BessieLabel">
-                                <rect key="frame" x="830" y="567" width="68" height="40.5"/>
+                                <rect key="frame" x="682.66666666666663" y="289.66666666666669" width="68" height="21"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -204,17 +204,17 @@
             <objects>
                 <viewController storyboardIdentifier="ParkLunchViewController" modalPresentationStyle="fullScreen" id="fmG-p4-6rV" customClass="ParkLunchViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7C9-7R-i21">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amusement2" translatesAutoresizingMaskIntoConstraints="NO" id="kFS-kE-6gT" userLabel="Amusement2">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="captionRect" translatesAutoresizingMaskIntoConstraints="NO" id="HQz-Nm-yNB" userLabel="CaptionRect">
-                                <rect key="frame" x="162" y="12" width="756" height="243"/>
+                                <rect key="frame" x="134.33333333333331" y="6.3333333333333286" width="627.33333333333348" height="123.99999999999999"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhs-Rt-D9W" userLabel="CaptionLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
-                                <rect key="frame" x="200" y="48.5" width="680" height="170"/>
+                                <rect key="frame" x="165.66666666666669" y="25.000000000000007" width="564.66666666666652" height="86.666666666666686"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                                 </variation>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="GUD-9S-9ws" userLabel="CharacterImage">
-                                <rect key="frame" x="124" y="547" width="562" height="243"/>
+                                <rect key="frame" x="55" y="279.33333333333331" width="562" height="124.33333333333331"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycv-9e-glh" userLabel="AnywhereButton">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
@@ -268,17 +268,17 @@
             <objects>
                 <viewController storyboardIdentifier="BambooDialogViewController" modalPresentationStyle="fullScreen" id="yAx-TA-Eio" customClass="BambooDialogViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LrW-9f-VjY">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order" translatesAutoresizingMaskIntoConstraints="NO" id="tid-MV-oaV" userLabel="OrderBackgroundImage">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubblePrecise" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-dw-3jQ" userLabel="SpeechBubblePrecise">
-                                <rect key="frame" x="564" y="10" width="486" height="218.5"/>
+                                <rect key="frame" x="462.66666666666674" y="10.000000000000007" width="403.33333333333326" height="111.66666666666669"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-Kj-0rE" userLabel="IntroLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
-                                <rect key="frame" x="591" y="0.5" width="432" height="178"/>
+                                <rect key="frame" x="485.33333333333337" y="4" width="358.33333333333337" height="91"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -287,13 +287,13 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-Kk-eh4" userLabel="AnywhereButton">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <connections>
                                     <action selector="userClickedAnywhere:" destination="yAx-TA-Eio" eventType="touchUpInside" id="VdD-Ry-Ce5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-Vl-S5j" userLabel="PromptButton">
-                                <rect key="frame" x="853.5" y="95.5" width="218.5" height="194"/>
+                                <rect key="frame" x="750" y="56.666666666666664" width="111.66666666666663" height="99.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2Da-Vl-S5j" secondAttribute="height" multiplier="72:64" id="ehM-gd-O6W"/>
                                 </constraints>
@@ -338,31 +338,31 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ffD-I2-hPi" customClass="PingPongViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tpd-aV-DOX">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvE-EH-yiA" userLabel="PongScore">
-                                <rect key="frame" x="702" y="615.5" width="216" height="146"/>
+                                <rect key="frame" x="564" y="314.66666666666669" width="216" height="74.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paddle1" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-PR-fAj" userLabel="Paddle1">
-                                <rect key="frame" x="8" y="305" width="200" height="200"/>
+                                <rect key="frame" x="-10.333333333333329" y="107" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OhZ-b0-YyS"/>
                                     <constraint firstAttribute="width" secondItem="lJy-PR-fAj" secondAttribute="height" multiplier="1:1" id="hhT-vD-bgK"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paddle2" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-Ke-E3Z" userLabel="Paddle2">
-                                <rect key="frame" x="872" y="305" width="200" height="200"/>
+                                <rect key="frame" x="706.33333333333337" y="107" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="K6L-Ah-NqC"/>
                                     <constraint firstAttribute="width" secondItem="aVi-Ke-E3Z" secondAttribute="height" multiplier="1:1" id="ntV-Y7-1LB"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-tD-Szh" userLabel="Ball">
-                                <rect key="frame" x="515" y="380" width="50" height="50"/>
+                                <rect key="frame" x="423" y="182" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="ykH-Jy-Hjo"/>
                                     <constraint firstAttribute="height" constant="50" id="zKn-R9-xYE"/>
@@ -400,14 +400,14 @@
             <objects>
                 <viewController storyboardIdentifier="Hungry" modalPresentationStyle="fullScreen" id="IIj-b0-Doc" customClass="Keyboard" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7o-PD-hhc">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="thv-63-UX1">
-                                <rect key="frame" x="25" y="108" width="1006" height="671"/>
+                                <rect key="frame" x="65" y="108" width="738" height="275"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-j0-dZb">
-                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="C">
@@ -419,7 +419,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-Go-bt1">
-                                        <rect key="frame" x="126.5" y="0.0" width="121.5" height="671"/>
+                                        <rect key="frame" x="93" y="0.0" width="87.666666666666686" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="D">
@@ -430,7 +430,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Au-si-y6G">
-                                        <rect key="frame" x="253" y="0.0" width="121" height="671"/>
+                                        <rect key="frame" x="185.66666666666666" y="0.0" width="87.999999999999972" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="E">
@@ -441,7 +441,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2q-hN-Rka">
-                                        <rect key="frame" x="379" y="0.0" width="121.5" height="671"/>
+                                        <rect key="frame" x="278.66666666666669" y="0.0" width="88" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="F">
@@ -452,7 +452,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-Ua-0gh">
-                                        <rect key="frame" x="505.5" y="0.0" width="121.5" height="671"/>
+                                        <rect key="frame" x="371.66666666666669" y="0.0" width="87.666666666666686" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="G">
@@ -463,7 +463,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekv-21-VlU">
-                                        <rect key="frame" x="632" y="0.0" width="121.5" height="671"/>
+                                        <rect key="frame" x="464.33333333333337" y="0.0" width="88" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="A">
@@ -474,7 +474,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW0-bT-DMd">
-                                        <rect key="frame" x="758.5" y="0.0" width="121" height="671"/>
+                                        <rect key="frame" x="557.33333333333337" y="0.0" width="87.666666666666629" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="B">
@@ -485,7 +485,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-67-1lv">
-                                        <rect key="frame" x="884.5" y="0.0" width="121.5" height="671"/>
+                                        <rect key="frame" x="650" y="0.0" width="88" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <state key="normal" title="C">
@@ -586,35 +586,35 @@
             <objects>
                 <viewController storyboardIdentifier="FoodSelectViewController" modalPresentationStyle="fullScreen" id="22n-44-0Dd" customClass="FoodSelectViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Zr-aa-Oaa">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a food item!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1E-Nv-hit" userLabel="QuestionLabel">
-                                <rect key="frame" x="108" y="72.5" width="864" height="58"/>
+                                <rect key="frame" x="89.666666666666686" y="22.666666666666671" width="716.66666666666652" height="58"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeC-ea-qmS" userLabel="PizzaLabel">
-                                <rect key="frame" x="187" y="567" width="58" height="40.5"/>
+                                <rect key="frame" x="150.33333333333334" y="289.66666666666669" width="58" height="21"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Dog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bw1-jl-3zm" userLabel="HotDogLabel">
-                                <rect key="frame" x="498" y="567" width="84" height="40.5"/>
+                                <rect key="frame" x="406" y="289.66666666666669" width="84" height="21"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popcorn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUx-gI-ufw" userLabel="PopcornLabel">
-                                <rect key="frame" x="820.5" y="567" width="87" height="40.5"/>
+                                <rect key="frame" x="673.33333333333337" y="289.66666666666669" width="87" height="21"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v66-lO-WfT" userLabel="AnywhereButton">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -622,7 +622,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-lZ-vYW" userLabel="PizzaButton">
-                                <rect key="frame" x="75.5" y="234" width="281" height="220.5"/>
+                                <rect key="frame" x="62.666666666666657" y="84.666666666666686" width="232.99999999999997" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wF3-lZ-vYW" secondAttribute="height" multiplier="88:69" id="zOT-xO-2UK"/>
                                 </constraints>
@@ -632,7 +632,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8b-xf-QVh" userLabel="HotdogButton">
-                                <rect key="frame" x="399.5" y="234" width="281" height="220.5"/>
+                                <rect key="frame" x="331.66666666666669" y="84.666666666666686" width="232.66666666666669" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o8b-xf-QVh" secondAttribute="height" multiplier="88:69" id="mTC-Rz-DP3"/>
                                 </constraints>
@@ -642,7 +642,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmP-wO-lnE" userLabel="PopcornButton">
-                                <rect key="frame" x="723.5" y="234" width="281" height="220.5"/>
+                                <rect key="frame" x="600.33333333333337" y="84.666666666666686" width="233" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RmP-wO-lnE" secondAttribute="height" multiplier="88:69" id="jJ6-iK-ezb"/>
                                 </constraints>
@@ -704,17 +704,17 @@
             <objects>
                 <viewController storyboardIdentifier="SnackShopViewController" modalPresentationStyle="fullScreen" id="OPu-6c-rde" customClass="SnackShopViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uYZ-Pi-SFS">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snackShop" translatesAutoresizingMaskIntoConstraints="NO" id="9lS-4P-CRw" userLabel="SnackShopBackgroundImage">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="captionRect" translatesAutoresizingMaskIntoConstraints="NO" id="xS4-R6-Jsc" userLabel="CaptionRect">
-                                <rect key="frame" x="162" y="12" width="756" height="243"/>
+                                <rect key="frame" x="134.33333333333331" y="6.3333333333333286" width="627.33333333333348" height="123.99999999999999"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI6-rJ-yG1" userLabel="CaptionLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
-                                <rect key="frame" x="200" y="48.5" width="680" height="170"/>
+                                <rect key="frame" x="165.66666666666669" y="25.000000000000007" width="564.66666666666652" height="86.666666666666686"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -730,14 +730,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFb-Pi-b1a" userLabel="GoButton">
-                                <rect key="frame" x="722" y="186.5" width="156" height="97"/>
+                                <rect key="frame" x="645.33333333333337" y="95.333333333333329" width="79.333333333333371" height="49.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UFb-Pi-b1a" secondAttribute="height" multiplier="64:40" id="eBb-b6-Lys"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="go button"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="heD-QZ-rVp" userLabel="CharacterImage">
-                                <rect key="frame" x="124" y="547" width="562" height="243"/>
+                                <rect key="frame" x="55" y="279.33333333333331" width="562" height="124.33333333333331"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G7W-e4-P0k"/>
@@ -778,35 +778,35 @@
             <objects>
                 <viewController title="BackgroundSelect" modalPresentationStyle="fullScreen" id="IyB-f8-GW6" customClass="BackgroundSelect" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqM-df-Ort">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where would you like your story to be?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-y7-Ocg">
-                                <rect key="frame" x="108" y="72.5" width="864" height="58"/>
+                                <rect key="frame" x="89.666666666666686" y="22.666666666666671" width="716.66666666666652" height="58"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amusement Park" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbQ-sK-dnS">
-                                <rect key="frame" x="126" y="498.5" width="180" height="20"/>
+                                <rect key="frame" x="89.333333333333314" y="287.66666666666669" width="180" height="20"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980392156865" green="0.25490196078431371" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XG-pa-oJC">
-                                <rect key="frame" x="506" y="498.5" width="68" height="20"/>
+                                <rect key="frame" x="414" y="287.66666666666669" width="68" height="20"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcv-DY-ftA">
-                                <rect key="frame" x="836" y="498.5" width="56" height="20"/>
+                                <rect key="frame" x="688.66666666666663" y="287.66666666666669" width="56" height="20"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1C-IJ-3a4">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -814,7 +814,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBP-Q6-JLM">
-                                <rect key="frame" x="36" y="264" width="360" height="282"/>
+                                <rect key="frame" x="30" y="90" width="298.33333333333331" height="234"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nBP-Q6-JLM" secondAttribute="height" multiplier="88:69" id="3Tb-tX-iBA"/>
                                 </constraints>
@@ -827,7 +827,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctI-9H-sZO">
-                                <rect key="frame" x="360" y="264" width="360" height="282"/>
+                                <rect key="frame" x="298.66666666666663" y="90" width="298.66666666666663" height="234"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ctI-9H-sZO" secondAttribute="height" multiplier="88:69" id="Jh9-qX-CbV"/>
                                 </constraints>
@@ -840,7 +840,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIV-FX-Dk4">
-                                <rect key="frame" x="684" y="264" width="360" height="282"/>
+                                <rect key="frame" x="567.66666666666663" y="90" width="298.33333333333337" height="234"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xIV-FX-Dk4" secondAttribute="height" multiplier="88:69" id="dEw-Gz-5ag"/>
                                 </constraints>
@@ -853,7 +853,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-vG-Swm">
-                                <rect key="frame" x="993.5" y="24.5" width="65" height="64.5"/>
+                                <rect key="frame" x="834.66666666666663" y="12.333333333333332" width="33" height="33.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aFo-vG-Swm" secondAttribute="height" multiplier="1:1" id="1Kv-Vw-a0J"/>
                                 </constraints>
@@ -863,7 +863,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-c9-liy" userLabel="Pong Button">
-                                <rect key="frame" x="1003" y="98.5" width="46" height="30"/>
+                                <rect key="frame" x="828.33333333333337" y="43" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="ffD-I2-hPi" kind="show" id="J0X-dP-UVp"/>
@@ -925,14 +925,14 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Copy of gradient background" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-IW-kTZ">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-oJ-sbK">
-                                <rect key="frame" x="369" y="445.5" width="342" height="243"/>
+                                <rect key="frame" x="360.66666666666669" y="227.66666666666666" width="174.66666666666669" height="124.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q0x-oJ-sbK" secondAttribute="height" multiplier="38:27" id="sSX-Oh-USt"/>
                                 </constraints>
@@ -943,7 +943,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PocketStory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="33" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zof-Sl-WvH">
-                                <rect key="frame" x="224" y="182.5" width="632" height="121.5"/>
+                                <rect key="frame" x="286.66666666666663" y="93" width="322.66666666666663" height="62.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zof-Sl-WvH" secondAttribute="height" multiplier="26:5" id="E76-7l-Nu1"/>
                                 </constraints>

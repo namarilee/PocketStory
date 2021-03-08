@@ -32,12 +32,27 @@ class ParkWelcomeViewController: UIViewController {
     // TODO: Currently not used yet
     let playMyStoryButton = UIButton(type: UIButton.ButtonType.custom)
 
+    // TODO: Currently not used yet
+    let chosenCharacter =  UIImageView()
+
+    // TODO: Currently not used yet
+    let dogHappy = UIImageView()
+
+    // TODO: Currently not used yet
+    let storyTitle = UILabel()
+
+    // TODO: Currently not used yet
+    let captionRect = UIImageView()
+
+    // TODO: Currently not used yet
+    let captionLabel = AnimatedUILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         characterImage.isHidden = true
         characterImage.translatesAutoresizingMaskIntoConstraints = false
-        characterImage.image = UIImage(named: "dog")
+        characterImage.image = UIImage(named: Pup.imageName)
         view.addSubview(characterImage)
         speechBubble.isHidden = true
         speechBubble.translatesAutoresizingMaskIntoConstraints = true
@@ -144,26 +159,96 @@ class ParkWelcomeViewController: UIViewController {
     }
 
     // TODO: Create PlayMyStoryViewController for the below
-//    @IBAction func playButtonClicked(_ sender: UIButton) {
-//        characterAnimation()
-//        view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
-//        self.hideButtonQuestions()
-//        self.playMyStoryButton.isHidden = true
-//        storyTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 40)
-//        storyTitle.textAlignment = .center
-//        view.addSubview(storyTitle)
-//        showStoryTitle(Pup.name + "'s Amazing Day at the " + AmusementPark.name)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//            self.dogWalkLeft()
-//            self.storyTitle.isHidden = true
-//            self.view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
-//            self.showCaptionRect()
-//            self.captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
-//            self.view.addSubview(self.captionLabel)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//                self.updateCaption(Pup.name + " had an amazing day at the " + AmusementPark.name + "!")
-//            }
-//        }
-//    }
+    @IBAction func playButtonClicked(_ sender: UIButton) {
+        characterAnimation()
+        view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8862745098, blue: 0.8862745098, alpha: 1)
+        playMyStoryButton.isHidden = true
+        storyTitle.font = UIFont(name: "Arial Rounded MT Bold", size: 40)
+        storyTitle.textAlignment = .center
+        view.addSubview(storyTitle)
+        showStoryTitle(Pup.name + "'s Amazing Day at the " + AmusementPark.name)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.dogWalkLeft()
+            self.storyTitle.isHidden = true
+            self.view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
+            self.showCaptionRect()
+            self.captionLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 25)
+            self.view.addSubview(self.captionLabel)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.updateCaption(Pup.name + " had an amazing day at the " + AmusementPark.name + "!")
+            }
+        }
+    }
+
+    // TODO: Currently not used yet
+    func showChosenCharacter() {
+        if UserAnswers.character == Pup.answer {
+            chosenCharacter.image = UIImage(named: Pup.imageName)
+            view.addSubview(chosenCharacter)
+        } else if UserAnswers.character == Whiskers.answer {
+            chosenCharacter.image = UIImage(named: Whiskers.imageName)
+            chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
+            view.addSubview(chosenCharacter)
+        } else if UserAnswers.character == Bessie.answer {
+            chosenCharacter.image = UIImage(named: Bessie.imageName)
+            chosenCharacter.contentMode = UIView.ContentMode.scaleAspectFit
+            view.addSubview(chosenCharacter)
+        }
+    }
+
+    // TODO: Currently not used yet
+    func characterAnimation() {
+        showChosenCharacter()
+        
+        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            self.chosenCharacter.transform = CGAffineTransform(translationX: 0, y: -200)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.chosenCharacter.isHidden = true
+            self.dogHappy.image = UIImage(named: "dogHappy")
+            self.view.addSubview(self.dogHappy)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.repeat, .autoreverse], animations: {
+                self.dogHappy.transform = CGAffineTransform(translationX: 0, y: -10)
+            })
+            UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+                self.dogHappy.alpha = 0
+            })
+        }
+    }
+
+    // TODO: Currently not used yet
+    func dogWalkLeft() {
+        chosenCharacter.image = UIImage(named: Pup.imageName)
+        view.addSubview(chosenCharacter)
+        UIView.animate(withDuration: 0.5, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            self.chosenCharacter.transform = CGAffineTransform(translationX: 100, y: -10)
+        })
+    }
+
+    // TODO: Currently not used yet
+    func showStoryTitle(_ title: String) {
+        storyTitle.text = title
+        storyTitle.adjustsFontSizeToFitWidth = true
+        storyTitle.numberOfLines = 0
+    }
+
+    // TODO: Currently not used yet
+    func showCaptionRect() {
+        captionRect.image = UIImage(named: "captionRect")
+        self.view.addSubview(self.captionRect)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+            self.captionRect.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        })
+    }
+
+    // TODO: Currently not used yet
+    func updateCaption(_ caption: String) {
+        captionLabel.stopAnimation()
+        captionLabel.text = caption
+        captionLabel.adjustsFontSizeToFitWidth = true
+        captionLabel.numberOfLines = 0
+        captionLabel.startAnimation(newText: self.captionLabel.text ?? "", characterDelay: 0.07)
+    }
 
 }

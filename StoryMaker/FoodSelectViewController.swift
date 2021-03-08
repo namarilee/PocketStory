@@ -35,6 +35,9 @@ class FoodSelectViewController: UIViewController {
     var hotdogGameCoordinator: HotdogGameCoordinator? = nil
     var popcornGameCoordinator: PopcornGameCoordinator? = nil
 
+    // TODO: Currently not used yet
+    var chosenFood =  UIImageView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -109,15 +112,15 @@ class FoodSelectViewController: UIViewController {
 
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
 
-        if UserAnswers.food == "Pizza" {
+        if UserAnswers.food == Pizza.answer {
             pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
             view = pizzaGameCoordinator?.loadView()
         }
-        if UserAnswers.food == "Hotdog" {
+        if UserAnswers.food == Hotdog.answer {
             hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
             view = hotdogGameCoordinator?.loadView()
         }
-        if UserAnswers.food == "Popcorn" {
+        if UserAnswers.food == Popcorn.answer {
             popcornGameCoordinator = PopcornGameCoordinator(parent: self)
             view = popcornGameCoordinator?.loadView()
         }
@@ -174,4 +177,35 @@ class FoodSelectViewController: UIViewController {
         }
     }
 
+    // TODO: Currently not used yet
+    func showChosenFood() {
+        if UserAnswers.food == Pizza.answer {
+            chosenFood.image = UIImage(named: Pizza.imageName)
+              self.view.addSubview(chosenFood)
+          } else if UserAnswers.food == Hotdog.answer {
+            chosenFood.image = UIImage(named: Hotdog.imageName)
+              chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
+              self.view.addSubview(chosenFood)
+          } else if UserAnswers.food == Popcorn.answer {
+            chosenFood.image = UIImage(named: Popcorn.imageName)
+              chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
+              self.view.addSubview(chosenFood)
+          }
+      }
+
+}
+
+struct Pizza {
+    static let answer = "Pizza"
+    static let imageName = "pizza"
+}
+
+struct Hotdog {
+    static let answer = "Hotdog"
+    static let imageName = "hotdog"
+}
+
+struct Popcorn {
+    static let answer = "Popcorn"
+    static let imageName = "popcorn"
 }
