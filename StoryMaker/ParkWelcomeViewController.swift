@@ -181,6 +181,17 @@ class ParkWelcomeViewController: UIViewController {
     }
 
     // TODO: Currently not used yet
+    func showChosenBackground() {
+        if UserAnswers.background == AmusementPark.answer {
+            view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
+        } else if UserAnswers.background == School.answer {
+            view.addBackground(imageName: School.imageName, contentMode: .scaleAspectFill)
+        } else if UserAnswers.background == Farm.answer {
+            view.addBackground(imageName: Farm.imageName, contentMode: .scaleAspectFill)
+        }
+    }
+
+    // TODO: Currently not used yet
     func showChosenCharacter() {
         if UserAnswers.character == Pup.answer {
             chosenCharacter.image = UIImage(named: Pup.imageName)

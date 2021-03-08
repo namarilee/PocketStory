@@ -17,12 +17,6 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var button2: UIButton!
     
     @IBOutlet weak var button3: UIButton!
-    
-    @IBOutlet weak var label1: UILabel!
-    
-    @IBOutlet weak var label2: UILabel!
-    
-    @IBOutlet weak var label3: UILabel!
 
     @IBOutlet weak var keyboardButton: UIButton!
     
@@ -45,9 +39,6 @@ class BackgroundSelect: UIViewController {
         button1.isHidden = true
         button2.isHidden = true
         button3.isHidden = true
-        label1.isHidden = true
-        label2.isHidden = true
-        label3.isHidden = true
         chooseButton.isHidden = true
         
     }
@@ -57,9 +48,6 @@ class BackgroundSelect: UIViewController {
         button1.isHidden = false
         button2.isHidden = false
         button3.isHidden = false
-        label1.isHidden = false
-        label2.isHidden = false
-        label3.isHidden = false
         view.backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
         view.removeBackground()
     }
@@ -88,29 +76,13 @@ class BackgroundSelect: UIViewController {
         })
     }
 
-    // TODO: Currently not used yet
-    func showChosenBackground() {
-        if UserAnswers.background == "Amusement" {
-            view.addBackground(imageName: AmusementPark.imageName, contentMode: .scaleAspectFill)
-        } else if UserAnswers.background == "School" {
-            view.addBackground(imageName: School.imageName, contentMode: .scaleAspectFill)
-        } else if UserAnswers.background == "Farm" {
-            view.addBackground(imageName: Farm.imageName, contentMode: .scaleAspectFill)
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         questionLabel.adjustsFontSizeToFitWidth = true
         
-        button1.setImage(UIImage(named: "amParkButton"), for: .normal)
         button1.imageView?.contentMode = .scaleAspectFit
-        
-        button2.setImage(UIImage(named: "schoolButton"), for: .normal)
         button2.imageView?.contentMode = .scaleAspectFit
-        
-        button3.setImage(UIImage(named: "farmButton"), for: .normal)
         button3.imageView?.contentMode = .scaleAspectFit
         
         button1.setTitle(AmusementPark.answer, for: .normal)
@@ -139,7 +111,6 @@ class BackgroundSelect: UIViewController {
 
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         revertAll()
-        label1.backgroundColor = nil
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
