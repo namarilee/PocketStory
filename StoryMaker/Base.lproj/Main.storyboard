@@ -196,7 +196,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvT-FG-mBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="bxT-hf-mWk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="631" y="2596"/>
         </scene>
@@ -301,6 +300,7 @@
                                 <state key="normal" image="hello"/>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rp3-nE-fhk"/>
                         <constraints>
                             <constraint firstItem="RKX-Kk-eh4" firstAttribute="centerY" secondItem="LrW-9f-VjY" secondAttribute="centerY" id="Coo-sU-mHx"/>
                             <constraint firstItem="RKX-Kk-eh4" firstAttribute="centerX" secondItem="LrW-9f-VjY" secondAttribute="centerX" id="Ed2-hp-BO9"/>
@@ -322,7 +322,6 @@
                             <constraint firstItem="2Da-Vl-S5j" firstAttribute="centerX" secondItem="C0O-dw-3jQ" secondAttribute="centerX" multiplier="1.1" constant="75" id="xsh-wg-AEF"/>
                             <constraint firstItem="XGh-Kj-0rE" firstAttribute="centerY" secondItem="C0O-dw-3jQ" secondAttribute="centerY" multiplier="0.75" id="zD6-Po-b9d"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rp3-nE-fhk"/>
                     </view>
                     <connections>
                         <outlet property="introLabel" destination="XGh-Kj-0rE" id="5Jh-00-l75"/>
@@ -370,7 +369,8 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="38J-g0-tUZ"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="aVi-Ke-E3Z" firstAttribute="centerX" secondItem="tpd-aV-DOX" secondAttribute="centerX" multiplier="1.8" id="836-lg-gyZ"/>
                             <constraint firstItem="lJy-PR-fAj" firstAttribute="centerX" secondItem="tpd-aV-DOX" secondAttribute="centerX" multiplier="0.2" id="ETe-hm-dln"/>
@@ -382,7 +382,6 @@
                             <constraint firstItem="mvE-EH-yiA" firstAttribute="height" secondItem="tpd-aV-DOX" secondAttribute="height" multiplier="0.18" id="rC4-Vg-t1Z"/>
                             <constraint firstItem="6L0-tD-Szh" firstAttribute="centerY" secondItem="tpd-aV-DOX" secondAttribute="centerY" id="wnU-x7-AH8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="38J-g0-tUZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZdN-ib-rbz"/>
                     <connections>
@@ -648,7 +647,7 @@
                                     <constraint firstAttribute="width" secondItem="RmP-wO-lnE" secondAttribute="height" multiplier="88:69" id="jJ6-iK-ezb"/>
                                 </constraints>
                                 <state key="normal" title="Popcorn" image="popcorn">
-                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="linkColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
@@ -685,7 +684,6 @@
                             <constraint firstItem="v66-lO-WfT" firstAttribute="height" secondItem="1Zr-aa-Oaa" secondAttribute="height" id="vyZ-5R-fGe"/>
                             <constraint firstItem="wF3-lZ-vYW" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="0.85" id="yYO-xC-cjt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aPM-cN-ZFb"/>
                     </view>
                     <connections>
                         <outlet property="anywhereButton" destination="v66-lO-WfT" id="HXs-zy-nKA"/>
@@ -893,7 +891,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-Jw-j8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="1636"/>
+            <point key="canvasLocation" x="632.8125" y="604.34782608695662"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -914,7 +912,7 @@
                                 <state key="normal" title="Button" image="Start button"/>
                                 <connections>
                                     <action selector="keyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vt-VG-u8p"/>
-                                    <segue destination="eaw-4R-cdx" kind="modal" modalTransitionStyle="crossDissolve" id="VKL-1P-NNm"/>
+                                    <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="crossDissolve" id="pjY-Ml-ilS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PocketStory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="33" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zof-Sl-WvH">
@@ -951,7 +949,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mEI-B0-efL"/>
+        <segue reference="pjY-Ml-ilS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
