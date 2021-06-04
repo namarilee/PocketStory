@@ -35,7 +35,8 @@ class FoodSelectViewController: UIViewController {
     var hotdogGameCoordinator: HotdogGameCoordinator? = nil
     var popcornGameCoordinator: PopcornGameCoordinator? = nil
 
-    var chosenFood = ""
+    // TODO: Currently not used yet
+    var chosenFood =  UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +56,7 @@ class FoodSelectViewController: UIViewController {
     }
 
     @IBAction func pizzaButtonClicked(_ sender: UIButton) {
-        chosenFood = sender.title (for: .normal)!
-        print("Chosen food: \(chosenFood)")
+        UserAnswers.food = "Pizza"
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -69,8 +69,7 @@ class FoodSelectViewController: UIViewController {
     }
 
     @IBAction func hotdogButtonClicked(_ sender: UIButton) {
-        chosenFood = sender.title (for: .normal)!
-        print("Chosen food: \(chosenFood)")
+        UserAnswers.food = "Hotdog"
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -83,8 +82,7 @@ class FoodSelectViewController: UIViewController {
     }
 
     @IBAction func popcornButtonClicked(_ sender: UIButton) {
-        chosenFood = sender.title (for: .normal)!
-        print("Chosen food: \(chosenFood)")
+        UserAnswers.food = "Popcorn"
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
@@ -114,15 +112,15 @@ class FoodSelectViewController: UIViewController {
 
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
 
-        if chosenFood == "Pizza" {
+        if UserAnswers.food == Pizza.answer {
             pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
             view = pizzaGameCoordinator?.loadView()
         }
-        if chosenFood == "Hotdog" {
+        if UserAnswers.food == Hotdog.answer {
             hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
             view = hotdogGameCoordinator?.loadView()
         }
-        if chosenFood == "Popcorn" {
+        if UserAnswers.food == Popcorn.answer {
             popcornGameCoordinator = PopcornGameCoordinator(parent: self)
             view = popcornGameCoordinator?.loadView()
         }
@@ -179,4 +177,35 @@ class FoodSelectViewController: UIViewController {
         }
     }
 
+    // TODO: Currently not used yet
+    func showChosenFood() {
+        if UserAnswers.food == Pizza.answer {
+            chosenFood.image = UIImage(named: Pizza.imageName)
+              self.view.addSubview(chosenFood)
+          } else if UserAnswers.food == Hotdog.answer {
+            chosenFood.image = UIImage(named: Hotdog.imageName)
+              chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
+              self.view.addSubview(chosenFood)
+          } else if UserAnswers.food == Popcorn.answer {
+            chosenFood.image = UIImage(named: Popcorn.imageName)
+              chosenFood.contentMode = UIView.ContentMode.scaleAspectFit
+              self.view.addSubview(chosenFood)
+          }
+      }
+
+}
+
+struct Pizza {
+    static let answer = "Pizza"
+    static let imageName = "pizza"
+}
+
+struct Hotdog {
+    static let answer = "Hotdog"
+    static let imageName = "hotdog"
+}
+
+struct Popcorn {
+    static let answer = "Popcorn"
+    static let imageName = "popcorn"
 }

@@ -39,7 +39,6 @@ class BambooDialogViewController: UIViewController {
     }
 
     func showSpeechBubble() {
-        speechBubble.isHidden = true
         showSpeechBubbleWorkItem = DispatchWorkItem {
             self.speechBubble.isHidden = false
             self.speechBubble.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -59,7 +58,6 @@ class BambooDialogViewController: UIViewController {
     }
 
     func showPromptButton(image: UIImage, delay: Double) {
-        promptButton.isHidden = true
         promptButton.transform = .identity
         promptButton.setImage(image, for: .normal)
         
@@ -74,7 +72,7 @@ class BambooDialogViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtenWorkItem!)
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
-    
+
     @IBAction func promptButtonClicked(_ sender: UIButton) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "FoodSelectViewController") as! FoodSelectViewController
         self.present(nextViewController, animated:false, completion:nil)
