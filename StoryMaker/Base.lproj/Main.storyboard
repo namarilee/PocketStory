@@ -16,29 +16,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yre-GH-4VD">
-                                <rect key="frame" x="30" y="90" width="377" height="270"/>
+                                <rect key="frame" x="101" y="122" width="225" height="202"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yre-GH-4VD" secondAttribute="height" multiplier="88:69" id="ID1-ha-WpP"/>
                                 </constraints>
-                                <state key="normal" image="newStory">
+                                <state key="normal" title="new story">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="Tlb-YG-vqg"/>
+                                    <action selector="newStoryButton:" destination="bxT-hf-mWk" eventType="touchUpInside" id="4md-ab-Qo6"/>
+                                    <segue destination="IyB-f8-GW6" kind="presentation" id="mEI-B0-efL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.98431372549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="yre-GH-4VD" firstAttribute="width" secondItem="yre-GH-4VD" secondAttribute="height" multiplier="88:69" id="nvx-sT-Tz0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="D9d-Ee-aNN"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvT-FG-mBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bxT-hf-mWk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="671" y="494"/>
+            <point key="canvasLocation" x="670.3125" y="492.75362318840581"/>
         </scene>
         <!--Bamboo Dialog View Controller-->
         <scene sceneID="MCz-rM-xpb">
@@ -642,7 +642,7 @@
                                 <state key="normal" title="Button" image="Start button"/>
                                 <connections>
                                     <action selector="keyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vt-VG-u8p"/>
-                                    <segue destination="eaw-4R-cdx" kind="presentation" id="VKL-1P-NNm"/>
+                                    <segue destination="eaw-4R-cdx" kind="modal" modalTransitionStyle="crossDissolve" id="VKL-1P-NNm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PocketStory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="33" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zof-Sl-WvH">
@@ -679,7 +679,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vlc-68-cOu"/>
+        <segue reference="mEI-B0-efL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
@@ -687,7 +687,6 @@
         <image name="ball" width="1080" height="1080"/>
         <image name="hello" width="960" height="720"/>
         <image name="hotdog" width="1019" height="516"/>
-        <image name="newStory" width="298" height="270"/>
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>

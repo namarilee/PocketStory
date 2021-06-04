@@ -23,7 +23,9 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var label2: UILabel!
     
     @IBOutlet weak var label3: UILabel!
-
+    
+    
+   
     @IBOutlet weak var keyboardButton: UIButton!
     
     @IBOutlet weak var pongButton: UIButton!
@@ -98,6 +100,7 @@ class BackgroundSelect: UIViewController {
     var chosenFood =  UIImageView(frame: CGRect(x: 340, y: 240, width: 100, height: 150))
     
     var dogHappy = UIImageView(frame: CGRect(x: 125, y: 260, width: 92, height: 136.36))
+    
     
     @IBOutlet weak var anywhereButton: UIButton!
     
