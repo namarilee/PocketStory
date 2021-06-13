@@ -37,6 +37,7 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var anywhereButton: UIButton!
     
     var player: AVAudioPlayer!
+
     static var instance: BackgroundSelect!
 
     func hideButtonQuestions() {
@@ -83,6 +84,7 @@ class BackgroundSelect: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        BackgroundSelect.instance = self
 
         questionLabel.adjustsFontSizeToFitWidth = true
         
@@ -98,8 +100,8 @@ class BackgroundSelect: UIViewController {
         button2.addTarget(self, action: #selector(button2Clicked), for: .touchUpInside)
         button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
         
-        keyboardButton.setImage(UIImage(named: "keyboard button"), for: .normal)
-        pongButton.setTitle("Pong", for: .normal)
+    //    keyboardButton.setImage(UIImage(named: "keyboard button"), for: .normal)
+     //   pongButton.setTitle("Pong", for: .normal)
     }
 
     let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -129,20 +131,20 @@ class BackgroundSelect: UIViewController {
     }
     
     func playSound(soundFile: String) {
-        BackgroundSelect.instance = self
          soundFileName = soundFile
         soundFileNameURL = Bundle.main.url(forResource: soundFile, withExtension: "mp3")! as NSURL
         do {
-            try player = AVAudioPlayer(contentsOf: soundFileNameURL as URL)
-            } catch {
-                print("Could not play sound file!")
-            }
-        player.prepareToPlay()
-        player.play()
+            player = try AVAudioPlayer(contentsOf: soundFileNameURL as URL)
+            player.prepareToPlay()
+            player.play()
+        } catch {
+            print("Could not play sound file!")
+        }
+        
         
     }
     
-    func stopSound(soundFile: String) {
+    func stopSound() {
         player.stop()
         print("music stopped")
     }

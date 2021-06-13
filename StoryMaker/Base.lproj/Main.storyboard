@@ -366,6 +366,14 @@
                                     <constraint firstAttribute="height" constant="50" id="zKn-R9-xYE"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-KP-kBz">
+                                <rect key="frame" x="43" y="20" width="87" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="jna-er-N3D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -391,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ql5-YL-uiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.4444444444443" y="1595.5555555555554"/>
+            <point key="canvasLocation" x="1388.8392857142856" y="1594.2028985507247"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f7K-Yy-dvo">
@@ -401,15 +409,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUI-LU-lMV">
-                                <rect key="frame" x="91" y="220" width="279" height="122"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="pongGameButton"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-C4-swr">
-                                <rect key="frame" x="91" y="71" width="279" height="122"/>
+                                <rect key="frame" x="33" y="72" width="279" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="keyboardButton"/>
+                                <connections>
+                                    <segue destination="IIj-b0-Doc" kind="presentation" modalTransitionStyle="flipHorizontal" id="ceF-I1-WEZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUI-LU-lMV">
+                                <rect key="frame" x="33" y="221" width="279" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pongGameButton"/>
+                                <connections>
+                                    <segue destination="ffD-I2-hPi" kind="presentation" modalTransitionStyle="flipHorizontal" id="cSc-EN-Gwd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-NZ-f5v">
+                                <rect key="frame" x="330" y="72" width="279" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pizzaGameButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yog-Xf-Kpf">
+                                <rect key="frame" x="330" y="221" width="279" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="hotdogGameButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEy-jN-Sq9">
+                                <rect key="frame" x="39" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="flipHorizontal" id="kSa-LR-lZV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-ye-sA3">
+                                <rect key="frame" x="617" y="72" width="279" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="popcornGameButton"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83529411760000005" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -535,11 +572,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-Lg-dzE">
-                                <rect key="frame" x="51" y="41" width="46" height="30"/>
+                                <rect key="frame" x="57" y="41" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="back"/>
                                 <connections>
-                                    <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="flipHorizontal" id="yPW-bk-Kzd"/>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="qT1-FB-nbz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-wW-AN2">
@@ -591,7 +628,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.80784313730000001" green="0.98431372549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="thv-63-UX1" firstAttribute="leading" secondItem="h7o-PD-hhc" secondAttribute="leadingMargin" constant="5" id="3OA-Kv-qq1"/>
                             <constraint firstItem="thv-63-UX1" firstAttribute="top" secondItem="6Ok-5n-p6m" secondAttribute="top" constant="108" id="Kg0-Rw-XTU"/>
@@ -820,7 +857,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="minigames"/>
                                 <connections>
-                                    <segue destination="Duh-BA-6gu" kind="presentation" id="sVY-U8-8EB"/>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="sVY-U8-8EB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -897,23 +934,6 @@
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="IU7-ee-BAr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-vG-Swm">
-                                <rect key="frame" x="834.66666666666663" y="12.333333333333332" width="33" height="33.333333333333343"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="aFo-vG-Swm" secondAttribute="height" multiplier="1:1" id="1Kv-Vw-a0J"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="IIj-b0-Doc" kind="presentation" modalTransitionStyle="flipHorizontal" id="Vlc-68-cOu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-c9-liy" userLabel="Pong Button">
-                                <rect key="frame" x="828.33333333333337" y="43" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="ffD-I2-hPi" kind="show" id="J0X-dP-UVp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-l1-Dnj">
                                 <rect key="frame" x="36" y="22" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -929,22 +949,17 @@
                             <constraint firstItem="xIV-FX-Dk4" firstAttribute="width" secondItem="cqM-df-Ort" secondAttribute="width" multiplier="0.333" id="2wu-AK-MKo"/>
                             <constraint firstItem="nBP-Q6-JLM" firstAttribute="centerX" secondItem="cqM-df-Ort" secondAttribute="centerX" multiplier="0.4" id="5TP-Ho-KGD"/>
                             <constraint firstItem="nBP-Q6-JLM" firstAttribute="centerY" secondItem="cqM-df-Ort" secondAttribute="centerY" id="6Xu-ih-DoA"/>
-                            <constraint firstItem="aFo-vG-Swm" firstAttribute="centerY" secondItem="cqM-df-Ort" secondAttribute="centerY" multiplier="0.14" id="9RG-Q3-MzB"/>
                             <constraint firstItem="xIV-FX-Dk4" firstAttribute="centerY" secondItem="cqM-df-Ort" secondAttribute="centerY" id="9br-E4-iNq"/>
-                            <constraint firstItem="aFo-vG-Swm" firstAttribute="height" secondItem="cqM-df-Ort" secondAttribute="height" multiplier="0.08" id="G03-GV-GYk"/>
                             <constraint firstItem="k1C-IJ-3a4" firstAttribute="centerX" secondItem="cqM-df-Ort" secondAttribute="centerX" id="K1c-jJ-Exo"/>
-                            <constraint firstItem="KYu-c9-liy" firstAttribute="centerY" secondItem="cqM-df-Ort" secondAttribute="centerY" multiplier="0.28" id="UPF-eC-F6V"/>
                             <constraint firstItem="ctI-9H-sZO" firstAttribute="width" secondItem="cqM-df-Ort" secondAttribute="width" multiplier="0.333" id="Uss-sV-xFm"/>
                             <constraint firstItem="k1C-IJ-3a4" firstAttribute="height" secondItem="cqM-df-Ort" secondAttribute="height" id="Xhx-ZZ-1Jd"/>
                             <constraint firstItem="uhv-y7-Ocg" firstAttribute="width" secondItem="cqM-df-Ort" secondAttribute="width" multiplier="0.8" id="Y5f-Vj-XQq"/>
                             <constraint firstItem="k1C-IJ-3a4" firstAttribute="width" secondItem="cqM-df-Ort" secondAttribute="width" id="bqI-SW-a8v"/>
                             <constraint firstItem="ctI-9H-sZO" firstAttribute="centerX" secondItem="cqM-df-Ort" secondAttribute="centerX" id="cWq-KD-qMU"/>
                             <constraint firstItem="xIV-FX-Dk4" firstAttribute="centerX" secondItem="cqM-df-Ort" secondAttribute="centerX" multiplier="1.6" id="cfp-GQ-mBY"/>
-                            <constraint firstItem="aFo-vG-Swm" firstAttribute="centerX" secondItem="cqM-df-Ort" secondAttribute="centerX" multiplier="1.9" id="dVG-cz-i9Y"/>
                             <constraint firstItem="k1C-IJ-3a4" firstAttribute="centerY" secondItem="cqM-df-Ort" secondAttribute="centerY" id="dYz-0I-QIj"/>
                             <constraint firstItem="uhv-y7-Ocg" firstAttribute="centerX" secondItem="cqM-df-Ort" secondAttribute="centerX" id="gfs-RV-GHg"/>
                             <constraint firstItem="ctI-9H-sZO" firstAttribute="centerY" secondItem="cqM-df-Ort" secondAttribute="centerY" id="wM7-Ai-AUR"/>
-                            <constraint firstItem="KYu-c9-liy" firstAttribute="centerX" secondItem="aFo-vG-Swm" secondAttribute="centerX" id="xIS-Ht-lxy"/>
                             <constraint firstItem="nBP-Q6-JLM" firstAttribute="width" secondItem="cqM-df-Ort" secondAttribute="width" multiplier="0.333" id="yFA-CJ-PtX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tss-TX-3E9"/>
@@ -955,14 +970,12 @@
                         <outlet property="Button2" destination="ctI-9H-sZO" id="rqf-AX-sY6"/>
                         <outlet property="anywhereButton" destination="k1C-IJ-3a4" id="DuK-l3-nbX"/>
                         <outlet property="button3" destination="xIV-FX-Dk4" id="ZWu-5a-gdj"/>
-                        <outlet property="keyboardButton" destination="aFo-vG-Swm" id="Tgh-vR-1NA"/>
-                        <outlet property="pongButton" destination="KYu-c9-liy" id="0tk-gi-x4R"/>
                         <outlet property="questionLabel" destination="uhv-y7-Ocg" id="iFC-to-dJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-Jw-j8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595" y="984"/>
+            <point key="canvasLocation" x="596" y="990"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1021,7 +1034,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
-        <segue reference="5ip-ZR-JK0"/>
+        <segue reference="jqQ-OR-bQG"/>
+        <segue reference="sVY-U8-8EB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
@@ -1038,6 +1052,7 @@
         <image name="go button" width="654" height="372"/>
         <image name="hello" width="960" height="720"/>
         <image name="hotdog" width="1019" height="516"/>
+        <image name="hotdogGameButton" width="476" height="208"/>
         <image name="keyboardButton" width="476" height="208"/>
         <image name="minigames" width="714" height="720"/>
         <image name="newStory" width="298" height="270"/>
@@ -1045,8 +1060,10 @@
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
         <image name="pizza" width="732" height="855"/>
+        <image name="pizzaGameButton" width="476" height="208"/>
         <image name="pongGameButton" width="476" height="208"/>
         <image name="popcorn" width="543" height="680"/>
+        <image name="popcornGameButton" width="476" height="236"/>
         <image name="schoolButton" width="952" height="864"/>
         <image name="snackShop" width="4096" height="2048"/>
         <image name="speechBubblePrecise" width="438" height="130"/>

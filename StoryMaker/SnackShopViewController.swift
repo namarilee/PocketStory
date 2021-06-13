@@ -55,7 +55,10 @@ class SnackShopViewController: UIViewController {
     }
 
     @IBAction func goButtonClicked(_ sender: UIButton) {
-        musicPlaying = true
+       // musicPlaying = true
+        BackgroundSelect.instance.stopSound()
+        BackgroundSelect.instance.playSound(soundFile: "foodcourtost")
+
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
         self.present(nextViewController, animated:false, completion:nil)
        // BackgroundSelect().chooseButtonClicked(<#UIButton#>).stopSound()
@@ -63,10 +66,8 @@ class SnackShopViewController: UIViewController {
 //        player = try! AVAudioPlayer(contentsOf: url!)
 //        player?.prepareToPlay()
 //        player?.play()
-        BackgroundSelect().player?.stop()
     //    BackgroundSelect().stopSound(soundFile: "dixielandost (1)")
 
-        BackgroundSelect().playSound(soundFile: "foodcourtost")
     }
 
     @IBAction func userClickedAnywhere(_ sender: Any) {
