@@ -113,16 +113,32 @@ class BackgroundSelect: UIViewController {
         print(UserAnswers.food)
     }
 
+     
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         revertAll()
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
-            let url = Bundle.main.url(forResource: "dixielandost (1)", withExtension: "mp3")
-            player = try! AVAudioPlayer(contentsOf: url!)
-            player.play()
+           
+            playSound(soundFile: "dixielandost (1)")
+
         }
     }
+    
+    func playSound(soundFile: String) {
+        var url = Bundle.main.url(forResource: soundFile, withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.prepareToPlay()
+        player.play()
+        print("lmao")
+    }
+    func stopSound(soundFile: String) {
+        var url = Bundle.main.url(forResource: soundFile, withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.stop()
+    }
+    
+    
 
     @IBAction func button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {

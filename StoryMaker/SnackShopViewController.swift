@@ -5,7 +5,7 @@
 //  Created by MarinaM Lee on 3/2/21.
 //  Copyright © 2021 marinalee. All rights reserved.
 //
-
+import AVFoundation
 import Foundation
 import UIKit
 
@@ -16,7 +16,8 @@ class SnackShopViewController: UIViewController {
     @IBOutlet weak var goButton: UIButton!
 
     @IBOutlet weak var characterImage: UIImageView!
-
+    var player: AVAudioPlayer!
+    var musicPlaying = true
     let captionText = "Let's order some food!"
 
     var showGoButtenWorkItem: DispatchWorkItem?
@@ -56,6 +57,14 @@ class SnackShopViewController: UIViewController {
     @IBAction func goButtonClicked(_ sender: UIButton) {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
         self.present(nextViewController, animated:false, completion:nil)
+       // BackgroundSelect().chooseButtonClicked(<#UIButton#>).stopSound()
+        var url = Bundle.main.url(forResource: "foodcourtost", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player?.prepareToPlay()
+        player?.play()
+        BackgroundSelect().player?.stop()
+
+        BackgroundSelect().playSound(soundFile: "foodcourtost")
     }
 
     @IBAction func userClickedAnywhere(_ sender: Any) {
