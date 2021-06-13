@@ -22,6 +22,7 @@
 		7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */; };
 		7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */; };
 		7A4592E92675B2EB001AD703 /* foodcourtost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */; };
+		7A4592EB2675E8F1001AD703 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EA2675E8F1001AD703 /* HomeScreen.swift */; };
 		7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E53225A44727003ECDD3 /* Keyboard.swift */; };
 		7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A46E53725A44D97003ECDD3 /* c1piano.wav */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
@@ -63,6 +64,7 @@
 		7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dixielandost (1).mp3"; path = "../../../Downloads/dixielandost (1).mp3"; sourceTree = "<group>"; };
 		7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = foodcourtost.mp3; path = ../../../Downloads/foodcourtost.mp3; sourceTree = "<group>"; };
+		7A4592EA2675E8F1001AD703 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7A46E53225A44727003ECDD3 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A46E53725A44D97003ECDD3 /* c1piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c1piano.wav; path = StoryMaker/sounds/c1piano.wav; sourceTree = SOURCE_ROOT; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				7AFC373723E78825009C6534 /* SceneDelegate.swift */,
 				7AFC373923E78825009C6534 /* ViewController.swift */,
 				7AFC373B23E78825009C6534 /* Main.storyboard */,
+				7A4592EA2675E8F1001AD703 /* HomeScreen.swift */,
 				7A63ED41240308C200264532 /* BackgroundSelect.swift */,
 				7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */,
 				7AFC373E23E7882B009C6534 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			files = (
 				7AFC373A23E78825009C6534 /* ViewController.swift in Sources */,
 				90AAB9E225DB40F3000337AD /* PizzaGameCoordinator.swift in Sources */,
+				7A4592EB2675E8F1001AD703 /* HomeScreen.swift in Sources */,
 				90AAB9A625A2A27D000337AD /* AnimatedUILabel.swift in Sources */,
 				90F9C08E25F0BDFF00840D48 /* ParkWelcomeViewController.swift in Sources */,
 				90F9C08525EF571100840D48 /* SnackShopViewController.swift in Sources */,
