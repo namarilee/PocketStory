@@ -784,7 +784,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="newStory"/>
                                 <connections>
-                                    <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="crossDissolve" id="1cs-tk-AFp"/>
+                                    <action selector="newStoryClicked:" destination="Ojv-yZ-M3M" eventType="touchUpInside" id="9uu-tn-haI"/>
+                                    <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="flipHorizontal" id="pVk-aa-ex4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n72-j8-mtU">
@@ -797,6 +798,7 @@
                         <viewLayoutGuide key="safeArea" id="N4S-Uz-GXJ"/>
                     </view>
                     <connections>
+                        <outlet property="minigamesButton" destination="n72-j8-mtU" id="owd-bO-Hzs"/>
                         <outlet property="newStoryButton" destination="zD5-6d-x0g" id="W0O-Uh-MhM"/>
                     </connections>
                 </viewController>
@@ -988,7 +990,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1cs-tk-AFp"/>
+        <segue reference="pVk-aa-ex4"/>
         <segue reference="jqQ-OR-bQG"/>
     </inferredMetricsTieBreakers>
     <resources>
