@@ -23,6 +23,8 @@
 		7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */; };
 		7A4592E92675B2EB001AD703 /* foodcourtost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */; };
 		7A4592EB2675E8F1001AD703 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EA2675E8F1001AD703 /* HomeScreen.swift */; };
+		7A4592ED2676A168001AD703 /* MinigamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EC2676A168001AD703 /* MinigamesViewController.swift */; };
+		7A4592EF2676A63C001AD703 /* AbstractGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EE2676A63C001AD703 /* AbstractGamesViewController.swift */; };
 		7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E53225A44727003ECDD3 /* Keyboard.swift */; };
 		7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A46E53725A44D97003ECDD3 /* c1piano.wav */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
@@ -65,6 +67,8 @@
 		7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dixielandost (1).mp3"; path = "../../../Downloads/dixielandost (1).mp3"; sourceTree = "<group>"; };
 		7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = foodcourtost.mp3; path = ../../../Downloads/foodcourtost.mp3; sourceTree = "<group>"; };
 		7A4592EA2675E8F1001AD703 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		7A4592EC2676A168001AD703 /* MinigamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigamesViewController.swift; sourceTree = "<group>"; };
+		7A4592EE2676A63C001AD703 /* AbstractGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractGamesViewController.swift; sourceTree = "<group>"; };
 		7A46E53225A44727003ECDD3 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A46E53725A44D97003ECDD3 /* c1piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c1piano.wav; path = StoryMaker/sounds/c1piano.wav; sourceTree = SOURCE_ROOT; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
@@ -165,11 +169,13 @@
 				90AAB9F225DB96B1000337AD /* PopcornGameView.swift */,
 				90F9C07325EB0CE200840D48 /* PingPongViewController.swift */,
 				90F9C07A25EB6EEF00840D48 /* FoodSelectViewController.swift */,
+				7A4592EC2676A168001AD703 /* MinigamesViewController.swift */,
 				90F9C07F25EC8B3000840D48 /* BambooDialogViewController.swift */,
 				90F9C08425EF571000840D48 /* SnackShopViewController.swift */,
 				90F9C08725EF704C00840D48 /* ParkLunchViewController.swift */,
 				90F9C08A25F0B01B00840D48 /* CharacterSelectViewController.swift */,
 				90F9C08D25F0BDFF00840D48 /* ParkWelcomeViewController.swift */,
+				7A4592EE2676A63C001AD703 /* AbstractGamesViewController.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -271,10 +277,12 @@
 				90AAB9F325DB96B1000337AD /* PopcornGameView.swift in Sources */,
 				90AAB9DF25DB28EA000337AD /* PizzaGameView.swift in Sources */,
 				90AAB9E525DB60BA000337AD /* HotdogGameCoordinator.swift in Sources */,
+				7A4592EF2676A63C001AD703 /* AbstractGamesViewController.swift in Sources */,
 				90F9C07425EB0CE200840D48 /* PingPongViewController.swift in Sources */,
 				7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */,
 				90F9C08825EF704C00840D48 /* ParkLunchViewController.swift in Sources */,
 				90AAB9F025DB965D000337AD /* PopcornGameCoordinator.swift in Sources */,
+				7A4592ED2676A168001AD703 /* MinigamesViewController.swift in Sources */,
 				90F9C07B25EB6EEF00840D48 /* FoodSelectViewController.swift in Sources */,
 				7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */,
 				90AAB9E925DB6210000337AD /* HotdogGameView.swift in Sources */,

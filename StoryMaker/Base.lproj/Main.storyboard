@@ -401,10 +401,10 @@
             </objects>
             <point key="canvasLocation" x="1388.8392857142856" y="1594.2028985507247"/>
         </scene>
-        <!--View Controller-->
+        <!--Minigames View Controller-->
         <scene sceneID="f7K-Yy-dvo">
             <objects>
-                <viewController id="Duh-BA-6gu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MinigamesViewController" id="Duh-BA-6gu" customClass="MinigamesViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="teO-m8-TNz">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -429,6 +429,9 @@
                                 <rect key="frame" x="330" y="72" width="279" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="pizzaGameButton"/>
+                                <connections>
+                                    <action selector="pizzaGameClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="UsC-4Q-cbe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yog-Xf-Kpf">
                                 <rect key="frame" x="330" y="221" width="279" height="122"/>
@@ -1033,9 +1036,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pVk-aa-ex4"/>
+        <segue reference="cSc-EN-Gwd"/>
         <segue reference="jqQ-OR-bQG"/>
-        <segue reference="sVY-U8-8EB"/>
+        <segue reference="jna-er-N3D"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
