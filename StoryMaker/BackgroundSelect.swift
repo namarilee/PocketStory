@@ -37,6 +37,7 @@ class BackgroundSelect: UIViewController {
     @IBOutlet weak var anywhereButton: UIButton!
     
     var player: AVAudioPlayer!
+    static var instance: BackgroundSelect!
 
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -113,29 +114,37 @@ class BackgroundSelect: UIViewController {
         print(UserAnswers.food)
     }
 
-     
+    var soundFileNameURL: NSURL = NSURL()
+    var soundFileName = ""
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         revertAll()
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
            
-            playSound(soundFile: "dixielandost (1)")
+          //  playSound(soundFile: "dixielandost (1)")
+           
 
         }
     }
     
     func playSound(soundFile: String) {
-        var url = Bundle.main.url(forResource: soundFile, withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
+        BackgroundSelect.instance = self
+         soundFileName = soundFile
+        soundFileNameURL = Bundle.main.url(forResource: soundFile, withExtension: "mp3") as! NSURL
+        do {
+            try player = AVAudioPlayer(contentsOf: soundFileNameURL as URL)
+            } catch {
+                print("Could not play sound file!")
+            }
         player.prepareToPlay()
         player.play()
-        print("lmao")
+        
     }
+    
     func stopSound(soundFile: String) {
-        var url = Bundle.main.url(forResource: soundFile, withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
         player.stop()
+        print("music stopped")
     }
     
     
