@@ -63,7 +63,7 @@ class SnackShopViewController: UIViewController {
 //        player = try! AVAudioPlayer(contentsOf: url!)
 //        player?.prepareToPlay()
 //        player?.play()
-       // BackgroundSelect().player?.stop()
+        BackgroundSelect().player?.stop()
     //    BackgroundSelect().stopSound(soundFile: "dixielandost (1)")
 
         BackgroundSelect().playSound(soundFile: "foodcourtost")

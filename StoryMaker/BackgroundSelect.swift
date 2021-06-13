@@ -122,7 +122,7 @@ class BackgroundSelect: UIViewController {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
            
-          //  playSound(soundFile: "dixielandost (1)")
+            playSound(soundFile: "dixielandost (1)")
            
 
         }
@@ -131,7 +131,7 @@ class BackgroundSelect: UIViewController {
     func playSound(soundFile: String) {
         BackgroundSelect.instance = self
          soundFileName = soundFile
-        soundFileNameURL = Bundle.main.url(forResource: soundFile, withExtension: "mp3") as! NSURL
+        soundFileNameURL = Bundle.main.url(forResource: soundFile, withExtension: "mp3")! as NSURL
         do {
             try player = AVAudioPlayer(contentsOf: soundFileNameURL as URL)
             } catch {

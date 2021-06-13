@@ -393,6 +393,33 @@
             </objects>
             <point key="canvasLocation" x="1389.4444444444443" y="1595.5555555555554"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="f7K-Yy-dvo">
+            <objects>
+                <viewController id="Duh-BA-6gu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teO-m8-TNz">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUI-LU-lMV">
+                                <rect key="frame" x="91" y="220" width="279" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pongGameButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-C4-swr">
+                                <rect key="frame" x="91" y="71" width="279" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="keyboardButton"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="1Qb-Kf-WHq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4m-Ak-ObC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166.5178571428571" y="-213.04347826086959"/>
+        </scene>
         <!--Keyboard-->
         <scene sceneID="RJI-al-vHn">
             <objects>
@@ -792,6 +819,9 @@
                                 <rect key="frame" x="355" y="57" width="275" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="minigames"/>
+                                <connections>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" id="sVY-U8-8EB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58431372550000005" green="0.88235294119999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -804,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N43-1D-Q0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="569.86607142857144" y="14.492753623188406"/>
+            <point key="canvasLocation" x="457" y="70"/>
         </scene>
         <!--BackgroundSelect-->
         <scene sceneID="Ffp-61-iHc">
@@ -889,7 +919,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="crossDissolve" id="jqQ-OR-bQG"/>
+                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="flipHorizontal" id="jqQ-OR-bQG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -986,12 +1016,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-465"/>
+            <point key="canvasLocation" x="729" y="-993"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
-        <segue reference="jqQ-OR-bQG"/>
+        <segue reference="5ip-ZR-JK0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
@@ -1008,12 +1038,14 @@
         <image name="go button" width="654" height="372"/>
         <image name="hello" width="960" height="720"/>
         <image name="hotdog" width="1019" height="516"/>
+        <image name="keyboardButton" width="476" height="208"/>
         <image name="minigames" width="714" height="720"/>
         <image name="newStory" width="298" height="270"/>
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
         <image name="pizza" width="732" height="855"/>
+        <image name="pongGameButton" width="476" height="208"/>
         <image name="popcorn" width="543" height="680"/>
         <image name="schoolButton" width="952" height="864"/>
         <image name="snackShop" width="4096" height="2048"/>
