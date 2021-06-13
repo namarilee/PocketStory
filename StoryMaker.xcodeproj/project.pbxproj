@@ -20,6 +20,7 @@
 		7A14485725DB0FDF0080BBF6 /* bflatpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */; };
 		7A14485825DB0FDF0080BBF6 /* gpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484D25DB0FDE0080BBF6 /* gpiano.wav */; };
 		7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */; };
+		7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */; };
 		7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E53225A44727003ECDD3 /* Keyboard.swift */; };
 		7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A46E53725A44D97003ECDD3 /* c1piano.wav */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
@@ -59,6 +60,7 @@
 		7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bflatpiano.wav; path = StoryMaker/sounds/bflatpiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484D25DB0FDE0080BBF6 /* gpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gpiano.wav; path = StoryMaker/sounds/gpiano.wav; sourceTree = SOURCE_ROOT; };
 		7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dixielandost (1).mp3"; path = "../../../Downloads/dixielandost (1).mp3"; sourceTree = "<group>"; };
 		7A46E53225A44727003ECDD3 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A46E53725A44D97003ECDD3 /* c1piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c1piano.wav; path = StoryMaker/sounds/c1piano.wav; sourceTree = SOURCE_ROOT; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				7A14484D25DB0FDE0080BBF6 /* gpiano.wav */,
 				7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */,
 				7A14484125DB0F8E0080BBF6 /* apiano.wav */,
+				7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */,
 				7A14485425DB0FDF0080BBF6 /* gsharppiano.wav in Resources */,
 				7A14485525DB0FDF0080BBF6 /* fpiano.wav in Resources */,
+				7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */,
 				7AFC373D23E78825009C6534 /* Main.storyboard in Resources */,
 				7A14485325DB0FDF0080BBF6 /* fsharppiano.wav in Resources */,
 				7A14485125DB0FDF0080BBF6 /* epiano.wav in Resources */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import AVFoundation
 
 class BackgroundSelect: UIViewController {
     
@@ -33,6 +35,8 @@ class BackgroundSelect: UIViewController {
     var chooseButton = UIButton(type: UIButton.ButtonType.custom)
     
     @IBOutlet weak var anywhereButton: UIButton!
+    
+    var player: AVAudioPlayer!
 
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -114,6 +118,9 @@ class BackgroundSelect: UIViewController {
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
+            let url = Bundle.main.url(forResource: "dixielandost (1)", withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
         }
     }
 

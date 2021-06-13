@@ -620,7 +620,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-lZ-vYW" userLabel="PizzaButton">
-                                <rect key="frame" x="62.666666666666657" y="84.666666666666686" width="232.99999999999997" height="182.66666666666663"/>
+                                <rect key="frame" x="62.666666666666657" y="84.666666666666671" width="232.99999999999997" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wF3-lZ-vYW" secondAttribute="height" multiplier="88:69" id="zOT-xO-2UK"/>
                                 </constraints>
@@ -630,7 +630,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8b-xf-QVh" userLabel="HotdogButton">
-                                <rect key="frame" x="331.66666666666669" y="84.666666666666686" width="232.66666666666669" height="182.66666666666663"/>
+                                <rect key="frame" x="331.66666666666669" y="84.666666666666671" width="232.66666666666669" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o8b-xf-QVh" secondAttribute="height" multiplier="88:69" id="mTC-Rz-DP3"/>
                                 </constraints>
@@ -640,7 +640,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmP-wO-lnE" userLabel="PopcornButton">
-                                <rect key="frame" x="600.33333333333337" y="84.666666666666686" width="233" height="182.66666666666663"/>
+                                <rect key="frame" x="600.33333333333337" y="84.666666666666671" width="233" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RmP-wO-lnE" secondAttribute="height" multiplier="88:69" id="jJ6-iK-ezb"/>
                                 </constraints>
@@ -779,10 +779,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD5-6d-x0g">
-                                <rect key="frame" x="107" y="90" width="117" height="93"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD5-6d-x0g">
+                                <rect key="frame" x="39" y="72" width="352" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="newStory"/>
                                 <connections>
                                     <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="flipHorizontal" id="1cs-tk-AFp"/>
                                 </connections>
@@ -794,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N43-1D-Q0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571.18226600985224" y="15.199999999999999"/>
+            <point key="canvasLocation" x="570.53571428571422" y="14.492753623188406"/>
         </scene>
         <!--BackgroundSelect-->
         <scene sceneID="Ffp-61-iHc">
@@ -972,7 +972,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yPW-bk-Kzd"/>
+        <segue reference="1cs-tk-AFp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
@@ -989,6 +989,7 @@
         <image name="go button" width="654" height="372"/>
         <image name="hello" width="960" height="720"/>
         <image name="hotdog" width="1019" height="516"/>
+        <image name="newStory" width="298" height="270"/>
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
