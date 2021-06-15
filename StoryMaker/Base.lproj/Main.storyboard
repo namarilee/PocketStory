@@ -455,6 +455,7 @@
                                 <state key="normal" title="Button" image="back button"/>
                                 <connections>
                                     <action selector="backButtonClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="5Yl-SU-0bD"/>
+                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="flipHorizontal" id="O8j-VC-0WM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -462,7 +463,7 @@
                         <viewLayoutGuide key="safeArea" id="1Qb-Kf-WHq"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="PKP-hD-d0A" id="jhk-4D-JRp"/>
+                        <outlet property="backButton" destination="PKP-hD-d0A" id="PB7-Po-xCv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4m-Ak-ObC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -869,7 +870,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="minigames"/>
                                 <connections>
-                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="sVY-U8-8EB"/>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="t6c-FP-YCx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxT-Jz-PP0">
+                                <rect key="frame" x="699" y="206" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" id="VVO-lg-tuH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1045,8 +1054,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jqQ-OR-bQG"/>
-        <segue reference="jna-er-N3D"/>
+        <segue reference="O8j-VC-0WM"/>
+        <segue reference="qT1-FB-nbz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>

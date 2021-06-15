@@ -12,18 +12,13 @@ import UIKit
 
 class MinigamesViewController: AbstractGamesViewController {
 
-  //  var popcornGameCoordinator: PopcornGameCoordinator? = nil
-//    var backButton = UIButton(type: UIButton.ButtonType.custom)
-//    let imageName = UIImage(named: "back button")
-//    backButton.setImage(imageName, for: .normal)
-//
-//    view.addSubview(backButton)
+ 
     
     @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButton.isHidden = true
+       // backButton.isHidden = true
     }
     
     
@@ -49,9 +44,9 @@ class MinigamesViewController: AbstractGamesViewController {
         view = popcornGameCoordinator?.loadView()
     }
     
-    @IBAction func backButtonClicked(_ sender: Any) {
-        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MinigamesViewController") as! MinigamesViewController
-              self.present(nextViewController, animated:false, completion:nil)
-    }
+//    @IBAction func backButtonClicked(_ sender: Any) {
+//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MinigamesViewController") as! MinigamesViewController
+//              self.present(nextViewController, animated:false, completion:nil)
+//    }
     
 }
