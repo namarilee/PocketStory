@@ -11,7 +11,7 @@ import UIKit
 
 class PopcornGameView: UIView {
 
-    private var parent: FoodSelectViewController
+    private var parent: AbstractGamesViewController
 
     let darkImageView = UIImageView()
     let greatJobImageView = UIImageView()
@@ -21,7 +21,7 @@ class PopcornGameView: UIView {
 
     var currentScore = 0
 
-    init(parent: FoodSelectViewController) {
+    init(parent: AbstractGamesViewController) {
         self.parent = parent
         super.init(frame: .zero)
 

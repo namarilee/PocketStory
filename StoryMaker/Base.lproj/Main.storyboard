@@ -366,10 +366,10 @@
                                     <constraint firstAttribute="height" constant="50" id="zKn-R9-xYE"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-KP-kBz">
-                                <rect key="frame" x="43" y="20" width="87" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-KP-kBz">
+                                <rect key="frame" x="40" y="20" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
+                                <state key="normal" title="back" image="back button"/>
                                 <connections>
                                     <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="jna-er-N3D"/>
                                 </connections>
@@ -433,6 +433,14 @@
                                     <action selector="pizzaGameClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="UsC-4Q-cbe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-ye-sA3">
+                                <rect key="frame" x="617" y="72" width="279" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="popcornGameButton"/>
+                                <connections>
+                                    <action selector="popcornGameClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="AX6-1n-IxC"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yog-Xf-Kpf">
                                 <rect key="frame" x="330" y="221" width="279" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -441,23 +449,21 @@
                                     <action selector="hotdogGameClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="yI1-S6-SEA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEy-jN-Sq9">
-                                <rect key="frame" x="39" y="20" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-hD-d0A">
+                                <rect key="frame" x="33" y="11" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
+                                <state key="normal" title="Button" image="back button"/>
                                 <connections>
-                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="flipHorizontal" id="kSa-LR-lZV"/>
+                                    <action selector="backButtonClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="5Yl-SU-0bD"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-ye-sA3">
-                                <rect key="frame" x="617" y="72" width="279" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="popcornGameButton"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83529411760000005" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="1Qb-Kf-WHq"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="PKP-hD-d0A" id="jhk-4D-JRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4m-Ak-ObC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -577,14 +583,6 @@
                                     <action selector="bflatpressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="9Xa-9W-nbC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-Lg-dzE">
-                                <rect key="frame" x="57" y="41" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
-                                <connections>
-                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="qT1-FB-nbz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-wW-AN2">
                                 <rect key="frame" x="503" y="108" width="52" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -631,6 +629,14 @@
                                 </state>
                                 <connections>
                                     <action selector="fSharpPressed:" destination="IIj-b0-Doc" eventType="touchUpInside" id="tUX-7v-LO5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-Lg-dzE">
+                                <rect key="frame" x="40" y="20" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back" image="back button"/>
+                                <connections>
+                                    <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="qT1-FB-nbz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1039,8 +1045,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cSc-EN-Gwd"/>
-        <segue reference="kSa-LR-lZV"/>
+        <segue reference="jqQ-OR-bQG"/>
         <segue reference="jna-er-N3D"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1049,6 +1054,7 @@
         <image name="amParkButton" width="952" height="864"/>
         <image name="amusement" width="3000" height="1775"/>
         <image name="amusement2" width="4096" height="2048"/>
+        <image name="back button" width="630" height="618"/>
         <image name="ball" width="1080" height="1080"/>
         <image name="captionRect" width="840" height="154"/>
         <image name="cat" width="818" height="888"/>

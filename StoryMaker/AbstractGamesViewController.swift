@@ -12,6 +12,8 @@ class AbstractGamesViewController: UIViewController {
     
     var pizzaGameCoordinator: PizzaGameCoordinator!
     var hotdogGameCoordinator: HotdogGameCoordinator!
+    var popcornGameCoordinator: PopcornGameCoordinator!
+
     let numSelectors = [#selector(num1Clicked), #selector(num2Clicked), #selector(num3Clicked), #selector(num4Clicked), #selector(num5Clicked)]
     let gameProgressBar = [UIImage(named: "p0"), UIImage(named: "p1"), UIImage(named: "p2"), UIImage(named: "p3"), UIImage(named: "p4"), UIImage(named: "p5")]
     

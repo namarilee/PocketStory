@@ -27,7 +27,7 @@ class FoodSelectViewController: AbstractGamesViewController {
 
     let chooseButton = UIButton(type: UIButton.ButtonType.custom)
 
-    var popcornGameCoordinator: PopcornGameCoordinator? = nil
+   // var popcornGameCoordinator: PopcornGameCoordinator? = nil
 
     // TODO: Currently not used yet
     var chosenFood =  UIImageView()

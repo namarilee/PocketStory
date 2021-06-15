@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class PopcornGameCoordinator {
-    private var parent: FoodSelectViewController
+    private var parent: AbstractGamesViewController
     private var popcornGameView: PopcornGameView?
     
-    init(parent: FoodSelectViewController) {
+    init(parent: AbstractGamesViewController) {
         self.parent = parent
     }
     
