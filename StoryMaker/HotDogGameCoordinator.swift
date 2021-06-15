@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class HotdogGameCoordinator {
-    private var parent: FoodSelectViewController
+    private var parent: AbstractGamesViewController
     private var numSelectors: [Selector]
     private var hotdogGameView: HotdogGameView?
     
-    init(parent: FoodSelectViewController, numSelectors: [Selector]) {
+    init(parent: AbstractGamesViewController, numSelectors: [Selector]) {
         self.parent = parent
         self.numSelectors = numSelectors
     }

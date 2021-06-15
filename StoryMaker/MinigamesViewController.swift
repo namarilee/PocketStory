@@ -25,4 +25,8 @@ class MinigamesViewController: AbstractGamesViewController {
     }
     
     
+    @IBAction func hotdogGameClicked(_ sender: Any) {
+        hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
+        view = hotdogGameCoordinator?.loadView()
+    }
 }

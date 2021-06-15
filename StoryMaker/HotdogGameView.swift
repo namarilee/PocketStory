@@ -11,7 +11,7 @@ import UIKit
 
 class HotdogGameView: UIView {
 
-    private var parent: FoodSelectViewController
+    private var parent: AbstractGamesViewController
 
     let foodGameLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
     let foodGameImageView = UIImageView()
@@ -34,7 +34,7 @@ class HotdogGameView: UIView {
 
     var foodGameCount = 0
 
-    init(parent: FoodSelectViewController, numSelectors: [Selector]) {
+    init(parent: AbstractGamesViewController, numSelectors: [Selector]) {
         self.parent = parent
         super.init(frame: .zero)
 

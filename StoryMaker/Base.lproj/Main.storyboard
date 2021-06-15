@@ -437,6 +437,9 @@
                                 <rect key="frame" x="330" y="221" width="279" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="hotdogGameButton"/>
+                                <connections>
+                                    <action selector="hotdogGameClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="yI1-S6-SEA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEy-jN-Sq9">
                                 <rect key="frame" x="39" y="20" width="34" height="30"/>
@@ -1037,7 +1040,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cSc-EN-Gwd"/>
-        <segue reference="jqQ-OR-bQG"/>
+        <segue reference="kSa-LR-lZV"/>
         <segue reference="jna-er-N3D"/>
     </inferredMetricsTieBreakers>
     <resources>
