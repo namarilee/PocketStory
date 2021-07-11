@@ -45,6 +45,14 @@
                                 </constraints>
                                 <state key="normal" image="hello"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-op-KZQ">
+                                <rect key="frame" x="26" y="20" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back" image="back button"/>
+                                <connections>
+                                    <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="flipHorizontal" id="3uH-Qr-wIE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -78,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVi-r5-K7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="1802"/>
+            <point key="canvasLocation" x="602" y="1751"/>
         </scene>
         <!--Character Select View Controller-->
         <scene sceneID="Vk1-DW-tX7">
@@ -272,6 +280,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order" translatesAutoresizingMaskIntoConstraints="NO" id="tid-MV-oaV" userLabel="OrderBackgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-Kk-eh4" userLabel="AnywhereButton">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <state key="normal" image="Menuatsnackbarbuttons"/>
+                                <connections>
+                                    <action selector="userClickedAnywhere:" destination="yAx-TA-Eio" eventType="touchUpInside" id="VdD-Ry-Ce5"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubblePrecise" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-dw-3jQ" userLabel="SpeechBubblePrecise">
                                 <rect key="frame" x="462.66666666666674" y="10.000000000000007" width="403.33333333333326" height="111.66666666666669"/>
                             </imageView>
@@ -284,12 +299,6 @@
                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-Kk-eh4" userLabel="AnywhereButton">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                                <connections>
-                                    <action selector="userClickedAnywhere:" destination="yAx-TA-Eio" eventType="touchUpInside" id="VdD-Ry-Ce5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-Vl-S5j" userLabel="PromptButton">
                                 <rect key="frame" x="750" y="56.666666666666664" width="111.66666666666663" height="99.333333333333343"/>
                                 <constraints>
@@ -339,6 +348,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pingpongtable" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-SR-PLN">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvE-EH-yiA" userLabel="PongScore">
                                 <rect key="frame" x="564" y="314.66666666666669" width="216" height="74.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
@@ -399,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ql5-YL-uiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388.8392857142856" y="1594.2028985507247"/>
+            <point key="canvasLocation" x="1339.9553571428571" y="1573.913043478261"/>
         </scene>
         <!--Minigames View Controller-->
         <scene sceneID="f7K-Yy-dvo">
@@ -696,12 +709,12 @@
                                     <action selector="userClickedAnywhere:" destination="22n-44-0Dd" eventType="touchUpInside" id="ceW-cM-qkX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-lZ-vYW" userLabel="PizzaButton">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-lZ-vYW" userLabel="PizzaButton">
                                 <rect key="frame" x="62.666666666666657" y="84.666666666666671" width="232.99999999999997" height="182.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wF3-lZ-vYW" secondAttribute="height" multiplier="88:69" id="zOT-xO-2UK"/>
                                 </constraints>
-                                <state key="normal" title="Pizza" image="pizza"/>
+                                <state key="normal" title="Pizza" image="pizzaonplate"/>
                                 <connections>
                                     <action selector="pizzaButtonClicked:" destination="22n-44-0Dd" eventType="touchUpInside" id="Um5-Sh-esU"/>
                                 </connections>
@@ -711,7 +724,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o8b-xf-QVh" secondAttribute="height" multiplier="88:69" id="mTC-Rz-DP3"/>
                                 </constraints>
-                                <state key="normal" title="Hotdog" image="hotdog"/>
+                                <state key="normal" title="Hotdog" image="hotdogonplate"/>
                                 <connections>
                                     <action selector="hotdogButtonClicked:" destination="22n-44-0Dd" eventType="touchUpInside" id="msl-th-pBk"/>
                                 </connections>
@@ -955,10 +968,10 @@
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="IU7-ee-BAr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-l1-Dnj">
-                                <rect key="frame" x="36" y="22" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-l1-Dnj">
+                                <rect key="frame" x="26" y="20" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back" image="back button"/>
                                 <connections>
                                     <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="flipHorizontal" id="jqQ-OR-bQG"/>
                                 </connections>
@@ -996,7 +1009,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-Jw-j8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="990"/>
+            <point key="canvasLocation" x="595.98214285714278" y="989.85507246376824"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1010,7 +1023,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-oJ-sbK">
-                                <rect key="frame" x="360.66666666666669" y="227.66666666666663" width="174.66666666666669" height="124.33333333333334"/>
+                                <rect key="frame" x="360.66666666666669" y="227.66666666666666" width="174.66666666666669" height="124.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q0x-oJ-sbK" secondAttribute="height" multiplier="38:27" id="sSX-Oh-USt"/>
                                 </constraints>
@@ -1054,11 +1067,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="O8j-VC-0WM"/>
-        <segue reference="qT1-FB-nbz"/>
+        <segue reference="3uH-Qr-wIE"/>
+        <segue reference="jqQ-OR-bQG"/>
+        <segue reference="jna-er-N3D"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
+        <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>
+        <image name="Pingpongtable" width="1008" height="504"/>
         <image name="Start button" width="960" height="720"/>
         <image name="amParkButton" width="952" height="864"/>
         <image name="amusement" width="3000" height="1775"/>
@@ -1072,16 +1088,16 @@
         <image name="farmButton" width="952" height="864"/>
         <image name="go button" width="654" height="372"/>
         <image name="hello" width="960" height="720"/>
-        <image name="hotdog" width="1019" height="516"/>
         <image name="hotdogGameButton" width="476" height="208"/>
+        <image name="hotdogonplate" width="2048" height="1212"/>
         <image name="keyboardButton" width="476" height="208"/>
         <image name="minigames" width="714" height="720"/>
         <image name="newStory" width="298" height="270"/>
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
-        <image name="pizza" width="732" height="855"/>
         <image name="pizzaGameButton" width="476" height="208"/>
+        <image name="pizzaonplate" width="2048" height="1212"/>
         <image name="pongGameButton" width="476" height="208"/>
         <image name="popcorn" width="543" height="680"/>
         <image name="popcornGameButton" width="476" height="236"/>

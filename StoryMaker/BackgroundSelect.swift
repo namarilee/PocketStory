@@ -137,6 +137,7 @@ class BackgroundSelect: UIViewController {
             player = try AVAudioPlayer(contentsOf: soundFileNameURL as URL)
             player.prepareToPlay()
             player.play()
+            player.numberOfLoops = -1
         } catch {
             print("Could not play sound file!")
         }

@@ -28,7 +28,8 @@ class ParkWelcomeViewController: UIViewController {
     var showPromptButtenWorkItem: DispatchWorkItem?
 
     var promptCount = 0
-
+    
+    
     // TODO: Currently not used yet
     let playMyStoryButton = UIButton(type: UIButton.ButtonType.custom)
 
@@ -69,6 +70,12 @@ class ParkWelcomeViewController: UIViewController {
 
         showPromptButton(image: UIImage(named: "hello")!, delay: 7)
     }
+    
+    
+//    @IBAction func backButtonClicked(_ sender: Any) {
+//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundSelect") as! BackgroundSelect
+//        self.present(nextViewController, animated:false, completion:nil)
+//    }
     
     func showCharacter() {
         NSLayoutConstraint.activate([
