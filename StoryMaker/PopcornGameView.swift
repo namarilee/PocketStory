@@ -18,7 +18,9 @@ class PopcornGameView: UIView {
     let popcornCountLabel = UILabel(frame: CGRect(x: 760, y: 250, width: 620, height: 200))
     let basketImageView = UIImageView()
     let pCounterImageView = UIImageView()
-
+    var buttonName = UIButton(type: UIButton.ButtonType.custom) as UIButton
+   //buttonName.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
+   // buttonName.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
     var currentScore = 0
 
     init(parent: AbstractGamesViewController) {
@@ -64,6 +66,10 @@ class PopcornGameView: UIView {
                             self.hidePopcornGame()
                             self.greatJobImageView.isHidden = true
 //                            parent.questionLabel.text = "What would you like to play?"
+                      
+                                      
+                                      // playSound(soundFile: "dixielandost (1)")
+                                      
                         }
                     }
                 }
@@ -87,6 +93,7 @@ class PopcornGameView: UIView {
         basketImageView.isHidden = true
         //kernelImageView.isHidden = true
 //        parent.showButtonQuestions()
+        
     }
 
     @objc func moveBasket(_ recognizer: UIPanGestureRecognizer) {
