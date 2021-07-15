@@ -28,7 +28,7 @@ class ParkWelcomeViewController: UIViewController {
     var showPromptButtenWorkItem: DispatchWorkItem?
 
     var promptCount = 0
-    
+    static var instance: ParkWelcomeViewController!
     
     // TODO: Currently not used yet
     let playMyStoryButton = UIButton(type: UIButton.ButtonType.custom)
@@ -50,7 +50,7 @@ class ParkWelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ParkWelcomeViewController.instance = self
         characterImage.isHidden = true
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         characterImage.image = UIImage(named: Pup.imageName)
@@ -150,6 +150,13 @@ class ParkWelcomeViewController: UIViewController {
 //            playMyStoryButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
         }
     }
+    
+    func photoboothIntro() {
+          showCharacter()
+         showSpeechBubble()
+          addMessageToSpeechBubble("That snack was delicious, wasn't it?")
+         showPromptButton(image: UIImage(named: "Next button")!, delay: 7)
+      }
 
     @IBAction func userClickedAnywhere(_ sender: Any) {
         characterImage.layer.removeAllAnimations()

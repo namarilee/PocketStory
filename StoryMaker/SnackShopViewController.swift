@@ -56,7 +56,7 @@ class SnackShopViewController: UIViewController {
 
     @IBAction func goButtonClicked(_ sender: UIButton) {
        // musicPlaying = true
-        BackgroundSelect.instance.stopSound()
+        BackgroundSelect.instance.pauseSound()
         BackgroundSelect.instance.playSound(soundFile: "foodcourtost")
 
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController

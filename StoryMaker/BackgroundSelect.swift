@@ -150,7 +150,9 @@ class BackgroundSelect: UIViewController {
         print("music stopped")
     }
     
-    
+    func pauseSound() {
+        player.pause()
+    }
 
     @IBAction func button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {

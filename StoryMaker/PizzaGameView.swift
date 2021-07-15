@@ -141,10 +141,14 @@ class PizzaGameView: UIView {
             removeBackground()
 //            parent.questionLabel.text = "What game would you like to play?"
             parent.pizzaGameCoordinator = nil
-            BackgroundSelect.instance.stopSound()
-            BackgroundSelect.instance.playSound(soundFile: "dixielandost (1)")
 
-            addBackground(imageName: "amusement", contentMode: .scaleAspectFill)
+          //  addBackground(imageName: "amusement", contentMode: .scaleAspectFill)
+            AbstractGamesViewController.instance.photoboothIntro()
+        
+//            ParkWelcomeViewController.instance.showCharacter()
+//            showSpeechBubble()
+//            addMessageToSpeechBubble("Welcome to the " + AmusementPark.name + "!")
+//            showPromptButton(image: UIImage(named: "hello")!, delay: 7)
 //            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
 //
 //            self.present(nextViewController, animated:false, completion:nil)

@@ -20,53 +20,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8BC4853A-D6F6-478B-BBA5-8CECF9A6943C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StoryMaker/SnackShopViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "goButtonClicked(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8BC4853A-D6F6-478B-BBA5-8CECF9A6943C - bea8dac2ae6894dd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "App.SnackShopViewController.goButtonClicked(__C.UIButton) -&gt; ()"
-                  moduleName = "App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marinalee/Desktop/StoryMaker/StoryMaker/SnackShopViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "671">
-               </Location>
-               <Location
-                  uuid = "8BC4853A-D6F6-478B-BBA5-8CECF9A6943C - bea8dac2ae6894dd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "App.SnackShopViewController.goButtonClicked(__C.UIButton) -&gt; ()"
-                  moduleName = "App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marinalee/Desktop/StoryMaker/StoryMaker/SnackShopViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1082">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
