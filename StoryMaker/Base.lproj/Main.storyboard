@@ -358,6 +358,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="paddle1" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-PR-fAj" userLabel="Paddle1">
                                 <rect key="frame" x="-1" y="107" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OhZ-b0-YyS"/>
@@ -904,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N43-1D-Q0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="70"/>
+            <point key="canvasLocation" x="346" y="-16"/>
         </scene>
         <!--BackgroundSelect-->
         <scene sceneID="Ffp-61-iHc">
@@ -946,7 +947,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ctI-9H-sZO" secondAttribute="height" multiplier="88:69" id="Jh9-qX-CbV"/>
                                 </constraints>
-                                <state key="normal" title="Button2" image="schoolButton">
+                                <state key="normal" title="Button2" image="school coming soon">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
@@ -959,8 +960,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xIV-FX-Dk4" secondAttribute="height" multiplier="88:69" id="dEw-Gz-5ag"/>
                                 </constraints>
-                                <state key="normal" title="Button3" image="farmButton">
-                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="farm coming soon">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
@@ -1008,7 +1008,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-Jw-j8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595.98214285714278" y="989.85507246376824"/>
+            <point key="canvasLocation" x="595.3125" y="989.85507246376824"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1066,9 +1066,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3uH-Qr-wIE"/>
+        <segue reference="pVk-aa-ex4"/>
         <segue reference="jqQ-OR-bQG"/>
-        <segue reference="jna-er-N3D"/>
+        <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Copy of gradient background" width="1920" height="1080"/>
@@ -1084,7 +1084,7 @@
         <image name="cat" width="818" height="888"/>
         <image name="cow" width="903" height="771"/>
         <image name="dog" width="562" height="835"/>
-        <image name="farmButton" width="952" height="864"/>
+        <image name="farm coming soon" width="714" height="648"/>
         <image name="go button" width="654" height="372"/>
         <image name="hello" width="960" height="720"/>
         <image name="hotdogGameButton" width="476" height="208"/>
@@ -1100,7 +1100,7 @@
         <image name="pongGameButton" width="476" height="208"/>
         <image name="popcorn" width="543" height="680"/>
         <image name="popcornGameButton" width="476" height="236"/>
-        <image name="schoolButton" width="952" height="864"/>
+        <image name="school coming soon" width="714" height="648"/>
         <image name="snackShop" width="4096" height="2048"/>
         <image name="speechBubblePrecise" width="438" height="130"/>
     </resources>

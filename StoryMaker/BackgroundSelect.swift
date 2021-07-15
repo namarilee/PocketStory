@@ -168,7 +168,7 @@ class BackgroundSelect: UIViewController {
             self.button3.transform = .identity
             self.button2.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         })
-        showChooseButton()
+        //showChooseButton()
     }
     
     @IBAction func button3Clicked(_ sender: UIButton) {
@@ -178,7 +178,7 @@ class BackgroundSelect: UIViewController {
             self.button3.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         })
         
-        showChooseButton()
+        //showChooseButton()
     }
        
     @IBAction func userClickedAnywhere(_ sender: Any) {
