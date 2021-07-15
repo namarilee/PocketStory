@@ -141,11 +141,11 @@ class HotdogGameView: UIView {
         })
         if foodGameCount == 5 {
             self.hideHotdogGame()
-//            parent.showButtonQuestions()
             backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
             removeBackground()
-//            parent.questionLabel.text = "What game would you like to play?"
             parent.hotdogGameCoordinator = nil
+            AbstractGamesViewController.instance.photoboothIntro()
+
         }
     }
 

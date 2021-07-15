@@ -65,10 +65,8 @@ class PopcornGameView: UIView {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                             self.hidePopcornGame()
                             self.greatJobImageView.isHidden = true
-//                            parent.questionLabel.text = "What would you like to play?"
-                      
-                                      
-                                      // playSound(soundFile: "dixielandost (1)")
+                            AbstractGamesViewController.instance.photoboothIntro()
+
                                       
                         }
                     }

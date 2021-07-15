@@ -136,22 +136,12 @@ class PizzaGameView: UIView {
         })
         if foodGameCount == 5 {
             hidePizzaGame()
-//            parent.showButtonQuestions()
             backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
             removeBackground()
-//            parent.questionLabel.text = "What game would you like to play?"
             parent.pizzaGameCoordinator = nil
 
-          //  addBackground(imageName: "amusement", contentMode: .scaleAspectFill)
             AbstractGamesViewController.instance.photoboothIntro()
         
-//            ParkWelcomeViewController.instance.showCharacter()
-//            showSpeechBubble()
-//            addMessageToSpeechBubble("Welcome to the " + AmusementPark.name + "!")
-//            showPromptButton(image: UIImage(named: "hello")!, delay: 7)
-//            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
-//
-//            self.present(nextViewController, animated:false, completion:nil)
         }
     }
 
