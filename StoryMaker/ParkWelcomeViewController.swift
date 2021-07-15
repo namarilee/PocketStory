@@ -68,10 +68,10 @@ class ParkWelcomeViewController: UIViewController {
 
         addMessageToSpeechBubble("Welcome to the " + AmusementPark.name + "!")
 
-        showPromptButton(image: UIImage(named: "hello")!, delay: 7)
+          showPromptButton(image: UIImage(named: "hello")!, delay: 7)
     }
     
-    
+  
 //    @IBAction func backButtonClicked(_ sender: Any) {
 //        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundSelect") as! BackgroundSelect
 //        self.present(nextViewController, animated:false, completion:nil)

@@ -24,13 +24,9 @@ class AbstractGamesViewController: UIViewController {
     }
     
     func photoboothIntro() {
-//        ParkWelcomeViewController.instance.showCharacter()
-//        ParkWelcomeViewController.instance.showSpeechBubble()
-//        ParkWelcomeViewController.instance.addMessageToSpeechBubble("That snack was delicious, wasn't it?")
-//        ParkWelcomeViewController.instance.showPromptButton(image: UIImage(named: "Next button")!, delay: 7)
         BackgroundSelect.instance.stopSound()
         BackgroundSelect.instance.playSound(soundFile: "dixielandost (1)")
-        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
+        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkIntroPhotobooth") as! ParkIntroPhotobooth
             self.present(nextViewController, animated:false, completion:nil)
     }
     
