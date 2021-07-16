@@ -28,6 +28,8 @@
 		7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E53225A44727003ECDD3 /* Keyboard.swift */; };
 		7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A46E53725A44D97003ECDD3 /* c1piano.wav */; };
 		7A626393269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A626392269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift */; };
+		7A62639526A0B6BD00CA4FB3 /* PhotoboothSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62639426A0B6BD00CA4FB3 /* PhotoboothSelect.swift */; };
+		7A6263D826A1511C00CA4FB3 /* Bb major.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A6263D726A1511B00CA4FB3 /* Bb major.mp3 */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
 		7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373523E78825009C6534 /* AppDelegate.swift */; };
 		7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373723E78825009C6534 /* SceneDelegate.swift */; };
@@ -73,6 +75,8 @@
 		7A46E53225A44727003ECDD3 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A46E53725A44D97003ECDD3 /* c1piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = c1piano.wav; path = StoryMaker/sounds/c1piano.wav; sourceTree = SOURCE_ROOT; };
 		7A626392269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkIntroPhotobooth.swift; sourceTree = "<group>"; };
+		7A62639426A0B6BD00CA4FB3 /* PhotoboothSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoboothSelect.swift; sourceTree = "<group>"; };
+		7A6263D726A1511B00CA4FB3 /* Bb major.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bb major.mp3"; path = "../../Bb major.mp3"; sourceTree = "<group>"; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
 		7AFC373223E78825009C6534 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC373523E78825009C6534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				7A14484D25DB0FDE0080BBF6 /* gpiano.wav */,
 				7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */,
 				7A14484125DB0F8E0080BBF6 /* apiano.wav */,
+				7A6263D726A1511B00CA4FB3 /* Bb major.mp3 */,
 				7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */,
 				7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */,
 			);
@@ -179,6 +184,7 @@
 				90F9C08A25F0B01B00840D48 /* CharacterSelectViewController.swift */,
 				90F9C08D25F0BDFF00840D48 /* ParkWelcomeViewController.swift */,
 				7A4592EE2676A63C001AD703 /* AbstractGamesViewController.swift */,
+				7A62639426A0B6BD00CA4FB3 /* PhotoboothSelect.swift */,
 			);
 			path = StoryMaker;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */,
 				7A14485425DB0FDF0080BBF6 /* gsharppiano.wav in Resources */,
 				7A14485525DB0FDF0080BBF6 /* fpiano.wav in Resources */,
+				7A6263D826A1511C00CA4FB3 /* Bb major.mp3 in Resources */,
 				7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */,
 				7A4592E92675B2EB001AD703 /* foodcourtost.mp3 in Resources */,
 				7AFC373D23E78825009C6534 /* Main.storyboard in Resources */,
@@ -292,6 +299,7 @@
 				7A626393269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift in Sources */,
 				7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */,
 				90F9C08B25F0B01B00840D48 /* CharacterSelectViewController.swift in Sources */,
+				7A62639526A0B6BD00CA4FB3 /* PhotoboothSelect.swift in Sources */,
 				7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

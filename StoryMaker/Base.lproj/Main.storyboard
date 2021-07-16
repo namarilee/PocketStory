@@ -205,14 +205,59 @@
             </objects>
             <point key="canvasLocation" x="455" y="2339"/>
         </scene>
-        <!--View Controller-->
+        <!--Photobooth Select-->
         <scene sceneID="8tl-jn-cK2">
             <objects>
-                <viewController id="Jj3-OW-OvX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoboothSelect" id="Jj3-OW-OvX" customClass="PhotoboothSelect" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gC6-GX-VNH">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUN-Ui-rOR">
+                                <rect key="frame" x="567.66666666666663" y="90" width="298.33333333333331" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iUN-Ui-rOR" secondAttribute="height" multiplier="88:69" id="hNx-VF-YIb"/>
+                                </constraints>
+                                <state key="normal" image="farm coming soon">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="7RS-xn-qrM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxV-FN-jfo">
+                                <rect key="frame" x="298.66666666666663" y="90" width="298.66666666666663" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pxV-FN-jfo" secondAttribute="height" multiplier="88:69" id="Gld-AF-SLg"/>
+                                </constraints>
+                                <state key="normal" title="Button2" image="campfire button">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="twZ-Of-tRn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-vV-T7n">
+                                <rect key="frame" x="30" y="90" width="298.33333333333331" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Reh-vV-T7n" secondAttribute="height" multiplier="88:69" id="8Te-yB-YvZ"/>
+                                </constraints>
+                                <state key="normal" title="Button1" image="boat river button">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="Aie-cg-kzD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pxV-FN-jfo" firstAttribute="width" secondItem="pxV-FN-jfo" secondAttribute="height" multiplier="88:69" id="0Da-Qg-fc9"/>
+                            <constraint firstItem="Reh-vV-T7n" firstAttribute="width" secondItem="Reh-vV-T7n" secondAttribute="height" multiplier="88:69" id="Eaq-mj-ngG"/>
+                            <constraint firstItem="iUN-Ui-rOR" firstAttribute="width" secondItem="iUN-Ui-rOR" secondAttribute="height" multiplier="88:69" id="iE9-sh-Fnl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yNH-UZ-z9B"/>
                     </view>
                 </viewController>
@@ -1151,6 +1196,8 @@
         <image name="amusement2" width="4096" height="2048"/>
         <image name="back button" width="630" height="618"/>
         <image name="ball" width="1080" height="1080"/>
+        <image name="boat river button" width="714" height="648"/>
+        <image name="campfire button" width="714" height="648"/>
         <image name="captionRect" width="840" height="154"/>
         <image name="cat" width="818" height="888"/>
         <image name="cow" width="903" height="771"/>
