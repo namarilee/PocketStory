@@ -804,6 +804,30 @@
             </objects>
             <point key="canvasLocation" x="1862" y="141"/>
         </scene>
+        <!--Photobooth Picture-->
+        <scene sceneID="Ups-kd-Eou">
+            <objects>
+                <viewController storyboardIdentifier="PhotoboothPicture" id="cSo-l8-FLq" customClass="PhotoboothPicture" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cn6-we-fk0">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boat" translatesAutoresizingMaskIntoConstraints="NO" id="iUp-wC-VSo">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="k3f-OV-ZRl"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoBG" destination="iUp-wC-VSo" id="fZg-HD-hjF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ua-G2-r5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.8392857142856" y="1097.1014492753625"/>
+        </scene>
         <!--Food Select View Controller-->
         <scene sceneID="802-R7-Z4B">
             <objects>
@@ -1219,6 +1243,7 @@
         <image name="back button" width="630" height="618"/>
         <image name="ball" width="1080" height="1080"/>
         <image name="beachButton" width="714" height="648"/>
+        <image name="boat" width="1008" height="504"/>
         <image name="boat river button" width="714" height="648"/>
         <image name="campfire button" width="714" height="648"/>
         <image name="captionRect" width="840" height="154"/>

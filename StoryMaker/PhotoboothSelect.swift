@@ -98,13 +98,8 @@ class PhotoboothSelect: UIViewController {
     
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
            revertAll()
-           if UserAnswers.background == AmusementPark.answer {
-               let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoboothPicture") as! PhotoboothPicture
                self.present(nextViewController, animated:false, completion:nil)
-              
-              
-
-           }
        }
     
     

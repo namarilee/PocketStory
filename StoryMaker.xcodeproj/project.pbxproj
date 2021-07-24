@@ -31,6 +31,7 @@
 		7A62639526A0B6BD00CA4FB3 /* PhotoboothSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62639426A0B6BD00CA4FB3 /* PhotoboothSelect.swift */; };
 		7A6263DA26A15BC200CA4FB3 /* Bb major_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A6263D926A15BC200CA4FB3 /* Bb major_1.mp3 */; };
 		7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63ED41240308C200264532 /* BackgroundSelect.swift */; };
+		7AC482BE26ACB52F00A09FD3 /* PhotoboothPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC482BD26ACB52F00A09FD3 /* PhotoboothPicture.swift */; };
 		7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373523E78825009C6534 /* AppDelegate.swift */; };
 		7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373723E78825009C6534 /* SceneDelegate.swift */; };
 		7AFC373A23E78825009C6534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC373923E78825009C6534 /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		7A62639426A0B6BD00CA4FB3 /* PhotoboothSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoboothSelect.swift; sourceTree = "<group>"; };
 		7A6263D926A15BC200CA4FB3 /* Bb major_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bb major_1.mp3"; path = "../../Bb major_1.mp3"; sourceTree = "<group>"; };
 		7A63ED41240308C200264532 /* BackgroundSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelect.swift; sourceTree = "<group>"; };
+		7AC482BD26ACB52F00A09FD3 /* PhotoboothPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoboothPicture.swift; sourceTree = "<group>"; };
 		7AFC373223E78825009C6534 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC373523E78825009C6534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFC373723E78825009C6534 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				7AFC373723E78825009C6534 /* SceneDelegate.swift */,
 				7AFC373923E78825009C6534 /* ViewController.swift */,
 				7AFC373B23E78825009C6534 /* Main.storyboard */,
+				7AC482BD26ACB52F00A09FD3 /* PhotoboothPicture.swift */,
 				7A626392269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift */,
 				7A4592EA2675E8F1001AD703 /* HomeScreen.swift */,
 				7A63ED41240308C200264532 /* BackgroundSelect.swift */,
@@ -296,6 +299,7 @@
 				90F9C07B25EB6EEF00840D48 /* FoodSelectViewController.swift in Sources */,
 				7AFC373623E78825009C6534 /* AppDelegate.swift in Sources */,
 				90AAB9E925DB6210000337AD /* HotdogGameView.swift in Sources */,
+				7AC482BE26ACB52F00A09FD3 /* PhotoboothPicture.swift in Sources */,
 				7A626393269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift in Sources */,
 				7AFC373823E78825009C6534 /* SceneDelegate.swift in Sources */,
 				90F9C08B25F0B01B00840D48 /* CharacterSelectViewController.swift in Sources */,
