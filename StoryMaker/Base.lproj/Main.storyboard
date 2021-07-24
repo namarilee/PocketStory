@@ -221,9 +221,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="anywhereButton"/>
                                 <connections>
                                     <action selector="userClickedAnywhere:" destination="IyB-f8-GW6" eventType="touchUpInside" id="M82-PU-KAB"/>
+                                    <action selector="userClickedAnywhere:" destination="Jj3-OW-OvX" eventType="touchUpInside" id="VIZ-me-Bd8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUN-Ui-rOR">
@@ -234,6 +235,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="7RS-xn-qrM"/>
+                                    <action selector="beachButtonClicked:" destination="Jj3-OW-OvX" eventType="touchUpInside" id="W2t-LX-gsL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxV-FN-jfo">
@@ -245,6 +247,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="twZ-Of-tRn"/>
+                                    <action selector="campfireButtonClicked:" destination="Jj3-OW-OvX" eventType="touchUpInside" id="Fof-Q7-MwO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-vV-T7n">
@@ -256,6 +259,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="Aie-cg-kzD"/>
+                                    <action selector="boatButtonClicked:" destination="Jj3-OW-OvX" eventType="touchUpInside" id="ccD-hL-dVn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a scene!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66r-33-NUo">
@@ -269,6 +273,11 @@
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yNH-UZ-z9B"/>
                     </view>
+                    <connections>
+                        <outlet property="beachButton" destination="iUN-Ui-rOR" id="I1y-6Q-MkR"/>
+                        <outlet property="boatButton" destination="Reh-vV-T7n" id="7R7-Wu-TWC"/>
+                        <outlet property="campfireButton" destination="pxV-FN-jfo" id="R7D-gH-GYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzj-VX-4Nq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,6 +330,7 @@
                         <viewLayoutGuide key="safeArea" id="evr-bl-Nt7"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImg" destination="4ug-mP-WNU" id="4ow-Ko-3CG"/>
                         <outlet property="introLabel" destination="I4n-v1-Mfu" id="Cd1-o8-Vh1"/>
                         <outlet property="promptButton" destination="ILZ-68-aYL" id="e9q-nW-bTk"/>
                         <outlet property="speechBubble" destination="cqp-He-dA4" id="cFA-gK-8ET"/>
@@ -537,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ql5-YL-uiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2415" y="-32"/>
+            <point key="canvasLocation" x="1736" y="-1557"/>
         </scene>
         <!--Minigames View Controller-->
         <scene sceneID="f7K-Yy-dvo">
@@ -792,7 +802,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gef-uC-pQJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="x0x-l0-Rge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="287"/>
+            <point key="canvasLocation" x="1862" y="141"/>
         </scene>
         <!--Food Select View Controller-->
         <scene sceneID="802-R7-Z4B">
@@ -1197,7 +1207,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
         <segue reference="5ip-ZR-JK0"/>
-        <segue reference="VVO-lg-tuH"/>
+        <segue reference="qT1-FB-nbz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>

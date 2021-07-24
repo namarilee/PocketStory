@@ -110,6 +110,8 @@ class BackgroundSelect: UIViewController {
         UserAnswers.background = sender.title (for: .normal)!
         UserAnswers.character = sender.title (for: .normal)!
         UserAnswers.food = sender.title (for: .normal)!
+        UserAnswers.photo = sender.title (for: .normal)!
+
 
         print(UserAnswers.background)
         print(UserAnswers.character)
@@ -196,6 +198,7 @@ struct UserAnswers {
     static var background = ""
     static var character = ""
     static var food = ""
+    static var photo = ""
 }
 
 struct AmusementPark {

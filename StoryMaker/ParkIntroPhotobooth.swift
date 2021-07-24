@@ -16,6 +16,8 @@ class ParkIntroPhotobooth: UIViewController {
     @IBOutlet weak var introLabel: AnimatedUILabel!
     
     @IBOutlet weak var promptButton: UIButton!
+    
+    @IBOutlet weak var backgroundImg: UIImageView!
     let characterImage =  UIImageView()
     var showSpeechBubbleWorkItem: DispatchWorkItem?
 
@@ -100,6 +102,7 @@ class ParkIntroPhotobooth: UIViewController {
         promptButton.isHidden = true
         count += 1
         if count == 1 {
+            backgroundImg.image = UIImage(named: "amusementpark3photobooth")
             introLabel.text = "Let's end the day by taking a picture at the photobooth!"
             introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
         showPromptButton(image: UIImage(named: "Next button")!, delay: 3)
