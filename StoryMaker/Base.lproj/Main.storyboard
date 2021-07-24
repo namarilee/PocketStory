@@ -1087,6 +1087,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="skip:" destination="Ojv-yZ-M3M" eventType="touchUpInside" id="yAm-3b-2QW"/>
                                     <segue destination="Duh-BA-6gu" kind="presentation" id="VVO-lg-tuH"/>
                                 </connections>
                             </button>
@@ -1262,9 +1263,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3uH-Qr-wIE"/>
+        <segue reference="pVk-aa-ex4"/>
         <segue reference="5ip-ZR-JK0"/>
-        <segue reference="qT1-FB-nbz"/>
+        <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>

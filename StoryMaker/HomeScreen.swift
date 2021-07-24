@@ -18,23 +18,22 @@ class HomeScreen: UIViewController {
     
    
     
-    @IBAction func newStoryClicked(_ sender: Any) {
-        animateButton(button: newStoryButton)
+    @IBAction func newStoryClicked(_ sender: UIButton) {
+        animateButton(sender)
     }
     
-    func animateButton(button: UIButton) {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
-         //   self.button2.transform = .identity
-             button.transform =  CGAffineTransform(scaleX: 1.05, y: 1.05)
-
-            self.minigamesButton.transform = CGAffineTransform(translationX: 0, y: 500)
-            button.transform = CGAffineTransform(translationX: 0, y: 500)
-            
-        })
-      //  DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-           // self.goToNextScreen()
-       // }
-    }
+    
+    
+   
+      func animateButton(_ buttonToAnimate: UIView) {
+            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                     buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+                 }) { (_) in
+                     UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+                         buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+                     }, completion: nil)
+                 }
+        }
     
     func goToNextScreen() {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundSelect") as! BackgroundSelect

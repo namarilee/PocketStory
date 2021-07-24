@@ -14,7 +14,8 @@ class PhotoboothPicture: UIViewController {
     
     @IBOutlet weak var characterImage: UIButton!
     
-    
+    var addMessageToSpeechBubbleWorkItem: DispatchWorkItem?
+
     @IBOutlet weak var photoBG: UIImageView!
     var showCaptionRectWorkItem: DispatchWorkItem?
 
@@ -30,17 +31,25 @@ class PhotoboothPicture: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         photoBG.image = UIImage(named: UserAnswers.photo)
-      //  characterImage.image = UIImage(named: UserAnswers.character)
         characterImage.setImage(charImage, for: .normal)
         characterImage.isUserInteractionEnabled = true
         characterImage.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(PhotoboothPicture.moveCharacter(_:))))
         captionRect.translatesAutoresizingMaskIntoConstraints = true
         captionRect.isHidden = true
+        captionLabel.isHidden = true
+
         showCaptionRect()
-        delayedCaptionWorkItem = DispatchWorkItem {
-            self.updateCaption(self.captionText)
-               }
+       addMessageToSpeechBubble("Drag the character to move it anywhere!")
     }
+    
+    func addMessageToSpeechBubble(_ message: String) {
+        captionLabel.isHidden = false
+           captionLabel.text = message
+           addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
+               self.captionLabel.startAnimation(newText: self.captionLabel.text ?? "", characterDelay: 0.07)
+           }
+           DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: addMessageToSpeechBubbleWorkItem!)
+       }
     
     func updateCaption(_ caption: String) {
           captionLabel.stopAnimation()
@@ -57,12 +66,13 @@ class PhotoboothPicture: UIViewController {
     
     
     @IBAction func userClickedAnywhere(_ sender: Any) {
-        showCaptionRectWorkItem?.perform()
                showCaptionRectWorkItem?.cancel()
                delayedCaptionWorkItem?.perform()
                delayedCaptionWorkItem?.cancel()
                captionLabel.stopAnimation()
                captionRect.layer.removeAllAnimations()
+        captionRect.isHidden = true
+        captionLabel.isHidden = true
     }
     
     @objc func moveCharacter(_ recognizer: UIPanGestureRecognizer) {
