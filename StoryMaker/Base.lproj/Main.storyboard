@@ -816,11 +816,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-uX-8m0" userLabel="AnywhereButton">
+                                <rect key="frame" x="10" y="10" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="userClickedAnywhere:" destination="fmG-p4-6rV" eventType="touchUpInside" id="R7Q-BA-915"/>
+                                    <action selector="userClickedAnywhere:" destination="cSo-l8-FLq" eventType="touchUpInside" id="nKe-v1-YcF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="captionRect" translatesAutoresizingMaskIntoConstraints="NO" id="kig-nB-SbL" userLabel="CaptionRect">
+                                <rect key="frame" x="123" y="37" width="509" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gne-Bd-11S" userLabel="CaptionLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
+                                <rect key="frame" x="136" y="56" width="477" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Sd-tNZ">
+                                <rect key="frame" x="602" y="217" width="97" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="dog"/>
+                                <connections>
+                                    <action selector="characterClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="0bW-iL-ztT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="k3f-OV-ZRl"/>
                     </view>
                     <connections>
+                        <outlet property="captionLabel" destination="Gne-Bd-11S" id="Pr2-rl-ZDl"/>
+                        <outlet property="captionRect" destination="kig-nB-SbL" id="pxu-eg-aqn"/>
+                        <outlet property="characterImage" destination="8Sm-Sd-tNZ" id="GTi-WA-Q8k"/>
                         <outlet property="photoBG" destination="iUp-wC-VSo" id="fZg-HD-hjF"/>
                     </connections>
                 </viewController>
@@ -1229,7 +1262,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pVk-aa-ex4"/>
+        <segue reference="3uH-Qr-wIE"/>
         <segue reference="5ip-ZR-JK0"/>
         <segue reference="qT1-FB-nbz"/>
     </inferredMetricsTieBreakers>
