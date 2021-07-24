@@ -213,11 +213,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUN-Ui-rOR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoboothinside" translatesAutoresizingMaskIntoConstraints="NO" id="V9W-Ug-twv" userLabel="Amusement">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUN-Ui-rOR">
                                 <rect key="frame" x="567.66666666666663" y="90" width="298.33333333333331" height="234"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iUN-Ui-rOR" secondAttribute="height" multiplier="88:69" id="hNx-VF-YIb"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="farm coming soon">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
@@ -225,11 +227,9 @@
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="7RS-xn-qrM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxV-FN-jfo">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxV-FN-jfo">
                                 <rect key="frame" x="298.66666666666663" y="90" width="298.66666666666663" height="234"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pxV-FN-jfo" secondAttribute="height" multiplier="88:69" id="Gld-AF-SLg"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button2" image="campfire button">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -238,11 +238,9 @@
                                     <action selector="backgroundButtonClicked:" destination="IyB-f8-GW6" eventType="touchUpInside" id="twZ-Of-tRn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-vV-T7n">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-vV-T7n">
                                 <rect key="frame" x="30" y="90" width="298.33333333333331" height="234"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Reh-vV-T7n" secondAttribute="height" multiplier="88:69" id="8Te-yB-YvZ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button1" image="boat river button">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -253,11 +251,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pxV-FN-jfo" firstAttribute="width" secondItem="pxV-FN-jfo" secondAttribute="height" multiplier="88:69" id="0Da-Qg-fc9"/>
-                            <constraint firstItem="Reh-vV-T7n" firstAttribute="width" secondItem="Reh-vV-T7n" secondAttribute="height" multiplier="88:69" id="Eaq-mj-ngG"/>
-                            <constraint firstItem="iUN-Ui-rOR" firstAttribute="width" secondItem="iUN-Ui-rOR" secondAttribute="height" multiplier="88:69" id="iE9-sh-Fnl"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yNH-UZ-z9B"/>
                     </view>
                 </viewController>
@@ -1213,6 +1206,7 @@
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
+        <image name="photoboothinside" width="2100" height="1050"/>
         <image name="pizzaGameButton" width="476" height="208"/>
         <image name="pizzaonplate" width="2048" height="1212"/>
         <image name="pongGameButton" width="476" height="208"/>
