@@ -39,7 +39,11 @@ class PhotoboothPicture: UIViewController {
         captionLabel.isHidden = true
 
         showCaptionRect()
-       addMessageToSpeechBubble("Drag the character to move it anywhere!")
+        delayedCaptionWorkItem = DispatchWorkItem {
+            self.addMessageToSpeechBubble("Drag the character to move it anywhere!")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
+
     }
     
     func addMessageToSpeechBubble(_ message: String) {
@@ -48,7 +52,7 @@ class PhotoboothPicture: UIViewController {
            addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
                self.captionLabel.startAnimation(newText: self.captionLabel.text ?? "", characterDelay: 0.07)
            }
-           DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: addMessageToSpeechBubbleWorkItem!)
+           DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute: addMessageToSpeechBubbleWorkItem!)
        }
     
     func updateCaption(_ caption: String) {
@@ -64,10 +68,11 @@ class PhotoboothPicture: UIViewController {
         animateButton(sender)
     }
     
-    
+    var count = 0
     @IBAction func userClickedAnywhere(_ sender: Any) {
+        count += 1
                showCaptionRectWorkItem?.cancel()
-               delayedCaptionWorkItem?.perform()
+              // delayedCaptionWorkItem?.perform()
                delayedCaptionWorkItem?.cancel()
                captionLabel.stopAnimation()
                captionRect.layer.removeAllAnimations()

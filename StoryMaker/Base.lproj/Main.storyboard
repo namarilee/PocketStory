@@ -838,10 +838,10 @@
                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Sd-tNZ">
-                                <rect key="frame" x="602" y="217" width="97" height="132"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Sd-tNZ">
+                                <rect key="frame" x="602" y="217" width="142" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="dog"/>
+                                <state key="normal" title="Button" image="cow"/>
                                 <connections>
                                     <action selector="characterClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="0bW-iL-ztT"/>
                                 </connections>
