@@ -76,8 +76,17 @@ class PhotoboothPicture: UIViewController {
                delayedCaptionWorkItem?.cancel()
                captionLabel.stopAnimation()
                captionRect.layer.removeAllAnimations()
-        captionRect.isHidden = true
-        captionLabel.isHidden = true
+        if count == 1 {
+            delayedCaptionWorkItem = DispatchWorkItem {
+                       self.addMessageToSpeechBubble("Tap the camera button once you're ready to take a picture!")
+                   }
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
+        }
+        if count == 2 {
+            captionRect.isHidden = true
+            captionLabel.isHidden = true
+            
+        }
     }
     
     @objc func moveCharacter(_ recognizer: UIPanGestureRecognizer) {

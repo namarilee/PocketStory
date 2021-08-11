@@ -602,7 +602,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back button"/>
                                 <connections>
-                                    <action selector="backButtonClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="5Yl-SU-0bD"/>
                                     <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="flipHorizontal" id="O8j-VC-0WM"/>
                                 </connections>
                             </button>
@@ -838,10 +837,10 @@
                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Sd-tNZ">
-                                <rect key="frame" x="602" y="217" width="142" height="132"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Sd-tNZ">
+                                <rect key="frame" x="567" y="210" width="140" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="cow"/>
+                                <state key="normal" title="Button" image="cat"/>
                                 <connections>
                                     <action selector="characterClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="0bW-iL-ztT"/>
                                 </connections>
@@ -1079,6 +1078,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="minigames"/>
                                 <connections>
+                                    <action selector="minigamesClicked:" destination="Ojv-yZ-M3M" eventType="touchUpInside" id="B7C-Hf-Moh"/>
                                     <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="t6c-FP-YCx"/>
                                 </connections>
                             </button>
@@ -1264,7 +1264,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
-        <segue reference="5ip-ZR-JK0"/>
+        <segue reference="O8j-VC-0WM"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
