@@ -140,5 +140,19 @@ class PhotoboothPicture: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showGoButtenWorkItem!)
         nextButton.addTarget(self, action: #selector(goButtonClicked), for: .touchUpInside)
     }
-
+    
+    
+    @IBAction func captureButton(_ sender: Any) {
+        var image :UIImage?
+          let currentLayer = UIApplication.shared.keyWindow!.layer
+          let currentScale = UIScreen.main.scale
+          UIGraphicsBeginImageContextWithOptions(currentLayer.frame.size, false, currentScale);
+          guard let currentContext = UIGraphicsGetCurrentContext() else {return}
+          currentLayer.render(in: currentContext)
+          image = UIGraphicsGetImageFromCurrentImageContext()
+          UIGraphicsEndImageContext()
+          guard let img = image else { return }
+          UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+    }
+    
 }
