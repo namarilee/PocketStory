@@ -827,7 +827,7 @@
                                 <rect key="frame" x="123" y="37" width="509" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gne-Bd-11S" userLabel="CaptionLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gne-Bd-11S" userLabel="CaptionLabel" customClass="AnimatedUILabel" customModule="App" customModuleProvider="target">
                                 <rect key="frame" x="136" y="56" width="477" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
@@ -845,6 +845,11 @@
                                     <action selector="characterClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="0bW-iL-ztT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee1-eK-Cbs">
+                                <rect key="frame" x="450" y="100" width="163" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Next button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="k3f-OV-ZRl"/>
@@ -853,6 +858,7 @@
                         <outlet property="captionLabel" destination="Gne-Bd-11S" id="Pr2-rl-ZDl"/>
                         <outlet property="captionRect" destination="kig-nB-SbL" id="pxu-eg-aqn"/>
                         <outlet property="characterImage" destination="8Sm-Sd-tNZ" id="GTi-WA-Q8k"/>
+                        <outlet property="nextButton" destination="ee1-eK-Cbs" id="CSh-It-TJc"/>
                         <outlet property="photoBG" destination="iUp-wC-VSo" id="fZg-HD-hjF"/>
                     </connections>
                 </viewController>
@@ -1269,6 +1275,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>
+        <image name="Next button" width="960" height="720"/>
         <image name="Pingpongtablelighter" width="1008" height="504"/>
         <image name="Start button" width="960" height="720"/>
         <image name="amParkButton" width="952" height="864"/>

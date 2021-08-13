@@ -27,6 +27,8 @@ class PhotoboothPicture: UIViewController {
     let captionText = "Drag the character to move it anywhere!"
     let charImage = UIImage(named: UserAnswers.character)
 
+    @IBOutlet weak var nextButton: UIButton!
+    var showGoButtenWorkItem: DispatchWorkItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,7 @@ class PhotoboothPicture: UIViewController {
             self.addMessageToSpeechBubble("Drag the character to move it anywhere!")
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
-
+        showNextButton(delay: 2)
     }
     
     func addMessageToSpeechBubble(_ message: String) {
@@ -69,6 +71,13 @@ class PhotoboothPicture: UIViewController {
     }
     
     var count = 0
+    
+      @IBAction func goButtonClicked(_ sender: UIButton) {
+    delayedCaptionWorkItem = DispatchWorkItem {
+                       self.addMessageToSpeechBubble("Tap the camera button once you're ready to take a picture!")
+                   }
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
+    }
     @IBAction func userClickedAnywhere(_ sender: Any) {
         count += 1
                showCaptionRectWorkItem?.cancel()
@@ -114,6 +123,22 @@ class PhotoboothPicture: UIViewController {
             })
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: showCaptionRectWorkItem!)
+    }
+    
+    func showNextButton(delay: Double) {
+        nextButton.isHidden = true
+        nextButton.transform = .identity
+
+        showGoButtenWorkItem = DispatchWorkItem {
+            self.view.bringSubviewToFront(self.nextButton)
+            self.nextButton.isHidden = false
+            self.nextButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                self.nextButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showGoButtenWorkItem!)
+        nextButton.addTarget(self, action: #selector(goButtonClicked), for: .touchUpInside)
     }
 
 }
