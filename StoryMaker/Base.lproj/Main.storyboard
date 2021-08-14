@@ -856,7 +856,7 @@
                                 <color key="backgroundColor" red="0.73985068249999997" green="0.67813152649999997" blue="0.98392885919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="captureButton:" destination="cSo-l8-FLq" eventType="touchUpInside" id="o6i-ou-j8L"/>
+                                    <action selector="captureButtonClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="o6i-ou-j8L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -866,6 +866,7 @@
                     <connections>
                         <outlet property="captionLabel" destination="Gne-Bd-11S" id="Pr2-rl-ZDl"/>
                         <outlet property="captionRect" destination="kig-nB-SbL" id="pxu-eg-aqn"/>
+                        <outlet property="captureButton" destination="p3U-fu-Tmg" id="4U9-dm-rbp"/>
                         <outlet property="characterImage" destination="8Sm-Sd-tNZ" id="GTi-WA-Q8k"/>
                         <outlet property="nextButton" destination="ee1-eK-Cbs" id="CSh-It-TJc"/>
                         <outlet property="photoBG" destination="iUp-wC-VSo" id="fZg-HD-hjF"/>
