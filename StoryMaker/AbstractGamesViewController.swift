@@ -24,8 +24,8 @@ class AbstractGamesViewController: UIViewController {
     }
     
     func photoboothIntro() {
-        BackgroundSelect.instance.stopSound()
-        BackgroundSelect.instance.playSound(soundFile: "dixielandost (1)")
+        ViewController.instance.stopSound()
+        ViewController.instance.playSound(soundFile: "dixielandost (1)")
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkIntroPhotobooth") as! ParkIntroPhotobooth
             self.present(nextViewController, animated:false, completion:nil)
     }

@@ -108,8 +108,8 @@ class ParkIntroPhotobooth: UIViewController {
         showPromptButton(image: UIImage(named: "Next button")!, delay: 3)
         }
         if count == 2 {
-            BackgroundSelect.instance.pauseSound()
-            BackgroundSelect.instance.playSound(soundFile: "Bb major_1")
+            ViewController.instance.pauseSound()
+            ViewController.instance.playSound(soundFile: "Bb major_1")
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoboothSelect") as! PhotoboothSelect
             self.present(nextViewController, animated:false, completion:nil)
         }

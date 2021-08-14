@@ -36,9 +36,7 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var anywhereButton: UIButton!
     
-    var player: AVAudioPlayer!
-
-    static var instance: BackgroundSelect!
+   
 
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -84,7 +82,7 @@ class BackgroundSelect: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        BackgroundSelect.instance = self
+        //BackgroundSelect.instance = self
 
         questionLabel.adjustsFontSizeToFitWidth = true
         
@@ -118,43 +116,20 @@ class BackgroundSelect: UIViewController {
         print(UserAnswers.food)
     }
 
-    var soundFileNameURL: NSURL = NSURL()
-    var soundFileName = ""
+   
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
         revertAll()
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
           //  pauseSound()
-            playSound(soundFile: "dixielandost (1)")
-           
+            ViewController.instance.pauseSound()
+            ViewController.instance.playSound(soundFile: "dixielandost (1)")
 
         }
     }
     
-    func playSound(soundFile: String) {
-         soundFileName = soundFile
-        soundFileNameURL = Bundle.main.url(forResource: soundFile, withExtension: "mp3")! as NSURL
-        do {
-            player = try AVAudioPlayer(contentsOf: soundFileNameURL as URL)
-            player.prepareToPlay()
-            player.play()
-            player.numberOfLoops = -1
-        } catch {
-            print("Could not play sound file!")
-        }
-        
-        
-    }
     
-    func stopSound() {
-        player.stop()
-        print("music stopped")
-    }
-    
-    func pauseSound() {
-        player.pause()
-    }
 
     @IBAction func button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {

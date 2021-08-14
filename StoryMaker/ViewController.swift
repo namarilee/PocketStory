@@ -13,7 +13,9 @@ import Foundation
 class ViewController: UIViewController {
     var userResponses: [String] = []
     
-    
+    var player: AVAudioPlayer!
+
+    static var instance: ViewController!
     
     @IBAction func amusementPark(_ sender: Any) {
         userResponses.append("Amusement park")
@@ -45,13 +47,38 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-  //       BackgroundSelect.instance.playSound(soundFile: "Bb major_1")
+        ViewController.instance = self
+         playSound(soundFile: "Eb ")
     }
     
     
     @IBAction func startButtonClicked(_ sender: Any) {
       //   BackgroundSelect.instance.playSound(soundFile: "Eb ")
+    }
+    var soundFileNameURL: NSURL = NSURL()
+    var soundFileName = ""
+    func playSound(soundFile: String) {
+         soundFileName = soundFile
+        soundFileNameURL = Bundle.main.url(forResource: soundFile, withExtension: "mp3")! as NSURL
+        do {
+            player = try AVAudioPlayer(contentsOf: soundFileNameURL as URL)
+            player.prepareToPlay()
+            player.play()
+            player.numberOfLoops = -1
+        } catch {
+            print("Could not play sound file!")
+        }
+        
+        
+    }
+    
+    func stopSound() {
+        player.stop()
+        print("music stopped")
+    }
+    
+    func pauseSound() {
+        player.pause()
     }
     
 }
