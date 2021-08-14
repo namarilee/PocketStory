@@ -125,7 +125,7 @@ class BackgroundSelect: UIViewController {
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
-           
+          //  pauseSound()
             playSound(soundFile: "dixielandost (1)")
            
 

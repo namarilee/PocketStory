@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0052B126C8421F00D9B201 /* Eb .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052B026C8421E00D9B201 /* Eb .mp3 */; };
 		7A14484225DB0F8E0080BBF6 /* apiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484125DB0F8E0080BBF6 /* apiano.wav */; };
 		7A14484E25DB0FDF0080BBF6 /* dsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */; };
 		7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484425DB0FDE0080BBF6 /* bpiano.wav */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A0052B026C8421E00D9B201 /* Eb .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Eb .mp3"; path = "../../Eb .mp3"; sourceTree = "<group>"; };
 		7A14484125DB0F8E0080BBF6 /* apiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = apiano.wav; path = StoryMaker/sounds/apiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dsharppiano.wav; path = StoryMaker/sounds/dsharppiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484425DB0FDE0080BBF6 /* bpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bpiano.wav; path = StoryMaker/sounds/bpiano.wav; sourceTree = SOURCE_ROOT; };
@@ -132,6 +134,7 @@
 				7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */,
 				7A14484125DB0F8E0080BBF6 /* apiano.wav */,
 				7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */,
+				7A0052B026C8421E00D9B201 /* Eb .mp3 */,
 				7A6263D926A15BC200CA4FB3 /* Bb major_1.mp3 */,
 				7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */,
 			);
@@ -262,6 +265,7 @@
 				7A6263DA26A15BC200CA4FB3 /* Bb major_1.mp3 in Resources */,
 				7A46E53825A44D98003ECDD3 /* c1piano.wav in Resources */,
 				7A14485425DB0FDF0080BBF6 /* gsharppiano.wav in Resources */,
+				7A0052B126C8421F00D9B201 /* Eb .mp3 in Resources */,
 				7A14485525DB0FDF0080BBF6 /* fpiano.wav in Resources */,
 				7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */,
 				7A4592E92675B2EB001AD703 /* foodcourtost.mp3 in Resources */,

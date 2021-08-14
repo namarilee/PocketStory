@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
+import Foundation
 
 class ViewController: UIViewController {
     var userResponses: [String] = []
+    
+    
     
     @IBAction func amusementPark(_ sender: Any) {
         userResponses.append("Amusement park")
@@ -42,7 +46,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+  //       BackgroundSelect.instance.playSound(soundFile: "Bb major_1")
     }
-   
+    
+    
+    @IBAction func startButtonClicked(_ sender: Any) {
+      //   BackgroundSelect.instance.playSound(soundFile: "Eb ")
+    }
+    
 }
 
