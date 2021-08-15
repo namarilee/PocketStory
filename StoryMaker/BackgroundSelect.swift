@@ -36,7 +36,7 @@ class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var anywhereButton: UIButton!
     
-   
+   static var storyInProgress = false
 
     func hideButtonQuestions() {
         questionLabel.isHidden = true
@@ -118,6 +118,7 @@ class BackgroundSelect: UIViewController {
 
    
     @IBAction func chooseButtonClicked(_ sender: UIButton) {
+        BackgroundSelect.storyInProgress = true
         revertAll()
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController

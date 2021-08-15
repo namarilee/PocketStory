@@ -63,11 +63,10 @@ class PopcornGameView: UIView {
                         self.basketImageView.isHidden = true
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                            self.hidePopcornGame()
-                            self.greatJobImageView.isHidden = true
-                            AbstractGamesViewController.instance.photoboothIntro()
-
-                                      
+                                self.hidePopcornGame()
+                                self.greatJobImageView.isHidden = true
+                                AbstractGamesViewController.instance.photoboothIntro()
+                          
                         }
                     }
                 }

@@ -24,10 +24,19 @@ class AbstractGamesViewController: UIViewController {
     }
     
     func photoboothIntro() {
+        if BackgroundSelect.storyInProgress == true {
+
         ViewController.instance.stopSound()
         ViewController.instance.playSound(soundFile: "dixielandost (1)")
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkIntroPhotobooth") as! ParkIntroPhotobooth
             self.present(nextViewController, animated:false, completion:nil)
+        }
+        if BackgroundSelect.storyInProgress == false {
+            ViewController.instance.pauseSound()
+            ViewController.instance.playSound(soundFile: "Eb ")
+            let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MinigamesViewController") as! MinigamesViewController
+            self.present(nextViewController, animated:false, completion:nil)
+        }
     }
     
     @IBAction func num1Clicked(_ sender: UIButton) {
