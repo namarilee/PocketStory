@@ -823,11 +823,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Next button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3U-fu-Tmg">
-                                <rect key="frame" x="729" y="335" width="122" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3U-fu-Tmg">
+                                <rect key="frame" x="761" y="299" width="87" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.73985068249999997" green="0.67813152649999997" blue="0.98392885919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="camera button"/>
                                 <connections>
                                     <action selector="captureButtonClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="o6i-ou-j8L"/>
                                 </connections>
@@ -1270,6 +1270,7 @@
         <image name="beachButton" width="714" height="648"/>
         <image name="boat" width="1008" height="504"/>
         <image name="boat river button" width="714" height="648"/>
+        <image name="camera button" width="1080" height="1080"/>
         <image name="campfire button" width="714" height="648"/>
         <image name="captionRect" width="840" height="154"/>
         <image name="cat" width="818" height="888"/>
