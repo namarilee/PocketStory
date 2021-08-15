@@ -23,6 +23,8 @@ class MinigamesViewController: AbstractGamesViewController {
     
     
     @IBAction func pizzaGameClicked(_ sender: Any) {
+        ViewController.instance.pauseSound()
+              ViewController.instance.playSound(soundFile: "foodcourtost")
         pizzaGameCoordinator = PizzaGameCoordinator(parent: self, numSelectors: numSelectors)
         view = pizzaGameCoordinator?.loadView()
         backButton.isHidden = false
@@ -32,14 +34,16 @@ class MinigamesViewController: AbstractGamesViewController {
     
     @IBAction func hotdogGameClicked(_ sender: Any) {
         backButton.isHidden = false
-
+        ViewController.instance.pauseSound()
+              ViewController.instance.playSound(soundFile: "foodcourtost")
         hotdogGameCoordinator = HotdogGameCoordinator(parent: self, numSelectors: numSelectors)
         view = hotdogGameCoordinator?.loadView()
     }
     
     @IBAction func popcornGameClicked(_ sender: Any) {
         backButton.isHidden = false
-
+        ViewController.instance.pauseSound()
+              ViewController.instance.playSound(soundFile: "foodcourtost")
         popcornGameCoordinator = PopcornGameCoordinator(parent: self)
         view = popcornGameCoordinator?.loadView()
     }
