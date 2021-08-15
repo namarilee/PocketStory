@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A0052B126C8421F00D9B201 /* Eb .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052B026C8421E00D9B201 /* Eb .mp3 */; };
 		7A0052B326C97FA600D9B201 /* ParkOutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0052B226C97FA600D9B201 /* ParkOutro.swift */; };
+		7A0052B526C99B0200D9B201 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0052B426C99B0200D9B201 /* PlaylistViewController.swift */; };
 		7A14484225DB0F8E0080BBF6 /* apiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484125DB0F8E0080BBF6 /* apiano.wav */; };
 		7A14484E25DB0FDF0080BBF6 /* dsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */; };
 		7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484425DB0FDE0080BBF6 /* bpiano.wav */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		7A0052B026C8421E00D9B201 /* Eb .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Eb .mp3"; path = "../../Eb .mp3"; sourceTree = "<group>"; };
 		7A0052B226C97FA600D9B201 /* ParkOutro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkOutro.swift; sourceTree = "<group>"; };
+		7A0052B426C99B0200D9B201 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		7A14484125DB0F8E0080BBF6 /* apiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = apiano.wav; path = StoryMaker/sounds/apiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dsharppiano.wav; path = StoryMaker/sounds/dsharppiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484425DB0FDE0080BBF6 /* bpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bpiano.wav; path = StoryMaker/sounds/bpiano.wav; sourceTree = SOURCE_ROOT; };
@@ -175,6 +177,7 @@
 				7A63ED41240308C200264532 /* BackgroundSelect.swift */,
 				7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */,
 				7AFC373E23E7882B009C6534 /* Assets.xcassets */,
+				7A0052B426C99B0200D9B201 /* PlaylistViewController.swift */,
 				7AFC374023E7882B009C6534 /* LaunchScreen.storyboard */,
 				7AFC374323E7882B009C6534 /* Info.plist */,
 				90AAB9A525A2A27D000337AD /* AnimatedUILabel.swift */,
@@ -302,6 +305,7 @@
 				90F9C07425EB0CE200840D48 /* PingPongViewController.swift in Sources */,
 				7A63ED42240308C200264532 /* BackgroundSelect.swift in Sources */,
 				90F9C08825EF704C00840D48 /* ParkLunchViewController.swift in Sources */,
+				7A0052B526C99B0200D9B201 /* PlaylistViewController.swift in Sources */,
 				90AAB9F025DB965D000337AD /* PopcornGameCoordinator.swift in Sources */,
 				7A4592ED2676A168001AD703 /* MinigamesViewController.swift in Sources */,
 				90F9C07B25EB6EEF00840D48 /* FoodSelectViewController.swift in Sources */,
