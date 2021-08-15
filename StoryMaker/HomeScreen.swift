@@ -17,6 +17,7 @@ class HomeScreen: UIViewController {
     @IBOutlet weak var minigamesButton: UIButton!
     
    
+    @IBOutlet weak var playlistButton: UIButton!
     
     @IBAction func newStoryClicked(_ sender: UIButton) {
         animateButton(sender)
@@ -31,6 +32,7 @@ class HomeScreen: UIViewController {
     
     @IBAction func playlistClicked(_ sender: UIButton) {
         animateButton(sender)
+        ViewController.instance.pauseSound()
       }
     
     override func viewDidLoad() {

@@ -11,4 +11,5 @@ import UIKit
 
 class PlaylistViewController: UIViewController {
     
+    @IBOutlet weak var playlistImageView: UIButton!
 }
