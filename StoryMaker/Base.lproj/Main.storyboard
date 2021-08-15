@@ -788,14 +788,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-uX-8m0" userLabel="AnywhereButton">
-                                <rect key="frame" x="10" y="10" width="896" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="userClickedAnywhere:" destination="fmG-p4-6rV" eventType="touchUpInside" id="R7Q-BA-915"/>
-                                    <action selector="userClickedAnywhere:" destination="cSo-l8-FLq" eventType="touchUpInside" id="nKe-v1-YcF"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="captionRect" translatesAutoresizingMaskIntoConstraints="NO" id="kig-nB-SbL" userLabel="CaptionRect">
                                 <rect key="frame" x="123" y="37" width="509" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -832,17 +824,38 @@
                                     <action selector="captureButtonClicked:" destination="cSo-l8-FLq" eventType="touchUpInside" id="o6i-ou-j8L"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-uX-8m0" userLabel="AnywhereButton">
+                                <rect key="frame" x="0.0" y="0.0" width="906" height="424"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="userClickedAnywhere:" destination="fmG-p4-6rV" eventType="touchUpInside" id="R7Q-BA-915"/>
+                                    <action selector="userClickedAnywhere:" destination="cSo-l8-FLq" eventType="touchUpInside" id="nKe-v1-YcF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picSuccessNotif" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-N9-MdO">
+                                <rect key="frame" x="127" y="20" width="652" height="347"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSF-9V-pba">
+                                <rect key="frame" x="397" y="314" width="112" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="ok button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="k3f-OV-ZRl"/>
                     </view>
                     <connections>
+                        <outlet property="anywhereButton" destination="UaI-uX-8m0" id="59D-Or-2jN"/>
                         <outlet property="captionLabel" destination="Gne-Bd-11S" id="Pr2-rl-ZDl"/>
                         <outlet property="captionRect" destination="kig-nB-SbL" id="pxu-eg-aqn"/>
                         <outlet property="captureButton" destination="p3U-fu-Tmg" id="4U9-dm-rbp"/>
                         <outlet property="characterImage" destination="8Sm-Sd-tNZ" id="GTi-WA-Q8k"/>
                         <outlet property="nextButton" destination="ee1-eK-Cbs" id="CSh-It-TJc"/>
+                        <outlet property="okButton" destination="LSF-9V-pba" id="H5A-We-9uh"/>
                         <outlet property="photoBG" destination="iUp-wC-VSo" id="fZg-HD-hjF"/>
+                        <outlet property="picSuccessNotif" destination="3wb-N9-MdO" id="Vw5-Np-PIQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ua-G2-r5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1207,18 +1220,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startscreenanimalsnoroad" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-IW-kTZ">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-oJ-sbK">
-                                <rect key="frame" x="360.66666666666669" y="227.66666666666666" width="174.66666666666669" height="124.33333333333334"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="q0x-oJ-sbK" secondAttribute="height" multiplier="38:27" id="sSX-Oh-USt"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="Start button"/>
-                                <connections>
-                                    <action selector="keyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vt-VG-u8p"/>
-                                    <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N48-ec-hGl"/>
-                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="crossDissolve" id="5ip-ZR-JK0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PocketStory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="33" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zof-Sl-WvH">
                                 <rect key="frame" x="286.66666666666663" y="93" width="322.66666666666663" height="62.333333333333343"/>
                                 <constraints>
@@ -1228,6 +1229,18 @@
                                 <color key="textColor" red="0.27450980392156865" green="0.25490196078431371" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-oJ-sbK">
+                                <rect key="frame" x="376" y="203" width="144" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="q0x-oJ-sbK" secondAttribute="height" multiplier="38:27" id="sSX-Oh-USt"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="START button (1)"/>
+                                <connections>
+                                    <action selector="keyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vt-VG-u8p"/>
+                                    <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N48-ec-hGl"/>
+                                    <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="crossDissolve" id="5ip-ZR-JK0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="UZ7-IW-kTZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="3yx-0K-WiR"/>
@@ -1249,19 +1262,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773" y="-1228"/>
+            <point key="canvasLocation" x="772.76785714285711" y="-1228.985507246377"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
-        <segue reference="O8j-VC-0WM"/>
+        <segue reference="5ip-ZR-JK0"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>
         <image name="Next button" width="960" height="720"/>
         <image name="Pingpongtablelighter" width="1008" height="504"/>
-        <image name="Start button" width="960" height="720"/>
+        <image name="START button (1)" width="960" height="720"/>
         <image name="amParkButton" width="952" height="864"/>
         <image name="amusement" width="3000" height="1775"/>
         <image name="amusement2" width="4096" height="2048"/>
@@ -1286,10 +1299,12 @@
         <image name="keyboardButton" width="476" height="208"/>
         <image name="minigames" width="714" height="720"/>
         <image name="newStory" width="298" height="270"/>
+        <image name="ok button" width="960" height="720"/>
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
         <image name="photoboothinside" width="2100" height="1050"/>
+        <image name="picSuccessNotif" width="1509" height="1068"/>
         <image name="pizzaGameButton" width="476" height="208"/>
         <image name="pizzaonplate" width="2048" height="1212"/>
         <image name="pongGameButton" width="476" height="208"/>

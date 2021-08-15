@@ -25,16 +25,24 @@ class PhotoboothPicture: UIViewController {
     
     @IBOutlet weak var captionRect: UIImageView!
     
+    @IBOutlet weak var anywhereButton: UIButton!
+    
     @IBOutlet weak var captionLabel: AnimatedUILabel!
     let captionText = "Drag the character to move it anywhere!"
     let charImage = UIImage(named: UserAnswers.character)
 
+    @IBOutlet weak var picSuccessNotif: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var okButton: UIButton!
+    
     var showGoButtenWorkItem: DispatchWorkItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         captureButton.isHidden = true
+        anywhereButton.isHidden = true
+        picSuccessNotif.isHidden = true
+        okButton.isHidden = true
         photoBG.image = UIImage(named: UserAnswers.photo)
         characterImage.setImage(charImage, for: .normal)
         characterImage.isUserInteractionEnabled = true
@@ -158,6 +166,7 @@ class PhotoboothPicture: UIViewController {
     
     @IBAction func captureButtonClicked(_ sender: Any) {
         captureButton.isHidden = true
+        anywhereButton.isHidden = false
         var image :UIImage?
           let currentLayer = UIApplication.shared.keyWindow!.layer
           let currentScale = UIScreen.main.scale
@@ -168,6 +177,19 @@ class PhotoboothPicture: UIViewController {
           UIGraphicsEndImageContext()
           guard let img = image else { return }
           UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.picSuccessNotif.isHidden = false
+            self.okButton.isHidden = false
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                self.picSuccessNotif.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                     })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                               self.okButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                                    })
+            }
+        }
     }
     
 }
