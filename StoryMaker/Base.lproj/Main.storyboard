@@ -530,11 +530,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-C4-swr">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-C4-swr">
                                 <rect key="frame" x="33" y="72" width="279" height="122"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="7cu-yh-R1q"/>
+                                </constraints>
                                 <state key="normal" image="keyboardButton"/>
                                 <connections>
+                                    <action selector="keyboardButtonClicked:" destination="Duh-BA-6gu" eventType="touchUpInside" id="SBu-5V-Nw5"/>
                                     <segue destination="IIj-b0-Doc" kind="presentation" modalTransitionStyle="flipHorizontal" id="ceF-I1-WEZ"/>
                                 </connections>
                             </button>
@@ -757,6 +760,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back" image="back button"/>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="IIj-b0-Doc" eventType="touchUpInside" id="boX-Qs-Nkz"/>
                                     <segue destination="Duh-BA-6gu" kind="presentation" modalTransitionStyle="flipHorizontal" id="qT1-FB-nbz"/>
                                 </connections>
                             </button>
@@ -1330,8 +1334,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
-        <segue reference="5ip-ZR-JK0"/>
-        <segue reference="t6c-FP-YCx"/>
+        <segue reference="O8j-VC-0WM"/>
+        <segue reference="qT1-FB-nbz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>

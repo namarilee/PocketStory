@@ -108,4 +108,10 @@ class Keyboard: UIViewController {
                        player.play()
     }
     
+    
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+        ViewController.instance.playSound(soundFile: "dixielandost (1)")
+
+    }
 }

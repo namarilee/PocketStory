@@ -49,4 +49,8 @@ class MinigamesViewController: AbstractGamesViewController {
 //              self.present(nextViewController, animated:false, completion:nil)
 //    }
     
+    @IBAction func keyboardButtonClicked(_ sender: Any) {
+        ViewController.instance.pauseSound()
+
+    }
 }
