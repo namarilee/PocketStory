@@ -32,7 +32,7 @@ class HomeScreen: UIViewController {
     
     @IBAction func playlistClicked(_ sender: UIButton) {
         animateButton(sender)
-        ViewController.instance.pauseSound()
+       // ViewController.instance.pauseSound()
       }
     
     override func viewDidLoad() {

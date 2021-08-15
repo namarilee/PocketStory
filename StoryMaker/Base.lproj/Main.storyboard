@@ -184,16 +184,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yx-Sx-J1q">
-                                <rect key="frame" x="101" y="58" width="344" height="310"/>
+                                <rect key="frame" x="101" y="58" width="330" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="initialPlaylistView"/>
+                                <connections>
+                                    <action selector="playImageClicked:" destination="Ohs-hO-1JW" eventType="touchUpInside" id="wJh-d0-8s3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw0-ik-o5d">
+                                <rect key="frame" x="463" y="58" width="369" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="themeSongTitle"/>
+                                <connections>
+                                    <action selector="themeSongClicked:" destination="Ohs-hO-1JW" eventType="touchUpInside" id="X3n-Ao-xN7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6s-I9-88p">
+                                <rect key="frame" x="463" y="142" width="369" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="parkSongTitle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkx-Rb-Gp1">
+                                <rect key="frame" x="462" y="224" width="369" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="snackSongTitle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWE-Wb-zT4">
+                                <rect key="frame" x="462" y="305" width="369" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="photoSongTitle"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70140094070959214" green="0.88143561639167145" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vFj-BR-Qop"/>
                     </view>
                     <connections>
-                        <outlet property="playlistImageView" destination="0Yx-Sx-J1q" id="Xcy-NV-9IG"/>
+                        <outlet property="playlistImageView" destination="0Yx-Sx-J1q" id="0Zf-qW-So0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQJ-gp-xej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1357,7 +1383,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="O8j-VC-0WM"/>
+        <segue reference="jqQ-OR-bQG"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1396,7 +1422,9 @@
         <image name="order" width="4200" height="2100"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
+        <image name="parkSongTitle" width="1059" height="225"/>
         <image name="pause button" width="156" height="177"/>
+        <image name="photoSongTitle" width="1059" height="225"/>
         <image name="photoboothinside" width="2100" height="1050"/>
         <image name="picSuccessNotif" width="1509" height="1068"/>
         <image name="pizzaGameButton" width="476" height="208"/>
@@ -1407,8 +1435,10 @@
         <image name="popcornGameButton" width="476" height="236"/>
         <image name="school coming soon" width="714" height="648"/>
         <image name="snackShop" width="4096" height="2048"/>
+        <image name="snackSongTitle" width="1059" height="225"/>
         <image name="speechBubblePrecise" width="438" height="130"/>
         <image name="startscreen" width="2100" height="1050"/>
         <image name="startscreenanimalsnoroad" width="2100" height="1050"/>
+        <image name="themeSongTitle" width="1059" height="222"/>
     </resources>
 </document>
