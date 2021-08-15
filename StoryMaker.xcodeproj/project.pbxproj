@@ -11,6 +11,8 @@
 		7A0052B526C99B0200D9B201 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0052B426C99B0200D9B201 /* PlaylistViewController.swift */; };
 		7A0052B926C9DCBB00D9B201 /* Bb major_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052B826C9DCBA00D9B201 /* Bb major_1.mp3 */; };
 		7A0052BB26C9DD0F00D9B201 /* Eb .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052BA26C9DD0E00D9B201 /* Eb .mp3 */; };
+		7A0052BD26C9DDDC00D9B201 /* foodcourtost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052BC26C9DDDC00D9B201 /* foodcourtost.mp3 */; };
+		7A0052BF26C9DE0600D9B201 /* dixielandost (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052BE26C9DE0600D9B201 /* dixielandost (1).mp3 */; };
 		7A14484225DB0F8E0080BBF6 /* apiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484125DB0F8E0080BBF6 /* apiano.wav */; };
 		7A14484E25DB0FDF0080BBF6 /* dsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */; };
 		7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484425DB0FDE0080BBF6 /* bpiano.wav */; };
@@ -24,8 +26,6 @@
 		7A14485725DB0FDF0080BBF6 /* bflatpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */; };
 		7A14485825DB0FDF0080BBF6 /* gpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484D25DB0FDE0080BBF6 /* gpiano.wav */; };
 		7A2E23E02432CDBB008DF4FD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */; };
-		7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */; };
-		7A4592E92675B2EB001AD703 /* foodcourtost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */; };
 		7A4592EB2675E8F1001AD703 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EA2675E8F1001AD703 /* HomeScreen.swift */; };
 		7A4592ED2676A168001AD703 /* MinigamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EC2676A168001AD703 /* MinigamesViewController.swift */; };
 		7A4592EF2676A63C001AD703 /* AbstractGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4592EE2676A63C001AD703 /* AbstractGamesViewController.swift */; };
@@ -62,6 +62,8 @@
 		7A0052B426C99B0200D9B201 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		7A0052B826C9DCBA00D9B201 /* Bb major_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bb major_1.mp3"; path = "StoryMaker/sounds/Bb major_1.mp3"; sourceTree = SOURCE_ROOT; };
 		7A0052BA26C9DD0E00D9B201 /* Eb .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Eb .mp3"; path = "StoryMaker/sounds/Eb .mp3"; sourceTree = SOURCE_ROOT; };
+		7A0052BC26C9DDDC00D9B201 /* foodcourtost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = foodcourtost.mp3; path = StoryMaker/sounds/foodcourtost.mp3; sourceTree = SOURCE_ROOT; };
+		7A0052BE26C9DE0600D9B201 /* dixielandost (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dixielandost (1).mp3"; path = "StoryMaker/sounds/dixielandost (1).mp3"; sourceTree = SOURCE_ROOT; };
 		7A14484125DB0F8E0080BBF6 /* apiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = apiano.wav; path = StoryMaker/sounds/apiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dsharppiano.wav; path = StoryMaker/sounds/dsharppiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484425DB0FDE0080BBF6 /* bpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bpiano.wav; path = StoryMaker/sounds/bpiano.wav; sourceTree = SOURCE_ROOT; };
@@ -75,8 +77,6 @@
 		7A14484C25DB0FDE0080BBF6 /* bflatpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bflatpiano.wav; path = StoryMaker/sounds/bflatpiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484D25DB0FDE0080BBF6 /* gpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gpiano.wav; path = StoryMaker/sounds/gpiano.wav; sourceTree = SOURCE_ROOT; };
 		7A2E23DF2432CDBA008DF4FD /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dixielandost (1).mp3"; path = "../../../Downloads/dixielandost (1).mp3"; sourceTree = "<group>"; };
-		7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = foodcourtost.mp3; path = ../../../Downloads/foodcourtost.mp3; sourceTree = "<group>"; };
 		7A4592EA2675E8F1001AD703 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7A4592EC2676A168001AD703 /* MinigamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigamesViewController.swift; sourceTree = "<group>"; };
 		7A4592EE2676A63C001AD703 /* AbstractGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractGamesViewController.swift; sourceTree = "<group>"; };
@@ -137,9 +137,9 @@
 				7A14484D25DB0FDE0080BBF6 /* gpiano.wav */,
 				7A14484925DB0FDE0080BBF6 /* gsharppiano.wav */,
 				7A14484125DB0F8E0080BBF6 /* apiano.wav */,
-				7A4592E62675AE9C001AD703 /* dixielandost (1).mp3 */,
 				7A0052B826C9DCBA00D9B201 /* Bb major_1.mp3 */,
-				7A4592E82675B2EB001AD703 /* foodcourtost.mp3 */,
+				7A0052BE26C9DE0600D9B201 /* dixielandost (1).mp3 */,
+				7A0052BC26C9DDDC00D9B201 /* foodcourtost.mp3 */,
 				7A0052BA26C9DD0E00D9B201 /* Eb .mp3 */,
 			);
 			path = Sounds;
@@ -263,6 +263,7 @@
 				7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */,
 				7A14485625DB0FDF0080BBF6 /* c#piano.wav in Resources */,
 				7AFC374223E7882B009C6534 /* LaunchScreen.storyboard in Resources */,
+				7A0052BF26C9DE0600D9B201 /* dixielandost (1).mp3 in Resources */,
 				7A14485825DB0FDF0080BBF6 /* gpiano.wav in Resources */,
 				7A14485225DB0FDF0080BBF6 /* dpiano.wav in Resources */,
 				7A14485025DB0FDF0080BBF6 /* c2piano.wav in Resources */,
@@ -272,8 +273,7 @@
 				7A14485425DB0FDF0080BBF6 /* gsharppiano.wav in Resources */,
 				7A14485525DB0FDF0080BBF6 /* fpiano.wav in Resources */,
 				7A0052BB26C9DD0F00D9B201 /* Eb .mp3 in Resources */,
-				7A4592E72675AE9C001AD703 /* dixielandost (1).mp3 in Resources */,
-				7A4592E92675B2EB001AD703 /* foodcourtost.mp3 in Resources */,
+				7A0052BD26C9DDDC00D9B201 /* foodcourtost.mp3 in Resources */,
 				7AFC373D23E78825009C6534 /* Main.storyboard in Resources */,
 				7A14485325DB0FDF0080BBF6 /* fsharppiano.wav in Resources */,
 				7A0052B926C9DCBB00D9B201 /* Bb major_1.mp3 in Resources */,
