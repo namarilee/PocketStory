@@ -62,7 +62,6 @@ class PhotoboothPicture: UIViewController {
             self.addMessageToSpeechBubble("Drag the character to move it anywhere!")
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.rightArrow.isHidden = false
             Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
                       UIView.animate(withDuration: 2, delay: 0, options: [], animations: { [self] in
@@ -73,7 +72,7 @@ class PhotoboothPicture: UIViewController {
                           self.rightArrow.transform = CGAffineTransform(translationX: 10, y: 0)
                       }, completion: nil)
                   }
-        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
      //   showNextButton(delay: 4)
     }
@@ -146,11 +145,11 @@ class PhotoboothPicture: UIViewController {
                downArrow.isHidden = false
                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
                                    UIView.animate(withDuration: 2, delay: 0, options: [], animations: { [self] in
-                                       self.downArrow.transform = CGAffineTransform(translationX: 0, y: -10)
+                                       self.downArrow.transform = CGAffineTransform(translationX: 0, y: -5)
                                    }, completion: nil)
                                    
                                    UIView.animate(withDuration: 2, delay: 1, options: [], animations: { [self] in
-                                       self.downArrow.transform = CGAffineTransform(translationX: 0, y: 10)
+                                       self.downArrow.transform = CGAffineTransform(translationX: 0, y: 5)
                                    }, completion: nil)
                                }
       }
@@ -222,5 +221,13 @@ class PhotoboothPicture: UIViewController {
             
         }
     }
+    
+    @IBAction func okButtonTapped(_ sender: Any) {
+        ViewController.instance.pauseSound()
+        ViewController.instance.playSound(soundFile: "dixielandost (1)")
+        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkOutro") as! ParkOutro
+        self.present(nextViewController, animated:false, completion:nil)
+    }
+    
     
 }

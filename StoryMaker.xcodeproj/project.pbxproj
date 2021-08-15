@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A0052B126C8421F00D9B201 /* Eb .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A0052B026C8421E00D9B201 /* Eb .mp3 */; };
+		7A0052B326C97FA600D9B201 /* ParkOutro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0052B226C97FA600D9B201 /* ParkOutro.swift */; };
 		7A14484225DB0F8E0080BBF6 /* apiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484125DB0F8E0080BBF6 /* apiano.wav */; };
 		7A14484E25DB0FDF0080BBF6 /* dsharppiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */; };
 		7A14484F25DB0FDF0080BBF6 /* bpiano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A14484425DB0FDE0080BBF6 /* bpiano.wav */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		7A0052B026C8421E00D9B201 /* Eb .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Eb .mp3"; path = "../../Eb .mp3"; sourceTree = "<group>"; };
+		7A0052B226C97FA600D9B201 /* ParkOutro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkOutro.swift; sourceTree = "<group>"; };
 		7A14484125DB0F8E0080BBF6 /* apiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = apiano.wav; path = StoryMaker/sounds/apiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484325DB0FDE0080BBF6 /* dsharppiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dsharppiano.wav; path = StoryMaker/sounds/dsharppiano.wav; sourceTree = SOURCE_ROOT; };
 		7A14484425DB0FDE0080BBF6 /* bpiano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bpiano.wav; path = StoryMaker/sounds/bpiano.wav; sourceTree = SOURCE_ROOT; };
@@ -166,6 +168,7 @@
 				7AFC373723E78825009C6534 /* SceneDelegate.swift */,
 				7AFC373923E78825009C6534 /* ViewController.swift */,
 				7AFC373B23E78825009C6534 /* Main.storyboard */,
+				7A0052B226C97FA600D9B201 /* ParkOutro.swift */,
 				7AC482BD26ACB52F00A09FD3 /* PhotoboothPicture.swift */,
 				7A626392269FF8C600CA4FB3 /* ParkIntroPhotobooth.swift */,
 				7A4592EA2675E8F1001AD703 /* HomeScreen.swift */,
@@ -290,6 +293,7 @@
 				90F9C08E25F0BDFF00840D48 /* ParkWelcomeViewController.swift in Sources */,
 				90F9C08525EF571100840D48 /* SnackShopViewController.swift in Sources */,
 				7A46E53325A44727003ECDD3 /* Keyboard.swift in Sources */,
+				7A0052B326C97FA600D9B201 /* ParkOutro.swift in Sources */,
 				90F9C08025EC8B3000840D48 /* BambooDialogViewController.swift in Sources */,
 				90AAB9F325DB96B1000337AD /* PopcornGameView.swift in Sources */,
 				90AAB9DF25DB28EA000337AD /* PizzaGameView.swift in Sources */,
