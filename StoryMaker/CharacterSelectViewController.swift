@@ -34,6 +34,10 @@ class CharacterSelectViewController: UIViewController {
 
     @IBAction func pupButtonClicked(_ sender: UIButton) {
         UserAnswers.character = "dog"
+        pupButton.setImage(UIImage(named: "dogSelected"), for: .normal)
+        whiskersButton.setImage(UIImage(named: "catButton"), for: .normal)
+        bessieButton.setImage(UIImage(named: "cowButton"), for: .normal)
+
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
             self.whiskersButton.transform = .identity
@@ -45,7 +49,9 @@ class CharacterSelectViewController: UIViewController {
 
     @IBAction func whiskersButtonClicked(_ sender: UIButton) {
         UserAnswers.character = "cat"
-
+        whiskersButton.setImage(UIImage(named: "catSelected"), for: .normal)
+        pupButton.setImage(UIImage(named: "dogButton"), for: .normal)
+        bessieButton.setImage(UIImage(named: "cowButton"), for: .normal)
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
             self.bessieButton.transform = .identity
@@ -58,7 +64,9 @@ class CharacterSelectViewController: UIViewController {
 
     @IBAction func bessieButtonClicked(_ sender: UIButton) {
         UserAnswers.character = "cow"
-
+        bessieButton.setImage(UIImage(named: "cowSelected"), for: .normal)
+        pupButton.setImage(UIImage(named: "dogButton"), for: .normal)
+        whiskersButton.setImage(UIImage(named: "catButton"), for: .normal)
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
             self.pupButton.transform = .identity
@@ -71,6 +79,9 @@ class CharacterSelectViewController: UIViewController {
 
     @IBAction func userClickedAnywhere(_ sender: Any) {
         chooseButton.isHidden = true
+        pupButton.setImage(UIImage(named: "dogButton"), for: .normal)
+        whiskersButton.setImage(UIImage(named: "catButton"), for: .normal)
+        bessieButton.setImage(UIImage(named: "cowButton"), for: .normal)
 
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             
