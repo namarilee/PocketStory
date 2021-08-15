@@ -18,11 +18,13 @@ class PhotoboothPicture: UIViewController {
     
     var addMessageToSpeechBubbleWorkItem: DispatchWorkItem?
 
+    @IBOutlet weak var rightArrow: UIImageView!
     @IBOutlet weak var photoBG: UIImageView!
     var showCaptionRectWorkItem: DispatchWorkItem?
 
     var delayedCaptionWorkItem: DispatchWorkItem?
     
+    @IBOutlet weak var downArrow: UIImageView!
     @IBOutlet weak var captionRect: UIImageView!
     
     @IBOutlet weak var anywhereButton: UIButton!
@@ -39,10 +41,14 @@ class PhotoboothPicture: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.isHidden = true
         captureButton.isHidden = true
         anywhereButton.isHidden = true
         picSuccessNotif.isHidden = true
         okButton.isHidden = true
+        rightArrow.isHidden = true
+        downArrow.isHidden = true
+
         photoBG.image = UIImage(named: UserAnswers.photo)
         characterImage.setImage(charImage, for: .normal)
         characterImage.isUserInteractionEnabled = true
@@ -55,8 +61,21 @@ class PhotoboothPicture: UIViewController {
         delayedCaptionWorkItem = DispatchWorkItem {
             self.addMessageToSpeechBubble("Drag the character to move it anywhere!")
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.rightArrow.isHidden = false
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
+                      UIView.animate(withDuration: 2, delay: 0, options: [], animations: { [self] in
+                          self.rightArrow.transform = CGAffineTransform(translationX: -10, y: 0)
+                      }, completion: nil)
+                      
+                      UIView.animate(withDuration: 2, delay: 1, options: [], animations: { [self] in
+                          self.rightArrow.transform = CGAffineTransform(translationX: 10, y: 0)
+                      }, completion: nil)
+                  }
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
-        showNextButton(delay: 4)
+     //   showNextButton(delay: 4)
     }
     
     func addMessageToSpeechBubble(_ message: String) {
@@ -79,6 +98,7 @@ class PhotoboothPicture: UIViewController {
     
     @IBAction func characterClicked(_ sender: UIButton) {
         animateButton(sender)
+       
     }
     
     var count = 0
@@ -91,6 +111,16 @@ class PhotoboothPicture: UIViewController {
                    }
                    DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute: delayedCaptionWorkItem!)
             captureButton.isHidden = false
+            downArrow.isHidden = false
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
+                                UIView.animate(withDuration: 2, delay: 0, options: [], animations: { [self] in
+                                    self.downArrow.transform = CGAffineTransform(translationX: 0, y: -10)
+                                }, completion: nil)
+                                
+                                UIView.animate(withDuration: 2, delay: 1, options: [], animations: { [self] in
+                                    self.downArrow.transform = CGAffineTransform(translationX: 0, y: 10)
+                                }, completion: nil)
+                            }
         }
         
         if count == 2 {
@@ -100,30 +130,29 @@ class PhotoboothPicture: UIViewController {
 
         }
     }
-//    @IBAction func userClickedAnywhere(_ sender: Any) {
-//        count += 1
-//               showCaptionRectWorkItem?.cancel()
-//              // delayedCaptionWorkItem?.perform()
-//               delayedCaptionWorkItem?.cancel()
-//               captionLabel.stopAnimation()
-//               captionRect.layer.removeAllAnimations()
-//        if count == 1 {
-//            delayedCaptionWorkItem = DispatchWorkItem {
-//                       self.addMessageToSpeechBubble("Tap the camera button once you're ready to take a picture!")
-//                   }
-//                   DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
-//        }
-//        if count == 2 {
-//            captionRect.isHidden = true
-//            captionLabel.isHidden = true
-//
-//        }
-//    }
+
     
     @objc func moveCharacter(_ recognizer: UIPanGestureRecognizer) {
           let translation: CGPoint = recognizer.translation(in: self.view)
           recognizer.view?.center = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y + translation.y)
           recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
+        
+        rightArrow.isHidden = true
+               delayedCaptionWorkItem = DispatchWorkItem {
+                          self.addMessageToSpeechBubble("Tap the camera button once you're ready to take a picture!")
+                      }
+                      DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute: delayedCaptionWorkItem!)
+               captureButton.isHidden = false
+               downArrow.isHidden = false
+               Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
+                                   UIView.animate(withDuration: 2, delay: 0, options: [], animations: { [self] in
+                                       self.downArrow.transform = CGAffineTransform(translationX: 0, y: -10)
+                                   }, completion: nil)
+                                   
+                                   UIView.animate(withDuration: 2, delay: 1, options: [], animations: { [self] in
+                                       self.downArrow.transform = CGAffineTransform(translationX: 0, y: 10)
+                                   }, completion: nil)
+                               }
       }
     
     func animateButton(_ buttonToAnimate: UIView) {
@@ -166,7 +195,9 @@ class PhotoboothPicture: UIViewController {
     
     @IBAction func captureButtonClicked(_ sender: Any) {
         captureButton.isHidden = true
-        anywhereButton.isHidden = false
+        downArrow.isHidden = true
+        captionRect.isHidden = true
+        captionLabel.isHidden = true
         var image :UIImage?
           let currentLayer = UIApplication.shared.keyWindow!.layer
           let currentScale = UIScreen.main.scale
@@ -179,16 +210,16 @@ class PhotoboothPicture: UIViewController {
           UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.anywhereButton.isHidden = false
             self.picSuccessNotif.isHidden = false
             self.okButton.isHidden = false
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                self.picSuccessNotif.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                self.picSuccessNotif.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                      })
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                               self.okButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                               self.okButton.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                                     })
-            }
+            
         }
     }
     
