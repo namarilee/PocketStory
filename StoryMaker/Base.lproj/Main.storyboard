@@ -110,34 +110,34 @@
                                     <action selector="userClickedAnywhere:" destination="eaw-4R-cdx" eventType="touchUpInside" id="FSj-Rb-Bmu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hV-xM-TKk" userLabel="PupButton">
-                                <rect key="frame" x="125" y="95.333333333333329" width="108.66666666666669" height="161.33333333333337"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hV-xM-TKk" userLabel="PupButton">
+                                <rect key="frame" x="86" y="104" width="232" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1hV-xM-TKk" secondAttribute="height" multiplier="562:835" id="ibn-YH-JNf"/>
                                 </constraints>
-                                <state key="normal" image="dog"/>
+                                <state key="normal" image="dogButton"/>
                                 <connections>
                                     <action selector="pizzaButtonClicked:" destination="22n-44-0Dd" eventType="touchUpInside" id="rdO-VQ-8Uv"/>
                                     <action selector="pupButtonClicked:" destination="eaw-4R-cdx" eventType="touchUpInside" id="Pcg-Mc-aEw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Yr-iwn" userLabel="WhiskersButton">
-                                <rect key="frame" x="373.66666666666669" y="95.333333333333329" width="148.66666666666669" height="161.33333333333337"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Yr-iwn" userLabel="WhiskersButton">
+                                <rect key="frame" x="332" y="104" width="233" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="exO-Yr-iwn" secondAttribute="height" multiplier="818:888" id="qhg-1S-PEJ"/>
                                 </constraints>
-                                <state key="normal" image="cat"/>
+                                <state key="normal" image="catButton"/>
                                 <connections>
                                     <action selector="hotdogButtonClicked:" destination="22n-44-0Dd" eventType="touchUpInside" id="fuh-4Q-fXL"/>
                                     <action selector="whiskersButtonClicked:" destination="eaw-4R-cdx" eventType="touchUpInside" id="mmR-iK-urh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-bD-NYe" userLabel="BessieButton">
-                                <rect key="frame" x="622.33333333333337" y="95.333333333333329" width="189" height="161.33333333333337"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-bD-NYe" userLabel="BessieButton">
+                                <rect key="frame" x="586" y="104" width="236" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="r0n-bD-NYe" secondAttribute="height" multiplier="903:771" id="gj6-bc-Hm8"/>
                                 </constraints>
-                                <state key="normal" image="cow">
+                                <state key="normal" image="cowButton">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
@@ -146,47 +146,20 @@
                                     <action selector="popcornButtonClicked:" destination="22n-44-0Dd" eventType="touchUpInside" id="7Ea-gb-x4v"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZp-mk-woC" userLabel="PupLabel">
-                                <rect key="frame" x="158.66666666666666" y="289.66666666666669" width="41" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whiskers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7n2-gi-VDi" userLabel="WhiskersLabel">
-                                <rect key="frame" x="399" y="289.66666666666669" width="98" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bessie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgx-IQ-HKX" userLabel="BessieLabel">
-                                <rect key="frame" x="682.66666666666663" y="289.66666666666669" width="68" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.8901960784313725" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89802099909999999" green="0.86647390560000004" blue="0.98392885919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7n2-gi-VDi" firstAttribute="height" secondItem="ciy-bN-ohY" secondAttribute="height" multiplier="0.05" id="0Xi-kC-QuW"/>
                             <constraint firstItem="cCT-ko-FJB" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="0.25" id="36H-dv-u8i"/>
                             <constraint firstItem="3eu-Yt-kLV" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" id="3Az-wK-VHR"/>
                             <constraint firstItem="1hV-xM-TKk" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="0.85" id="4gQ-ps-bFu"/>
-                            <constraint firstItem="7n2-gi-VDi" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" id="6uN-Ai-bsB"/>
                             <constraint firstItem="exO-Yr-iwn" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" id="D39-hD-Wiu"/>
                             <constraint firstItem="r0n-bD-NYe" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" multiplier="1.6" id="F4E-aZ-w4r"/>
                             <constraint firstItem="cCT-ko-FJB" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" id="Jwa-W4-9Bk"/>
                             <constraint firstItem="r0n-bD-NYe" firstAttribute="height" secondItem="ciy-bN-ohY" secondAttribute="height" multiplier="0.39" id="OuE-Eu-uU2"/>
-                            <constraint firstItem="qgx-IQ-HKX" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" multiplier="1.6" id="RuM-Hj-l3Z"/>
-                            <constraint firstItem="qgx-IQ-HKX" firstAttribute="height" secondItem="ciy-bN-ohY" secondAttribute="height" multiplier="0.05" id="SSL-Rv-DqK"/>
-                            <constraint firstItem="WZp-mk-woC" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="1.45" id="T5m-qa-3Eq"/>
-                            <constraint firstItem="7n2-gi-VDi" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="1.45" id="Xqd-OJ-Z8b"/>
                             <constraint firstItem="exO-Yr-iwn" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="0.85" id="aSz-QM-0OF"/>
                             <constraint firstItem="exO-Yr-iwn" firstAttribute="height" secondItem="ciy-bN-ohY" secondAttribute="height" multiplier="0.39" id="anM-wI-pNs"/>
                             <constraint firstItem="3eu-Yt-kLV" firstAttribute="width" secondItem="ciy-bN-ohY" secondAttribute="width" id="e1G-gs-47Q"/>
                             <constraint firstItem="cCT-ko-FJB" firstAttribute="width" secondItem="ciy-bN-ohY" secondAttribute="width" multiplier="0.9" id="iMN-5j-Wdw"/>
-                            <constraint firstItem="WZp-mk-woC" firstAttribute="height" secondItem="ciy-bN-ohY" secondAttribute="height" multiplier="0.05" id="iwd-jW-hqk"/>
-                            <constraint firstItem="WZp-mk-woC" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" multiplier="0.4" id="khe-c4-3VA"/>
-                            <constraint firstItem="qgx-IQ-HKX" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="1.45" id="l5h-1C-Hln"/>
                             <constraint firstItem="r0n-bD-NYe" firstAttribute="centerY" secondItem="ciy-bN-ohY" secondAttribute="centerY" multiplier="0.85" id="lbc-cj-y1h"/>
                             <constraint firstItem="1hV-xM-TKk" firstAttribute="height" secondItem="ciy-bN-ohY" secondAttribute="height" multiplier="0.39" id="ngB-iL-pHz"/>
                             <constraint firstItem="1hV-xM-TKk" firstAttribute="centerX" secondItem="ciy-bN-ohY" secondAttribute="centerX" multiplier="0.4" id="rhi-Zc-EwV"/>
@@ -203,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvT-FG-mBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="2339"/>
+            <point key="canvasLocation" x="454.6875" y="2337.68115942029"/>
         </scene>
         <!--Photobooth Select-->
         <scene sceneID="8tl-jn-cK2">
@@ -1281,7 +1254,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pVk-aa-ex4"/>
-        <segue reference="5ip-ZR-JK0"/>
+        <segue reference="O8j-VC-0WM"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1300,8 +1273,10 @@
         <image name="campfire button" width="714" height="648"/>
         <image name="captionRect" width="840" height="154"/>
         <image name="cat" width="818" height="888"/>
-        <image name="cow" width="903" height="771"/>
+        <image name="catButton" width="714" height="648"/>
+        <image name="cowButton" width="714" height="648"/>
         <image name="dog" width="562" height="835"/>
+        <image name="dogButton" width="714" height="648"/>
         <image name="farm coming soon" width="714" height="648"/>
         <image name="go button" width="654" height="372"/>
         <image name="hello" width="960" height="720"/>
