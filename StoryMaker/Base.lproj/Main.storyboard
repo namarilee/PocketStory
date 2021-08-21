@@ -1360,11 +1360,11 @@
                                 <rect key="frame" x="-134.33333333333337" y="-62" width="1164.666666666667" height="538"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD5-6d-x0g">
-                                <rect key="frame" x="49.333333333333343" y="81" width="259.66666666666663" height="252"/>
+                                <rect key="frame" x="49.333333333333343" y="88.333333333333329" width="259.66666666666663" height="237.33333333333337"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="zD5-6d-x0g" secondAttribute="height" multiplier="160:155" id="Dh3-Lk-lqO"/>
+                                    <constraint firstAttribute="width" secondItem="zD5-6d-x0g" secondAttribute="height" multiplier="160:146" id="Dh3-Lk-lqO"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="newStory"/>
+                                <state key="normal" title="Button" image="Group 5newStory"/>
                                 <connections>
                                     <action selector="newStoryClicked:" destination="Ojv-yZ-M3M" eventType="touchUpInside" id="9uu-tn-haI"/>
                                     <segue destination="IyB-f8-GW6" kind="presentation" modalTransitionStyle="flipHorizontal" id="pVk-aa-ex4"/>
@@ -1581,10 +1581,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="9rs-pz-D53"/>
         <segue reference="mkC-iG-4Ze"/>
-        <segue reference="qT1-FB-nbz"/>
+        <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Group 5newStory" width="714" height="648"/>
         <image name="Menuatsnackbarbuttons" width="4200" height="2100"/>
         <image name="Next button" width="960" height="720"/>
         <image name="Pingpongtablelighter" width="1008" height="504"/>
@@ -1615,7 +1617,6 @@
         <image name="initialPlaylistView" width="1059" height="954"/>
         <image name="keyboardButton" width="476" height="208"/>
         <image name="minigames" width="709" height="646"/>
-        <image name="newStory" width="298" height="270"/>
         <image name="ok button" width="960" height="720"/>
         <image name="paddle1" width="1080" height="1080"/>
         <image name="paddle2" width="1080" height="1080"/>
