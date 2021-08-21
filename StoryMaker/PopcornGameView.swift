@@ -15,15 +15,22 @@ class PopcornGameView: UIView {
     private var greatJobImageView: UIImageView
 
     let darkImageView = UIImageView()
-    let popcornCountLabel = UILabel(frame: CGRect(x: 760, y: 250, width: 620, height: 200))
+    let popcornCountLabel = UILabel(frame: CGRect(
+                                        x: (Int)(UIScreen.main.bounds.size.width) - 125,
+                                        y: (Int)(UIScreen.main.bounds.size.height / 2) + 43,
+                                        width: 620,
+                                        height: 200))
     let basketImageView = UIImageView()
     let pCounterImageView = UIImageView()
+    let maxScore = 5
     var currentScore = 0
 
     init(parent: AbstractGamesViewController) {
         self.parent = parent
         self.greatJobImageView = parent.getGreatJobImageView()
         super.init(frame: .zero)
+        print("UIScreen width: ", UIScreen.main.bounds.size.width)
+        print("UIScreen height: ", UIScreen.main.bounds.size.height)
 
         addSubview(greatJobImageView)
         greatJobImageView.isHidden = true
@@ -37,18 +44,31 @@ class PopcornGameView: UIView {
         popcornCountLabel.text = "0"
         addSubview(popcornCountLabel)
         basketImageView.isUserInteractionEnabled = true
-        basketImageView.frame = CGRect(x: 100, y: 280, width: 150, height: 150)
+        basketImageView.frame = CGRect(
+            x: 100,
+            y: (Int)(UIScreen.main.bounds.size.height / 2) + 73,
+            width: 150,
+            height: 150)
         basketImageView.image = UIImage(named: "popcornContainer")
         addSubview(basketImageView)
-        pCounterImageView.frame = CGRect(x: 750, y: 250, width: 200, height: 200)
+        pCounterImageView.frame = CGRect(
+            x: (Int)(UIScreen.main.bounds.size.width) - 146,
+            y: (Int)(UIScreen.main.bounds.size.height / 2) + 43,
+            width: 200,
+            height: 200)
         pCounterImageView.image = UIImage(named: "kernel")
         addSubview(pCounterImageView)
+
         basketImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(PopcornGameView.moveBasket(_:))))
         addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
-            let randomPopcorn = Int(arc4random_uniform(UInt32((Int)(UIScreen.main.bounds.size.width-100))) + 1)
+        Timer.scheduledTimer(withTimeInterval: 2.1, repeats: true) { (t1) in
+            let randomPopcorn = Int(arc4random_uniform(UInt32((Int)(UIScreen.main.bounds.size.width - 100))) + 1)
             let kernelImageView = UIImageView()
-            kernelImageView.frame = CGRect(x: randomPopcorn + 30, y: 30, width: 100, height: 100)
+            kernelImageView.frame = CGRect(
+                x: randomPopcorn + 30,
+                y: (Int)(UIScreen.main.bounds.size.height / 2) - 177,
+                width: 100,
+                height: 100)
             kernelImageView.image = UIImage(named: "kernel")
             self.addSubview(kernelImageView)
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (t2) in
@@ -57,7 +77,8 @@ class PopcornGameView: UIView {
                     self.currentScore += 1
                     self.popcornCountLabel.text = "\(self.currentScore)"
                     kernelImageView.center.y = -100000
-                    if self.currentScore == 10 {
+
+                    if self.currentScore == self.maxScore {
                         kernelImageView.isHidden = true
                         t1.invalidate()
                         t2.invalidate()

@@ -1224,7 +1224,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="greatJob" translatesAutoresizingMaskIntoConstraints="NO" id="EMy-Uk-A7n" userLabel="GreatJobImage">
-                                <rect key="frame" x="205" y="238" width="614" height="292"/>
+                                <rect key="frame" x="179.33333333333331" y="79.333333333333329" width="537.33333333333348" height="255.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EMy-Uk-A7n" secondAttribute="height" multiplier="647:307" id="330-UM-v81"/>
                                 </constraints>
@@ -1570,7 +1570,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="O8j-VC-0WM"/>
+        <segue reference="mkC-iG-4Ze"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
