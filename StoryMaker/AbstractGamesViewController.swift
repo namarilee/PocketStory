@@ -22,6 +22,10 @@ class AbstractGamesViewController: UIViewController {
         super.viewDidLoad()
         AbstractGamesViewController.instance = self
     }
+
+    func getGreatJobImageView() -> UIImageView {
+        fatalError("This method must be overridden")
+    }
     
     func photoboothIntro() {
         if BackgroundSelect.storyInProgress == true {
