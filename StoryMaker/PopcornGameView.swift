@@ -12,25 +12,27 @@ import UIKit
 class PopcornGameView: UIView {
 
     private var parent: AbstractGamesViewController
+    private var greatJobImageView: UIImageView
 
     let darkImageView = UIImageView()
-    let greatJobImageView = UIImageView()
     let popcornCountLabel = UILabel(frame: CGRect(x: 760, y: 250, width: 620, height: 200))
     let basketImageView = UIImageView()
     let pCounterImageView = UIImageView()
-    var buttonName = UIButton(type: UIButton.ButtonType.custom) as UIButton
-   //buttonName.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
-   // buttonName.frame = CGRect(x: 620, y: 330, width: 72, height: 54)
     var currentScore = 0
 
     init(parent: AbstractGamesViewController) {
         self.parent = parent
+        self.greatJobImageView = parent.getGreatJobImageView()
         super.init(frame: .zero)
 
-        greatJobImageView.frame = CGRect(x: 230, y: 100, width: 431.3, height: 204.6)
-        greatJobImageView.image = UIImage(named: "greatJob")
         addSubview(greatJobImageView)
         greatJobImageView.isHidden = true
+        greatJobImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            greatJobImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6),
+            greatJobImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            greatJobImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
         popcornCountLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 50)
         popcornCountLabel.text = "0"
         addSubview(popcornCountLabel)
@@ -88,9 +90,6 @@ class PopcornGameView: UIView {
         popcornCountLabel.isHidden = true
         pCounterImageView.isHidden = true
         basketImageView.isHidden = true
-        //kernelImageView.isHidden = true
-//        parent.showButtonQuestions()
-        
     }
 
     @objc func moveBasket(_ recognizer: UIPanGestureRecognizer) {

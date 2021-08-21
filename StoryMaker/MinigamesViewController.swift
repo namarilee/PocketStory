@@ -12,16 +12,19 @@ import UIKit
 
 class MinigamesViewController: AbstractGamesViewController {
 
- 
-    
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var greatJobImageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
        // backButton.isHidden = true
     }
-    
-    
+
+    override func getGreatJobImageView() -> UIImageView {
+        return self.greatJobImageView
+    }
+
     @IBAction func pizzaGameClicked(_ sender: Any) {
         ViewController.instance.pauseSound()
               ViewController.instance.playSound(soundFile: "foodcourtost")
