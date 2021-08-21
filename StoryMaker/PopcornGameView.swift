@@ -16,13 +16,13 @@ class PopcornGameView: UIView {
 
     let darkImageView = UIImageView()
     let popcornCountLabel = UILabel(frame: CGRect(
-                                        x: (Int)(UIScreen.main.bounds.size.width) - 125,
+                                        x: (Int)(UIScreen.main.bounds.size.width) - 135,
                                         y: (Int)(UIScreen.main.bounds.size.height / 2) + 43,
                                         width: 620,
                                         height: 200))
     let basketImageView = UIImageView()
     let pCounterImageView = UIImageView()
-    let maxScore = 5
+    let maxScore = 10
     var currentScore = 0
 
     init(parent: AbstractGamesViewController) {
