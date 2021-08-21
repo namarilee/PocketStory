@@ -666,7 +666,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-C4-swr" userLabel="Button1">
-                                <rect key="frame" x="44.666666666666657" y="75.666666666666657" width="269" height="117.66666666666666"/>
+                                <rect key="frame" x="44.666666666666657" y="78.333333333333343" width="269" height="117.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BvB-C4-swr" secondAttribute="height" multiplier="279:122" id="OaH-iJ-iCb"/>
                                 </constraints>
@@ -677,7 +677,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-NZ-f5v" userLabel="Button2">
-                                <rect key="frame" x="313.66666666666663" y="75.666666666666657" width="268.66666666666663" height="117.66666666666666"/>
+                                <rect key="frame" x="313.66666666666663" y="78.333333333333343" width="268.66666666666663" height="117.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PHU-NZ-f5v" secondAttribute="height" multiplier="279:122" id="oNq-hQ-x7w"/>
                                 </constraints>
@@ -687,7 +687,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-ye-sA3" userLabel="Button3">
-                                <rect key="frame" x="582.33333333333337" y="75.666666666666657" width="269" height="117.66666666666666"/>
+                                <rect key="frame" x="582.33333333333337" y="78.333333333333343" width="269" height="117.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VBx-ye-sA3" secondAttribute="height" multiplier="279:122" id="355-Yd-0sS"/>
                                 </constraints>
@@ -715,7 +715,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greatJob" translatesAutoresizingMaskIntoConstraints="NO" id="jD7-wD-eeT" userLabel="GreatJobImage">
-                                <rect key="frame" x="179.33333333333331" y="79.333333333333314" width="537.33333333333348" height="255.33333333333337"/>
+                                <rect key="frame" x="179.33333333333331" y="79.333333333333329" width="537.33333333333348" height="255.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jD7-wD-eeT" secondAttribute="height" multiplier="647:307" id="abV-FF-J0U"/>
                                 </constraints>
@@ -728,13 +728,13 @@
                             <constraint firstItem="BvB-C4-swr" firstAttribute="width" secondItem="teO-m8-TNz" secondAttribute="width" multiplier="0.3" id="CRp-xm-9hd"/>
                             <constraint firstItem="jD7-wD-eeT" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" id="EFm-CN-FdO"/>
                             <constraint firstItem="PHU-NZ-f5v" firstAttribute="width" secondItem="teO-m8-TNz" secondAttribute="width" multiplier="0.3" id="K15-Uq-IyJ"/>
-                            <constraint firstItem="VBx-ye-sA3" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" multiplier="0.65" id="Mmm-10-wkr"/>
-                            <constraint firstItem="PHU-NZ-f5v" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" multiplier="0.65" id="OGh-X9-aFs"/>
-                            <constraint firstItem="BvB-C4-swr" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" multiplier="0.65" id="PTB-eP-tYL"/>
+                            <constraint firstItem="VBx-ye-sA3" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" constant="-70" id="Mmm-10-wkr"/>
+                            <constraint firstItem="PHU-NZ-f5v" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" constant="-70" id="OGh-X9-aFs"/>
+                            <constraint firstItem="BvB-C4-swr" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" constant="-70" id="PTB-eP-tYL"/>
                             <constraint firstItem="yog-Xf-Kpf" firstAttribute="width" secondItem="teO-m8-TNz" secondAttribute="width" multiplier="0.3" id="YnE-8Y-r1Z"/>
                             <constraint firstItem="yog-Xf-Kpf" firstAttribute="centerX" secondItem="teO-m8-TNz" secondAttribute="centerX" multiplier="0.4" id="ZhL-Cv-yBc"/>
                             <constraint firstItem="PHU-NZ-f5v" firstAttribute="centerX" secondItem="teO-m8-TNz" secondAttribute="centerX" id="b3Z-Zf-VU1"/>
-                            <constraint firstItem="yog-Xf-Kpf" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" multiplier="1.35" id="i68-1v-XKq"/>
+                            <constraint firstItem="yog-Xf-Kpf" firstAttribute="centerY" secondItem="teO-m8-TNz" secondAttribute="centerY" constant="70" id="i68-1v-XKq"/>
                             <constraint firstItem="BvB-C4-swr" firstAttribute="centerX" secondItem="teO-m8-TNz" secondAttribute="centerX" multiplier="0.4" id="joy-hR-jfw"/>
                             <constraint firstItem="VBx-ye-sA3" firstAttribute="centerX" secondItem="teO-m8-TNz" secondAttribute="centerX" multiplier="1.6" id="rlL-dT-nbm"/>
                             <constraint firstItem="VBx-ye-sA3" firstAttribute="width" secondItem="teO-m8-TNz" secondAttribute="width" multiplier="0.3" id="tA8-mp-BVh"/>
@@ -1224,7 +1224,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="greatJob" translatesAutoresizingMaskIntoConstraints="NO" id="EMy-Uk-A7n" userLabel="GreatJobImage">
-                                <rect key="frame" x="179.33333333333331" y="79.333333333333329" width="537.33333333333348" height="255.33333333333337"/>
+                                <rect key="frame" x="179.33333333333331" y="79.333333333333314" width="537.33333333333348" height="255.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EMy-Uk-A7n" secondAttribute="height" multiplier="647:307" id="330-UM-v81"/>
                                 </constraints>
@@ -1570,7 +1570,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mkC-iG-4Ze"/>
+        <segue reference="ceF-I1-WEZ"/>
+        <segue reference="O8j-VC-0WM"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>
