@@ -37,9 +37,7 @@ class FoodSelectViewController: AbstractGamesViewController {
 
         chooseButton.isHidden = true
 
-        pizzaLabel.adjustsFontSizeToFitWidth = true
-        hotdogLabel.adjustsFontSizeToFitWidth = true
-        popcornLabel.adjustsFontSizeToFitWidth = true
+      
 
         pizzaButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         pizzaButton.translatesAutoresizingMaskIntoConstraints = true

@@ -107,8 +107,8 @@
                                     <action selector="userClickedAnywhere:" destination="eaw-4R-cdx" eventType="touchUpInside" id="FSj-Rb-Bmu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hV-xM-TKk" userLabel="PupButton">
-                                <rect key="frame" x="62.666666666666657" y="76.333333333333329" width="232.99999999999997" height="211.66666666666669"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hV-xM-TKk" userLabel="PupButton">
+                                <rect key="frame" x="62" y="102" width="232.99999999999997" height="211.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1hV-xM-TKk" secondAttribute="height" multiplier="714:648" id="ibn-YH-JNf"/>
                                 </constraints>
@@ -118,8 +118,8 @@
                                     <action selector="pupButtonClicked:" destination="eaw-4R-cdx" eventType="touchUpInside" id="Pcg-Mc-aEw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Yr-iwn" userLabel="WhiskersButton">
-                                <rect key="frame" x="331.66666666666669" y="76.333333333333329" width="232.66666666666669" height="211.66666666666669"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exO-Yr-iwn" userLabel="WhiskersButton">
+                                <rect key="frame" x="331" y="102" width="232.66666666666669" height="211.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="exO-Yr-iwn" secondAttribute="height" multiplier="714:648" id="qhg-1S-PEJ"/>
                                 </constraints>
@@ -129,8 +129,8 @@
                                     <action selector="whiskersButtonClicked:" destination="eaw-4R-cdx" eventType="touchUpInside" id="mmR-iK-urh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-bD-NYe" userLabel="BessieButton">
-                                <rect key="frame" x="600.33333333333337" y="76.333333333333329" width="233" height="211.66666666666669"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-bD-NYe" userLabel="BessieButton">
+                                <rect key="frame" x="600" y="102" width="233" height="211.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="r0n-bD-NYe" secondAttribute="height" multiplier="714:648" id="gj6-bc-Hm8"/>
                                 </constraints>
@@ -1170,24 +1170,6 @@
                                 <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeC-ea-qmS" userLabel="PizzaLabel">
-                                <rect key="frame" x="150.33333333333334" y="289.66666666666669" width="58" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Dog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bw1-jl-3zm" userLabel="HotDogLabel">
-                                <rect key="frame" x="406" y="289.66666666666669" width="84" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popcorn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUx-gI-ufw" userLabel="PopcornLabel">
-                                <rect key="frame" x="673.33333333333337" y="289.66666666666669" width="87" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.25490196079999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v66-lO-WfT" userLabel="AnywhereButton">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1230,31 +1212,22 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.58431372549019611" green="0.88235294117647056" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.66671954314720816" green="0.62500642112136939" blue="0.58608996248619871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Bw1-jl-3zm" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="1.45" id="HBO-tK-eH8"/>
                             <constraint firstItem="RmP-wO-lnE" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="0.85" id="I4Q-Xd-oIV"/>
-                            <constraint firstItem="JeC-ea-qmS" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" multiplier="0.4" id="Ie7-gx-9Qx"/>
-                            <constraint firstItem="JeC-ea-qmS" firstAttribute="height" secondItem="1Zr-aa-Oaa" secondAttribute="height" multiplier="0.05" id="Ksi-Ru-ET5"/>
                             <constraint firstItem="wF3-lZ-vYW" firstAttribute="width" secondItem="1Zr-aa-Oaa" secondAttribute="width" multiplier="0.26" id="MAP-jM-J3s"/>
                             <constraint firstItem="b1E-Nv-hit" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="0.25" id="Nvh-Nt-rOP"/>
-                            <constraint firstItem="Bw1-jl-3zm" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" id="QPS-vt-lxf"/>
-                            <constraint firstItem="kUx-gI-ufw" firstAttribute="height" secondItem="1Zr-aa-Oaa" secondAttribute="height" multiplier="0.05" id="Sr9-wA-y8z"/>
-                            <constraint firstItem="kUx-gI-ufw" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="1.45" id="VKU-5a-tNB"/>
                             <constraint firstItem="v66-lO-WfT" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" id="bN1-nA-K2r"/>
                             <constraint firstItem="v66-lO-WfT" firstAttribute="width" secondItem="1Zr-aa-Oaa" secondAttribute="width" id="dyS-hP-t1l"/>
                             <constraint firstItem="b1E-Nv-hit" firstAttribute="width" secondItem="1Zr-aa-Oaa" secondAttribute="width" multiplier="0.8" id="fUd-oQ-Lrb"/>
-                            <constraint firstItem="Bw1-jl-3zm" firstAttribute="height" secondItem="1Zr-aa-Oaa" secondAttribute="height" multiplier="0.05" id="hn0-ct-COj"/>
                             <constraint firstItem="wF3-lZ-vYW" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" multiplier="0.4" id="jq4-XO-JOx"/>
                             <constraint firstItem="o8b-xf-QVh" firstAttribute="width" secondItem="1Zr-aa-Oaa" secondAttribute="width" multiplier="0.26" id="nwK-5j-b8p"/>
                             <constraint firstItem="RmP-wO-lnE" firstAttribute="width" secondItem="1Zr-aa-Oaa" secondAttribute="width" multiplier="0.26" id="o9H-Xj-k3J"/>
                             <constraint firstItem="o8b-xf-QVh" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="0.85" id="qvF-MH-aTN"/>
                             <constraint firstItem="b1E-Nv-hit" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" id="sYU-ex-QcE"/>
                             <constraint firstItem="o8b-xf-QVh" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" id="se7-21-jZb"/>
-                            <constraint firstItem="kUx-gI-ufw" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" multiplier="1.6" id="seH-cK-F2x"/>
                             <constraint firstItem="v66-lO-WfT" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" id="sfS-pR-6hf"/>
                             <constraint firstItem="RmP-wO-lnE" firstAttribute="centerX" secondItem="1Zr-aa-Oaa" secondAttribute="centerX" multiplier="1.6" id="tMk-3V-I4B"/>
-                            <constraint firstItem="JeC-ea-qmS" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="1.45" id="tbe-l8-bDS"/>
                             <constraint firstItem="v66-lO-WfT" firstAttribute="height" secondItem="1Zr-aa-Oaa" secondAttribute="height" id="vyZ-5R-fGe"/>
                             <constraint firstItem="wF3-lZ-vYW" firstAttribute="centerY" secondItem="1Zr-aa-Oaa" secondAttribute="centerY" multiplier="0.85" id="yYO-xC-cjt"/>
                         </constraints>
@@ -1263,11 +1236,8 @@
                     <connections>
                         <outlet property="anywhereButton" destination="v66-lO-WfT" id="HXs-zy-nKA"/>
                         <outlet property="hotdogButton" destination="o8b-xf-QVh" id="BMm-Fk-4Y7"/>
-                        <outlet property="hotdogLabel" destination="Bw1-jl-3zm" id="tNF-al-KX6"/>
                         <outlet property="pizzaButton" destination="wF3-lZ-vYW" id="PkC-bk-7cd"/>
-                        <outlet property="pizzaLabel" destination="JeC-ea-qmS" id="cUA-qT-sCC"/>
                         <outlet property="popcornButton" destination="RmP-wO-lnE" id="0hL-qP-AoK"/>
-                        <outlet property="popcornLabel" destination="kUx-gI-ufw" id="YNs-hs-7xu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRz-rY-0SF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
