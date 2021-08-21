@@ -25,6 +25,8 @@ class FoodSelectViewController: AbstractGamesViewController {
 
     @IBOutlet weak var anywhereButton: UIButton!
 
+    @IBOutlet weak var greatJobImageView: UIImageView!
+    
     let chooseButton = UIButton(type: UIButton.ButtonType.custom)
 
    // var popcornGameCoordinator: PopcornGameCoordinator? = nil
@@ -47,6 +49,10 @@ class FoodSelectViewController: AbstractGamesViewController {
         hotdogButton.translatesAutoresizingMaskIntoConstraints = true
         popcornButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         popcornButton.translatesAutoresizingMaskIntoConstraints = true
+    }
+
+    override func getGreatJobImageView() -> UIImageView {
+        return self.greatJobImageView
     }
 
     @IBAction func pizzaButtonClicked(_ sender: UIButton) {
