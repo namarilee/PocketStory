@@ -189,15 +189,11 @@ class PizzaGameView: UIView {
             height: 225)
         reloadPizzaImageView()
         foodGameImageView.isHidden = false
-        let originalTransform = foodGameImageView.transform
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: {
             for i in 0...4 {
                 self.numButtons[i].transform = .identity
             }
         })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            self.foodGameImageView.transform = originalTransform
-        }
         if foodGameCount == 5 {
             hidePizzaGame()
             backgroundColor = #colorLiteral(red: 0.8607051969, green: 0.9679742455, blue: 1, alpha: 1)
