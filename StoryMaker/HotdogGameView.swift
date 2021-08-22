@@ -49,7 +49,11 @@ class HotdogGameView: UIView {
             greatJobImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
 
-        foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
+        foodGameImageView.frame = CGRect(
+            x: (Int)(UIScreen.main.bounds.size.width / 2) - 198,
+            y: (Int)(UIScreen.main.bounds.size.height / 2) - 157,
+            width: 394,
+            height: 225)
         foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
         addSubview(foodGameImageView)
         addBackground(imageName: "foodTable", contentMode: .scaleAspectFill)
