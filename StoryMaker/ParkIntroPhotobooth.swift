@@ -113,7 +113,20 @@ class ParkIntroPhotobooth: UIViewController {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoboothSelect") as! PhotoboothSelect
             self.present(nextViewController, animated:false, completion:nil)
         }
-        
-
     }
+
+    @IBAction func userClickedAnywhere(_ sender: Any) {
+        characterImage.layer.removeAllAnimations()
+        showCharacterWorkItem?.perform()
+        showCharacterWorkItem?.cancel()
+        showSpeechBubbleWorkItem?.perform()
+        showSpeechBubbleWorkItem?.cancel()
+        speechBubble.layer.removeAllAnimations()
+        addMessageToSpeechBubbleWorkItem?.perform()
+        addMessageToSpeechBubbleWorkItem?.cancel()
+        introLabel.stopAnimation()
+        showPromptButtenWorkItem?.perform()
+        showPromptButtenWorkItem?.cancel()
+    }
+
 }
