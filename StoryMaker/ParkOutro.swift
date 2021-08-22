@@ -105,6 +105,7 @@ class ParkOutro: UIViewController {
            showPromptButton(image: UIImage(named: "Next button")!, delay: 3)
            }
            if count == 2 {
+            BackgroundSelect.storyInProgress = false
                ViewController.instance.pauseSound()
                ViewController.instance.playSound(soundFile: "Eb ")
                let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreen") as! HomeScreen
