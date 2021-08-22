@@ -12,12 +12,12 @@ import UIKit
 class HotdogGameView: UIView {
 
     private var parent: AbstractGamesViewController
+    private var greatJobImageView: UIImageView
 
     let foodGameLabel = UILabel(frame: CGRect(x: 200, y: -40, width: 620, height: 200))
     let foodGameImageView = UIImageView()
     let progressImageView = UIImageView()
     let darkImageView = UIImageView()
-    let greatJobImageView = UIImageView()
     let numButtons = [UIButton(type: UIButton.ButtonType.custom),
                       UIButton(type: UIButton.ButtonType.custom),
                       UIButton(type: UIButton.ButtonType.custom),
@@ -36,7 +36,19 @@ class HotdogGameView: UIView {
 
     init(parent: AbstractGamesViewController, numSelectors: [Selector]) {
         self.parent = parent
+        self.greatJobImageView = parent.getGreatJobImageView()
         super.init(frame: .zero)
+        print("UIScreen width: ", UIScreen.main.bounds.size.width)
+        print("UIScreen height: ", UIScreen.main.bounds.size.height)
+
+        addSubview(greatJobImageView)
+        greatJobImageView.isHidden = true
+        greatJobImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            greatJobImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6),
+            greatJobImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            greatJobImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
 
         foodGameImageView.frame = CGRect(x: 250, y: 50, width: 393.75, height: 225)
         foodGameImageView.image = hotdogDisplays[Int.random(in: 0...4)]
