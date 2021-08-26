@@ -10,7 +10,7 @@ import UIKit
 
 class AnimatedUILabel: UILabel {
     
-    private var newText: String?
+    var newText: String?
     private var workItems = [DispatchWorkItem]()
     
     override init(frame: CGRect) {

@@ -105,7 +105,8 @@ class ParkWelcomeViewController: UIViewController {
     }
 
     func addMessageToSpeechBubble(_ message: String) {
-        introLabel.text = message
+        introLabel.text = message 
+        introLabel.newText = message
         addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
             self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
         }
@@ -162,12 +163,12 @@ class ParkWelcomeViewController: UIViewController {
         characterImage.layer.removeAllAnimations()
         showCharacterWorkItem?.perform()
         showCharacterWorkItem?.cancel()
+        introLabel.stopAnimation()
         showSpeechBubbleWorkItem?.perform()
         showSpeechBubbleWorkItem?.cancel()
         speechBubble.layer.removeAllAnimations()
         addMessageToSpeechBubbleWorkItem?.perform()
         addMessageToSpeechBubbleWorkItem?.cancel()
-        introLabel.stopAnimation()
         showPromptButtenWorkItem?.perform()
         showPromptButtenWorkItem?.cancel()
     }

@@ -51,6 +51,7 @@ class BambooDialogViewController: UIViewController {
 
     func addMessageToSpeechBubble(_ message: String) {
         introLabel.text = message
+        introLabel.newText = message
         addMessageToSpeechBubbleWorkItem = DispatchWorkItem {
             self.introLabel.startAnimation(newText: self.introLabel.text ?? "", characterDelay: 0.07)
         }
@@ -79,12 +80,12 @@ class BambooDialogViewController: UIViewController {
     }
 
     @IBAction func userClickedAnywhere(_ sender: Any) {
+        introLabel.stopAnimation()
         showSpeechBubbleWorkItem?.perform()
         showSpeechBubbleWorkItem?.cancel()
         speechBubble.layer.removeAllAnimations()
         addMessageToSpeechBubbleWorkItem?.perform()
         addMessageToSpeechBubbleWorkItem?.cancel()
-        introLabel.stopAnimation()
         showPromptButtenWorkItem?.perform()
         showPromptButtenWorkItem?.cancel()
     }
