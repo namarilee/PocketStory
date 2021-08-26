@@ -28,26 +28,32 @@ class ParkIntroPhotobooth: UIViewController {
     var count = 0
     
     override func viewDidLoad() {
-         super.viewDidLoad()
-         characterImage.isHidden = true
-         characterImage.translatesAutoresizingMaskIntoConstraints = false
-         characterImage.image = UIImage(named: Pup.imageName)
-         view.addSubview(characterImage)
-         speechBubble.isHidden = true
-         speechBubble.translatesAutoresizingMaskIntoConstraints = true
-         introLabel.isHidden = true
-         introLabel.translatesAutoresizingMaskIntoConstraints = true
-         promptButton.isHidden = true
-         promptButton.translatesAutoresizingMaskIntoConstraints = true
+        super.viewDidLoad()
+        characterImage.isHidden = true
+        characterImage.translatesAutoresizingMaskIntoConstraints = false
+        characterImage.image = UIImage(named: Pup.imageName)
+        view.addSubview(characterImage)
+        speechBubble.isHidden = true
+        speechBubble.translatesAutoresizingMaskIntoConstraints = true
+        introLabel.isHidden = true
+        introLabel.translatesAutoresizingMaskIntoConstraints = true
+        if (UIScreen.main.traitCollection.verticalSizeClass == .compact) {
+            introLabel.font = UIFont(name:"Arial Rounded MT Bold", size:18)
+        } else {
+            introLabel.font = UIFont(name:"Arial Rounded MT Bold", size:32)
+        }
+        promptButton.isHidden = true
+        promptButton.translatesAutoresizingMaskIntoConstraints = true
+        
+        showCharacter()
+        
+        showSpeechBubble()
+        
+        addMessageToSpeechBubble("That snack was delicious, wasn't it?")
+        
+        showPromptButton(image: UIImage(named: "Next button")!, delay: 7)
+    }
 
-         showCharacter()
-
-         showSpeechBubble()
-
-         addMessageToSpeechBubble("That snack was delicious, wasn't it?")
-
-           showPromptButton(image: UIImage(named: "Next button")!, delay: 7)
-     }
     func showCharacter() {
         NSLayoutConstraint.activate([
             characterImage.heightAnchor.constraint(equalTo: characterImage.widthAnchor, multiplier: 150.0/100.0),

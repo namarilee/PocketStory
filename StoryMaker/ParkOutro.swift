@@ -35,6 +35,11 @@ class ParkOutro: UIViewController {
         speechBubble.translatesAutoresizingMaskIntoConstraints = true
         introLabel.isHidden = true
         introLabel.translatesAutoresizingMaskIntoConstraints = true
+        if (UIScreen.main.traitCollection.verticalSizeClass == .compact) {
+            introLabel.font = UIFont(name:"Arial Rounded MT Bold", size:18)
+        } else {
+            introLabel.font = UIFont(name:"Arial Rounded MT Bold", size:32)
+        }
         promptButton.isHidden = true
         promptButton.translatesAutoresizingMaskIntoConstraints = true
 
