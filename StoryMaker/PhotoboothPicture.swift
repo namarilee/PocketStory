@@ -49,6 +49,7 @@ class PhotoboothPicture: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
         nextButton.isHidden = true
         captureButton.isHidden = true
         anywhereButton.isHidden = true

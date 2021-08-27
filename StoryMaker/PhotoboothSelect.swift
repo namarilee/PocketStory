@@ -20,6 +20,7 @@ class PhotoboothSelect: UIViewController {
     
      override func viewDidLoad() {
             super.viewDidLoad()
+            view.layoutIfNeeded()
             chooseButton.isHidden = true
     //        boatButton.setTitle(BoatRiver.answer, for: .normal)
     //        campfireButton.setTitle(Campfire.answer, for: .normal)

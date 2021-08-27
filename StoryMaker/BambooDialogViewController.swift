@@ -25,6 +25,7 @@ class BambooDialogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
 
         speechBubble.isHidden = true
         speechBubble.translatesAutoresizingMaskIntoConstraints = true

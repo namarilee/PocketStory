@@ -50,6 +50,7 @@ class ParkWelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
         ParkWelcomeViewController.instance = self
         characterImage.isHidden = true
         characterImage.translatesAutoresizingMaskIntoConstraints = false

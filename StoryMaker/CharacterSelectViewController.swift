@@ -21,6 +21,7 @@ class CharacterSelectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
 
         chooseButton.isHidden = true
 

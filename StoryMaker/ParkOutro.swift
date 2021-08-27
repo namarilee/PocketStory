@@ -27,6 +27,7 @@ class ParkOutro: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
         characterImage.isHidden = true
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         characterImage.image = UIImage(named: Pup.imageName)

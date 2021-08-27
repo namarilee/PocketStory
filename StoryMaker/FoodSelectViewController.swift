@@ -36,6 +36,7 @@ class FoodSelectViewController: AbstractGamesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
 
         chooseButton.isHidden = true
 

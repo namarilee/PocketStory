@@ -25,6 +25,7 @@ class ParkLunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
 
         characterImage.image = UIImage(named: UserAnswers.character)
         captionRect.translatesAutoresizingMaskIntoConstraints = true
