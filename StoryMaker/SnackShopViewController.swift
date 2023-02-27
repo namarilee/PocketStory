@@ -61,12 +61,6 @@ class SnackShopViewController: UIViewController {
 
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BambooDialogViewController") as! BambooDialogViewController
         self.present(nextViewController, animated:false, completion:nil)
-       // BackgroundSelect().chooseButtonClicked(<#UIButton#>).stopSound()
-//        var url = Bundle.main.url(forResource: "foodcourtost", withExtension: "mp3")
-//        player = try! AVAudioPlayer(contentsOf: url!)
-//        player?.prepareToPlay()
-//        player?.play()
-    //    BackgroundSelect().stopSound(soundFile: "dixielandost (1)")
 
     }
 

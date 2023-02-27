@@ -22,9 +22,6 @@ class PhotoboothSelect: UIViewController {
             super.viewDidLoad()
             view.layoutIfNeeded()
             chooseButton.isHidden = true
-    //        boatButton.setTitle(BoatRiver.answer, for: .normal)
-    //        campfireButton.setTitle(Campfire.answer, for: .normal)
-    //        beachButton.setTitle(Beach.answer, for: .normal)
             boatButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
             boatButton.translatesAutoresizingMaskIntoConstraints = true
             campfireButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit

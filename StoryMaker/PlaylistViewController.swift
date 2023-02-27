@@ -20,7 +20,6 @@ class PlaylistViewController: UIViewController {
             animateButton(sender)
         }
         if playlistImageView.currentImage == UIImage(named: "themeSongPlaying") {
-          //  countClick += 1
             ViewController.instance.pauseSound()
             showPausedImage(image: UIImage(named: "themeSongPaused")!)
         }
@@ -30,7 +29,6 @@ class PlaylistViewController: UIViewController {
             showPlayImage(image: UIImage(named: "themeSongPlaying")!)
         }
         if playlistImageView.currentImage == UIImage(named: "parkSongPlaying") {
-                //  countClick += 1
                   ViewController.instance.pauseSound()
                   showPausedImage(image: UIImage(named: "parkSongPaused")!)
         }
@@ -40,7 +38,6 @@ class PlaylistViewController: UIViewController {
                   showPlayImage(image: UIImage(named: "parkSongPlaying")!)
         }
         if playlistImageView.currentImage == UIImage(named: "snackSongPlaying") {
-                //  countClick += 1
                   ViewController.instance.pauseSound()
                   showPausedImage(image: UIImage(named: "snackSongPaused")!)
         }
@@ -50,7 +47,6 @@ class PlaylistViewController: UIViewController {
                   showPlayImage(image: UIImage(named: "snackSongPlaying")!)
         }
         if playlistImageView.currentImage == UIImage(named: "photoSongPlaying") {
-                       //  countClick += 1
                 ViewController.instance.pauseSound()
                 showPausedImage(image: UIImage(named: "photoSongPaused")!)
                }

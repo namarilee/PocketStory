@@ -53,7 +53,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func startButtonClicked(_ sender: Any) {
-      //   BackgroundSelect.instance.playSound(soundFile: "Eb ")
     }
     var soundFileNameURL: NSURL = NSURL()
     var soundFileName = ""

@@ -83,7 +83,6 @@ class PhotoboothPicture: UIViewController {
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: delayedCaptionWorkItem!)
-        //        showNextButton(delay: 4)
     }
 
     func addMessageToSpeechBubble(_ message: String) {
