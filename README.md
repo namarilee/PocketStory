@@ -19,7 +19,8 @@ Being unfamiliar with app development at the time, I took an online course to te
 
 # Features 🧩
 * New Story: users can create their own story featuring these scenes:
-- Amusement Park
-- School (coming soon)
-- Farm (coming soon)
+  - Amusement Park
+    -  The user can choose from one of these characters: dog, cat, cow
+  - School (coming soon)
+  - Farm (coming soon)
 - 
