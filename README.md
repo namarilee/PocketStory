@@ -14,3 +14,12 @@ During my childhood, I attended music therapy sessions, where I spent hours sing
 * Logic Pro X
 
 
+# The process 💬
+Being unfamiliar with app development at the time, I took an online course to teach myself Swift and iOS development. Meanwhile, I got in contact and established partnerships with two community organizations, CHIM Studio in the Bay Area and PCDA in LA. Throughout the process of developing the app, I also collaborated with two friends in designing the illustrations and producing the background music.
+
+# Features 🧩
+* New Story: users can create their own story featuring these scenes:
+- Amusement Park
+- School (coming soon)
+- Farm (coming soon)
+- 
