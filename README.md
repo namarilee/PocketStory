@@ -15,6 +15,9 @@ During my childhood, I attended music therapy sessions, where I spent hours sing
 
 
 # The process 💬
+![Image 2-27-23 at 5 48 PM](https://user-images.githubusercontent.com/57848149/221731933-8c647219-836b-47ca-b624-a4ce1822e7d4.jpg)
+
+
 Being unfamiliar with app development at the time, I took an online course to teach myself Swift and iOS development. Meanwhile, I got in contact and established partnerships with two community organizations, CHIM Studio in the Bay Area and PCDA in LA. Throughout the process of developing the app, I also collaborated with two friends in designing the illustrations and producing the background music.
 
 # Features 🧩
