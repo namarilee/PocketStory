@@ -22,15 +22,15 @@ Being unfamiliar with app development at the time, I took an online course to te
   - Amusement Park
     -  The user can choose from one of these characters: dog, cat, cow
     -  The user goes to a snack shop and chooses one of the following:
-      -  Pizza: a game that tests your knowledge of identifying numbers
-      -  Hotdog: a game that tests your knowledge of identifying colors
-      -  Popcorn: a game where you catch falling popcorn into a bucket
+        -  Pizza: a game that tests your knowledge of identifying numbers
+        -  Hotdog: a game that tests your knowledge of identifying colors
+        -  Popcorn: a game where you catch falling popcorn into a bucket
     -  After that, they'll be taken to a photobooth to take a picture at one of the following places: a river, campfire, or beach
-      -  The user can then move their character wherever they want, and pressing the camera button will take a screenshot and save it to the user's camera roll
+        -  The user can then move their character wherever they want, and pressing the camera button will take a screenshot and save it to the user's camera roll
   - School (coming soon)
   - Farm (coming soon)
 * Minigames
-- An interactive keyboard where the user can play their favorite tunes on the piano!
-- Counting pizzas, hotdog colors, and popcorn catch games so that they can play them without having to start a new story at the amusement park
+  - An interactive keyboard where the user can play their favorite tunes on the piano!
+  - Counting pizzas, hotdog colors, and popcorn catch games so that they can play them without having to start a new story at the amusement park
 * Playlist
-- The user can listen any of the background OSTs, and pause and resume as needed.
+  - The user can listen any of the background OSTs, and pause and resume as needed.
