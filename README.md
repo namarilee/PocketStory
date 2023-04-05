@@ -19,8 +19,10 @@ During my childhood, I attended music therapy sessions, where I spent hours sing
 ![Screen Shot 2023-04-04 at 11 24 48 PM](https://user-images.githubusercontent.com/57848149/229998176-25a32694-0d24-4ae7-8e1f-9807bcff8a65.png)
 *Wireframing and designing on Figma*
 
+
 ![Screen Shot 2023-04-04 at 11 19 23 PM](https://user-images.githubusercontent.com/57848149/229997729-217f5818-5eb5-4c29-bd9d-c7954b60b536.png)
 *Producing music on Logic Pro*
+
 
 ![Image 2-27-23 at 5 48 PM](https://user-images.githubusercontent.com/57848149/221731933-8c647219-836b-47ca-b624-a4ce1822e7d4.jpg)
 *Xcode IDE*
