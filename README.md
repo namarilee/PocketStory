@@ -55,6 +55,13 @@ Being unfamiliar with app development at the time, I took an online course to te
 ### Listen to your favorite songs 🎧
 ![playlist-recording](https://user-images.githubusercontent.com/57848149/229950789-cf2b46e2-9230-4cb5-84ce-eda276b8a947.gif)
 
+p.s. here are the songs if you'd like to listen!
+
+
+https://user-images.githubusercontent.com/57848149/229953764-338ff85a-e8a8-482a-a8ca-f38d654f6f0b.mov
+
+
+
 # Results 🏆
 This project led me to earn the Girl Scout Gold Award, the highest award a Girl Scout can earn with only about 5.4% of those eligible earning it. When the app was finished, I published it to the App Store and showcased the game to a child development center. Watching the children’s faces light up as they played further emphasized how impactful resources like these can have.
 
