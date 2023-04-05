@@ -41,10 +41,17 @@ Being unfamiliar with app development at the time, I took an online course to te
 # Demos 🎥
 
 ### Begin your adventure! 🌎
-![Uploading story-recording (1).gif…]()
+![story-recording (1)](https://user-images.githubusercontent.com/57848149/229950531-5c33aa48-cc42-4cb2-a190-ac7292d560c0.gif)
 
-### Stop by for a quick snack! 
+### Stop by for a quick snack! 🍕
 ![snack-shop-recording (1)](https://user-images.githubusercontent.com/57848149/229950475-34495424-6de5-49ce-bbe0-22bd16752010.gif)
 
+### Take a photo for your memories 📸
+![photobooth-recording](https://user-images.githubusercontent.com/57848149/229950630-ebbf9c78-ccf6-4cb8-a4e1-b89f80394636.gif)
 
+### Access the minigames anytime 🎲
+![minigames-recording](https://user-images.githubusercontent.com/57848149/229950728-3c01b756-45a9-414f-8cad-3c15bf685393.gif)
+
+### Listen to your favorite songs 🎧
+![playlist-recording](https://user-images.githubusercontent.com/57848149/229950789-cf2b46e2-9230-4cb5-84ce-eda276b8a947.gif)
 
