@@ -55,10 +55,19 @@ Being unfamiliar with app development at the time, I took an online course to te
 ### Listen to your favorite songs 🎧
 ![playlist-recording](https://user-images.githubusercontent.com/57848149/229950789-cf2b46e2-9230-4cb5-84ce-eda276b8a947.gif)
 
-p.s. here are the songs if you'd like to listen!
+*p.s. here are the songs if you'd like to listen!*
 
-
+Theme song
 https://user-images.githubusercontent.com/57848149/229953764-338ff85a-e8a8-482a-a8ca-f38d654f6f0b.mov
+
+Amusement park song
+https://user-images.githubusercontent.com/57848149/229954174-d9a36446-2091-40ae-b97b-9383a910257d.mov
+
+Snack shop song
+https://user-images.githubusercontent.com/57848149/229954060-15904bc2-d6a6-4462-8d0d-6d995a3ce14b.mov
+
+Photobooth song
+https://user-images.githubusercontent.com/57848149/229954256-0faca33e-8e13-41ad-86af-a400ba8f0ce5.mov
 
 
 
