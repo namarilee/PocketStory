@@ -37,3 +37,14 @@ Being unfamiliar with app development at the time, I took an online course to te
   - Counting pizzas, hotdog colors, and popcorn catch games so that they can play them without having to start a new story at the amusement park
 * Playlist
   - The user can listen any of the background OSTs, and pause and resume as needed.
+
+# Demos 🎥
+
+### Begin your adventure! 🌎
+![Uploading story-recording (1).gif…]()
+
+### Stop by for a quick snack! 
+![snack-shop-recording (1)](https://user-images.githubusercontent.com/57848149/229950475-34495424-6de5-49ce-bbe0-22bd16752010.gif)
+
+
+
