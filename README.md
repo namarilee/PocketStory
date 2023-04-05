@@ -55,3 +55,11 @@ Being unfamiliar with app development at the time, I took an online course to te
 ### Listen to your favorite songs 🎧
 ![playlist-recording](https://user-images.githubusercontent.com/57848149/229950789-cf2b46e2-9230-4cb5-84ce-eda276b8a947.gif)
 
+# Results 🏆
+This project led me to earn the Girl Scout Gold Award, the highest award a Girl Scout can earn with only about 5.4% of those eligible earning it. When the app was finished, I published it to the App Store and. showcased the game to a child development center. Watching the children’s faces light up as they played further emphasized how impactful resources like these can have.
+
+# What's next🔭
+
+Although I could only afford one year of the Apple Developer membership, I hope to add more improvements and bug fixes and get it back on the App Store in the near future. I also hope to add more accessible features, such as verbal instructions or music/sound effect volume control, and include even more options for customization. 
+
+Having no web development experience at the time, I created a landing page website on Wix: bit.ly/PocketStory. Now that I do, I hope to make some small improvements and update that as well.
