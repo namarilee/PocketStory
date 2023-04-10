@@ -16,16 +16,13 @@ class Keyboard: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    // @IBAction func c1pressed(_ sender: Any) {
-    
+        
     @IBAction func c1pressed(_ sender: Any) {
         
         let url = Bundle.main.url(forResource: "c1piano", withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
     }
-    
     
     @IBAction func cSharpPressed(_ sender: Any) {
         let url = Bundle.main.url(forResource: "c#piano", withExtension: "wav")
@@ -34,14 +31,11 @@ class Keyboard: UIViewController {
         
     }
     
-    
-   
     @IBAction func dPressed(_ sender: Any) {
     
     let url = Bundle.main.url(forResource: "dpiano", withExtension: "wav")
            player = try! AVAudioPlayer(contentsOf: url!)
            player.play()
-    
     }
     
     @IBAction func dSharpPressed(_ sender: Any) {
@@ -49,7 +43,6 @@ class Keyboard: UIViewController {
                  player = try! AVAudioPlayer(contentsOf: url!)
                  player.play()
     }
-    
     
     @IBAction func ePressed(_ sender: Any) {
         let url = Bundle.main.url(forResource: "epiano", withExtension: "wav")
@@ -82,7 +75,6 @@ class Keyboard: UIViewController {
                        player.play()
     }
     
-    
     @IBAction func apressed(_ sender: Any) {
         let url = Bundle.main.url(forResource: "apiano", withExtension: "wav")
                        player = try! AVAudioPlayer(contentsOf: url!)
@@ -101,14 +93,11 @@ class Keyboard: UIViewController {
                        player.play()
     }
     
-    
     @IBAction func c2pressed(_ sender: Any) {
         let url = Bundle.main.url(forResource: "c2piano", withExtension: "wav")
                        player = try! AVAudioPlayer(contentsOf: url!)
                        player.play()
     }
-    
-    
     
     @IBAction func backButtonClicked(_ sender: Any) {
         ViewController.instance.playSound(soundFile: "Eb ")

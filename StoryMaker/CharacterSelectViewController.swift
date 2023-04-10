@@ -12,9 +12,7 @@ import UIKit
 class CharacterSelectViewController: UIViewController {
 
     @IBOutlet weak var pupButton: UIButton!
-
     @IBOutlet weak var whiskersButton: UIButton!
-    
     @IBOutlet weak var bessieButton: UIButton!
 
     let chooseButton = UIButton(type: UIButton.ButtonType.custom)

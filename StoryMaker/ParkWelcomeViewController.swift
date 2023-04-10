@@ -12,21 +12,13 @@ import UIKit
 class ParkWelcomeViewController: UIViewController {
 
     @IBOutlet weak var speechBubble: UIImageView!
-
     @IBOutlet weak var introLabel: AnimatedUILabel!
-
     @IBOutlet weak var promptButton: UIButton!
-
     let characterImage =  UIImageView()
-
     var showCharacterWorkItem: DispatchWorkItem?
-
     var showSpeechBubbleWorkItem: DispatchWorkItem?
-
     var addMessageToSpeechBubbleWorkItem: DispatchWorkItem?
-
-    var showPromptButtenWorkItem: DispatchWorkItem?
-
+    var showPromptButtonWorkItem: DispatchWorkItem?
     var promptCount = 0
     static var instance: ParkWelcomeViewController!
     
@@ -77,12 +69,7 @@ class ParkWelcomeViewController: UIViewController {
           showPromptButton(image: UIImage(named: "hello")!, delay: 7)
     }
     
-  
-//    @IBAction func backButtonClicked(_ sender: Any) {
-//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundSelect") as! BackgroundSelect
-//        self.present(nextViewController, animated:false, completion:nil)
-//    }
-    
+      
     func showCharacter() {
         NSLayoutConstraint.activate([
             characterImage.heightAnchor.constraint(equalTo: characterImage.widthAnchor, multiplier: 150.0/100.0),
@@ -123,7 +110,7 @@ class ParkWelcomeViewController: UIViewController {
         promptButton.transform = .identity
         promptButton.setImage(image, for: .normal)
         
-        showPromptButtenWorkItem = DispatchWorkItem {
+        showPromptButtonWorkItem = DispatchWorkItem {
             self.view.bringSubviewToFront(self.promptButton)
             self.promptButton.isHidden = false
             self.promptButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
@@ -131,7 +118,7 @@ class ParkWelcomeViewController: UIViewController {
                 self.promptButton.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtenWorkItem!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtonWorkItem!)
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
     
@@ -175,8 +162,8 @@ class ParkWelcomeViewController: UIViewController {
         speechBubble.layer.removeAllAnimations()
         addMessageToSpeechBubbleWorkItem?.perform()
         addMessageToSpeechBubbleWorkItem?.cancel()
-        showPromptButtenWorkItem?.perform()
-        showPromptButtenWorkItem?.cancel()
+        showPromptButtonWorkItem?.perform()
+        showPromptButtonWorkItem?.cancel()
     }
 
     // TODO: Create PlayMyStoryViewController for the below

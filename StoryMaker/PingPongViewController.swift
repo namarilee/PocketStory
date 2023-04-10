@@ -11,6 +11,7 @@ import UIKit
 
 class PingPongViewController: UIViewController {
     
+    //ping pong game is still a work in progress, not currently shown in the app
     @IBOutlet weak var paddle1: UIImageView!
     @IBOutlet weak var paddle2: UIImageView!
     @IBOutlet weak var ball: UIImageView!

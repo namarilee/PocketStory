@@ -17,32 +17,32 @@ class ViewController: UIViewController {
 
     static var instance: ViewController!
     
-    @IBAction func amusementPark(_ sender: Any) {
-        userResponses.append("Amusement park")
-        print(userResponses)
-        
-    }
-
-    @IBAction func birthdayParty(_ sender: Any) {
-        userResponses.append("Birthday party")
-        print(userResponses)
-
-    }
-    
-    
-    @IBAction func school(_ sender: Any) {
-        userResponses.append("school")
-        print(userResponses)
-
-    }
-    
-    @IBAction func keyPressed(_ sender: UIButton) {
-           
-          
-        print(sender.currentTitle!)
-           //Reduces the sender's (the button that got pressed) opacity to half.
-           
-       }
+//    @IBAction func amusementPark(_ sender: Any) {
+//        userResponses.append("Amusement park")
+//        print(userResponses)
+//
+//    }
+//
+//    @IBAction func birthdayParty(_ sender: Any) {
+//        userResponses.append("Birthday party")
+//        print(userResponses)
+//
+//    }
+//
+//
+//    @IBAction func school(_ sender: Any) {
+//        userResponses.append("school")
+//        print(userResponses)
+//
+//    }
+//
+//    @IBAction func keyPressed(_ sender: UIButton) {
+//
+//
+//        print(sender.currentTitle!)
+//           //Reduces the sender's (the button that got pressed) opacity to half.
+//
+//       }
     
     
     override func viewDidLoad() {

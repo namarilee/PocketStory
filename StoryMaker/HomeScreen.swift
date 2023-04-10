@@ -13,34 +13,27 @@ import AVFoundation
 class HomeScreen: UIViewController {
     
     @IBOutlet weak var newStoryButton: UIButton!
-    
     @IBOutlet weak var minigamesButton: UIButton!
-    
-   
     @IBOutlet weak var playlistButton: UIButton!
     
     @IBAction func newStoryClicked(_ sender: UIButton) {
         animateButton(sender)
     }
     
-    
-    
     @IBAction func minigamesClicked(_ sender: UIButton) {
         animateButton(sender)
-
     }
     
     @IBAction func playlistClicked(_ sender: UIButton) {
         animateButton(sender)
-       // ViewController.instance.pauseSound()
-      }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   //     BackgroundSelect.instance.playSound(soundFile: "Eb ")
     }
+    
   func animateButton(_ buttonToAnimate: UIView) {
-            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.15, delay: 0,usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                      buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
                  }) { (_) in
                      UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
@@ -51,6 +44,6 @@ class HomeScreen: UIViewController {
     
     func goToNextScreen() {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundSelect") as! BackgroundSelect
-               self.present(nextViewController, animated:false, completion:nil)
+        self.present(nextViewController, animated:false, completion:nil)
     }
 }

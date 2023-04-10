@@ -1540,7 +1540,6 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="START button (1)"/>
                                 <connections>
-                                    <action selector="keyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vt-VG-u8p"/>
                                     <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N48-ec-hGl"/>
                                     <segue destination="Ojv-yZ-M3M" kind="presentation" modalTransitionStyle="crossDissolve" id="5ip-ZR-JK0"/>
                                 </connections>
@@ -1569,8 +1568,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9rs-pz-D53"/>
-        <segue reference="mkC-iG-4Ze"/>
+        <segue reference="5ip-ZR-JK0"/>
         <segue reference="t6c-FP-YCx"/>
     </inferredMetricsTieBreakers>
     <resources>

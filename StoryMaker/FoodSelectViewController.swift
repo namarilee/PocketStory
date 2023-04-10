@@ -29,7 +29,6 @@ class FoodSelectViewController: AbstractGamesViewController {
     
     let chooseButton = UIButton(type: UIButton.ButtonType.custom)
 
-   // var popcornGameCoordinator: PopcornGameCoordinator? = nil
 
     // TODO: Currently not used yet
     var chosenFood =  UIImageView()
@@ -39,8 +38,6 @@ class FoodSelectViewController: AbstractGamesViewController {
         view.layoutIfNeeded()
 
         chooseButton.isHidden = true
-
-      
 
         pizzaButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         pizzaButton.translatesAutoresizingMaskIntoConstraints = true

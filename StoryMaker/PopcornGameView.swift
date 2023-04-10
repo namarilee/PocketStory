@@ -14,7 +14,6 @@ class PopcornGameView: UIView {
     private var parent: AbstractGamesViewController
     private var greatJobImageView: UIImageView
 
-    let darkImageView = UIImageView()
     let popcornCountLabel = UILabel(frame: CGRect(
                                         x: (Int)(UIScreen.main.bounds.size.width) - 135,
                                         y: (Int)(UIScreen.main.bounds.size.height / 2) + 43,
@@ -103,7 +102,6 @@ class PopcornGameView: UIView {
     }
     
     func showGreatJob() {
-        darkImageView.isHidden = false
         greatJobImageView.isHidden = false
     }
 

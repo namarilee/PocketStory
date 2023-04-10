@@ -22,7 +22,6 @@ class HotdogGameView: UIView {
             height: 200))
     let foodGameImageView = UIImageView()
     let progressImageView = UIImageView()
-    let darkImageView = UIImageView()
     let numButtons = [UIButton(type: UIButton.ButtonType.custom),
                       UIButton(type: UIButton.ButtonType.custom),
                       UIButton(type: UIButton.ButtonType.custom),
@@ -64,9 +63,6 @@ class HotdogGameView: UIView {
             height: 200)
         progressImageView.image = parent.gameProgressBar[0]
         addSubview(progressImageView)
-        darkImageView.image = UIImage(named: "darkFaded")
-        addSubview(darkImageView)
-        darkImageView.isHidden = true
         foodGameLabel.isHidden = false
         foodGameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: getFlexFontSize())
         foodGameLabel.text = "Match the color!"

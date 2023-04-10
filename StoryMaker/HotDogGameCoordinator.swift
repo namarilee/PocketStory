@@ -23,7 +23,7 @@ class HotdogGameCoordinator {
         hotdogGameView = HotdogGameView(parent: parent, numSelectors: numSelectors)
         return hotdogGameView!
     }
-    
+     
     func isHotdogDisplayed(_ displayIndex: Int) -> Bool {
         return ((hotdogGameView?.isHotdogDisplayed(displayIndex)) != nil)
     }

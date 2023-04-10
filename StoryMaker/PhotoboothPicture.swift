@@ -102,40 +102,6 @@ class PhotoboothPicture: UIViewController {
         captionLabel.startAnimation(newText: self.captionLabel.text ?? "", characterDelay: 0.07)
     }
 
-    // Not used
-    @IBAction func characterClicked(_ sender: UIButton) {
-        animateButton(sender)
-    }
-
-    var count = 0
-
-    // Not used
-    @IBAction func goButtonClicked(_ sender: UIButton) {
-        count += 1
-        if count == 1 {
-            delayedCaptionWorkItem = DispatchWorkItem {
-                self.addMessageToSpeechBubble("Tap the camera button once you're ready to take a picture!")
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute: delayedCaptionWorkItem!)
-            captureButton.isHidden = false
-            downArrow.isHidden = false
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (t1) in
-                UIView.animate(withDuration: 2, delay: 0, options: [], animations: { [self] in
-                    self.downArrow.transform = CGAffineTransform(translationX: 0, y: -10)
-                }, completion: nil)
-
-                UIView.animate(withDuration: 2, delay: 1, options: [], animations: { [self] in
-                    self.downArrow.transform = CGAffineTransform(translationX: 0, y: 10)
-                }, completion: nil)
-            }
-        }
-
-        if count == 2 {
-            captionRect.isHidden = true
-            nextButton.isHidden = true
-            captionLabel.isHidden = true
-        }
-    }
 
     @objc func moveCharacter(_ recognizer: UIPanGestureRecognizer) {
         let translation: CGPoint = recognizer.translation(in: self.view)
@@ -166,17 +132,7 @@ class PhotoboothPicture: UIViewController {
         }
     }
 
-    // Not used
-    func animateButton(_ buttonToAnimate: UIView) {
-        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-        }) { (_) in
-            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
-                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }, completion: nil)
-        }
-    }
-
+ 
     func showCaptionRect() {
         showCaptionRectWorkItem = DispatchWorkItem {
             self.captionRect.isHidden = false
@@ -188,22 +144,7 @@ class PhotoboothPicture: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: showCaptionRectWorkItem!)
     }
 
-    // Not used
-    func showNextButton(delay: Double) {
-        nextButton.isHidden = true
-        nextButton.transform = .identity
-        
-        showGoButtenWorkItem = DispatchWorkItem {
-            self.view.bringSubviewToFront(self.nextButton)
-            self.nextButton.isHidden = false
-            self.nextButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
-                self.nextButton.transform = CGAffineTransform(scaleX: 1, y: 1)
-            })
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showGoButtenWorkItem!)
-        nextButton.addTarget(self, action: #selector(goButtonClicked), for: .touchUpInside)
-    }
+  
 
     @IBAction func captureButtonClicked(_ sender: Any) {
         captureButton.isHidden = true
@@ -253,4 +194,32 @@ class PhotoboothPicture: UIViewController {
         showGoButtenWorkItem?.perform()
         showGoButtenWorkItem?.cancel()
     }
+    
+    // Not used
+    func showNextButton(delay: Double) {
+        nextButton.isHidden = true
+        nextButton.transform = .identity
+        
+        showGoButtenWorkItem = DispatchWorkItem {
+            self.view.bringSubviewToFront(self.nextButton)
+            self.nextButton.isHidden = false
+            self.nextButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 3, options: [], animations: {
+                self.nextButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showGoButtenWorkItem!)
+    }
+    
+    // Not used
+    func animateButton(_ buttonToAnimate: UIView) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }) { (_) in
+            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
+        }
+    }
+
 }

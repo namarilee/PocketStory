@@ -21,7 +21,7 @@ class BambooDialogViewController: UIViewController {
 
     var addMessageToSpeechBubbleWorkItem: DispatchWorkItem?
 
-    var showPromptButtenWorkItem: DispatchWorkItem?
+    var showPromptButtonWorkItem: DispatchWorkItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class BambooDialogViewController: UIViewController {
         promptButton.transform = .identity
         promptButton.setImage(image, for: .normal)
         
-        showPromptButtenWorkItem = DispatchWorkItem {
+        showPromptButtonWorkItem = DispatchWorkItem {
             self.view.bringSubviewToFront(self.promptButton)
             self.promptButton.isHidden = false
             self.promptButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
@@ -76,7 +76,7 @@ class BambooDialogViewController: UIViewController {
                 self.promptButton.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtenWorkItem!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: showPromptButtonWorkItem!)
         promptButton.addTarget(self, action: #selector(promptButtonClicked), for: .touchUpInside)
     }
 
@@ -92,8 +92,8 @@ class BambooDialogViewController: UIViewController {
         speechBubble.layer.removeAllAnimations()
         addMessageToSpeechBubbleWorkItem?.perform()
         addMessageToSpeechBubbleWorkItem?.cancel()
-        showPromptButtenWorkItem?.perform()
-        showPromptButtenWorkItem?.cancel()
+        showPromptButtonWorkItem?.perform()
+        showPromptButtonWorkItem?.cancel()
     }
 
 }

@@ -13,24 +13,12 @@ import AVFoundation
 class BackgroundSelect: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var button1: UIButton!
-    
     @IBOutlet weak var button2: UIButton!
-    
     @IBOutlet weak var button3: UIButton!
-
     @IBOutlet weak var keyboardButton: UIButton!
-    
     @IBOutlet weak var pongButton: UIButton!
     
-    let answer3 = ["Merry-go-round", "Rollercoaster", "Ferris wheel"]
-    
-    let answer4 = ["Ping pong", "Xylophone", "Basketball"]
-
-    var promptButton = UIButton(type: UIButton.ButtonType.custom)
-    
-    var showPromptButtenWorkItem: DispatchWorkItem?
 
     var chooseButton = UIButton(type: UIButton.ButtonType.custom)
     
@@ -38,6 +26,7 @@ class BackgroundSelect: UIViewController {
     
    static var storyInProgress = false
 
+    //not currently used but helpful if needed
     func hideButtonQuestions() {
         questionLabel.isHidden = true
         button1.isHidden = true
@@ -47,6 +36,7 @@ class BackgroundSelect: UIViewController {
         
     }
     
+    //not currently used but helpful if needed
     func showButtonQuestions() {
         questionLabel.isHidden = false
         button1.isHidden = false
@@ -82,7 +72,6 @@ class BackgroundSelect: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //BackgroundSelect.instance = self
 
         questionLabel.adjustsFontSizeToFitWidth = true
         
@@ -98,8 +87,7 @@ class BackgroundSelect: UIViewController {
         button2.addTarget(self, action: #selector(button2Clicked), for: .touchUpInside)
         button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
         
-    //    keyboardButton.setImage(UIImage(named: "keyboard button"), for: .normal)
-     //   pongButton.setTitle("Pong", for: .normal)
+
     }
 
     let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -110,7 +98,7 @@ class BackgroundSelect: UIViewController {
         UserAnswers.food = sender.title (for: .normal)!
         UserAnswers.photo = sender.title (for: .normal)!
 
-
+        //DEBUG: confirm UserAnswers is working properly
         print(UserAnswers.background)
         print(UserAnswers.character)
         print(UserAnswers.food)
@@ -123,14 +111,11 @@ class BackgroundSelect: UIViewController {
         if UserAnswers.background == AmusementPark.answer {
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ParkWelcomeViewController") as! ParkWelcomeViewController
             self.present(nextViewController, animated:false, completion:nil)
-          //  pauseSound()
             ViewController.instance.pauseSound()
             ViewController.instance.playSound(soundFile: "dixielandost (1)")
 
         }
     }
-    
-    
 
     @IBAction func button1Clicked(_ sender: UIButton) {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
@@ -148,7 +133,6 @@ class BackgroundSelect: UIViewController {
             self.button3.transform = .identity
             self.button2.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         })
-        //showChooseButton()
     }
     
     @IBAction func button3Clicked(_ sender: UIButton) {
@@ -158,12 +142,9 @@ class BackgroundSelect: UIViewController {
             self.button3.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         })
         
-        //showChooseButton()
     }
        
     @IBAction func userClickedAnywhere(_ sender: Any) {
-        showPromptButtenWorkItem?.perform()
-        showPromptButtenWorkItem?.cancel()
         revertAll()
         chooseButton.isHidden = true
     }

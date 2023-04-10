@@ -55,7 +55,6 @@ class SnackShopViewController: UIViewController {
     }
 
     @IBAction func goButtonClicked(_ sender: UIButton) {
-       // musicPlaying = true
         ViewController.instance.pauseSound()
         ViewController.instance.playSound(soundFile: "foodcourtost")
 

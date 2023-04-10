@@ -22,7 +22,6 @@ class PizzaGameView: UIView {
             height: 200))
     let foodGameImageView = UIImageView()
     let progressImageView = UIImageView()
-    let darkImageView = UIImageView()
     let numButtons = [UIButton(type: UIButton.ButtonType.custom),
                       UIButton(type: UIButton.ButtonType.custom),
                       UIButton(type: UIButton.ButtonType.custom),
@@ -71,9 +70,7 @@ class PizzaGameView: UIView {
             height: 200)
         progressImageView.image = parent.gameProgressBar[0]
         addSubview(progressImageView)
-        darkImageView.image = UIImage(named: "darkFaded")
-        addSubview(darkImageView)
-        darkImageView.isHidden = true
+        
         //1
         numButtons[0].frame = CGRect(
             x: (Int)(UIScreen.main.bounds.size.width / 2) - 350,
@@ -173,7 +170,6 @@ class PizzaGameView: UIView {
     }
     
     func showGreatJob() {
-        darkImageView.isHidden = false
         greatJobImageView.isHidden = false
     }
 

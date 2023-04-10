@@ -18,7 +18,6 @@ class MinigamesViewController: AbstractGamesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // backButton.isHidden = true
     }
 
     override func getGreatJobImageView() -> UIImageView {
@@ -51,10 +50,6 @@ class MinigamesViewController: AbstractGamesViewController {
         view = popcornGameCoordinator?.loadView()
     }
     
-//    @IBAction func backButtonClicked(_ sender: Any) {
-//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MinigamesViewController") as! MinigamesViewController
-//              self.present(nextViewController, animated:false, completion:nil)
-//    }
     
     @IBAction func keyboardButtonClicked(_ sender: Any) {
         ViewController.instance.pauseSound()
